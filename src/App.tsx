@@ -4,7 +4,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="flexw-full h-screen">
+    <div className="grid w-full h-screen">
       <Navbar />
       <div className="flex w-full h-screen justify-items-center items-center place-content-center"></div>
     </div>
