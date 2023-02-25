@@ -1,12 +1,20 @@
 import { useState } from "react";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Articles from "./pages/Articles";
+import Projects from "./pages/Projects";
 
 function App() {
   return (
     <div className="grid w-full h-screen">
       <Navbar />
-      <div className="flex w-full h-screen justify-items-center items-center place-content-center"></div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/articles" element={<Articles />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
     </div>
   );
 }
