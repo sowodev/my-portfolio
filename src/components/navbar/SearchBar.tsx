@@ -5,7 +5,7 @@ const SearchBar = function searchBar() {
   const [inputF, setInputF] = useState(false);
 
   return (
-    <div className="nav-button-search relative justify-between">
+    <div className="nav-button-search justify-between">
       <div className="flex w-full h-full items-center">
         <label
           htmlFor="searchtab"
