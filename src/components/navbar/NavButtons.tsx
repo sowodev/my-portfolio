@@ -66,15 +66,15 @@ const NavButtons = function navButtons() {
           )}
         </NavLink>
       </div>
-      {/*           <div className="nav-button-foto invisible">
-      <a href="/" className="foto h-3/4 w-3/4">
-        <img
-          className="h-full w-full"
-          src="./src/assets/user.svg"
-          alt=""
-        />
-      </a>
-    </div> */}
+      <div className="nav-button-foto">
+        <a href="/" className="foto h-3/4 w-3/4">
+          <img
+            className="h-full w-full"
+            src="./src/assets/imgs/user.svg"
+            alt=""
+          />
+        </a>
+      </div>
     </div>
   );
 };

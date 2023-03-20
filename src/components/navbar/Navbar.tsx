@@ -4,7 +4,7 @@ import NavButtons from "./NavButtons";
 
 const Navbar = function () {
   return (
-    <nav className="flex navbar">
+    <nav className="flex sticky w-full navbar">
       <div className="columns-6 colnav justify-around">
         <Logo />
         <SearchBar />

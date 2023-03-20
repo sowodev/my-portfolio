@@ -8,7 +8,7 @@ import Projects from "./pages/Projects";
 
 function App() {
   return (
-    <div className="grid w-full h-screen">
+    <div className="flex flex-col w-full h-screen">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
