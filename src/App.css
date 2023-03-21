@@ -30,6 +30,12 @@
   -webkit-text-stroke: 8px transparent;
 }
 
+.font-adesive {
+  background: linear-gradient(-45deg, #777777, #555555, #444444);
+  background-clip: text;
+  -webkit-text-stroke: 7px transparent;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -44,14 +50,6 @@ body {
   display: flex;
   justify-content: center;
   background-color: white;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  background: linear-gradient(0, #555555, #333333);
-  height: 4.5rem;
 }
 
 .colnav {
@@ -75,7 +73,7 @@ body {
   width: 28rem;
   justify-content: center;
   align-items: center;
-  color: #9f9f9f;
+  color: #ffffff;
 }
 
 .search {
