@@ -24,8 +24,8 @@ const NavButtons = function navButtons() {
           )}
         </NavLink>
       </div>
-      <div className="nav-button-articles">
-        <NavLink to="/articles" className="flex relative h-full">
+      <div className="nav-button-home flex-none">
+        <NavLink to="/articles" className="flex relative h-full w-full">
           {({ isActive }) => (
             <>
               <img
@@ -45,8 +45,8 @@ const NavButtons = function navButtons() {
           )}
         </NavLink>
       </div>
-      <div className="nav-button-projects">
-        <NavLink to="/projects" className="flex relative h-full">
+      <div className="nav-button-home flex-none">
+        <NavLink to="/projects" className="flex relative h-full w-full">
           {({ isActive }) => (
             <>
               <img
@@ -66,7 +66,7 @@ const NavButtons = function navButtons() {
           )}
         </NavLink>
       </div>
-      <div className="nav-button-foto">
+      <div className="nav-button-foto flex-none">
         <a href="/" className="foto h-3/4 w-3/4">
           <img
             className="h-full w-full"

@@ -114,24 +114,6 @@ body {
   color: white;
 }
 
-.nav-button-articles {
-  display: flex;
-  height: 100%;
-  width: 7rem;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.nav-button-projects {
-  display: flex;
-  height: 100%;
-  width: 7rem;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
 .nav-button-foto {
   display: flex;
   height: 100%;
