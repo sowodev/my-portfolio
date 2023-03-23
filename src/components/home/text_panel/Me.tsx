@@ -1,15 +1,15 @@
 const Me = function me() {
   return (
     <>
-      <div className="w-full h-full px-6 py-12 overflow-y-auto">
+      <div className="w-full h-full text-white px-6 py-12 overflow-y-auto">
         <div className="max-w-prose mx-auto">
           <img className="w-14 h-7" src="./src/assets/imgs/me.png" alt="" />
         </div>
         <div className="mt-4 prose prose-slate mx-auto">
-          <p className="lead">
+          <p className="lead text-white">
             This is a quick example of the typography plugin
           </p>
-          <p>
+          <p className="text-white">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
