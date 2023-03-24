@@ -12,7 +12,7 @@ function App() {
       <div className="flex sticky top-0 w-full h-[4.5rem]">
         <Navbar />
       </div>
-      <div className="flex bg-[#23272f] w-full h-full overflow-hidden">
+      <div className="flex w-full h-full overflow-hidden">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<Articles />} />
