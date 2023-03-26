@@ -9,8 +9,10 @@ const Me = function me(): ReactElement {
         </div>
         <div className="mt-4 prose prose-slate mx-auto">
           <p className="lead">
-            This is a quick example of the typography plugin
+            In this section I talk about myself, my passions, my dreams and my
+            goals.
           </p>
+          <hr />
           <p>
             Hi there, my name is Wendell, but here in the digital world you can
             call me Sowodin, I'm a Full Stack Software
