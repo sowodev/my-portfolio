@@ -14,7 +14,10 @@ const Learning = function learning() {
             In this section I talk about what I'm learning, the technologies I
             want to learn and the technologies I want to deepen my knowledge.
           </p>
-          <hr />
+          <div className="italic text-sm text-slate-500">
+            last update: 03/26/2023
+          </div>
+          <hr className="my-4" />
           <ul>
             <li>Search Engine Optimization</li>
             <li>Test Driven Development</li>

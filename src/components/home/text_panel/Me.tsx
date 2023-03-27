@@ -12,8 +12,11 @@ const Me = function me(): ReactElement {
             In this section I talk about myself, my passions, my dreams and my
             goals.
           </p>
-          <hr />
-          <p>
+          <div className="italic text-sm text-slate-500">
+            last update: 03/26/2023
+          </div>
+          <hr className="my-4" />
+          <p className="py-4">
             Hi there, my name is Wendell, but here in the digital world you can
             call me Sowodin, I'm a Full Stack Software
             Developer/Programmer/Software Engineer, I'm passionate about
