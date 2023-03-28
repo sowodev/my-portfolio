@@ -95,41 +95,48 @@ export const StackData = [
     icon: "figma",
     quote:
       "Whether you're brainstorming ideas, designing prototypes, or building solutions, Figma helps teams align early and stay in-sync, from initial idea to shipped.",
-    desc: "I'm currently using Figma for designing the UI of my projects. I'm able to create complex layouts, and I'm able to create complex animations.",
+    desc: "I'm currently using Figma for designing the UI of my projects. I'm able to create prototypes for web components and refine it with complex behavior.",
   },
   {
     name: "C++",
     icon: "cpp",
     quote:
       "C++ is a high-level, general-purpose programming language created by Danish computer scientist Bjarne Stroustrup.",
-    desc: "C++ was my first case of pltonic love, I love the language, I love the syntax, I love the power of the language. I'm able to create complex applications with C++.",
+    desc: "C++ was my first case of pltonic love, back then I felt in love with it. Now I just use it from time to time, for playing with some algorithms.",
   },
   {
     name: "Java",
     icon: "java",
     quote:
       "Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.",
-    desc: "Java is so cool, first contact that I had with OOP, I really enjoy coding in Java. I'm able to create complex applications with Java.",
+    desc: "Java is so cool, it was my first contact with OOP, I really enjoy coding in Java. Haven't been coding a lot with it, but I still enjoy it.",
   },
   {
     name: "Python",
     icon: "python",
     quote:
       "Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.",
-    desc: "I mainly use Git with Github.",
+    desc: "I learned Python for my own interest, was such an exciting experience. I consider myself an intermediate Python coder, I know the basics of it most popular libraries (Pandas, Numpy, Matplotlib, etc). I also know how to use it for web scrapping. No doubt, that I'm going to sharpen my Python skills in the near feature, for using it with AI and Automation.",
   },
   {
     name: "Bash",
     icon: "bash",
     quote:
       "Bash is a Unix shell and command language written by Brian Fox for the GNU Project as a free software replacement for the Bourne shell.",
-    desc: "I mainly use Git with Github.",
+    desc: "I know the really basics of bash, haven't been using it lately, but I'm planning to use it more in the near future.",
   },
   {
     name: "VSCode",
     icon: "vscode",
     quote:
       "Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.",
-    desc: "I mainly use Git with Github.",
+    desc: "VSCode is my favorite code editor/IDE, I use it for coding all my projects. I'm able to use it effectively and efficiently, and customizing it to maximize my productivity.",
+  },
+  {
+    name: "Kanban",
+    icon: "postit",
+    quote:
+      "The term “Kanban” is of Japanese origin and means “signaling” or “card”, and proposes the use of cards (post-its) to indicate and monitor the progress of production within the industry. It is a visual system that seeks to manage work as it moves through the process.",
+    desc: "For managing my projects I use a kinda of personalized Kanban system, so I can keep track of the progress of my projects. I'm planning to develop my own Kanban system as a side project in the near future, so I can use it for managing my projects.",
   },
 ];
