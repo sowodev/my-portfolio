@@ -53,63 +53,63 @@ export const StackData = [
     icon: "node",
     quote:
       "Node.js® is an open-source, cross-platform JavaScript runtime environment.",
-    desc: "Honestly I know only the basics of NodeJS, I'm not a NodeJS expert, but I'm able to build simple NodeJS applications. I'm currently learning more about NodeJS, but my main focus to back end development is NestJS.",
+    desc: "Honestly I know only the basics of NodeJS, I'm not a NodeJS expert, but I'm able to build CRUD like NodeJS applications. I'm currently learning and trying to specialize more about NestJS.",
   },
   {
     name: "NestJS",
     icon: "nest",
     quote:
       "Nest (NestJS) is a framework for building efficient, scalable Node.js server-side applications. It uses progressive JavaScript, is built with and fully supports TypeScript (yet still enables developers to code in pure JavaScript) and combines elements of OOP (Object Oriented Programming), FP (Functional Programming), and FRP (Functional Reactive Programming).",
-    desc: "I'm currently using the NestJS framework for managing the beck end, at this moment it is my favorite framework. I'd say I'm an intermediate-to-advanced user of NestJS, I understand quite well the core concepts (modules, controllers, services, guards, pipes, interceptors, etc) and I'm able to build modern Rest API applications with it.",
+    desc: "I'm currently using the NestJS framework for managing the beck end, at this moment it is my favorite framework. I'd say I'm an intermediate user of NestJS, I understand quite well the core concepts (modules, controllers, services, guards, pipes, interceptors, etc) and I'm able to build modern Rest API applications with it.",
   },
   {
     name: "MySql",
     icon: "mysql",
     quote:
       "MySQL Standard Edition enables you to deliver high-performance and scalable Online Transaction Processing (OLTP) applications. It provides the ease of use that has made MySQL famous along with industrial strength performance and reliability.",
-    desc: "MySql is a great database management system, I'm currently using it for managing the data of my projects. I've got a quite well understanding of the MySql language, I'm able to create tables, insert, update and delete data, and I'm able to create complex queries.",
+    desc: "MySql is a great database management system, I'm currently using it for storing and managing the data of my projects. I've got a quite well understanding of the SQL language, I'm able to create tables, insert, update and delete data, and I'm able to create complex queries.",
   },
   {
     name: "Docker",
     icon: "docker",
     quote:
       "Docker is a platform designed to help developers build, share, and run modern applications. We handle the tedious setup, so you can focus on the code.",
-    desc: "I'm currently using Docker for managing the containers of my projects. I've got a quite well understanding of the Docker language, I'm able to create containers, and I'm able to create complex docker-compose files.",
+    desc: "I'm currently using Docker to keep my projects running as clean and smooth as possible. I'm able to create containers, and I'm able to create complex docker-compose files.",
   },
   {
     name: "Tailwind",
     icon: "tailwind",
     quote:
       "A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.",
-    desc: "I mainly use Git with Github.",
+    desc: "I'm currently using Tailwind for styling my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with Tailwind, and I'm able to create complex responsive layouts with Tailwind.",
   },
   {
     name: "Github",
     icon: "github",
     quote:
       "GitHub is where over 100 million developers shape the future of software, together. Contribute to the open source community, manage your Git repositories.",
-    desc: "I mainly use Ubuntu 22.04 on Windows Subsystem for Linux 2, and I'm using Windows for some important tools compability.",
+    desc: "Version control is key for any well structured project, I keep all my projects in Github. I'm able to control the versions effectively and consistently, and I'm able to collaborate with other developers in a very efficient way, delivering high quality projects.",
   },
   {
     name: "Figma",
     icon: "figma",
     quote:
       "Whether you're brainstorming ideas, designing prototypes, or building solutions, Figma helps teams align early and stay in-sync, from initial idea to shipped.",
-    desc: "I mainly use Git with Github.",
+    desc: "I'm currently using Figma for designing the UI of my projects. I'm able to create complex layouts, and I'm able to create complex animations.",
   },
   {
     name: "C++",
     icon: "cpp",
     quote:
       "C++ is a high-level, general-purpose programming language created by Danish computer scientist Bjarne Stroustrup.",
-    desc: "I mainly use Git with Github.",
+    desc: "C++ was my first case of pltonic love, I love the language, I love the syntax, I love the power of the language. I'm able to create complex applications with C++.",
   },
   {
     name: "Java",
     icon: "java",
     quote:
       "Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.",
-    desc: "I mainly use Git with Github.",
+    desc: "Java is so cool, first contact that I had with OOP, I really enjoy coding in Java. I'm able to create complex applications with Java.",
   },
   {
     name: "Python",

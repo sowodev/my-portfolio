@@ -19,6 +19,9 @@ const Learning = function learning() {
           </div>
           <hr className="my-4" />
           <ul>
+            <li>NextJS</li>
+            <li>GraphQL</li>
+            <li>NoSQL</li>
             <li>Search Engine Optimization</li>
             <li>Test Driven Development</li>
             <li>Clean Architecture</li>
