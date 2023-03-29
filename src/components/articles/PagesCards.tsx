@@ -1,12 +1,19 @@
 import Card from "./Card";
+import { NavLink } from "react-router-dom";
+import { ArticilesData } from "./ArticlesData";
 
 const PagesCards = function pagesCards() {
   return (
-    <div className="flex flex-col w-[90%] h-[90%] bg-white justify-center items-center gap-6">
-      <Card path="./src/assets/imgs/articles/city.jpeg" />
-      <Card path="./src/assets/imgs/articles/drone.jpeg" />
-      <Card path="./src/assets/imgs/articles/setup.webp" />
-      <Card path="./src/assets/imgs/articles/work.webp" />
+    <div className="flex flex-col w-[95%] h-[95%] justify-center items-center gap-6">
+      {ArticilesData.map((article, index) => {
+        const link = "/articles/" + article.title.toLowerCase();
+
+        return (
+          <NavLink key={index} to={link} className="flex w-[92%] h-1/5">
+            <Card article={article} />
+          </NavLink>
+        );
+      })}
     </div>
   );
 };

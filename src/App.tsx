@@ -5,6 +5,8 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Articles from "./pages/Articles";
 import Projects from "./pages/Projects";
+import { ArticilesData } from "./components/articles/ArticlesData";
+import ArticlePrototype from "./components/articles/article/ArticlePrototype";
 
 function App() {
   return (
@@ -15,7 +17,20 @@ function App() {
       <div className="flex w-full h-full overflow-hidden">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/articles" element={<Articles />} />
+          <Route path="/articles">
+            <Route index element={<Articles />} />
+            {ArticilesData.map((article, index) => {
+              const link: string = article.title.toLowerCase();
+
+              return (
+                <Route
+                  key={index}
+                  path={link}
+                  element={<ArticlePrototype article={article} />}
+                />
+              );
+            })}
+          </Route>
           <Route path="/projects" element={<Projects />} />
         </Routes>
       </div>
