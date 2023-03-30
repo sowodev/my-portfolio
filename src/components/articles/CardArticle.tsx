@@ -1,7 +1,7 @@
 import TagsList from "./TagsList";
 import TextCard from "./TextCard";
 
-const Card = function card({
+const CardArticle = function cardArticle({
   article,
 }: {
   article: {
@@ -30,4 +30,4 @@ const Card = function card({
   );
 };
 
-export default Card;
+export default CardArticle;

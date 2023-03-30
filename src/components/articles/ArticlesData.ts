@@ -1,7 +1,7 @@
 export const ArticilesData = [
   {
-    img_path: "./src/assets/imgs/articles/city.jpeg",
-    title: "verdadeiro",
+    img_path: "/src/assets/imgs/articles/city.jpeg",
+    title: "Um verdadeiro mar de oportuinidades com o 5g",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content:
@@ -10,8 +10,8 @@ export const ArticilesData = [
     tags: ["5g", "IoT", "AI"],
   },
   {
-    img_path: "./src/assets/imgs/articles/drone.jpeg",
-    title: "Entenda",
+    img_path: "/src/assets/imgs/articles/drone.jpeg",
+    title: "Entenda o que é blockchain de uma vez por todas",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content:
@@ -20,8 +20,8 @@ export const ArticilesData = [
     tags: ["Cloud", "Blockchain", "Cybersecurity"],
   },
   {
-    img_path: "./src/assets/imgs/articles/setup.webp",
-    title: "Web",
+    img_path: "/src/assets/imgs/articles/setup.webp",
+    title: "Web 3.0 desafios e oportunidades ",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content:
@@ -30,8 +30,8 @@ export const ArticilesData = [
     tags: ["5g", "Cloud", "Cybersecurity"],
   },
   {
-    img_path: "./src/assets/imgs/articles/work.webp",
-    title: "futuro",
+    img_path: "/src/assets/imgs/articles/work.webp",
+    title: "O futuro das cryptos nunca mais será o mesmo",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content:

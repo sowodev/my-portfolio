@@ -20,7 +20,10 @@ function App() {
           <Route path="/articles">
             <Route index element={<Articles />} />
             {ArticilesData.map((article, index) => {
-              const link: string = article.title.toLowerCase();
+              const link: string = article.title
+                .toLowerCase()
+                .trim()
+                .replaceAll(" ", "-");
 
               return (
                 <Route
