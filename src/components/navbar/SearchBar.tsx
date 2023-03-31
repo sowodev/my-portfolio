@@ -16,7 +16,7 @@ const SearchBar = function searchBar() {
         </label>
         <input
           id="searchtab"
-          className="grid relative search w-full h-full focus:outline-none focus:ring-2 focus:ring-gray-400"
+          className="grid relative search w-full h-full focus:outline-none focus:ring-2 focus:ring-gray-400 rounded-l"
           type="search"
           onChange={(e) => {
             console.log(e.target.value === "");
@@ -29,7 +29,7 @@ const SearchBar = function searchBar() {
           }}
         />
       </div>
-      <button className="grid w-9 h-full place-content-center search-btn focus:outline-none focus:ring-2 focus:ring-gray-400">
+      <button className="grid w-9 h-full place-content-center search-btn focus:outline-none focus:ring-2 focus:ring-gray-400 rounded-r">
         <MagnifyingGlassIcon className="h-6 w-6 stroke-white pointer-events-none" />
       </button>
     </div>

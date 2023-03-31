@@ -14,8 +14,8 @@ const ArticlePrototype = function articlePrototype({
 }) {
   return (
     <div className="flex flex-row w-full overflow-auto">
-      <div className="flex basis-1/4"></div>
-      <div className="flex flex-col basis-2/4 gap-8">
+      <div className="flex basis-[30%]"></div>
+      <div className="flex flex-col basis-[40%] gap-8">
         <div className="h-80 w-full">
           <img className="w-full h-full" src={article.img_path} alt="img" />
         </div>
@@ -23,7 +23,7 @@ const ArticlePrototype = function articlePrototype({
         <p className="w-full">{article.leading}</p>
         <p className="w-full">{article.content}</p>
       </div>
-      <div className="flex basis-1/4"></div>
+      <div className="flex basis-[30%]"></div>
     </div>
   );
 };

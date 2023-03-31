@@ -5,9 +5,9 @@ const Filters = function filter() {
   const [collapse, setCollapse] = useState(true);
 
   return (
-    <div className="flex flex-col absolute top-[2.62rem] w-[75%] bg-white">
+    <div className="flex flex-col absolute top-[4rem] w-[75%] bg-white">
       <button
-        className="flex w-full h-[2.2rem] bg-[#D9D9D9] items-center justify-between"
+        className="flex w-full h-[2.2rem] bg-[#D9D9D9] items-center justify-between rounded"
         onClick={() => {
           setCollapse((current) => {
             return !current;
