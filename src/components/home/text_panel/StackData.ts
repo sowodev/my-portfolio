@@ -1,4 +1,7 @@
 export const StackData = [
+  /*   { frontend: [] },
+  { backend: [] },
+  { devops: [] }, */
   {
     name: "Linux",
     icon: "linux",

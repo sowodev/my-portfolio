@@ -2,13 +2,6 @@ const Learning = function learning() {
   return (
     <>
       <div className="w-full h-full px-6 py-12 overflow-y-auto">
-        <div className="max-w-prose mx-auto">
-          <img
-            className="w-40 h-7"
-            src="./src/assets/imgs/learning.png"
-            alt=""
-          />
-        </div>
         <div className="mt-4 prose prose-slate mx-auto">
           <p className="lead">
             In this section I talk about what I'm learning, the technologies I
