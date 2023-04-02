@@ -1,13 +1,9 @@
-import { useState } from "react";
 import StackComp from "./StackComp";
-import { StackData } from "./StackData";
 import { StackData_2 } from "./StackData_2";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { Disclosure } from "@headlessui/react";
 
 const MyStack = function myStack() {
-  const [collapse, setCollapse] = useState(false);
-
   return (
     <>
       <div className="w-full h-full px-6 py-12 overflow-y-auto">
@@ -24,29 +20,29 @@ const MyStack = function myStack() {
               <Disclosure>
                 {({ open }) => (
                   <>
-                    <Disclosure.Button className="flex w-full h-16 mt-8 bg-slate-100 border border-slate-400 rounded-lg justify-between items-center hover:bg-slate-200">
+                    <Disclosure.Button className="flex w-full h-16 mt-4 bg-slate-100 border border-slate-400 rounded-lg justify-between items-center hover:bg-slate-200">
                       <span className="font-[Lexend] text-slate-500 ml-8">
-                        A
+                        {current.stack_name}
                       </span>
                       <div
                         className={
-                          collapse ? "mr-4 origin-center rotate-180" : "mr-4"
+                          open ? "mr-4 origin-center rotate-180" : "mr-4"
                         }
                       >
                         <ChevronDownIcon className="h-5 w-5 stroke-[#333333ce] pointer-events-none" />
                       </div>
                     </Disclosure.Button>
-                    <Disclosure.Panel className="flex flex-col w-full h-24 rounded-lg">
-                      {StackData.map((current, index) => {
+                    <Disclosure.Panel className="flex flex-col w-full mt-8 rounded-lg">
+                      {current.stack_value.map((inner_current, index) => {
                         return (
                           <div key={index}>
-                            <hr className="my-4" />
                             <StackComp
-                              name={current.name}
-                              icon={current.icon}
-                              quote={current.quote}
-                              desc={current.desc}
+                              name={inner_current.name}
+                              icon={inner_current.icon}
+                              quote={inner_current.quote}
+                              desc={inner_current.desc}
                             />
+                            <hr className="my-4" />
                           </div>
                         );
                       })}
