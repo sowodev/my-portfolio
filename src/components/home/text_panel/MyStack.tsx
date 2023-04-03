@@ -17,7 +17,7 @@ const MyStack = function myStack() {
           </div>
           {StackData_2.map((current, index) => {
             return (
-              <Disclosure>
+              <Disclosure key={index}>
                 {({ open }) => (
                   <>
                     <Disclosure.Button className="flex w-full h-16 mt-4 bg-slate-100 border border-slate-400 rounded-lg justify-between items-center hover:bg-slate-200">
@@ -33,9 +33,9 @@ const MyStack = function myStack() {
                       </div>
                     </Disclosure.Button>
                     <Disclosure.Panel className="flex flex-col w-full mt-8 rounded-lg">
-                      {current.stack_value.map((inner_current, index) => {
+                      {current.stack_value.map((inner_current, inner_index) => {
                         return (
-                          <div key={index}>
+                          <div key={inner_index}>
                             <StackComp
                               name={inner_current.name}
                               icon={inner_current.icon}
