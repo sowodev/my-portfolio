@@ -8,7 +8,7 @@ const MyStack = function myStack() {
     <>
       <div className="w-full h-full px-6 py-12 overflow-y-auto">
         <div className="mt-4 prose prose-slate mx-auto">
-          <p className="lead">
+          <p className="lead indent-5">
             In this section I talk about my stack, the technologies I use to
             build my projects.
           </p>

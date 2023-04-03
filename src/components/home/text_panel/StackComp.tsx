@@ -17,7 +17,7 @@ const StackComp = function stackComp({
         <h3 className="my-0 w-full h-full">{name}</h3>
       </div>
       <blockquote className="my-4">{quote}</blockquote>
-      <p className="my-4">&emsp; {desc}</p>
+      <p className="my-4 indent-5">{desc}</p>
     </div>
   );
 };

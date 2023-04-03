@@ -5,7 +5,7 @@ const Filters = function filter() {
   const [collapse, setCollapse] = useState(true);
 
   return (
-    <div className="flex flex-col absolute top-[4rem] w-[75%] bg-white">
+    <div className="flex flex-col absolute gap-1 top-[6.2rem] w-[75%] bg-white">
       <button
         className="flex w-full h-[2.2rem] bg-[#D9D9D9] items-center justify-between rounded"
         onClick={() => {
@@ -21,24 +21,34 @@ const Filters = function filter() {
       </button>
       <div
         className={
-          collapse
-            ? "w-full h-[90%] border-x border-b border-[#B0B0B0] collapse"
-            : "w-full h-[90%] border-x border-b border-[#B0B0B0]"
+          collapse ? "collapse" : "w-full border border-[#B0B0B0] rounded-lg"
         }
       >
-        <form className="flex flex-col my-4 gap-4">
+        <form className="flex flex-col mt-4 mb-4 gap-4">
           <div className="flex flex-col ml-4 gap-1">
             <p className="font-[Lexend] text-sm text-[#333333ce]">
-              Search by text:
+              Filter by text:
             </p>
-            <input className="w-[95%] border border-[#B0B0B0]" type="text" />
+            <input
+              className="w-[95%] h-[2rem] font-[Lexend] text-[#333333ce] border border-[#B0B0B0] rounded indent-2"
+              type="text"
+            />
           </div>
           <div className="flex flex-col ml-4 gap-1">
             <p className="font-[Lexend] text-sm text-[#333333ce]">
-              Search by tag:
+              Filter by tag:
             </p>
-            <input className="w-[95%] border border-[#B0B0B0]" type="text" />
+            <input
+              className="w-[95%] h-[2rem] font-[Lexend] text-[#333333ce] border border-[#B0B0B0] rounded indent-2"
+              type="text"
+            />
           </div>
+          {/*           <button
+            type="submit"
+            className="w-28 h-8 bg-sky-300 border border-sky-500 rounded font-[Lexend] self-end mr-4 hover:bg-sky-500"
+          >
+            Filter
+          </button> */}
         </form>
       </div>
     </div>

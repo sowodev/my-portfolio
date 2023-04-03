@@ -1,4 +1,4 @@
-import Filters from "../components/articles/Filters";
+import Filters from "../components/commom/Filters";
 import PagesCardsArticles from "../components/articles/PagesCardsArticles";
 
 const Article = function articles() {
