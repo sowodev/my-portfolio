@@ -1,11 +1,11 @@
 import CardArticle from "./CardArticle";
 import { NavLink } from "react-router-dom";
-import { ArticilesData } from "./ArticlesData";
+import { ArticlesData } from "./ArticlesData";
 
 const PagesCardsArticles = function pagesCardsArticles() {
   return (
     <div className="flex flex-col w-[95%] h-full justify-center items-center gap-6">
-      {ArticilesData.map((article, index) => {
+      {ArticlesData.map((article, index) => {
         const link =
           "/articles/" +
           article.title

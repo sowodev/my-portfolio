@@ -1,4 +1,4 @@
-export const ArticilesData = [
+export const ArticlesData = [
   {
     img_path: "/src/assets/imgs/articles/city.jpeg",
     title: "Um verdadeiro mar de oportuinidades com o 5g",

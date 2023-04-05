@@ -2,12 +2,8 @@ import Navbar from "./components/navbar/Navbar";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Articles from "./pages/Articles";
-import Projects from "./pages/Projects";
-import { ArticilesData } from "./components/articles/ArticlesData";
-import ArticlePrototype from "./components/articles/article/ArticlePrototype";
-import { projectsData } from "./components/projects/ProjectsData";
-import ProjectPrototype from "./components/projects/cards-pages/ProjectPrototype";
+import ArticlesRoutes from "./components/articles/routes/ArticlesRoutes";
+import ProjectsRoutes from "./components/projects/routes/ProjectsRoutes";
 
 function App() {
   return (
@@ -21,44 +17,8 @@ function App() {
       <div className="flex w-full h-full overflow-hidden">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/articles">
-            <Route index element={<Articles />} />
-            {ArticilesData.map((article, index) => {
-              const link: string = article.title
-                .toLowerCase()
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g, "")
-                .trim()
-                .replaceAll(" ", "-");
-
-              return (
-                <Route
-                  key={index}
-                  path={link}
-                  element={<ArticlePrototype article={article} />}
-                />
-              );
-            })}
-          </Route>
-          <Route path="/projects">
-            <Route index element={<Projects />} />
-            {projectsData.map((project, index) => {
-              const link: string = project.title
-                .toLowerCase()
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g, "")
-                .trim()
-                .replaceAll(" ", "-");
-
-              return (
-                <Route
-                  key={index}
-                  path={link}
-                  element={<ProjectPrototype project={project.title} />}
-                />
-              );
-            })}
-          </Route>
+          <Route path="/articles/*" element={<ArticlesRoutes />} />
+          <Route path="/projects/*" element={<ProjectsRoutes />} />
         </Routes>
       </div>
     </div>

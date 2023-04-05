@@ -5,7 +5,7 @@ type Project = {
   tags: string[];
 };
 
-export const projectsData: Project[] = [
+export const ProjectsData: Project[] = [
   {
     title: "Countdown Timer",
     description:
@@ -21,7 +21,7 @@ export const projectsData: Project[] = [
     tags: ["React", "TypeScript", "JavaScript"],
   },
   {
-    title: "Agenda/Calendar",
+    title: "Agenda Calendar",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies tincidunt, nunc nisl ultricies nisl, nec ult",
     image: "https://picsum.photos/264/160",
