@@ -6,6 +6,8 @@ import Articles from "./pages/Articles";
 import Projects from "./pages/Projects";
 import { ArticilesData } from "./components/articles/ArticlesData";
 import ArticlePrototype from "./components/articles/article/ArticlePrototype";
+import { projectsData } from "./components/projects/ProjectsData";
+import ProjectPrototype from "./components/projects/cards-pages/ProjectPrototype";
 
 function App() {
   return (
@@ -38,7 +40,25 @@ function App() {
               );
             })}
           </Route>
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects">
+            <Route index element={<Projects />} />
+            {projectsData.map((project, index) => {
+              const link: string = project.title
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .trim()
+                .replaceAll(" ", "-");
+
+              return (
+                <Route
+                  key={index}
+                  path={link}
+                  element={<ProjectPrototype project={project.title} />}
+                />
+              );
+            })}
+          </Route>
         </Routes>
       </div>
     </div>

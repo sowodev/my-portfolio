@@ -7,7 +7,7 @@ const Projects = function projects() {
       <div className="flex relative h-full basis-1/4 justify-center">
         <Filters />
       </div>
-      <div className="flex h-full basis-3/4 bg-orange-300 justify-center items-center">
+      <div className="grid h-full basis-3/4 justify-start content-center">
         <CardsPagesProjects />
       </div>
     </div>

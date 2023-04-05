@@ -14,7 +14,7 @@ const CardArticle = function cardArticle({
   };
 }) {
   return (
-    <div className="flex flex-row w-full h-full ring-1 ring-[#d8d8d8] shadow-md hover:bg-gray-100 rounded">
+    <div className="flex flex-row w-full h-full ring-1 ring-[#d8d8d8] shadow-md rounded hover:bg-gray-100">
       <div className="h-full w-1/4 text-center">
         <img
           className="h-full w-full rounded-l"

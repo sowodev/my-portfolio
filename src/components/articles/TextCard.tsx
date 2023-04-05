@@ -13,8 +13,8 @@ const TextCard = function textCard({
         </p>
       </div>
       <div className="flex w-full h-[75%] justify-center items-center">
-        <p className="font-[Lexend] font-light text-sm mx-8 text-[#333333ce] line-clamp-3">
-          &ensp; {leading}
+        <p className="font-[Lexend] font-light text-sm mx-8 text-[#333333ce] line-clamp-3 indent-3">
+          {leading}
         </p>
       </div>
     </div>
