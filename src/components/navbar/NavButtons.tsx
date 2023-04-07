@@ -4,11 +4,15 @@ const NavButtons = function navButtons() {
   return (
     <div className="flex h-full w-fit">
       <div className="nav-button-home flex-none">
-        <NavLink to="/" className="flex relative h-full w-full">
+        <NavLink to="/" className="flex relative h-full w-full group">
           {({ isActive }) => (
             <>
               <img
-                className={isActive ? "relative h-full w-full" : "invisible"}
+                className={
+                  isActive
+                    ? "relative h-full w-full"
+                    : "relative h-full w-full opacity-0 group-hover:opacity-30"
+                }
                 src="/src/assets/imgs/light.svg"
                 alt=""
               />
@@ -25,11 +29,15 @@ const NavButtons = function navButtons() {
         </NavLink>
       </div>
       <div className="nav-button-home flex-none">
-        <NavLink to="/articles" className="flex relative h-full w-full">
+        <NavLink to="/articles" className="flex relative h-full w-full group">
           {({ isActive }) => (
             <>
               <img
-                className={isActive ? "relative h-full w-full" : "invisible"}
+                className={
+                  isActive
+                    ? "relative h-full w-full"
+                    : "relative h-full w-full opacity-0 group-hover:opacity-30"
+                }
                 src="/src/assets/imgs/light.svg"
                 alt=""
               />
@@ -46,11 +54,15 @@ const NavButtons = function navButtons() {
         </NavLink>
       </div>
       <div className="nav-button-home flex-none">
-        <NavLink to="/projects" className="flex relative h-full w-full">
+        <NavLink to="/projects" className="flex relative h-full w-full group">
           {({ isActive }) => (
             <>
               <img
-                className={isActive ? "relative h-full w-full" : "invisible"}
+                className={
+                  isActive
+                    ? "relative h-full w-full"
+                    : "relative h-full w-full opacity-0 group-hover:opacity-30"
+                }
                 src="/src/assets/imgs/light.svg"
                 alt=""
               />
@@ -67,11 +79,18 @@ const NavButtons = function navButtons() {
         </NavLink>
       </div>
       <div className="nav-button-foto flex-none">
-        <NavLink to="/login" className="flex flex-col relative h-full w-full">
+        <NavLink
+          to="/login"
+          className="flex flex-col relative h-full w-full group"
+        >
           {({ isActive }) => (
             <>
               <img
-                className={isActive ? "relative h-full w-full" : "invisible"}
+                className={
+                  isActive
+                    ? "relative h-full w-full"
+                    : "relative h-full w-full opacity-0 group-hover:opacity-30"
+                }
                 src="/src/assets/imgs/light.svg"
                 alt=""
               />

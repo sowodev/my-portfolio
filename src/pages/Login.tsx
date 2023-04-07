@@ -16,10 +16,11 @@ const Login = function loginPage() {
                 Email
               </label>
               <input
-                className="flex w-[90%] h-[2rem] font-[Lexend] text-[#333333ce] border-b border-[#B0B0B0] indent-2 focus:outline-none focus:border-cyan-400"
+                className="flex w-[90%] h-[2rem] font-[Lexend] text-[#333333ce] border-b border-[#B0B0B0] indent-2 placeholder:font-[Lexend] placeholder:text-gray-200 focus:outline-none focus:border-sky-400"
                 type="text"
                 name="username"
                 id="username"
+                placeholder="Enter your email"
               />
             </div>
             <div className="flex flex-col w-full items-center">
@@ -27,10 +28,11 @@ const Login = function loginPage() {
                 Password
               </label>
               <input
-                className="w-[90%] h-[2rem] font-[Lexend] text-[#333333ce] border-b border-[#B0B0B0] indent-2 focus:outline-none focus:border-cyan-400"
+                className="w-[90%] h-[2rem] font-[Lexend] text-[#333333ce] border-b border-[#B0B0B0] indent-2 placeholder:font-[Lexend] placeholder:text-gray-200 focus:outline-none focus:border-sky-400"
                 type="password"
                 name="password"
                 id="password"
+                placeholder="Enter your password"
               />
             </div>
             <div className="flex flex-row w-[90%] justify-between">
@@ -40,9 +42,12 @@ const Login = function loginPage() {
                   Keep me logged in?
                 </span>
               </div>
-              <span className="font-[Lexend] font-light text-sm text-slate-400">
+              <a
+                href="#"
+                className="font-[Lexend] font-light text-sm text-slate-400 hover:text-sky-400"
+              >
                 Forgot password?
-              </span>
+              </a>
             </div>
             <button
               className="flex bg-gradient-to-b from-sky-400 to-cyan-400 w-[90%] h-[3rem] font-[Lexend] text-white rounded indent-2 justify-center items-center hover:from-sky-500 hover:to-cyan-500"
@@ -72,7 +77,7 @@ const Login = function loginPage() {
             New here?{" "}
             <a
               href="#"
-              className="font-[Lexend] font-light text-sm text-sky-400"
+              className="font-[Lexend] font-light text-sm text-sky-400 hover:text-sky-600"
             >
               Sign Up!
             </a>
