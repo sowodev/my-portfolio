@@ -1,9 +1,10 @@
-import Navbar from "./components/navbar/Navbar";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
 import ArticlesRoutes from "./components/articles/routes/ArticlesRoutes";
 import ProjectsRoutes from "./components/projects/routes/ProjectsRoutes";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -14,11 +15,12 @@ function App() {
           <span className="font-[Lexend]">Mecados de Capitais API</span>
         </div>
       </div>
-      <div className="flex w-full h-full overflow-hidden">
+      <div className="flex w-full h-full overflow-hidden dark:bg-slate-800">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/articles/*" element={<ArticlesRoutes />} />
           <Route path="/projects/*" element={<ProjectsRoutes />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </div>

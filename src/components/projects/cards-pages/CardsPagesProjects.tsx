@@ -1,6 +1,7 @@
 import CardProject from "./CardProject";
 import { ProjectsData } from "../ProjectsData";
 import { NavLink } from "react-router-dom";
+import { Suspense } from "react";
 
 const CardsPagesProjects = function cardsPagesProjects() {
   return (

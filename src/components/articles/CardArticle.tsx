@@ -1,3 +1,4 @@
+import { useState } from "react";
 import TagsList from "./TagsList";
 import TextCard from "./TextCard";
 
@@ -13,13 +14,20 @@ const CardArticle = function cardArticle({
     tags: string[];
   };
 }) {
+  const [imgLoaded, setImgLoaded] = useState(false);
+
   return (
     <div className="flex flex-row w-full h-full ring-1 ring-[#d8d8d8] shadow-md rounded hover:bg-gray-100">
-      <div className="h-full w-1/4 text-center">
+      <div
+        className={
+          imgLoaded ? "h-full w-1/4" : "h-full w-1/4 bg-gray-300 animate-pulse"
+        }
+      >
         <img
           className="h-full w-full rounded-l"
           src={article.img_path}
-          alt=""
+          alt="img"
+          onLoad={() => setImgLoaded((c) => !c)}
         />
       </div>
       <div className="flex flex-col h-full w-3/4">

@@ -67,13 +67,27 @@ const NavButtons = function navButtons() {
         </NavLink>
       </div>
       <div className="nav-button-foto flex-none">
-        <a href="/" className="foto h-3/4 w-3/4">
-          <img
-            className="h-full w-full"
-            src="/src/assets/imgs/user.svg"
-            alt=""
-          />
-        </a>
+        <NavLink to="/login" className="flex flex-col relative h-full w-full">
+          {({ isActive }) => (
+            <>
+              <img
+                className={isActive ? "relative h-full w-full" : "invisible"}
+                src="/src/assets/imgs/light.svg"
+                alt=""
+              />
+              <div className="grid absolute h-full w-full float-none place-content-center">
+                <img
+                  className="h-10 w-10 justify-self-center"
+                  src="/src/assets/imgs/user.svg"
+                  alt=""
+                />
+                {/*                 <span className="font-[Blinker] text-[0.8rem] text-white">
+                  Sign In
+                </span> */}
+              </div>
+            </>
+          )}
+        </NavLink>
       </div>
     </div>
   );

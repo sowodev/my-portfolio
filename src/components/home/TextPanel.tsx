@@ -57,7 +57,7 @@ const TextPanel = function textPanel() {
           </div>
         </div>
       </div>
-      <div className="w-[95%] h-[85%] bg-white rounded-lg">
+      <div className="w-[95%] h-[85%] bg-white rounded-lg dark:bg-slate-700">
         {component_to_show}
       </div>
     </div>
