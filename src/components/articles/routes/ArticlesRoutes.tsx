@@ -23,6 +23,14 @@ const ArticlesRoutes = function articlesRoutes() {
           />
         );
       })}
+      <Route
+        path="*"
+        element={
+          <div className="flex w-full h-full justify-center items-center">
+            <p> Page Not Found (404)</p>
+          </div>
+        }
+      />
     </Routes>
   );
 };

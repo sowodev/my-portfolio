@@ -21,6 +21,14 @@ function App() {
           <Route path="/articles/*" element={<ArticlesRoutes />} />
           <Route path="/projects/*" element={<ProjectsRoutes />} />
           <Route path="/login" element={<Login />} />
+          <Route
+            path="*"
+            element={
+              <div className="flex w-full h-full justify-center items-center">
+                <p> Page Not Found (404)</p>
+              </div>
+            }
+          />
         </Routes>
       </div>
     </div>
