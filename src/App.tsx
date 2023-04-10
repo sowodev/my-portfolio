@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import ArticlesRoutes from "./components/articles/routes/ArticlesRoutes";
 import ProjectsRoutes from "./components/projects/routes/ProjectsRoutes";
 import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -21,14 +22,7 @@ function App() {
           <Route path="/articles/*" element={<ArticlesRoutes />} />
           <Route path="/projects/*" element={<ProjectsRoutes />} />
           <Route path="/login" element={<Login />} />
-          <Route
-            path="*"
-            element={
-              <div className="flex w-full h-full justify-center items-center">
-                <p> Page Not Found (404)</p>
-              </div>
-            }
-          />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </div>

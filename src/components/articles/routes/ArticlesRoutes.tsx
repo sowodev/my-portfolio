@@ -2,6 +2,7 @@ import { Route, Routes, createRoutesFromElements } from "react-router-dom";
 import { ArticlesData } from "../ArticlesData";
 import ArticlePrototype from "../article/ArticlePrototype";
 import Articles from "../../../pages/Articles";
+import NotFound from "../../../pages/NotFound";
 
 const ArticlesRoutes = function articlesRoutes() {
   return (
@@ -23,14 +24,7 @@ const ArticlesRoutes = function articlesRoutes() {
           />
         );
       })}
-      <Route
-        path="*"
-        element={
-          <div className="flex w-full h-full justify-center items-center">
-            <p> Page Not Found (404)</p>
-          </div>
-        }
-      />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
