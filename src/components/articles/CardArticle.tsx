@@ -9,9 +9,12 @@ const CardArticle = function cardArticle({
     img_path: string;
     title: string;
     leading: string;
-    content: string;
-    date: string;
+    content_path: string;
+    published_date: string;
+    updated_date: string;
     tags: string[];
+    author: string;
+    img_credits: string;
   };
 }) {
   const [imgLoaded, setImgLoaded] = useState(false);
