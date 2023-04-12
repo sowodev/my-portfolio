@@ -3,8 +3,8 @@ import PagesCardsArticles from "../components/articles/PagesCardsArticles";
 
 const Article = function articles() {
   return (
-    <div className="flex flex-row w-full h-full">
-      <div className="flex relative h-full basis-1/4 justify-center">
+    <div className="flex flex-row w-full h-full overflow-scroll">
+      <div className="flex h-full basis-1/4 justify-center">
         <Filters />
       </div>
       <div className="flex h-full basis-2/4 justify-center items-center">

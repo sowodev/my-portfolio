@@ -1,6 +1,7 @@
 import CardArticle from "./CardArticle";
 import { NavLink } from "react-router-dom";
 import { ArticlesData } from "./ArticlesData";
+import ShowMoreArticlesBtn from "./ShowMoreArticles";
 
 const PagesCardsArticles = function pagesCardsArticles() {
   return (
@@ -21,7 +22,9 @@ const PagesCardsArticles = function pagesCardsArticles() {
           </NavLink>
         );
       })}
-      <div className="flex absolute bottom-6 w-36 h-12 bg-sky-300"></div>
+      <div className="flex fixed bottom-6 w-52 h-12">
+        <ShowMoreArticlesBtn />
+      </div>
     </div>
   );
 };
