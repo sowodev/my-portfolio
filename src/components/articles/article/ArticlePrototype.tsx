@@ -52,7 +52,7 @@ const ArticlePrototype = function articlePrototype({
           })}
         </div>
         <div className="flex flex-col w-full gap-2">
-          <hr className="my-4 text-orange-400" />
+          <hr className="my-4 border-sky-300" />
           <img
             className="w-full aspect-video"
             src={article.img_path}
@@ -61,7 +61,7 @@ const ArticlePrototype = function articlePrototype({
           <span className="text-sm text-gray-400 font-light">
             {article.img_credits}
           </span>
-          <hr />
+          <hr className="my-4 border-sky-300" />
         </div>
         <div className="flex flex-row w-full font-[Lexend] font-light text-slate-400 text-xs justify-start">
           <div className="w-16 h-16">

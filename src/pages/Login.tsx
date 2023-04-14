@@ -37,7 +37,7 @@ const Login = function loginPage() {
             </div>
             <div className="flex flex-row w-[90%] justify-between">
               <div className="flex flex-row gap-2">
-                <input type="checkbox" />
+                <input type="checkbox" className="accent-amber-300" />
                 <span className="font-[Lexend] font-light text-sm">
                   Keep me logged in?
                 </span>

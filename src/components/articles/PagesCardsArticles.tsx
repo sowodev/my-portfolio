@@ -5,7 +5,7 @@ import ShowMoreArticlesBtn from "./ShowMoreArticles";
 
 const PagesCardsArticles = function pagesCardsArticles() {
   return (
-    <div className="flex flex-col relative w-full h-full justify-center items-center gap-6">
+    <div className="flex flex-col relative w-full h-full items-center gap-6">
       {ArticlesData.map((article, index) => {
         const link =
           "/articles/" +
@@ -22,7 +22,7 @@ const PagesCardsArticles = function pagesCardsArticles() {
           </NavLink>
         );
       })}
-      <div className="flex fixed bottom-6 w-52 h-12">
+      <div className="flex fixed bottom-8 w-52 h-12">
         <ShowMoreArticlesBtn />
       </div>
     </div>
