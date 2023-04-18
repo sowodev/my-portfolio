@@ -36,13 +36,13 @@ const Me = function me(): ReactElement {
               <span className="font-[Lexend] mr-5">See My Github</span>
             </button>
           </a>
-          <button className="flex flex-row gap-3 h-12 bg-sky-300 ring-1 ring-sky-500  rounded justify-center items-center hover:bg-sky-500">
+          <button className="flex flex-row gap-3 h-12 bg-gradient-to-b from-sky-400 to-cyan-400 rounded justify-center items-center hover:from-sky-500 hover:to-cyan-500">
             <img
               className="h-7 w-7 ml-5"
               src="./src/assets/imgs/mail.svg"
               alt="gh"
             />{" "}
-            <span className="font-[Lexend] mr-5">Contact Me</span>
+            <span className="font-[Lexend] mr-5 text-white">Contact Me</span>
           </button>
         </div>
       </div>

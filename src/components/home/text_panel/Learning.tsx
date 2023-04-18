@@ -21,6 +21,10 @@ const Learning = function learning() {
             <li>Design Thinking</li>
             <li>Cloud Services</li>
             <li>Rust Programming Language look so awesome ❤️</li>
+            <li>
+              A pure functional Programming Language just don't know which one
+              yet
+            </li>
             <li>I really want to deepen my knowledge in Machine Learning 🦾</li>
             <li>
               I want to be aware of the multiple threats and solution in

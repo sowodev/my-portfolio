@@ -5,9 +5,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/line-clamp"),
-    require("tailwindcss-hyphens"),
-  ],
+  plugins: [require("@tailwindcss/typography"), require("tailwindcss-hyphens")],
 };

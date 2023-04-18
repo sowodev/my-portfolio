@@ -7,7 +7,7 @@ const Article = function articles() {
       <div className="flex h-full basis-1/4 justify-center">
         <Filters />
       </div>
-      <div className="flex h-full basis-3/4 overflow-auto">
+      <div className="flex h-full basis-3/4 overflow-scroll scroll-smooth">
         <div className="flex basis-2/3 justify-center items-center pt-8">
           <PagesCardsArticles />
         </div>

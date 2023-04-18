@@ -1,7 +1,7 @@
 export const ArticlesData = [
   {
     img_path: "/src/assets/imgs/articles/city.jpeg",
-    title: "Um verdadeiro mar de oportuinidades com o 5g",
+    title: "Um verdadeiro mar de oportuinidades com o 5g (1)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content_path: "/src/components/articles/markdowns/ia.md",
@@ -13,7 +13,7 @@ export const ArticlesData = [
   },
   {
     img_path: "/src/assets/imgs/articles/drone.jpeg",
-    title: "Entenda o que é blockchain de uma vez por todas",
+    title: "Entenda o que é blockchain de uma vez por todas (2)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content_path: "/src/components/articles/markdowns/ia.md",
@@ -25,7 +25,7 @@ export const ArticlesData = [
   },
   {
     img_path: "/src/assets/imgs/articles/setup.webp",
-    title: "Web 3.0 desafios e oportunidades ",
+    title: "Web 3.0 desafios e oportunidades (3)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content_path: "/src/components/articles/markdowns/ia.md",
@@ -37,7 +37,7 @@ export const ArticlesData = [
   },
   {
     img_path: "/src/assets/imgs/articles/work.webp",
-    title: "O futuro das cryptos nunca mais será o mesmo",
+    title: "O futuro das cryptos nunca mais será o mesmo (4)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content_path: "/src/components/articles/markdowns/ia.md",
@@ -49,7 +49,7 @@ export const ArticlesData = [
   },
   {
     img_path: "/src/assets/imgs/articles/city.jpeg",
-    title: "Um verdadeiro mar de oportuinidades com o 5g",
+    title: "Um verdadeiro mar de oportuinidades com o 5g (5)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content_path: "/src/components/articles/markdowns/ia.md",
@@ -61,7 +61,7 @@ export const ArticlesData = [
   },
   {
     img_path: "/src/assets/imgs/articles/drone.jpeg",
-    title: "Entenda o que é blockchain de uma vez por todas",
+    title: "Entenda o que é blockchain de uma vez por todas (6)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content_path: "/src/components/articles/markdowns/ia.md",
@@ -73,7 +73,7 @@ export const ArticlesData = [
   },
   {
     img_path: "/src/assets/imgs/articles/setup.webp",
-    title: "Web 3.0 desafios e oportunidades ",
+    title: "Web 3.0 desafios e oportunidades (7)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content_path: "/src/components/articles/markdowns/ia.md",
@@ -85,7 +85,7 @@ export const ArticlesData = [
   },
   {
     img_path: "/src/assets/imgs/articles/work.webp",
-    title: "O futuro das cryptos nunca mais será o mesmo",
+    title: "O futuro das cryptos nunca mais será o mesmo (8)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content_path: "/src/components/articles/markdowns/ia.md",
@@ -97,7 +97,7 @@ export const ArticlesData = [
   },
   {
     img_path: "/src/assets/imgs/articles/city.jpeg",
-    title: "Um verdadeiro mar de oportuinidades com o 5g",
+    title: "Um verdadeiro mar de oportuinidades com o 5g (9)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content_path: "/src/components/articles/markdowns/ia.md",
@@ -109,7 +109,7 @@ export const ArticlesData = [
   },
   {
     img_path: "/src/assets/imgs/articles/drone.jpeg",
-    title: "Entenda o que é blockchain de uma vez por todas",
+    title: "Entenda o que é blockchain de uma vez por todas (10)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content_path: "/src/components/articles/markdowns/ia.md",
@@ -121,7 +121,7 @@ export const ArticlesData = [
   },
   {
     img_path: "/src/assets/imgs/articles/setup.webp",
-    title: "Web 3.0 desafios e oportunidades ",
+    title: "Web 3.0 desafios e oportunidades (11)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content_path: "/src/components/articles/markdowns/ia.md",
@@ -133,7 +133,7 @@ export const ArticlesData = [
   },
   {
     img_path: "/src/assets/imgs/articles/work.webp",
-    title: "O futuro das cryptos nunca mais será o mesmo",
+    title: "O futuro das cryptos nunca mais será o mesmo (12)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     content_path: "/src/components/articles/markdowns/ia.md",

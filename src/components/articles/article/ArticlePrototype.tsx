@@ -31,7 +31,6 @@ const ArticlePrototype = function articlePrototype({
     })
     .then((markdownContent) => {
       setMarkdownContent(markdownContent);
-      console.log(markdownContent);
     })
     .catch((error) => {
       console.error(`Error fetching markdown file: ${error.message}`);
