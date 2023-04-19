@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { Select, SelectProps } from "antd";
+import { Select, SelectProps, TimePicker } from "antd";
 import { useState } from "react";
 
 const options: SelectProps["options"] = [];
@@ -16,7 +16,7 @@ const handleChange = (value: string | string[]) => {
 };
 
 const Filters = function filter() {
-  const [collapse, setCollapse] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
@@ -49,24 +49,28 @@ const Filters = function filter() {
               type="text"
             />
           </div>
-          <div className="flex flex-col ml-4 gap-1">
+          <div className="flex flex-col ml-4 gap-1 group" data-tw-ignore>
             <p className="font-[Lexend] text-sm text-[#333333ce]">
               Filter by tag:
             </p>
             <Select
+              className="w-[95%] font-[Lexend]"
               mode="tags"
               allowClear
-              style={{
-                width: "95%",
-                display: "block",
-                fontFamily: "Lexend",
-              }}
+              showSearch
               placeholder="Choose tags"
               defaultValue={[]}
-              onChange={handleChange}
+              open={open}
+              onChange={(current) => {
+                handleChange(current), setOpen(false);
+              }}
+              onDropdownVisibleChange={(visible) => {
+                setOpen(visible);
+              }}
               options={options}
             />
           </div>
+
           {/*           <button
             type="submit"
             className="w-28 h-8 bg-sky-300 border border-sky-500 rounded font-[Lexend] self-end mr-4 hover:bg-sky-500"

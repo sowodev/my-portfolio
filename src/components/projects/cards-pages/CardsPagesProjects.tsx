@@ -1,7 +1,7 @@
 import CardProject from "./CardProject";
 import { ProjectsData } from "../ProjectsData";
 import { NavLink } from "react-router-dom";
-import { Suspense } from "react";
+import { Pagination } from "antd";
 
 const CardsPagesProjects = function cardsPagesProjects() {
   return (
@@ -22,6 +22,7 @@ const CardsPagesProjects = function cardsPagesProjects() {
           </NavLink>
         );
       })}
+      <Pagination defaultCurrent={1} total={50} />
     </div>
   );
 };

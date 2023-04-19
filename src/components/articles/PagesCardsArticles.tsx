@@ -50,7 +50,7 @@ const PagesCardsArticles = function pagesCardsArticles() {
       })}
       <div className="flex flex-row fixed bottom-8 w-52 h-12">
         <button
-          className="flex basis-1/2 h-full bg-gradient-to-b from-sky-400 to-cyan-400 rounded-3xl shadow-lg justify-center items-center hover:from-sky-500 hover:to-cyan-500"
+          className="flex w-52 h-full bg-gradient-to-b from-sky-400 to-cyan-400 rounded-3xl shadow-lg justify-center items-center hover:from-sky-500 hover:to-cyan-500"
           onClick={() => {
             if (cutStart + number_of_articles >= ArticlesData.length) {
               setDisableButton(true);
