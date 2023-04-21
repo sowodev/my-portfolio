@@ -175,19 +175,4 @@ const PaginationController: React.FC<Props> = ({
   );
 };
 
-const Test = function test() {
-  const [current_page, setCurrentPage] = useState(1);
-  return (
-    <div className="flex h-full w-full justify-center items-center">
-      <div className="h-12">
-        <PaginationController
-          current_page={current_page}
-          total_pages={2}
-          setCurrentPage={setCurrentPage}
-        />
-      </div>
-    </div>
-  );
-};
-
-export default Test;
+export default PaginationController;
