@@ -32,17 +32,17 @@ const PaginationBtn: React.FC<BtnProps> = ({
       ? `flex h-8 w-10 rounded justify-center items-center ${
           current_page === 1
             ? "bg-gray-200 cursor-not-allowed"
-            : "bg-gray-100 hover:bg-gray-200"
+            : "hover:bg-gray-100"
         }`
       : `flex h-8 w-10 rounded justify-center items-center ${
           current_page === total_pages
             ? "bg-gray-200 cursor-not-allowed"
-            : "bg-gray-100 hover:bg-gray-200"
+            : "hover:bg-gray-100"
         }`
     : `flex h-8 w-10 font-[Lexend] font-light text-sm rounded justify-center items-center ${
         current_page === page_number
           ? "bg-gradient-to-b from-sky-300 to-cyan-300 text-white cursor-not-allowed"
-          : "bg-gray-100 hover:bg-gray-200"
+          : "hover:bg-gray-100"
       }`;
 
   return (

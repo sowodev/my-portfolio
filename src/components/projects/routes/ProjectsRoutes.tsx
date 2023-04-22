@@ -1,14 +1,28 @@
 import { Route, Routes } from "react-router-dom";
 import Projects from "../../../pages/Projects";
-import { ProjectsData } from "../ProjectsData";
-import ProjectPrototype from "../cards-pages/ProjectPrototype";
+import { ProjectsData, Project } from "../ProjectsData";
 import { ElementsRoutes } from "./ElementsRoutes";
+import NotFound from "../../../pages/NotFound";
+import { useState } from "react";
+
+function sliceDataIntoArrays() {
+  const array_of_arrays: Project[][] = [];
+
+  for (let i = 0; i < ProjectsData.length; i += 8)
+    array_of_arrays.push(ProjectsData.slice(i, i + 8));
+
+  return array_of_arrays;
+}
 
 const ProjectsRoutes = function projectsRoutes() {
+  const [arrays_of_projects, setArraysOfProjects] = useState<Project[][]>(
+    sliceDataIntoArrays()
+  );
+
   return (
     <Routes>
       <Route index element={<Projects />} />
-      {ProjectsData.map((project, index) => {
+      {ProjectsData.map((project: any, index: number) => {
         const link: string = project.title
           .toLowerCase()
           .normalize("NFD")
@@ -24,14 +38,7 @@ const ProjectsRoutes = function projectsRoutes() {
           />
         );
       })}
-      <Route
-        path="*"
-        element={
-          <div className="flex w-full h-full justify-center items-center">
-            <p> Page Not Found (404)</p>
-          </div>
-        }
-      />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
