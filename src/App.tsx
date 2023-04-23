@@ -7,7 +7,6 @@ import ProjectsRoutes from "./components/projects/routes/ProjectsRoutes";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Test from "./pages/Test";
-import Test2 from "./pages/Test2";
 
 function App() {
   return (
@@ -26,7 +25,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/test" element={<Test />} />
-          <Route path="/test2" element={<Test2 />} />
         </Routes>
       </div>
     </div>

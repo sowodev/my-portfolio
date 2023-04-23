@@ -1,84 +1,53 @@
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { Select, SelectProps, TimePicker } from "antd";
 import { useState } from "react";
+import MultiSelectTags from "./MultiSelectTags";
 
-const options: SelectProps["options"] = [];
-
-for (let i = 10; i < 36; i++) {
-  options.push({
-    value: i.toString(36) + i,
-    label: i.toString(36) + i,
-  });
+export interface Tag {
+  id: string;
+  name: string;
 }
 
-const handleChange = (value: string | string[]) => {
-  console.log(`Selected: ${value}`);
-};
+const Filters = function filters() {
+  const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
 
-const Filters = function filter() {
-  const [open, setOpen] = useState(false);
+  const handleTagSelection = (tags: Tag[]) => {
+    setSelectedTags(tags);
+    console.log(tags);
+  };
+
+  const tags: Tag[] = [
+    { id: "1", name: "React" },
+    { id: "2", name: "TypeScript" },
+    { id: "3", name: "TailwindCSS" },
+    { id: "4", name: "JavaScript" },
+    { id: "5", name: "HTML" },
+    { id: "6", name: "CSS" },
+  ];
 
   return (
     <>
       <div className="flex flex-col fixed gap-1 top-[12.8rem] w-[23rem] bg-white">
-        {/*         <button
-          className="flex w-full h-[2.2rem] bg-[#D9D9D9] items-center justify-between rounded"
-          onClick={() => {
-            setCollapse((current) => {
-              return !current;
-            });
-          }}
-        >
-          <p className="font-[Lexend] text-lg ml-4 text-[#333333ce]">Filters</p>
-          <div className={collapse ? "mr-4" : "mr-4 origin-center rotate-180"}>
-            <ChevronDownIcon className="h-5 w-5 stroke-[#333333ce] pointer-events-none" />
-          </div>
-        </button>
-        <div
-          className={
-            collapse ? "collapse" : "w-full border border-[#B0B0B0] rounded-lg"
-          }
-        > */}
         <form className="flex flex-col mt-4 mb-4 gap-4">
           <div className="flex flex-col ml-4 gap-1">
             <p className="font-[Lexend] text-sm text-[#333333ce]">
               Filter by text:
             </p>
             <input
-              className="w-[95%] h-[2rem] font-[Lexend] text-[#333333ce] border border-gray-300 rounded indent-2"
+              className="w-100 h-10 font-[Lexend] font-light border border-gray-400 rounded indent-2"
               type="text"
+              placeholder="Search"
             />
           </div>
-          <div className="flex flex-col ml-4 gap-1 group" data-tw-ignore>
+          <div className="flex flex-col ml-4 gap-1 group">
             <p className="font-[Lexend] text-sm text-[#333333ce]">
               Filter by tag:
             </p>
-            <Select
-              className="w-[95%] font-[Lexend]"
-              mode="tags"
-              allowClear
-              showSearch
-              placeholder="Choose tags"
-              defaultValue={[]}
-              open={open}
-              onChange={(current) => {
-                handleChange(current), setOpen(false);
-              }}
-              onDropdownVisibleChange={(visible) => {
-                setOpen(visible);
-              }}
-              options={options}
+            <MultiSelectTags
+              tags={tags}
+              selectedTags={selectedTags}
+              onChange={handleTagSelection}
             />
           </div>
-
-          {/*           <button
-            type="submit"
-            className="w-28 h-8 bg-sky-300 border border-sky-500 rounded font-[Lexend] self-end mr-4 hover:bg-sky-500"
-          >
-            Filter
-          </button> */}
         </form>
-        {/* </div> */}
       </div>
     </>
   );
