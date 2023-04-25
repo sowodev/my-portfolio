@@ -1,113 +1,27 @@
-import { NavLink } from "react-router-dom";
+import HomeBtn from "./btns/HomeBtn";
+import ArticlesBtn from "./btns/ArticlesBtn";
+import ProjectsBtn from "./btns/ProjectsBtn";
+import LoginBtn from "./btns/LoginBtn";
+import { ReactElement } from "react";
 
 const NavButtons = function navButtons() {
+  const components_array: ReactElement[] = [
+    <HomeBtn />,
+    <ArticlesBtn />,
+    <ProjectsBtn />,
+    <LoginBtn />,
+  ];
+
   return (
     <div className="flex h-full w-fit">
-      <div className="nav-button-home flex-none">
-        <NavLink to="/" className="flex relative h-full w-full group">
-          {({ isActive }) => (
-            <>
-              <img
-                className={
-                  isActive
-                    ? "relative h-full w-full"
-                    : "relative h-full w-full opacity-0 group-hover:opacity-30"
-                }
-                src="/src/assets/imgs/light.svg"
-                alt=""
-              />
-              <div className="grid absolute h-full w-full float-none place-content-center">
-                <img
-                  className="w-6 h-5 justify-self-center"
-                  src="/src/assets/imgs/home-icon.svg"
-                  alt=""
-                />
-                <span className="nav-text">Home</span>
-              </div>
-            </>
-          )}
-        </NavLink>
-      </div>
-      <div className="nav-button-home flex-none">
-        <NavLink to="/articles" className="flex relative h-full w-full group">
-          {({ isActive }) => (
-            <>
-              <img
-                className={
-                  isActive
-                    ? "relative h-full w-full"
-                    : "relative h-full w-full opacity-0 group-hover:opacity-30"
-                }
-                src="/src/assets/imgs/light.svg"
-                alt=""
-              />
-              <div className="grid absolute h-full w-full float-none place-content-center">
-                <img
-                  className="w-6 h-5 justify-self-center"
-                  src="/src/assets/imgs/articles-icon.svg"
-                  alt=""
-                />
-                <span className="nav-text">Articles</span>
-              </div>
-            </>
-          )}
-        </NavLink>
-      </div>
-      <div className="nav-button-home flex-none">
-        <NavLink to="/projects" className="flex relative h-full w-full group">
-          {({ isActive }) => (
-            <>
-              <img
-                className={
-                  isActive
-                    ? "relative h-full w-full"
-                    : "relative h-full w-full opacity-0 group-hover:opacity-30"
-                }
-                src="/src/assets/imgs/light.svg"
-                alt=""
-              />
-              <div className="grid absolute h-full w-full float-none place-content-center">
-                <img
-                  className="w-6 h-5 justify-self-center"
-                  src="/src/assets/imgs/projects-icon.svg"
-                  alt=""
-                />
-                <span className="nav-text">Projects</span>
-              </div>
-            </>
-          )}
-        </NavLink>
-      </div>
-      <div className="nav-button-foto flex-none">
-        <NavLink
-          to="/login"
-          className="flex flex-col relative h-full w-full group"
+      {components_array.map((component, index) => (
+        <div
+          key={index}
+          className="flex flex-none h-full w-[7rem] justify-center items-center text-white"
         >
-          {({ isActive }) => (
-            <>
-              <img
-                className={
-                  isActive
-                    ? "relative h-full w-full"
-                    : "relative h-full w-full opacity-0 group-hover:opacity-30"
-                }
-                src="/src/assets/imgs/light.svg"
-                alt=""
-              />
-              <div className="grid absolute h-full w-full float-none place-content-center">
-                <img
-                  className="h-10 w-10 justify-self-center"
-                  src="/src/assets/imgs/user.svg"
-                  alt=""
-                />
-                {/*                 <span className="font-[Blinker] text-[0.8rem] text-white">
-                  Sign In
-                </span> */}
-              </div>
-            </>
-          )}
-        </NavLink>
-      </div>
+          {component}
+        </div>
+      ))}
     </div>
   );
 };

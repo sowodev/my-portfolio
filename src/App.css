@@ -13,29 +13,6 @@
   src: url("./assets/fonts/Wallpoet/Wallpoet-Regular.ttf");
 }
 
-.font-logo {
-  color: white;
-  font-family: Wallpoet;
-  font-size: 1.8rem;
-  background: linear-gradient(-45deg, #777777, #555555, #444444);
-  background-clip: text;
-  -webkit-text-stroke: 7px transparent;
-}
-
-.font-logo2 {
-  font-family: Wallpoet;
-  font-size: 1.8rem;
-  background: white;
-  background-clip: text;
-  -webkit-text-stroke: 8px transparent;
-}
-
-.font-adesive {
-  background: linear-gradient(-45deg, #777777, #555555, #444444);
-  background-clip: text;
-  -webkit-text-stroke: 7px transparent;
-}
-
 body {
   width: 100vw;
   height: 100vh;
@@ -50,55 +27,4 @@ body {
   display: flex;
   justify-content: center;
   background-color: white;
-}
-
-.colnav {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
-
-.nav-button-logo {
-  display: flex;
-  height: 100%;
-  width: fit-content;
-  justify-content: center;
-  align-items: center;
-}
-
-.search-btn {
-  background-color: #ffffff3f;
-  border: #f5f5f538 1px solid;
-}
-
-.bg-custom:hover {
-  background-color: #ffffff3f;
-}
-
-.search-text {
-  font-family: Blinker;
-  font-size: 1rem;
-}
-
-.nav-text {
-  font-family: Blinker;
-  font-size: 0.8rem;
-}
-
-.nav-button-home {
-  display: flex;
-  height: 100%;
-  width: 7rem;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.nav-button-foto {
-  display: flex;
-  height: 100%;
-  width: 7rem;
-  justify-content: center;
-  align-items: center;
 }

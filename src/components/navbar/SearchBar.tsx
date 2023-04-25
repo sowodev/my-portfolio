@@ -20,7 +20,7 @@ const SearchBar = function searchBar() {
         />
         <div
           className={`flex flex-col absolute top-[3.6rem] w-[25.9rem] h-[25rem] bg-white rounded-lg ${
-            inputF ? "collapse" : ""
+            inputF && "collapse"
           }`}
         >
           <div className="flex flex-row w-full basis-1/5 bg-gray-200 rounded-t-lg"></div>
@@ -30,7 +30,7 @@ const SearchBar = function searchBar() {
           <div className="flex flex-row w-full basis-1/5 bg-orange-200 rounded-b-lg"></div>
         </div>
       </div>
-      <button className="grid w-9 h-full place-content-center search-btn focus:outline-none focus:ring-2 focus:ring-gray-400 rounded-r">
+      <button className="grid w-9 h-full place-content-center bg-[#ffffff3f] border border-[#f5f5f538] focus:outline-none focus:ring-2 focus:ring-gray-400 rounded-r">
         <MagnifyingGlassIcon className="h-6 w-6 stroke-white pointer-events-none" />
       </button>
     </div>

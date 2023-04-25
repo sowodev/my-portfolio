@@ -9,7 +9,7 @@ const Home = function home() {
   return (
     <>
       <HomeContext.Provider value={{ text_to_show, setTextToShow }}>
-        <div className="flex basis-1/2 justify-center items-center">
+        <div className="flex basis-1/2 justify-center">
           <TextPanel />
         </div>
         <div className="flex basis-1/2 justify-center items-center">

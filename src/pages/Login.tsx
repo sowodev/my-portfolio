@@ -1,6 +1,6 @@
 const Login = function loginPage() {
   return (
-    <div className="flex w-full h-full justify-center items-center">
+    <div className="flex w-full h-full justify-center mt-20">
       <div className="flex flex-col h-[37rem] w-[29rem] rounded-lg ring-1 ring-gray-400 shadow-lg">
         <div className="flex w-full basis-[15%] justify-center items-center">
           <h1 className="font-[Lexend] text-3xl text-slate-700">Login</h1>
