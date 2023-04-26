@@ -36,7 +36,10 @@ const LoginBtn: React.FC = function loginBtn() {
           </>
         )}
       </NavLink>
-      <Tooltip id="my-tooltip" className="font-[Blinker] font-light text-sm" />
+      <Tooltip
+        id="my-tooltip"
+        className="font-[Blinker] absolute z-10 font-light text-sm bg-black bg-opacity-100"
+      />
     </>
   );
 };

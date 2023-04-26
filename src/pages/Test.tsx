@@ -52,7 +52,7 @@ const Ticker = () => {
 };
 
 const Test = function test() {
-  const [translate, setTranslate] = useState(0);
+  const [translate, setTranslate] = useState("0");
   return (
     <div className="flex flex-col gap-48 h-full w-full justify-center items-center">
       <div className="h-12">
@@ -67,7 +67,7 @@ const Test = function test() {
       </div>
       <button
         className="h-10 w-24 bg-pink-300 rounded"
-        onClick={() => setTranslate((c) => (c === 0 ? 80 : 0))}
+        onClick={() => setTranslate((c) => (c === "0" ? "80" : "0"))}
       >
         Change
       </button>

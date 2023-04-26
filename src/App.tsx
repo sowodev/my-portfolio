@@ -8,15 +8,14 @@ import ProjectsRoutes from "./components/projects/routes/ProjectsRoutes";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Test from "./pages/Test";
+import MarqueeTicker from "./components/marquee/MarqueeTicker";
 
 function App() {
   return (
     <div className="flex flex-col w-full h-screen">
       <div className="flex flex-col sticky top-0">
         <Navbar />
-        <div className="flex w-full h-[45px] bg-amber-300 justify-center items-center">
-          <span className="font-[Lexend]">Mecados de Capitais API</span>
-        </div>
+        <MarqueeTicker />
       </div>
       <div className="flex w-full h-full overflow-hidden dark:bg-slate-800">
         <Routes>
