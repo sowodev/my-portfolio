@@ -1,21 +1,16 @@
-export const StackData = [
-  /*   { frontend: [] },
-  { backend: [] },
-  { devops: [] }, */
-  {
-    name: "Linux",
-    icon: "linux",
-    quote:
-      "Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system.",
-    desc: "I mainly use Ubuntu 22.04 on Windows Subsystem for Linux 2, and I'm using Windows for some important tools compability.",
-  },
-  {
-    name: "Git",
-    icon: "git",
-    quote:
-      "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.",
-    desc: "Excellent version control system, I mainly use Git with Github. Sometimes I use Github CLI.",
-  },
+type element = {
+  name: string;
+  icon: string;
+  quote: string;
+  desc: string;
+};
+
+type stack = {
+  stack_name: string;
+  stack_value: element[];
+};
+
+const frontend: element[] = [
   {
     name: "Typescript",
     icon: "typescript",
@@ -52,12 +47,21 @@ export const StackData = [
     desc: "I love React, it's a great library for building robust, reliable, scaleble and safer web applications. Currently it is my favorite library for building web apps. I'd say I'm an early-advanced user of React, I understand quite well the core concepts (function components, hooks, routing, etc) and I'm able to build complex applications with it.",
   },
   {
-    name: "NodeJS",
-    icon: "node",
+    name: "Tailwind",
+    icon: "tailwind",
     quote:
-      "Node.js® is an open-source, cross-platform JavaScript runtime environment.",
-    desc: "Honestly I know only the basics of NodeJS, I'm not a NodeJS expert, but I'm able to build CRUD like NodeJS applications. I'm currently learning and trying to specialize more about NestJS.",
+      "A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.",
+    desc: "I'm currently using Tailwind for styling my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with Tailwind, and I'm able to create complex responsive layouts with Tailwind.",
   },
+  {
+    name: "Figma",
+    icon: "figma",
+    quote:
+      "Whether you're brainstorming ideas, designing prototypes, or building solutions, Figma helps teams align early and stay in-sync, from initial idea to shipped.",
+    desc: "I'm currently using Figma for designing the UI of my projects. I'm able to create prototypes for web components and refine it with complex behavior.",
+  },
+];
+const backend: element[] = [
   {
     name: "NestJS",
     icon: "nest",
@@ -73,19 +77,36 @@ export const StackData = [
     desc: "MySql is a great database management system, I'm currently using it for storing and managing the data of my projects. I've got a quite well understanding of the SQL language, I'm able to create tables, insert, update and delete data, and I'm able to create complex queries.",
   },
   {
+    name: "NodeJS",
+    icon: "node",
+    quote:
+      "Node.js® is an open-source, cross-platform JavaScript runtime environment.",
+    desc: "Honestly I know only the basics of NodeJS, I'm not a NodeJS expert, but I'm able to build CRUD like NodeJS applications. I'm currently learning and trying to specialize more about NestJS.",
+  },
+];
+const devops: element[] = [
+  {
+    name: "Linux",
+    icon: "linux",
+    quote:
+      "Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system.",
+    desc: "I mainly use Ubuntu 22.04 on Windows Subsystem for Linux 2, and I'm using Windows for some important tools compability.",
+  },
+  {
+    name: "Git",
+    icon: "git",
+    quote:
+      "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.",
+    desc: "Excellent version control system, I mainly use Git with Github. Sometimes I use Github CLI.",
+  },
+  {
     name: "Docker",
     icon: "docker",
     quote:
       "Docker is a platform designed to help developers build, share, and run modern applications. We handle the tedious setup, so you can focus on the code.",
     desc: "I'm currently using Docker to keep my projects running as clean and smooth as possible. I'm able to create containers, and I'm able to create complex docker-compose files.",
   },
-  {
-    name: "Tailwind",
-    icon: "tailwind",
-    quote:
-      "A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.",
-    desc: "I'm currently using Tailwind for styling my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with Tailwind, and I'm able to create complex responsive layouts with Tailwind.",
-  },
+
   {
     name: "Github",
     icon: "github",
@@ -93,13 +114,8 @@ export const StackData = [
       "GitHub is where over 100 million developers shape the future of software, together. Contribute to the open source community, manage your Git repositories.",
     desc: "Version control is key for any well structured project, I keep all my projects in Github. I'm able to control the versions effectively and consistently, and I'm able to collaborate with other developers in a very efficient way, delivering high quality projects.",
   },
-  {
-    name: "Figma",
-    icon: "figma",
-    quote:
-      "Whether you're brainstorming ideas, designing prototypes, or building solutions, Figma helps teams align early and stay in-sync, from initial idea to shipped.",
-    desc: "I'm currently using Figma for designing the UI of my projects. I'm able to create prototypes for web components and refine it with complex behavior.",
-  },
+];
+const others: element[] = [
   {
     name: "C++",
     icon: "cpp",
@@ -141,5 +157,24 @@ export const StackData = [
     quote:
       "The term “Kanban” is of Japanese origin and means “signaling” or “card”, and proposes the use of cards (post-its) to indicate and monitor the progress of production within the industry. It is a visual system that seeks to manage work as it moves through the process.",
     desc: "For managing my projects I use a kinda of personalized Kanban system, so I can keep track of the progress of my projects. I'm planning to develop my own Kanban system as a side project in the near future, so I can use it for managing my projects.",
+  },
+];
+
+export const StackData: stack[] = [
+  {
+    stack_name: "Frontend",
+    stack_value: frontend,
+  },
+  {
+    stack_name: "Backend",
+    stack_value: backend,
+  },
+  {
+    stack_name: "DevOps",
+    stack_value: devops,
+  },
+  {
+    stack_name: "Others",
+    stack_value: others,
   },
 ];

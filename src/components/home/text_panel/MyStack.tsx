@@ -1,5 +1,5 @@
 import StackComp from "./StackComp";
-import { StackData_2 } from "./StackData_2";
+import { StackData } from "./StackData";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { Disclosure } from "@headlessui/react";
 
@@ -15,7 +15,7 @@ const MyStack = function myStack() {
           <div className="italic text-sm text-slate-500">
             last update: 03/26/2023
           </div>
-          {StackData_2.map((current, index) => {
+          {StackData.map((current, index) => {
             return (
               <Disclosure key={index}>
                 {({ open }) => (

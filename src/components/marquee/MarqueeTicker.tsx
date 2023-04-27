@@ -1,44 +1,38 @@
-import { useEffect, useState } from "react";
-import { MockedTickerData } from "./MockedData";
+import TechComp from "./TechComp";
+import Marquee from "react-fast-marquee";
 
 const Ticker = () => {
   return (
-    <div className="flex relative w-full h-full gap-8 overflow-x-hidden justify-center items-center">
-      <div className="flex animate-marquee whitespace-nowrap">
-        {MockedTickerData.map((ticker_item, index) => (
-          <div className="flex flex-row h-full w-full justify-center items-center mx-8 gap-2">
-            <img
-              className="h-5 w-5"
-              src={ticker_item.img_path}
-              alt={ticker_item.stock}
-            />
-            <span
-              key={index}
-              className={`w-fit h-full font-[Lexend] font-light text-lg text-center`}
-            >
-              {ticker_item.stock}: {ticker_item.price}
-            </span>
-          </div>
-        ))}
+    <Marquee pauseOnHover speed={25} play={true}>
+      <div className="flex flex-row w-fit h-fit justify-between items-center mx-8">
+        <span className="flex flex-row">
+          <p className="font-[Lexend] font-bold text-lg">Looking for a job!</p>
+          <p className="font-[Lexend] text-lg px-8">
+            Full Stack Web Developer, currently working with:
+          </p>
+        </span>
+        <div className="w-1 h-full border-l border-gray-300" />
+        <TechComp name={"TypeScript"} />
+        <TechComp name={"React"} />
+        <TechComp name={"Tailwind"} />
+        <TechComp name={"Html"} />
+        <TechComp name={"Css"} />
+        <TechComp name={"Nest"} />
+        <TechComp name={"MySQL"} />
+        <TechComp name={"Docker"} />
+        <TechComp name={"Linux"} />
+        <TechComp name={"Github"} />
+        <TechComp name={"Python"} />
+        <TechComp name={"Cpp"} />
+        <TechComp name={"Java"} />
+        <span className="font-[Lexend] text-lg px-8 border-l border-gray-700">
+          For more information, please.
+        </span>
+        <button className="font-[Lexend] text-lg font-normal text-sky-400 underline hover:text-sky-600">
+          Contact Me!
+        </button>
       </div>
-      <div className="flex absolute animate-marquee2 whitespace-nowrap">
-        {MockedTickerData.map((ticker_item, index) => (
-          <div className="flex flex-row h-full w-fit justify-center items-center mx-8 gap-2">
-            <img
-              className="h-5 w-5"
-              src={ticker_item.img_path}
-              alt={ticker_item.stock}
-            />
-            <span
-              key={index}
-              className={`w-fit h-full font-[Lexend] font-light text-lg`}
-            >
-              {ticker_item.stock}: {ticker_item.price}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
+    </Marquee>
   );
 };
 
