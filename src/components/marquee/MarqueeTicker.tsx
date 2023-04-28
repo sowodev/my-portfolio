@@ -1,7 +1,11 @@
 import TechComp from "./TechComp";
 import Marquee from "react-fast-marquee";
+import { useContext } from "react";
+import { DialogContext } from "../commom/context/DialogContext";
 
 const Ticker = () => {
+  const { openDialog, setOpenDialog } = useContext(DialogContext);
+
   return (
     <Marquee pauseOnHover speed={25} play={true}>
       <div className="flex flex-row w-fit h-fit justify-between items-center mx-8">
@@ -28,7 +32,10 @@ const Ticker = () => {
         <span className="font-[Lexend] text-lg px-8 border-l border-gray-700">
           For more information, please.
         </span>
-        <button className="font-[Lexend] text-lg font-normal text-sky-400 underline hover:text-sky-600">
+        <button
+          className="font-[Lexend] text-lg font-normal text-sky-400 underline hover:text-sky-600"
+          onClick={() => setOpenDialog(true)}
+        >
           Contact Me!
         </button>
       </div>

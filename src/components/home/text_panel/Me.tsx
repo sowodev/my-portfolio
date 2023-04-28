@@ -1,6 +1,9 @@
-import { ReactElement } from "react";
+import { ReactElement, useContext } from "react";
+import { DialogContext } from "../../commom/context/DialogContext";
 
 const Me = function me(): ReactElement {
+  const { setOpenDialog } = useContext(DialogContext);
+
   return (
     <>
       <div className="flex flex-col w-full h-full text-white px-6 py-6 justify-between overflow-y-auto">
@@ -36,7 +39,10 @@ const Me = function me(): ReactElement {
               <span className="font-[Lexend] mr-5">See My Github</span>
             </button>
           </a>
-          <button className="flex flex-row gap-3 h-12 bg-gradient-to-b from-sky-400 to-cyan-400 rounded justify-center items-center hover:from-sky-500 hover:to-cyan-500">
+          <button
+            className="flex flex-row gap-3 h-12 bg-gradient-to-b from-sky-400 to-cyan-400 rounded justify-center items-center hover:from-sky-500 hover:to-cyan-500"
+            onClick={() => setOpenDialog(true)}
+          >
             <img
               className="h-7 w-7 ml-5"
               src="./src/assets/imgs/mail.svg"
