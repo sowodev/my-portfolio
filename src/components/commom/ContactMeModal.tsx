@@ -1,16 +1,16 @@
-import { Fragment, useState, useContext } from "react";
+import { Fragment, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { DialogContext } from "./context/DialogContext";
+import { GlobalContext } from "./context/GlobalContext";
 
 const ContactMeModal = function contactMeModal() {
-  const { openDialog, setOpenDialog } = useContext(DialogContext);
+  const { set_dialog } = useContext(GlobalContext);
 
   const closeModal = () => {
-    setOpenDialog(false);
+    set_dialog.setOpenDialog(false);
   };
 
   return (
-    <Transition appear as={Fragment} show={openDialog}>
+    <Transition appear as={Fragment} show={set_dialog.open_dialog}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
         <Transition.Child
           as={Fragment}
@@ -35,7 +35,7 @@ const ContactMeModal = function contactMeModal() {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-lg bg-white p-6 text-left align-middle shadow-xl transition-all">
                 <Dialog.Title
                   as="h4"
                   className="font-[Lexend] text-lg font-medium leading-6 text-gray-900"
@@ -110,14 +110,14 @@ const ContactMeModal = function contactMeModal() {
                 <div className="flex w-full justify-between">
                   <button
                     type="button"
-                    className="flex bg-gradient-to-b from-orange-300 to-amber-300 w-1/3 h-[3rem] font-[Lexend] text-white text-center rounded justify-center items-center hover:from-orange-400 hover:to-amber-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                    className="flex bg-gradient-to-b from-orange-300 to-amber-300 transition w-1/4 h-[3rem] font-[Lexend] text-white text-center rounded justify-center items-center hover:from-orange-400 hover:to-amber-400 hover:shadow-lg hover:scale-110 ease-in-out duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                     onClick={closeModal}
                   >
                     Cancel
                   </button>
                   <button
                     type="button"
-                    className="flex bg-gradient-to-b from-sky-400 to-cyan-400 w-1/3 h-[3rem] font-[Lexend] text-white text-center rounded justify-center items-center hover:from-sky-500 hover:to-cyan-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                    className="flex bg-gradient-to-b from-sky-400 to-cyan-400 transition w-1/4 h-[3rem] font-[Lexend] text-white text-center rounded justify-center items-center hover:from-sky-500 hover:to-cyan-500 hover:shadow-lg hover:scale-110 ease-in-out duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                     onClick={closeModal}
                   >
                     Send

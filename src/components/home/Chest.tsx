@@ -5,7 +5,7 @@ const Chest = function chestComponent(): ReactElement {
   const context_object = useContext(HomeContext);
 
   return (
-    <div className="flex relative w-11/12 h-11/12 justify-center">
+    <div className="flex relative h-full justify-center items-end">
       <div className="flex flex-col absolute h-1/5 w-1/2 top-28">
         <div className="flex flex-none relative basis-1/3 w-full">
           <button
@@ -46,7 +46,9 @@ const Chest = function chestComponent(): ReactElement {
           </button>
         </div>
       </div>
-      <img src="./src/assets/imgs/chest.png" alt="" />
+      <div className="w-[75%] h-[52%] mb-[11%]">
+        <img src="./src/assets/imgs/chest2.png" alt="" />
+      </div>
     </div>
   );
 };

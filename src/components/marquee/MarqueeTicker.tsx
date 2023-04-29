@@ -1,10 +1,10 @@
 import TechComp from "./TechComp";
 import Marquee from "react-fast-marquee";
 import { useContext } from "react";
-import { DialogContext } from "../commom/context/DialogContext";
+import { GlobalContext } from "../commom/context/GlobalContext";
 
 const Ticker = () => {
-  const { openDialog, setOpenDialog } = useContext(DialogContext);
+  const { set_dialog } = useContext(GlobalContext);
 
   return (
     <Marquee pauseOnHover speed={25} play={true}>
@@ -34,7 +34,7 @@ const Ticker = () => {
         </span>
         <button
           className="font-[Lexend] text-lg font-normal text-sky-400 underline hover:text-sky-600"
-          onClick={() => setOpenDialog(true)}
+          onClick={() => set_dialog.setOpenDialog(true)}
         >
           Contact Me!
         </button>

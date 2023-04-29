@@ -1,8 +1,8 @@
 import { ReactElement, useContext } from "react";
-import { DialogContext } from "../../commom/context/DialogContext";
+import { GlobalContext } from "../../commom/context/GlobalContext";
 
 const Me = function me(): ReactElement {
-  const { setOpenDialog } = useContext(DialogContext);
+  const { set_dialog } = useContext(GlobalContext);
 
   return (
     <>
@@ -24,24 +24,23 @@ const Me = function me(): ReactElement {
             and scalable systems.
           </p>
         </div>
-        <div className="flex flex-row w-full gap-4 text-gray-600 justify-end pb-4">
+        <div className="flex flex-row w-full gap-8 text-gray-600 justify-end pb-4">
           <a
+            className="flex flex-row gap-3 h-12 bg-white ring-1 ring-gray-300 rounded justify-center items-center hover:bg-gray-300 hover:shadow-lg hover:scale-110 ease-in-out duration-300"
             href="https://www.github.com/sowodin"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="flex flex-row gap-3 h-12 bg-white ring-1 ring-gray-300 hover:bg-gray-300 rounded justify-center items-center">
-              <img
-                className="h-7 w-7 ml-5"
-                src="./src/assets/imgs/mystack/github.svg"
-                alt="gh"
-              />
-              <span className="font-[Lexend] mr-5">See My Github</span>
-            </button>
+            <img
+              className="h-7 w-7 ml-5"
+              src="./src/assets/imgs/mystack/github.svg"
+              alt="gh"
+            />
+            <span className="font-[Lexend] mr-5">See My Github</span>
           </a>
           <button
-            className="flex flex-row gap-3 h-12 bg-gradient-to-b from-sky-400 to-cyan-400 rounded justify-center items-center hover:from-sky-500 hover:to-cyan-500"
-            onClick={() => setOpenDialog(true)}
+            className="flex flex-row gap-3 h-12 bg-gradient-to-b from-sky-400 to-cyan-400 rounded justify-center items-center hover:from-sky-500 hover:to-cyan-500 hover:shadow-lg hover:scale-110 ease-in-out duration-300"
+            onClick={() => set_dialog.setOpenDialog(true)}
           >
             <img
               className="h-7 w-7 ml-5"

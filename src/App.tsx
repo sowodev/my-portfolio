@@ -10,20 +10,29 @@ import NotFound from "./pages/NotFound";
 import Test from "./pages/Test";
 import MarqueeTicker from "./components/marquee/MarqueeTicker";
 import ContactMeModal from "./components/commom/ContactMeModal";
-import { DialogContext } from "./components/commom/context/DialogContext";
+import {
+  DarkType,
+  DialogType,
+  GlobalContext,
+} from "./components/commom/context/GlobalContext";
 import { useState } from "react";
+import DarkModeBtn from "./components/global-btns/DarkModeBtn";
 
 function App() {
-  const [openDialog, setOpenDialog] = useState(false);
+  const [open_dialog, setOpenDialog] = useState(false);
+  const set_dialog: DialogType = { open_dialog, setOpenDialog };
+  const [is_dark, setIsDark] = useState("light");
+  const set_dark: DarkType = { is_dark, setIsDark };
 
   return (
-    <div className="flex flex-col w-full h-screen">
-      <DialogContext.Provider value={{ openDialog, setOpenDialog }}>
-        <div className="flex flex-col sticky top-0">
+    <div className={`flex flex-col w-full h-screen ${is_dark}`}>
+      <GlobalContext.Provider value={{ set_dialog, set_dark }}>
+        <div className="flex flex-col z-10 sticky top-0">
           <Navbar />
           <MarqueeTicker />
+          <DarkModeBtn />
         </div>
-        <div className="flex w-full h-full overflow-hidden dark:bg-slate-800">
+        <div className="flex w-full h-full overflow-hidden z-0 dark:bg-slate-800 transition ease-in-out duration-300">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/articles/*" element={<ArticlesRoutes />} />
@@ -34,7 +43,7 @@ function App() {
           </Routes>
         </div>
         <ContactMeModal />
-      </DialogContext.Provider>
+      </GlobalContext.Provider>
     </div>
   );
 }
