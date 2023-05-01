@@ -40,7 +40,7 @@ const CreditsModal = function creditsModal({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-lg bg-white p-6 text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-lg bg-white p-6 text-left align-middle shadow-xl transition-all dark:bg-slate-700">
                 <Dialog.Title
                   as="h4"
                   className="font-[Lexend] text-lg font-medium leading-6 text-gray-900"
@@ -48,32 +48,24 @@ const CreditsModal = function creditsModal({
                   Credits!
                 </Dialog.Title>
 
-                <div className="flex flex-col w-full h-full gap-4 py-4">
-                  <div className="flex flex-col w-full items-center">
-                    <label
-                      className="font-[Lexend] w-full font-light"
-                      htmlFor="username"
-                    >
-                      Name
-                    </label>
-                    <input
-                      className="flex w-full h-[2rem] font-[Lexend] font-light text-gray-500 border-b border-[#B0B0B0] indent-2 placeholder:text-gray-200 focus:outline-none focus:border-sky-400"
-                      type="text"
-                      name="username"
-                      id="username"
-                      placeholder="Enter your name"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex w-full justify-end">
-                  <button
-                    type="button"
-                    className="flex bg-gradient-to-b from-orange-300 to-amber-300 transition w-1/4 h-[3rem] font-[Lexend] text-white text-center rounded justify-center items-center hover:from-orange-400 hover:to-amber-400 hover:shadow-lg hover:scale-110 ease-in-out duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                    onClick={closeModal}
+                <div className="flex flex-col w-full">
+                  <img
+                    className="w-36 h-24"
+                    src="/src/assets/imgs/chest2.png"
+                    alt="chest"
+                  />
+                  <p className="font-[Lexend] text-sm font-light leading-6">
+                    The treasure chest above, finded at the home page is a free
+                    liscence asset for commercial use with attribution, and you
+                    can find it at the following link:
+                  </p>
+                  <a
+                    className="font-[Lexend] text-sm font-light leading-6 text-blue-500 hover:text-blue-700"
+                    href="https://www.freepik.com/free-vector/treasure-chest-with-gold-coins-and-gems_27777164.htm"
+                    target="_blank"
                   >
-                    Close
-                  </button>
+                    https://www.freepik.com/free-vector/treasure-chest-with-gold-coins-and-gems_27777164.htm
+                  </a>
                 </div>
               </Dialog.Panel>
             </Transition.Child>

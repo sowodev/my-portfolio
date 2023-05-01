@@ -21,7 +21,7 @@ const Home = function home() {
             </div>
             <div className="flex basis-[3%] w-full justify-end px-8">
               <button
-                className="flex font-[Lexend] font-light text-sm text-slate-500"
+                className="flex font-[Lexend] font-light text-sm text-slate-500 dark:text-slate-300"
                 onClick={() => setOpenCredits(true)}
               >
                 credits

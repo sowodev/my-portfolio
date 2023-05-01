@@ -1,16 +1,16 @@
 const Learning = function learning() {
   return (
     <>
-      <div className="w-full h-full px-6 py-12 overflow-y-auto">
+      <div className="w-full h-full px-6 py-2 overflow-y-auto">
         <div className="mt-4 prose prose-slate mx-auto">
-          <p className="lead">
-            In this section I talk about what I'm learning, the technologies I
-            want to learn and the technologies I want to deepen my knowledge.
+          <p className="lead indent-3 font-[Lexend]">
+            This is the "Learning" section, here I try to show what I want to
+            learn or deepen my knowledge about it, in the near future.
           </p>
-          <div className="italic text-sm text-slate-500">
+          <div className="text-sm text-slate-500 font-[Lexend] font-extralight dark:text-slate-300">
             last update: 03/26/2023
           </div>
-          <hr className="my-4" />
+          <hr className="my-4 dark:border-slate-500" />
           <ul>
             <li>NextJS</li>
             <li>GraphQL</li>

@@ -14,10 +14,10 @@ const StackComp = function stackComp({
     <div className="flex flex-col">
       <div className="flex flex-row w-fit h-fit items-center">
         <img className="pr-[10px] l-0 w-[50px] my-0" alt={name} src={src} />{" "}
-        <h3 className="my-0 w-full h-full">{name}</h3>
+        <h3 className="my-0 w-full h-full dark:text-slate-300">{name}</h3>
       </div>
-      <blockquote className="my-4">{quote}</blockquote>
-      <p className="my-4 indent-5">{desc}</p>
+      <blockquote className="my-4 dark:text-slate-300">{quote}</blockquote>
+      <p className="my-4 indent-5 dark:text-slate-300">{desc}</p>
     </div>
   );
 };
