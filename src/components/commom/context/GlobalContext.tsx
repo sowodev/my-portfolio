@@ -5,6 +5,11 @@ export type DialogType = {
   setOpenDialog: Dispatch<SetStateAction<boolean>>;
 };
 
+export type CreditsType = {
+  open_credits: boolean;
+  setOpenCredits: Dispatch<SetStateAction<boolean>>;
+};
+
 export type DarkType = {
   is_dark: string;
   setIsDark: Dispatch<SetStateAction<string>>;
@@ -19,6 +24,10 @@ const GlobalContext = createContext({
     is_dark: "light",
     setIsDark: (is_dark: string) => {},
   } as DarkType,
+  set_credits: {
+    open_credits: false,
+    setOpenCredits: (open: boolean) => {},
+  } as CreditsType,
 });
 
 export { GlobalContext };

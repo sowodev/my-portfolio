@@ -3,7 +3,7 @@ import { GlobalContext } from "../../commom/context/GlobalContext";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
 
 const Me = function me(): ReactElement {
-  const { set_dialog } = useContext(GlobalContext);
+  const { set_dialog, set_dark } = useContext(GlobalContext);
 
   return (
     <>
@@ -39,7 +39,11 @@ const Me = function me(): ReactElement {
           >
             <img
               className="h-7 w-7 ml-5"
-              src="./src/assets/imgs/mystack/github.svg"
+              src={
+                set_dark.is_dark === "dark"
+                  ? "./src/assets/imgs/mystack/github-white.svg"
+                  : "./src/assets/imgs/mystack/github.svg"
+              }
               alt="gh"
             />
             <span className="font-[Lexend] mr-5 dark:text-slate-300">

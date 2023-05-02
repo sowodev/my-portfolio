@@ -17,14 +17,14 @@ const TextPanel = function textPanel() {
   }
 
   return (
-    <div className="flex flex-col w-3/4 h-4/5 mt-16 bg-gradient-to-tl from-[#45bff8] to-[#328bf0] shadow-lg ring-1 ring-slate-900/5 justify-center items-center rounded-lg">
+    <div className="flex flex-col w-3/4 h-4/5 mt-16 bg-gradient-to-tl from-[#45bff8] to-[#328bf0] shadow-lg ring-1 ring-slate-900/5 justify-center items-center rounded-lg ">
       <div className="flex w-full h-[10%] justify-center items-center">
         <div className="flex flex-row w-[80%] h-[80%] bg-[#ffffff3f] border border-[#f5f5f538] rounded-lg justify-center items-center gap-4">
           <div
             className={
               context_object.text_to_show === "Me"
-                ? "flex basis-1/3 h-[80%] justify-center items-center rounded-lg ml-[5%] bg-white ring-2 ring-white outline-none ring-opacity-60 ring-offset-2 ring-offset-blue-300"
-                : "flex basis-1/3 h-[80%] justify-center items-center rounded-lg ml-[5%]"
+                ? "flex basis-1/3 h-[80%] justify-center items-center rounded ml-[5%] bg-white ring-2 ring-white outline-none ring-opacity-60 ring-offset-2 ring-offset-blue-300 dark:bg-slate-700 dark:ring-slate-700 dark:ring-offset-blue-400"
+                : "flex basis-1/3 h-[80%] justify-center items-center rounded ml-[5%]"
             }
           >
             <div className="w-9 h-5">
@@ -35,8 +35,8 @@ const TextPanel = function textPanel() {
           <div
             className={
               context_object.text_to_show === "MyStack"
-                ? "flex basis-1/3 h-[80%] justify-center items-center rounded-lg bg-white ring-2 ring-white outline-none ring-opacity-60 ring-offset-2 ring-offset-blue-300"
-                : "flex basis-1/3 h-[80%] justify-center items-center rounded-lg"
+                ? "flex basis-1/3 h-[80%] justify-center items-center rounded bg-white ring-2 ring-white outline-none ring-opacity-60 ring-offset-2 ring-offset-blue-300 dark:bg-slate-700 dark:ring-slate-700 dark:ring-offset-blue-400"
+                : "flex basis-1/3 h-[80%] justify-center items-center rounded"
             }
           >
             <div className="w-24 h-5">
@@ -47,8 +47,8 @@ const TextPanel = function textPanel() {
           <div
             className={
               context_object.text_to_show === "Learning"
-                ? "flex basis-1/3 h-[80%] justify-center items-center rounded-lg mr-[5%] bg-white ring-2 ring-white outline-none ring-opacity-60 ring-offset-2 ring-offset-blue-300"
-                : "flex basis-1/3 h-[80%] justify-center items-center rounded-lg mr-[5%]"
+                ? "flex basis-1/3 h-[80%] justify-center items-center rounded mr-[5%] bg-white ring-2 ring-white outline-none ring-opacity-60 ring-offset-2 ring-offset-blue-300 dark:bg-slate-700 dark:ring-slate-700 dark:ring-offset-blue-400"
+                : "flex basis-1/3 h-[80%] justify-center items-center rounded mr-[5%]"
             }
           >
             <div className="w-28 h-5">
@@ -57,7 +57,7 @@ const TextPanel = function textPanel() {
           </div>
         </div>
       </div>
-      <div className="w-[95%] h-[85%] bg-white rounded-lg dark:bg-slate-700">
+      <div className="w-[95%] h-[85%] bg-white rounded-lg dark:bg-slate-700 transition ease-linear duration-300">
         {component_to_show}
       </div>
     </div>

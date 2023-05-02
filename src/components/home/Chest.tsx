@@ -47,7 +47,7 @@ const Chest = function chestComponent(): ReactElement {
         </div>
       </div>
       <div className="w-[75%] h-[52%] mb-[11%]">
-        <img src="./src/assets/imgs/chest2.png" alt="" />
+        <img src="./src/assets/imgs/chest.png" alt="" />
       </div>
     </div>
   );

@@ -2,7 +2,6 @@ import StackComp from "./StackComp";
 import { StackData } from "./StackData";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { Disclosure, Transition } from "@headlessui/react";
-import { useState } from "react";
 
 const MyStack = function myStack() {
   return (
@@ -25,7 +24,7 @@ const MyStack = function myStack() {
                 {({ open, close }) => (
                   <>
                     <Disclosure.Button
-                      className="flex w-full h-16 mt-4 bg-slate-100 border border-slate-400 rounded-lg justify-between items-center hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-slate-300"
+                      className="flex w-full h-16 mt-4 border border-slate-400 rounded justify-between items-center hover:bg-slate-100 dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-slate-300"
                       onClick={() => {}}
                     >
                       <span className="font-[Lexend] text-slate-500 ml-8 dark:text-slate-300">
@@ -45,7 +44,7 @@ const MyStack = function myStack() {
                       leaveFrom="transform scale-100 opacity-100"
                       leaveTo="transform scale-90 opacity-0"
                     >
-                      <Disclosure.Panel className="flex flex-col w-full mt-8 rounded-lg">
+                      <Disclosure.Panel className="flex flex-col w-full mt-8">
                         {current.stack_value.map(
                           (inner_current, inner_index) => {
                             return (

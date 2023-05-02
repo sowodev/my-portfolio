@@ -1,9 +1,10 @@
-import { Fragment, useContext } from "react";
+import { Fragment, useContext, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { GlobalContext } from "./context/GlobalContext";
 
 const ContactMeModal = function contactMeModal() {
   const { set_dialog, set_dark } = useContext(GlobalContext);
+  const dark: boolean = set_dark.is_dark === "dark";
 
   const closeModal = () => {
     set_dialog.setOpenDialog(false);
@@ -36,14 +37,16 @@ const ContactMeModal = function contactMeModal() {
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel
-                className={`w-full max-w-md transform overflow-hidden rounded-lg bg-white p-6 text-left align-middle shadow-xl transition-all ${
-                  set_dark.is_dark === "dark" && "bg-slate-700"
-                }`}
+                className={
+                  dark
+                    ? `w-full max-w-md transform overflow-hidden rounded-lg p-6 text-left align-middle shadow-xl transition-all bg-slate-700`
+                    : `w-full max-w-md transform overflow-hidden rounded-lg p-6 text-left align-middle shadow-xl transition-all bg-white`
+                }
               >
                 <Dialog.Title
                   as="h4"
                   className={`font-[Lexend] text-lg font-medium leading-6 text-gray-900 ${
-                    set_dark.is_dark === "dark" && "text-slate-300"
+                    dark && "text-slate-300"
                   }`}
                 >
                   Leave Me a Message!
@@ -52,13 +55,19 @@ const ContactMeModal = function contactMeModal() {
                 <div className="flex flex-col w-full h-full gap-4 py-4">
                   <div className="flex flex-col w-full items-center">
                     <label
-                      className="font-[Lexend] w-full font-light"
+                      className={`font-[Lexend] w-full font-light ${
+                        dark && "text-slate-300"
+                      }`}
                       htmlFor="username"
                     >
                       Name
                     </label>
                     <input
-                      className="flex w-full h-[2rem] font-[Lexend] font-light text-gray-500 border-b border-[#B0B0B0] indent-2 placeholder:text-gray-200 focus:outline-none focus:border-sky-400"
+                      className={
+                        dark
+                          ? `flex w-full bg-slate-700 h-[2rem] font-[Lexend] font-light text-slate-300 border-b border-[#B0B0B0] indent-2 placeholder:text-gray-500 focus:outline-none focus:border-sky-400`
+                          : `flex w-full h-[2rem] font-[Lexend] font-light text-gray-500 border-b border-[#B0B0B0] indent-2 placeholder:text-gray-200 focus:outline-none focus:border-sky-400`
+                      }
                       type="text"
                       name="username"
                       id="username"
@@ -67,13 +76,19 @@ const ContactMeModal = function contactMeModal() {
                   </div>
                   <div className="flex flex-col w-full items-center">
                     <label
-                      className="font-[Lexend] w-full font-light"
+                      className={`font-[Lexend] w-full font-light ${
+                        dark && "text-slate-300"
+                      }`}
                       htmlFor="useremail"
                     >
                       Email
                     </label>
                     <input
-                      className="flex w-full h-[2rem] font-[Lexend] font-light text-gray-500 border-b border-[#B0B0B0] indent-2 placeholder:text-gray-200 focus:outline-none focus:border-sky-400"
+                      className={
+                        dark
+                          ? `flex w-full bg-slate-700 h-[2rem] font-[Lexend] font-light text-slate-300 border-b border-[#B0B0B0] indent-2 placeholder:text-gray-500 focus:outline-none focus:border-sky-400`
+                          : `flex w-full h-[2rem] font-[Lexend] font-light text-gray-500 border-b border-[#B0B0B0] indent-2 placeholder:text-gray-200 focus:outline-none focus:border-sky-400`
+                      }
                       type="text"
                       name="useremail"
                       id="useremail"
@@ -82,13 +97,19 @@ const ContactMeModal = function contactMeModal() {
                   </div>
                   <div className="flex flex-col w-full items-center">
                     <label
-                      className="font-[Lexend] w-full font-light"
+                      className={`font-[Lexend] w-full font-light ${
+                        dark && "text-slate-300"
+                      }`}
                       htmlFor="usersubject"
                     >
                       Subject
                     </label>
                     <input
-                      className="flex w-full h-[2rem] font-[Lexend] font-light text-gray-500 border-b border-[#B0B0B0] indent-2 placeholder:text-gray-200 focus:outline-none focus:border-sky-400"
+                      className={
+                        dark
+                          ? `flex w-full bg-slate-700 h-[2rem] font-[Lexend] font-light text-slate-300 border-b border-[#B0B0B0] indent-2 placeholder:text-gray-500 focus:outline-none focus:border-sky-400`
+                          : `flex w-full h-[2rem] font-[Lexend] font-light text-gray-500 border-b border-[#B0B0B0] indent-2 placeholder:text-gray-200 focus:outline-none focus:border-sky-400`
+                      }
                       type="text"
                       name="usersubject"
                       id="usersubject"
@@ -97,13 +118,19 @@ const ContactMeModal = function contactMeModal() {
                   </div>
                   <div className="flex flex-col w-full items-center">
                     <label
-                      className="font-[Lexend] w-full font-light"
+                      className={`font-[Lexend] w-full font-light ${
+                        dark && "text-slate-300"
+                      }`}
                       htmlFor="content"
                     >
                       Message
                     </label>
                     <textarea
-                      className="flex w-full font-[Lexend] font-light text-gray-500 border-b border-[#B0B0B0] indent-2 placeholder:text-gray-200 focus:outline-none focus:border-sky-400"
+                      className={
+                        dark
+                          ? `flex w-full bg-slate-700 font-[Lexend] font-light text-slate-300 border-b border-[#B0B0B0] indent-2 placeholder:text-gray-500 focus:outline-none focus:border-sky-400`
+                          : `flex w-full font-[Lexend] font-light text-gray-500 border-b border-[#B0B0B0] indent-2 placeholder:text-gray-200 focus:outline-none focus:border-sky-400`
+                      }
                       name="content"
                       id="content"
                       rows={5}

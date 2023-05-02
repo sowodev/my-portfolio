@@ -3,7 +3,7 @@ const Learning = function learning() {
     <>
       <div className="w-full h-full px-6 py-2 overflow-y-auto">
         <div className="mt-4 prose prose-slate mx-auto">
-          <p className="lead indent-3 font-[Lexend]">
+          <p className="lead indent-3 font-[Lexend] dark:text-slate-300">
             This is the "Learning" section, here I try to show what I want to
             learn or deepen my knowledge about it, in the near future.
           </p>
@@ -11,7 +11,7 @@ const Learning = function learning() {
             last update: 03/26/2023
           </div>
           <hr className="my-4 dark:border-slate-500" />
-          <ul>
+          <ul className="font-[Lexend] dark:text-slate-300">
             <li>NextJS</li>
             <li>GraphQL</li>
             <li>NoSQL</li>
@@ -20,14 +20,11 @@ const Learning = function learning() {
             <li>Clean Architecture</li>
             <li>Design Thinking</li>
             <li>Cloud Services</li>
-            <li>Rust Programming Language look so awesome ❤️</li>
+            <li>Rust Programming Language ❤️</li>
+            <li>A pure functional Programming Language</li>
+            <li>Deepen my knowledge in Machine Learning 🦾</li>
             <li>
-              A pure functional Programming Language just don't know which one
-              yet
-            </li>
-            <li>I really want to deepen my knowledge in Machine Learning 🦾</li>
-            <li>
-              I want to be aware of the multiple threats and solution in
+              Intersection between Machine Learning 🦾, Quantum Computing 🧠 and
               Cybersecurity ⚔️
             </li>
           </ul>

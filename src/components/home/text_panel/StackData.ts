@@ -54,6 +54,46 @@ const frontend: element[] = [
     desc: "I'm currently using Tailwind for styling my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with Tailwind, and I'm able to create complex responsive layouts with Tailwind.",
   },
   {
+    name: "Headless UI",
+    icon: "headlessui",
+    quote:
+      "Completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.",
+    desc: "I'm currently using Headless UI for styling my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with Headless UI, and I'm able to create complex responsive layouts with Headless UI.",
+  },
+  {
+    name: "Bootstrap",
+    icon: "bootstrap",
+    quote:
+      "Build responsive, mobile-first projects on the web with the world's most popular front-end component library.",
+    desc: "I'm currently using Bootstrap for styling my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with Bootstrap, and I'm able to create complex responsive layouts with Bootstrap.",
+  },
+  {
+    name: "React Router",
+    icon: "router",
+    quote:
+      "React Router is a collection of navigational components that compose declaratively with your application.",
+    desc: "React router is a routing systems type of librarie",
+  },
+  {
+    name: "React Query",
+    icon: "query",
+    quote:
+      "Hooks for fetching, caching and updating asynchronous data in React.",
+    desc: "I'm currently using React Query for managing the state of my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with React Query, and I'm able to create complex responsive layouts with React Query.",
+  },
+  {
+    name: "Redux",
+    icon: "redux",
+    quote: "A Predictable State Container for JS Apps.",
+    desc: "I'm currently using Redux for managing the state of my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with Redux, and I'm able to create complex responsive layouts with Redux.",
+  },
+  {
+    name: "Ant Design",
+    icon: "ant",
+    quote: "A design system for enterprise-level products.",
+    desc: "I'm currently using Ant Design for styling my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with Ant Design, and I'm able to create complex responsive layouts with Ant Design.",
+  },
+  {
     name: "Figma",
     icon: "figma",
     quote:

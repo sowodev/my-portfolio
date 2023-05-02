@@ -7,8 +7,8 @@ export interface Tag {
 }
 
 interface Props {
-  tags: Tag[]; // replace with your own tag type
-  selectedTags: Tag[]; // replace with your own tag type
+  tags: Tag[];
+  selectedTags: Tag[];
   onChange: (tags: Tag[]) => void;
 }
 
@@ -35,6 +35,19 @@ const MultiSelectTags: React.FC<Props> = ({ tags, selectedTags, onChange }) => {
   return (
     <Select
       isMulti
+      className="w-100 font-[Lexend] font-light ring-slate-300 rounded placeholder:text-slate-200 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300"
+      styles={{
+        control: (provided) => ({
+          ...provided,
+          color: "#333333ce",
+          border: "1px solid #cbd5e1",
+          boxShadow: "none",
+          height: "2.5rem",
+          "&:hover": {
+            border: "1px solid #333333ce",
+          },
+        }),
+      }}
       options={options}
       value={selectedTags.map((tag) => ({ label: tag.name, value: tag.id }))}
       onChange={handleChange}

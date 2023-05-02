@@ -1,12 +1,13 @@
 import Chest from "../components/home/Chest";
 import TextPanel from "../components/home/TextPanel";
 import { HomeContext } from "../components/home/HomeContext";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import CreditsModal from "../components/commom/CreditsModal";
+import { GlobalContext } from "../components/commom/context/GlobalContext";
 
 const Home = function home() {
   const [text_to_show, setTextToShow] = useState("Me");
-  const [open_credits, setOpenCredits] = useState(false);
+  const { set_credits } = useContext(GlobalContext);
 
   return (
     <>
@@ -21,18 +22,15 @@ const Home = function home() {
             </div>
             <div className="flex basis-[3%] w-full justify-end px-8">
               <button
-                className="flex font-[Lexend] font-light text-sm text-slate-500 dark:text-slate-300"
-                onClick={() => setOpenCredits(true)}
+                className="flex font-[Lexend] font-light text-xs text-slate-500 dark:text-slate-300"
+                onClick={() => set_credits.setOpenCredits(true)}
               >
                 credits
               </button>
             </div>
           </div>
         </div>
-        <CreditsModal
-          open_credits={open_credits}
-          setOpenCredits={setOpenCredits}
-        />
+        <CreditsModal />
       </HomeContext.Provider>
     </>
   );

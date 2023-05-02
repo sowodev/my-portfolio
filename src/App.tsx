@@ -11,6 +11,7 @@ import Test from "./pages/Test";
 import MarqueeTicker from "./components/marquee/MarqueeTicker";
 import ContactMeModal from "./components/commom/ContactMeModal";
 import {
+  CreditsType,
   DarkType,
   DialogType,
   GlobalContext,
@@ -23,10 +24,12 @@ function App() {
   const set_dialog: DialogType = { open_dialog, setOpenDialog };
   const [is_dark, setIsDark] = useState("light");
   const set_dark: DarkType = { is_dark, setIsDark };
+  const [open_credits, setOpenCredits] = useState(false);
+  const set_credits: CreditsType = { open_credits, setOpenCredits };
 
   return (
     <div className={`flex flex-col w-full h-screen ${is_dark}`}>
-      <GlobalContext.Provider value={{ set_dialog, set_dark }}>
+      <GlobalContext.Provider value={{ set_dialog, set_credits, set_dark }}>
         <div className="flex flex-col z-10 sticky top-0">
           <Navbar />
           <MarqueeTicker />
