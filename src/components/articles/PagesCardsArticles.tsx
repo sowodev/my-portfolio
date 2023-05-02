@@ -51,9 +51,9 @@ const PagesCardsArticles = function pagesCardsArticles() {
       <div className="flex flex-col relative w-full justify-center items-center">
         <div className="flex flex-row fixed bottom-8 w-52 h-12">
           <button
-            className={`flex w-52 h-full bg-gradient-to-b  from-sky-400 to-cyan-400 rounded-3xl shadow-lg justify-center items-center ${
+            className={`flex w-52 h-full bg-gradient-to-b  from-sky-400 to-cyan-400 rounded shadow-lg justify-center items-center transition ease-linear duration-300 ${
               disableButton && "cursor-not-allowed"
-            } hover:from-sky-500 hover:to-cyan-500`}
+            } hover:scale-110 hover:from-sky-500 hover:to-cyan-500`}
             onClick={() => {
               if (cutStart + number_of_articles >= ArticlesData.length) {
                 setDisableButton(true);
