@@ -1,6 +1,6 @@
 import CardArticle from "./CardArticle";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type article_type = {
   img_path: string;
