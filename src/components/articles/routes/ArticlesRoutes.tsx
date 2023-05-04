@@ -3,6 +3,7 @@ import { ArticlesData } from "../ArticlesData";
 import ArticlePrototype from "../article/ArticlePrototype";
 import Articles from "../../../pages/Articles";
 import NotFound from "../../../pages/NotFound";
+import { useState } from "react";
 
 const ArticlesRoutes = function articlesRoutes() {
   return (

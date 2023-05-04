@@ -1,6 +1,5 @@
 import CardArticle from "./CardArticle";
 import { NavLink } from "react-router-dom";
-import { ArticlesData } from "./ArticlesData";
 import { useState } from "react";
 
 type article_type = {
@@ -15,14 +14,22 @@ type article_type = {
   img_credits: string;
 };
 
-const PagesCardsArticles = function pagesCardsArticles() {
-  const number_of_articles = 4;
-  const [cutStart, setCutStart] = useState(0);
-  const [cutEnd, setcutEnd] = useState(number_of_articles);
-  const [articles, setArticles] = useState(
-    ArticlesData.slice(cutStart, cutEnd)
+const PagesCardsArticles = function pagesCardsArticles({
+  articles_data,
+}: {
+  articles_data: article_type[];
+}) {
+  const articles_per_page = 4;
+  const [articles, setArticles] = useState<article_type[]>(
+    articles_data.slice(
+      0,
+      articles_data.length > articles_per_page
+        ? articles_per_page
+        : articles_data.length
+    )
   );
-
+  const [cutStart, setCutStart] = useState(0);
+  const [cutEnd, setcutEnd] = useState(articles_per_page);
   const [disableButton, setDisableButton] = useState(false);
 
   return (
@@ -55,18 +62,18 @@ const PagesCardsArticles = function pagesCardsArticles() {
               disableButton && "cursor-not-allowed"
             } hover:scale-110 hover:from-sky-500 hover:to-cyan-500`}
             onClick={() => {
-              if (cutStart + number_of_articles >= ArticlesData.length) {
+              if (cutStart + articles_per_page >= articles_data.length) {
                 setDisableButton(true);
               }
               setArticles((current) => [
                 ...current,
-                ...ArticlesData.slice(
-                  cutStart + number_of_articles,
-                  cutEnd + number_of_articles
+                ...articles_data.slice(
+                  cutStart + articles_per_page,
+                  cutEnd + articles_per_page
                 ),
               ]);
-              setCutStart((current) => current + number_of_articles);
-              setcutEnd((current) => current + number_of_articles);
+              setCutStart((current) => current + articles_per_page);
+              setcutEnd((current) => current + articles_per_page);
             }}
             disabled={disableButton}
           >

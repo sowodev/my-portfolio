@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import MultiSelectTags from "./MultiSelectTags";
 
 export interface Tag {
@@ -6,21 +6,45 @@ export interface Tag {
   name: string;
 }
 
-const Filters = function filters() {
+type article_type = {
+  img_path: string;
+  title: string;
+  leading: string;
+  content_path: string;
+  published_date: string;
+  updated_date: string;
+  tags: string[];
+  author: string;
+  img_credits: string;
+};
+
+const Filters = function filters({
+  articles,
+  setFilteredArticles,
+}: {
+  articles: article_type[];
+  setFilteredArticles: React.Dispatch<React.SetStateAction<article_type[]>>;
+}) {
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
 
   const handleTagSelection = (tags: Tag[]) => {
     setSelectedTags(tags);
-    console.log(tags);
+
+    const filtered_articles = articles.filter((article) => {
+      return tags.some((tag) => article.tags.includes(tag.name));
+    });
+
+    setFilteredArticles(filtered_articles);
   };
 
   const tags: Tag[] = [
-    { id: "1", name: "React" },
-    { id: "2", name: "TypeScript" },
-    { id: "3", name: "TailwindCSS" },
-    { id: "4", name: "JavaScript" },
-    { id: "5", name: "HTML" },
-    { id: "6", name: "CSS" },
+    { id: "1", name: "5g" },
+    { id: "2", name: "IoT" },
+    { id: "3", name: "AI" },
+    { id: "4", name: "Cloud" },
+    { id: "5", name: "BlockChain" },
+    { id: "6", name: "Cybersecurity" },
+    { id: "7", name: "Data" },
   ];
 
   return (
@@ -32,7 +56,7 @@ const Filters = function filters() {
               Filter by text:
             </p>
             <input
-              className="w-full h-[2.375rem] font-[Lexend] font-light border border-slate-300 rounded indent-2 focus:outline-none focus:outline-1 focus:outline-offset-0 focus:outline-blue-500 placeholder:text-slate-300 dark:placeholder:text-slate-500 dark:bg-slate-800 dark:hover:bg-slate-700 dark:border-slate-500 dark:text-slate-300"
+              className="w-full h-[2.375rem] font-[Lexend] font-light border border-slate-300 text-[#333333ce] rounded indent-2 focus:outline-none focus:outline-1 focus:outline-offset-0 focus:outline-blue-500 placeholder:text-slate-300 dark:placeholder:text-slate-500 dark:bg-slate-800 dark:hover:bg-slate-700 dark:border-slate-500 dark:text-slate-300"
               type="text"
               placeholder="Search"
             />

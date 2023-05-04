@@ -20,7 +20,7 @@ const CardArticle = function cardArticle({
   const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
-    <div className="flex flex-row w-full h-[9rem] ring-1 ring-[#d8d8d8] shadow-md rounded hover:bg-gray-100 dark:ring-slate-500 dark:hover:bg-slate-700">
+    <div className="flex flex-row w-full h-[9rem] ring-1 ring-[#d8d8d8] shadow-md rounded hover:bg-gray-100 dark:ring-slate-500 dark:hover:bg-slate-700 dark:shadow-slate-600">
       <div
         className={
           imgLoaded ? "h-full w-1/4" : "h-full w-1/4 bg-gray-300 animate-pulse"

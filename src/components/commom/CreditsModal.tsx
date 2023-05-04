@@ -45,7 +45,7 @@ const CreditsModal = function creditsModal() {
                   as="div"
                   className="flex flex-row w-full justify-between items-center font-[Lexend] text-lg font-medium leading-6 text-gray-900"
                 >
-                  <p className={`${dark && `text-slate-300`}`}> Credits!</p>
+                  <p className={`${dark && `text-white`}`}> Credits!</p>
                   <button
                     className="w-8 h-8 flex bg-gradient-to-b from-orange-300 to-amber-300 drop-shadow rounded justify-center items-center hover:from-orange-400 hover:to-amber-400 hover:scale-110 transition ease-linear duration-200"
                     onClick={() => set_credits.setOpenCredits(false)}

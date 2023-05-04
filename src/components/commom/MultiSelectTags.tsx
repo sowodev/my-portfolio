@@ -59,24 +59,26 @@ const MultiSelectTags: React.FC<Props> = ({ tags, selectedTags, onChange }) => {
         }),
         menu: (provided) => ({
           ...provided,
-          color: "#333333ce",
-          border: "1px solid #cbd5e1",
-          boxShadow: "none",
-          "&:hover": {
-            border: "1px solid #333333ce",
-          },
+          color: dark ? "#cbd5e1" : "#333333ce",
+          border: dark ? "1px solid #64748b" : "1px solid #cbd5e1",
+          backgroundColor: dark ? "#1e293b" : "#ffffff",
+          boxShadow: dark
+            ? "0px 5px 8px rgba(100, 116, 139, 0.5)"
+            : "0px 4px 8px rgba(0, 0, 0, 0.15)",
+          overflow: "hidden",
         }),
+        // 30, 41, 59,
         option: (provided, state) => ({
           ...provided,
-          color: state.isSelected ? "#333333ce" : "#333333ce",
-          backgroundColor: state.isSelected ? "#cbd5e1" : "#ffffff",
+          color: dark ? "#cbd5e1" : "#333333ce",
+          backgroundColor: dark ? "#1e293b" : "#ffffff",
           "&:hover": {
-            backgroundColor: "#cbd5e1",
+            backgroundColor: dark ? "#334155" : "#f3f4f6",
           },
         }),
         input: (provided) => ({
           ...provided,
-          color: "#cbd5e1",
+          color: dark ? "#cbd5e1" : "#333333ce",
         }),
         placeholder: (provided) => ({
           ...provided,
@@ -84,21 +86,30 @@ const MultiSelectTags: React.FC<Props> = ({ tags, selectedTags, onChange }) => {
         }),
         clearIndicator: (provided) => ({
           ...provided,
-          color: "#64748b",
+          color: dark ? "#64748b" : "#cbd5e1",
           "&:hover": {
-            color: "#64748b",
+            color: dark ? "#cbd5e1" : "#64748b",
           },
         }),
         dropdownIndicator: (provided) => ({
           ...provided,
-          color: "#64748b",
+          color: dark ? "#64748b" : "#cbd5e1",
           "&:hover": {
-            color: "#64748b",
+            color: dark ? "#cbd5e1" : "#64748b",
           },
         }),
         indicatorSeparator: (provided) => ({
           ...provided,
-          backgroundColor: "#64748b",
+          backgroundColor: dark ? "#64748b" : "#cbd5e1",
+        }),
+        noOptionsMessage: (provided) => ({
+          ...provided,
+          color: dark ? "#cbd5e1" : "#333333ce",
+        }),
+        multiValue: (provided) => ({
+          ...provided,
+          color: dark ? "#4b5563" : "#333333ce",
+          backgroundColor: dark ? "#cbd5e1" : "#e2e8f0",
         }),
       }}
     />

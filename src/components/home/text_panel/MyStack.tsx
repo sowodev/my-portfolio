@@ -8,7 +8,7 @@ const MyStack = function myStack() {
     <>
       <div className="w-full h-full px-6 py-2 overflow-y-auto">
         <div className="mt-4 prose prose-slate mx-auto">
-          <p className="lead indent-3 font-[Lexend] dark:text-slate-300">
+          <p className="lead indent-3 font-[Lexend] dark:text-white">
             This is the "MyStack" section, here I try to show the main tools,
             libraries and frameworks I have been using in my full stack web
             projects.

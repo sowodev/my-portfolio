@@ -67,7 +67,7 @@ const ArticlePrototype = function articlePrototype({
             <img src="/src/assets/imgs/user.svg" alt="" />
           </div>
           <div className="flex flex-col h-full w-fit">
-            <span className="text-base text-slate-700 w-fit dark:text-slate-300">
+            <span className="text-base text-slate-700 w-fit dark:text-white">
               {article.author}
             </span>
             <span className="w-fit dark:text-slate-300">

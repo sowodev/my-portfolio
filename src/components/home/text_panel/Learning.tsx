@@ -3,7 +3,7 @@ const Learning = function learning() {
     <>
       <div className="w-full h-full px-6 py-2 overflow-y-auto">
         <div className="mt-4 prose prose-slate mx-auto">
-          <p className="lead indent-3 font-[Lexend] dark:text-slate-300">
+          <p className="lead indent-3 font-[Lexend] dark:text-white">
             This is the "Learning" section, here I try to show what I want to
             learn or deepen my knowledge about it, in the near future.
           </p>

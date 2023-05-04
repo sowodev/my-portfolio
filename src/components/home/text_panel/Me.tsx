@@ -9,7 +9,7 @@ const Me = function me(): ReactElement {
     <>
       <div className="flex flex-col w-full h-full text-white px-6 py-2 justify-between overflow-y-auto">
         <div className="mt-4 prose prose-slate mx-auto">
-          <p className="lead indent-3 font-[Lexend] dark:text-slate-300">
+          <p className="lead indent-3 font-[Lexend] dark:text-white">
             This is the "Me" section, here you can find a brief description
             about myself.
           </p>

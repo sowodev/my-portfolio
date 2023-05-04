@@ -46,7 +46,7 @@ const ContactMeModal = function contactMeModal() {
                 <Dialog.Title
                   as="h4"
                   className={`font-[Lexend] text-lg font-medium leading-6 text-gray-900 ${
-                    dark && "text-slate-300"
+                    dark && "text-white"
                   }`}
                 >
                   Leave Me a Message!
