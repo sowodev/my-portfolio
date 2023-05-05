@@ -1,40 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import MultiSelectTags from "./MultiSelectTags";
-
-export interface Tag {
-  id: string;
-  name: string;
-}
-
-type article_type = {
-  img_path: string;
-  title: string;
-  leading: string;
-  content_path: string;
-  published_date: string;
-  updated_date: string;
-  tags: string[];
-  author: string;
-  img_credits: string;
-};
+import { ArticlesController, Tag } from "../../interfaces/ArticlesInterfaces";
 
 const Filters = function filters({
-  articles,
-  setFilteredArticles,
+  articles_controller,
 }: {
-  articles: article_type[];
-  setFilteredArticles: React.Dispatch<React.SetStateAction<article_type[]>>;
+  articles_controller: ArticlesController;
 }) {
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
 
   const handleTagSelection = (tags: Tag[]) => {
     setSelectedTags(tags);
-
-    const filtered_articles = articles.filter((article) => {
-      return tags.some((tag) => article.tags.includes(tag.name));
-    });
-
-    setFilteredArticles(filtered_articles);
+    articles_controller.filterArticlesByTag(tags);
   };
 
   const tags: Tag[] = [
@@ -59,6 +36,9 @@ const Filters = function filters({
               className="w-full h-[2.375rem] font-[Lexend] font-light border border-slate-300 text-[#333333ce] rounded indent-2 focus:outline-none focus:outline-1 focus:outline-offset-0 focus:outline-blue-500 placeholder:text-slate-300 dark:placeholder:text-slate-500 dark:bg-slate-800 dark:hover:bg-slate-700 dark:border-slate-500 dark:text-slate-300"
               type="text"
               placeholder="Search"
+              onChange={(e) => {
+                articles_controller.filterArticlesByText(e.target.value);
+              }}
             />
           </div>
           <div className="flex flex-col ml-4 gap-1 group">

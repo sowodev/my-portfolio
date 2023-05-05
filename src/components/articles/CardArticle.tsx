@@ -1,21 +1,12 @@
 import { useState } from "react";
 import TagsList from "./TagsList";
 import TextCard from "./TextCard";
+import { article_type } from "../../interfaces/ArticlesInterfaces";
 
 const CardArticle = function cardArticle({
   article,
 }: {
-  article: {
-    img_path: string;
-    title: string;
-    leading: string;
-    content_path: string;
-    published_date: string;
-    updated_date: string;
-    tags: string[];
-    author: string;
-    img_credits: string;
-  };
+  article: article_type;
 }) {
   const [imgLoaded, setImgLoaded] = useState(false);
 
@@ -30,7 +21,7 @@ const CardArticle = function cardArticle({
           className="h-full w-full rounded-l"
           src={article.img_path}
           alt="img"
-          onLoad={() => setImgLoaded((c) => !c)}
+          onLoad={() => setImgLoaded(true)}
         />
       </div>
       <div className="flex flex-col h-full w-3/4">
