@@ -1,13 +1,19 @@
 import Filters from "../components/commom/Filters";
 import PagesCardsArticles from "../components/articles/PagesCardsArticles";
-import { ArticlesData } from "../components/articles/ArticlesData";
-import { useState } from "react";
 import useArticlesController from "../hooks/useArticles/useArticlesController";
-import { ArticlesController } from "../interfaces/ArticlesInterfaces";
+import {
+  ArticlesController,
+  article_type,
+} from "../interfaces/ArticlesInterfaces";
 
-const Article = function articles() {
+const Article = function articles({
+  ArticlesData,
+}: {
+  ArticlesData: article_type[];
+}) {
   const articles_controller: ArticlesController =
     useArticlesController(ArticlesData);
+
   return (
     <div className="flex flex-row w-full h-full overflow-scroll scroll-smooth">
       <div className="flex h-full basis-1/4 justify-center">

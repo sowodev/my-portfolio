@@ -1,21 +1,12 @@
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
-
-type article_type = {
-  img_path: string;
-  title: string;
-  leading: string;
-  content_path: string;
-  published_date: string;
-  updated_date: string;
-  tags: string[];
-  author: string;
-  img_credits: string;
-};
+import { article_type } from "../../../interfaces/ArticlesInterfaces";
 
 const ArticlePrototype = function articlePrototype({
+  ArticlesData,
   article,
 }: {
+  ArticlesData: article_type[];
   article: article_type;
 }) {
   const [markdown_content, setMarkdownContent] = useState("");
@@ -81,7 +72,32 @@ const ArticlePrototype = function articlePrototype({
         <div className="prose prose-slate mx-auto pb-8 lg:prose-xl dark:prose-invert">
           <ReactMarkdown children={markdown_content} />
         </div>
-        <div className="flex w-full h-96 my-8 bg-white rounded"></div>
+        <div className="flex flex-col w-full h-72 my-8 rounded bg-slate-100 dark:bg-slate-700">
+          <div className="flex flex-row w-full basis-[15%] items-center border-l border-t border-r border-slate-300 dark:border-slate-500">
+            <span className="font-[Lexend] text-2xl indent-4 text-slate-500 dark:text-slate-300">
+              [Read Next]
+            </span>
+          </div>
+          <div className="flex flex-row w-full h-full border border-slate-300 justify-around items-center dark:border-slate-500">
+            <div className="flex flex-col w-[23%] h-full border-r border-slate-300 bg-white">
+              <div className="w-full h-1/2">
+                <img
+                  className="w-full h-full object-cover"
+                  src={ArticlesData[0].img_path}
+                  alt={ArticlesData[0].title}
+                />
+              </div>
+              <div className="w-full h-1/2 overflow-y-auto">
+                <span className="text-xs text-slate-700 font-[Lexend] font-light">
+                  {ArticlesData[0].title}
+                </span>
+              </div>
+            </div>
+            <div className="w-[23%] h-full border-r border-slate-300 bg-white"></div>
+            <div className="w-[23%] h-full border-r border-slate-300 bg-white"></div>
+            <div className="w-[23%] h-full bg-white"></div>
+          </div>
+        </div>
       </div>
       <div className="flex basis-[25%]"></div>
     </div>

@@ -7,7 +7,7 @@ import NotFound from "../../../pages/NotFound";
 const ArticlesRoutes = function articlesRoutes() {
   return (
     <Routes>
-      <Route index element={<Articles />} />
+      <Route index element={<Articles ArticlesData={ArticlesData} />} />
       {ArticlesData.map((article, index) => {
         const link: string = article.title
           .toLowerCase()
@@ -20,7 +20,9 @@ const ArticlesRoutes = function articlesRoutes() {
           <Route
             key={index}
             path={link}
-            element={<ArticlePrototype article={article} />}
+            element={
+              <ArticlePrototype ArticlesData={ArticlesData} article={article} />
+            }
           />
         );
       })}
