@@ -7,15 +7,21 @@ import {
 import { useState, useEffect } from "react";
 
 function useArticlesController(articles: article_type[]): ArticlesController {
-  const [filteredArticles, setFilteredArticles] = useState(articles);
+  const [filtered_articles, setFilteredArticles] = useState(articles);
   const [disabledBtn, setDisabledBtn] = useState(false);
   const [cutEnd, setCutEnd] = useState(4);
 
   function showingArticles(): article_type[] {
-    if (filteredArticles.length > 0) {
-      return filteredArticles.slice(0, cutEnd);
+    if (filtered_articles.length > 0) {
+      return filtered_articles.slice(
+        0,
+        filtered_articles.length < cutEnd ? filtered_articles.length : cutEnd
+      );
     } else {
-      return articles.slice(0, cutEnd);
+      return articles.slice(
+        0,
+        articles.length < cutEnd ? articles.length : cutEnd
+      );
     }
   }
 
@@ -36,8 +42,6 @@ function useArticlesController(articles: article_type[]): ArticlesController {
       return article.title.includes(text) || article.leading.includes(text);
     });
     setFilteredArticles(filtered);
-    /*     setCutEnd(4);
-    setDisabledBtn(false); */
   }
 
   function filterArticlesByTag(tags: Tag[]): void {
@@ -45,8 +49,6 @@ function useArticlesController(articles: article_type[]): ArticlesController {
       return tags.some((tag) => article.tags.includes(tag.name));
     });
     setFilteredArticles(filtered);
-    /*     setCutEnd(4);
-    setDisabledBtn(false); */
   }
 
   function getArticles(): article_type[] {
@@ -55,8 +57,6 @@ function useArticlesController(articles: article_type[]): ArticlesController {
 
   useEffect(() => {
     setFilteredArticles(articles);
-    /*     setDisabledBtn(false);
-    setCutEnd(4); */
   }, [articles]);
 
   return {

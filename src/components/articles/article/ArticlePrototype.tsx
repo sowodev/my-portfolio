@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { article_type } from "../../../interfaces/ArticlesInterfaces";
+import NextArticleCard from "./NextArticleCard";
 
 const ArticlePrototype = function articlePrototype({
   ArticlesData,
@@ -10,6 +11,13 @@ const ArticlePrototype = function articlePrototype({
   article: article_type;
 }) {
   const [markdown_content, setMarkdownContent] = useState("");
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [markdown_content]);
 
   fetch(article.content_path)
     .then((response) => {
@@ -27,10 +35,13 @@ const ArticlePrototype = function articlePrototype({
       console.error(`Error fetching markdown file: ${error.message}`);
     });
   return (
-    <div className="flex flex-row w-full h-full overflow-auto pt-12">
+    <div
+      className="flex flex-row w-full h-full overflow-scroll pt-12 "
+      ref={contentRef}
+    >
       <div className="flex basis-[25%]"></div>
       <div className="flex flex-col h-fit basis-[50%] gap-4" lang="pt-BR">
-        <h1 className="w-full text-5xl text-center font-[Lexend] text-slate-700 hyphens-auto dark:text-white">
+        <h1 className="w-full text-5xl text-center font-[Lexend] hyphens-auto dark:text-white">
           {article.title}
         </h1>
         <h3 className="w-full pt-2 text-lg text-center font-[Lexend] font-light text-slate-500 hyphens-auto dark:text-slate-300">
@@ -72,30 +83,17 @@ const ArticlePrototype = function articlePrototype({
         <div className="prose prose-slate mx-auto pb-8 lg:prose-xl dark:prose-invert">
           <ReactMarkdown children={markdown_content} />
         </div>
-        <div className="flex flex-col w-full h-72 my-8 rounded bg-slate-100 dark:bg-slate-700">
-          <div className="flex flex-row w-full basis-[15%] items-center border-l border-t border-r border-slate-300 dark:border-slate-500">
+        <div className="flex flex-col w-full h-80 my-8 rounded bg-slate-100 dark:bg-slate-800">
+          <div className="flex flex-row w-full basis-[15%] items-center rounded-t border-l border-t border-r border-slate-300 dark:border-slate-500">
             <span className="font-[Lexend] text-2xl indent-4 text-slate-500 dark:text-slate-300">
               [Read Next]
             </span>
           </div>
-          <div className="flex flex-row w-full h-full border border-slate-300 justify-around items-center dark:border-slate-500">
-            <div className="flex flex-col w-[23%] h-full border-r border-slate-300 bg-white">
-              <div className="w-full h-1/2">
-                <img
-                  className="w-full h-full object-cover"
-                  src={ArticlesData[0].img_path}
-                  alt={ArticlesData[0].title}
-                />
-              </div>
-              <div className="w-full h-1/2 overflow-y-auto">
-                <span className="text-xs text-slate-700 font-[Lexend] font-light">
-                  {ArticlesData[0].title}
-                </span>
-              </div>
-            </div>
-            <div className="w-[23%] h-full border-r border-slate-300 bg-white"></div>
-            <div className="w-[23%] h-full border-r border-slate-300 bg-white"></div>
-            <div className="w-[23%] h-full bg-white"></div>
+          <div className="flex flex-row w-full h-full border border-slate-300 rounded-b justify-around items-center dark:border-slate-500">
+            <NextArticleCard article={ArticlesData[1]} />
+            <NextArticleCard article={ArticlesData[2]} />
+            <NextArticleCard article={ArticlesData[3]} />
+            <NextArticleCard article={ArticlesData[4]} />
           </div>
         </div>
       </div>

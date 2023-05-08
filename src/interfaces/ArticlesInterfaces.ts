@@ -1,5 +1,3 @@
-import React from "react";
-
 export type article_type = {
   img_path: string;
   title: string;

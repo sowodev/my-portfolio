@@ -16,7 +16,7 @@ export const ArticlesData = [
     title: "Entenda o que é blockchain de uma vez por todas (2)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    content_path: "/src/components/articles/markdowns/ia.md",
+    content_path: "/src/components/articles/markdowns/5g.md",
     published_date: "03/29/2023",
     updated_date: "03/29/2023",
     tags: ["Cloud", "Blockchain", "Cybersecurity"],
@@ -28,7 +28,7 @@ export const ArticlesData = [
     title: "Web 3.0 desafios e oportunidades (3)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    content_path: "/src/components/articles/markdowns/ia.md",
+    content_path: "/src/components/articles/markdowns/LLM.md",
     published_date: "03/29/2023",
     updated_date: "03/29/2023",
     tags: ["5g", "Cloud", "Cybersecurity"],
@@ -40,7 +40,7 @@ export const ArticlesData = [
     title: "O futuro das cryptos nunca mais será o mesmo (4)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    content_path: "/src/components/articles/markdowns/ia.md",
+    content_path: "/src/components/articles/markdowns/cybersecurity.md",
     published_date: "03/29/2023",
     updated_date: "03/29/2023",
     tags: ["AI", "Cybersecurity", "Data"],
@@ -64,7 +64,7 @@ export const ArticlesData = [
     title: "Entenda o que é blockchain de uma vez por todas (6)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    content_path: "/src/components/articles/markdowns/ia.md",
+    content_path: "/src/components/articles/markdowns/5g.md",
     published_date: "03/29/2023",
     updated_date: "03/29/2023",
     tags: ["Cloud", "Blockchain", "Cybersecurity"],
@@ -76,7 +76,7 @@ export const ArticlesData = [
     title: "Web 3.0 desafios e oportunidades (7)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    content_path: "/src/components/articles/markdowns/ia.md",
+    content_path: "/src/components/articles/markdowns/LLM.md",
     published_date: "03/29/2023",
     updated_date: "03/29/2023",
     tags: ["5g", "Cloud", "Cybersecurity"],
@@ -88,7 +88,7 @@ export const ArticlesData = [
     title: "O futuro das cryptos nunca mais será o mesmo (8)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    content_path: "/src/components/articles/markdowns/ia.md",
+    content_path: "/src/components/articles/markdowns/cybersecurity.md",
     published_date: "03/29/2023",
     updated_date: "03/29/2023",
     tags: ["AI", "Cybersecurity", "Data"],
@@ -112,7 +112,7 @@ export const ArticlesData = [
     title: "Entenda o que é blockchain de uma vez por todas (10)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    content_path: "/src/components/articles/markdowns/ia.md",
+    content_path: "/src/components/articles/markdowns/5g.md",
     published_date: "03/29/2023",
     updated_date: "03/29/2023",
     tags: ["Cloud", "Blockchain", "Cybersecurity"],
@@ -124,7 +124,7 @@ export const ArticlesData = [
     title: "Web 3.0 desafios e oportunidades (11)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    content_path: "/src/components/articles/markdowns/ia.md",
+    content_path: "/src/components/articles/markdowns/LLM.md",
     published_date: "03/29/2023",
     updated_date: "03/29/2023",
     tags: ["5g", "Cloud", "Cybersecurity"],
@@ -136,7 +136,7 @@ export const ArticlesData = [
     title: "O futuro das cryptos nunca mais será o mesmo (12)",
     leading:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    content_path: "/src/components/articles/markdowns/ia.md",
+    content_path: "/src/components/articles/markdowns/cybersecurity.md",
     published_date: "03/29/2023",
     updated_date: "03/29/2023",
     tags: ["AI", "Cybersecurity", "Data"],
