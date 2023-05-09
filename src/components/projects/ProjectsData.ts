@@ -11,7 +11,7 @@ export const ProjectsData: Project[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies tincidunt, nunc nisl ultricies nisl, nec ult",
     image: "https://picsum.photos/264/160",
-    tags: ["React", "TypeScript", "JavaScript"],
+    tags: ["React", "TypeScriptabc", "JavaScript"],
   },
   {
     title: "Tasks Manager (2)",

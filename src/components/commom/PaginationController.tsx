@@ -1,4 +1,8 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  EllipsisHorizontalIcon,
+} from "@heroicons/react/24/outline";
 import React, { useState, ReactElement } from "react";
 
 // The code was Writen by Sowodin (Wendell Oliveira).
@@ -31,18 +35,18 @@ const PaginationBtn: React.FC<BtnProps> = ({
     ? chevron_direction === "left"
       ? `flex h-8 w-10 rounded justify-center items-center ${
           current_page === 1
-            ? "bg-gray-200 cursor-not-allowed"
-            : "hover:bg-gray-100"
+            ? "bg-slate-200 cursor-not-allowed dark:bg-slate-500"
+            : "hover:bg-slate-100 dark:hover:bg-slate-700"
         }`
       : `flex h-8 w-10 rounded justify-center items-center ${
           current_page === total_pages
-            ? "bg-gray-200 cursor-not-allowed"
-            : "hover:bg-gray-100"
+            ? "bg-gray-200 cursor-not-allowed dark:bg-slate-500"
+            : "hover:bg-gray-100 dark:hover:bg-slate-700"
         }`
     : `flex h-8 w-10 font-[Lexend] font-light text-sm rounded justify-center items-center ${
         current_page === page_number
-          ? "bg-gradient-to-b from-sky-300 to-cyan-300 text-white cursor-not-allowed"
-          : "hover:bg-gray-100"
+          ? "bg-gradient-to-b from-sky-300 to-cyan-300 text-white cursor-not-allowed dark:text-slate-800 dark:from-sky-400 dark:to-cyan-400"
+          : "hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-700"
       }`;
 
   return (
@@ -52,7 +56,7 @@ const PaginationBtn: React.FC<BtnProps> = ({
       (page_number === total_pages - 1 &&
         current_page < total_pages - 3 &&
         total_pages > 7) ? (
-        <img className="h-8 w-10" src="/src/assets/imgs/dots.svg" alt="dots" />
+        <EllipsisHorizontalIcon className="h-8 w-10 stroke-slate-300 dark:stroke-slate-500" />
       ) : (
         <button
           className={name_of_class}
@@ -143,7 +147,7 @@ const PaginationController: React.FC<Props> = ({
         current_page={current_page}
         total_pages={total_pages}
         icon={
-          <ChevronLeftIcon className="h-5 w-5 stroke-[#333333ce] pointer-events-none" />
+          <ChevronLeftIcon className="h-5 w-5 stroke-[#333333ce] pointer-events-none dark:stroke-slate-300" />
         }
         chevron_direction="left"
         handlePageChange={handlePageChange}
@@ -166,7 +170,7 @@ const PaginationController: React.FC<Props> = ({
         current_page={current_page}
         total_pages={total_pages}
         icon={
-          <ChevronRightIcon className="h-5 w-5 stroke-[#333333ce] pointer-events-none" />
+          <ChevronRightIcon className="h-5 w-5 stroke-[#333333ce] pointer-events-none dark:stroke-slate-300" />
         }
         chevron_direction="right"
         handlePageChange={handlePageChange}

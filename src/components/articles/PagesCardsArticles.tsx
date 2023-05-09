@@ -19,11 +19,9 @@ const PagesCardsArticles = function pagesCardsArticles({
             .trim()
             .replaceAll(" ", "-");
         return (
-          <div className="flex w-[85%] snap-center">
-            <NavLink key={index} to={link} className="w-full ">
-              <CardArticle article={article} />
-            </NavLink>
-          </div>
+          <NavLink key={index} to={link} className="flex w-[85%] snap-center">
+            <CardArticle article={article} />
+          </NavLink>
         );
       })}
       <div className="flex flex-col relative w-full justify-center items-center">
