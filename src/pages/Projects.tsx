@@ -1,18 +1,19 @@
-import { ArticlesData } from "../components/articles/ArticlesData";
+import { ProjectsData } from "../components/projects/ProjectsData";
+import { ProjectType } from "../interfaces/MultiCardsIntetrfaces";
 import Filters from "../components/commom/Filters";
 import CardsPagesProjects from "../components/projects/cards-pages/CardsPagesProjects";
-import useArticlesController from "../hooks/useArticles/useArticlesController";
+import useProjectsController from "../hooks/useProjects/useProjectsController";
 
 const Projects = function projects() {
-  const articles_controller = useArticlesController(ArticlesData);
+  const projects_controller = useProjectsController(ProjectsData);
 
   return (
     <div className="flex flex-row h-full w-full">
       <div className="flex relative h-full basis-1/4 justify-center">
-        <Filters articles_controller={articles_controller} />
+        <Filters multi_card_controller={projects_controller} />
       </div>
-      <div className="grid h-full basis-3/4 justify-start content-center">
-        <CardsPagesProjects />
+      <div className="flex h-full basis-3/4 justify-start items-center">
+        <CardsPagesProjects projects_controller={projects_controller} />
       </div>
     </div>
   );

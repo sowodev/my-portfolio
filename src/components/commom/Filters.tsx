@@ -1,17 +1,21 @@
 import { useState } from "react";
 import MultiSelectTags from "./MultiSelectTags";
-import { ArticlesController, Tag } from "../../interfaces/ArticlesInterfaces";
+import {
+  ArticlesController,
+  ProjectsController,
+  Tag,
+} from "../../interfaces/MultiCardsIntetrfaces";
 
 const Filters = function filters({
-  articles_controller,
+  multi_card_controller,
 }: {
-  articles_controller: ArticlesController;
+  multi_card_controller: ArticlesController | ProjectsController;
 }) {
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
 
   const handleTagSelection = (tags: Tag[]) => {
     setSelectedTags(tags);
-    articles_controller.filterArticlesByTag(tags);
+    multi_card_controller.filterMultiCardsByTag(tags);
   };
 
   const tags: Tag[] = [
@@ -37,7 +41,7 @@ const Filters = function filters({
               type="text"
               placeholder="Search"
               onChange={(e) => {
-                articles_controller.filterArticlesByText(e.target.value);
+                multi_card_controller.filterMultiCardsByText(e.target.value);
               }}
             />
           </div>

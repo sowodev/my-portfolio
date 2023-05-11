@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { article_type } from "../../../interfaces/ArticlesInterfaces";
+import { article_type } from "../../../interfaces/MultiCardsIntetrfaces";
 import NextArticleCard from "./NextArticleCard";
 
 const ArticlePrototype = function articlePrototype({

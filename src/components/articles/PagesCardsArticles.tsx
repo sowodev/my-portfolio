@@ -1,6 +1,6 @@
 import CardArticle from "./CardArticle";
 import { NavLink } from "react-router-dom";
-import { ArticlesController } from "../../interfaces/ArticlesInterfaces";
+import { ArticlesController } from "../../interfaces/MultiCardsIntetrfaces";
 
 const PagesCardsArticles = function pagesCardsArticles({
   articles_controller,

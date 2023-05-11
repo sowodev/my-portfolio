@@ -1,17 +1,17 @@
 import {
   ArticlesController,
-  article_type,
+  ArticleType,
   Tag,
-} from "../../interfaces/ArticlesInterfaces";
+} from "../../interfaces/MultiCardsIntetrfaces";
 
 import { useState, useEffect } from "react";
 
-function useArticlesController(articles: article_type[]): ArticlesController {
+function useArticlesController(articles: ArticleType[]): ArticlesController {
   const [filtered_articles, setFilteredArticles] = useState(articles);
-  const [disabledBtn, setDisabledBtn] = useState(false);
+  const [disabled_btn, setDisabledBtn] = useState(false);
   const [cutEnd, setCutEnd] = useState(4);
 
-  function showingArticles(): article_type[] {
+  function showingArticles(): ArticleType[] {
     if (filtered_articles.length > 0) {
       return filtered_articles.slice(
         0,
@@ -34,24 +34,24 @@ function useArticlesController(articles: article_type[]): ArticlesController {
   }
 
   function checkDisabledBtn(): boolean {
-    return disabledBtn;
+    return disabled_btn;
   }
 
-  function filterArticlesByText(text: string): void {
+  function filterMultiCardsByText(text: string): void {
     const filtered = articles.filter((article) => {
       return article.title.includes(text) || article.leading.includes(text);
     });
     setFilteredArticles(filtered);
   }
 
-  function filterArticlesByTag(tags: Tag[]): void {
+  function filterMultiCardsByTag(tags: Tag[]): void {
     const filtered = articles.filter((article) => {
       return tags.some((tag) => article.tags.includes(tag.name));
     });
     setFilteredArticles(filtered);
   }
 
-  function getArticles(): article_type[] {
+  function getArticles(): ArticleType[] {
     return articles;
   }
 
@@ -63,8 +63,8 @@ function useArticlesController(articles: article_type[]): ArticlesController {
     showingArticles,
     addMoreArticles,
     checkDisabledBtn,
-    filterArticlesByText,
-    filterArticlesByTag,
+    filterMultiCardsByText,
+    filterMultiCardsByTag,
     getArticles,
   };
 }

@@ -1,17 +1,12 @@
-export type Project = {
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-};
+import { ProjectType } from "../../interfaces/MultiCardsIntetrfaces";
 
-export const ProjectsData: Project[] = [
+export const ProjectsData: ProjectType[] = [
   {
     title: "Countdown Timer (1)",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies tincidunt, nunc nisl ultricies nisl, nec ult",
     image: "https://picsum.photos/264/160",
-    tags: ["React", "TypeScriptabc", "JavaScript"],
+    tags: ["5g", "TypeScriptabc", "JavaScript"],
   },
   {
     title: "Tasks Manager (2)",
@@ -25,7 +20,7 @@ export const ProjectsData: Project[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies tincidunt, nunc nisl ultricies nisl, nec ult",
     image: "https://picsum.photos/264/160",
-    tags: ["React", "TypeScript", "JavaScript"],
+    tags: ["React", "5g", "JavaScript"],
   },
   {
     title: "Notes Manager (4)",
@@ -39,7 +34,7 @@ export const ProjectsData: Project[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies tincidunt, nunc nisl ultricies nisl, nec ult",
     image: "https://picsum.photos/264/160",
-    tags: ["React", "TypeScript", "JavaScript"],
+    tags: ["React", "TypeScript", "5g"],
   },
   {
     title: "Goals (6)",
@@ -53,7 +48,7 @@ export const ProjectsData: Project[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies tincidunt, nunc nisl ultricies nisl, nec ult",
     image: "https://picsum.photos/264/160",
-    tags: ["React", "TypeScript", "JavaScript"],
+    tags: ["5g", "TypeScript", "JavaScript"],
   },
   {
     title: "Youtube Video Downloader and mp3 Converter (8)",
@@ -67,7 +62,7 @@ export const ProjectsData: Project[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies tincidunt, nunc nisl ultricies nisl, nec ult",
     image: "https://picsum.photos/264/160",
-    tags: ["React", "TypeScript", "JavaScript"],
+    tags: ["React", "TypeScript", "5g"],
   },
   {
     title: "Tasks Manager (10)",
