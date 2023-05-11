@@ -1,6 +1,6 @@
 import { ProjectsData } from "../components/projects/ProjectsData";
 import { ProjectType } from "../interfaces/MultiCardsIntetrfaces";
-import Filters from "../components/commom/Filters";
+import Filters from "../components/commom/filters/Filters";
 import CardsPagesProjects from "../components/projects/cards-pages/CardsPagesProjects";
 import useProjectsController from "../hooks/useProjects/useProjectsController";
 

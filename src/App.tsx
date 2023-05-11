@@ -9,7 +9,7 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Test from "./pages/Test";
 import MarqueeTicker from "./components/marquee/MarqueeTicker";
-import ContactMeModal from "./components/commom/ContactMeModal";
+import ContactMeModal from "./components/commom/contact-modal/ContactMeModal";
 import {
   CreditsType,
   DarkType,

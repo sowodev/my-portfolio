@@ -39,7 +39,10 @@ function useArticlesController(articles: ArticleType[]): ArticlesController {
 
   function filterMultiCardsByText(text: string): void {
     const filtered = articles.filter((article) => {
-      return article.title.includes(text) || article.leading.includes(text);
+      return (
+        article.title.toLowerCase().includes(text) ||
+        article.leading.toLowerCase().includes(text)
+      );
     });
     setFilteredArticles(filtered);
   }

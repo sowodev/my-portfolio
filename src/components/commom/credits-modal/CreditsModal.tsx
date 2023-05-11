@@ -1,6 +1,6 @@
 import { Fragment, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { GlobalContext } from "./context/GlobalContext";
+import { GlobalContext } from "../context/GlobalContext";
 
 const CreditsModal = function creditsModal() {
   const { set_credits, set_dark } = useContext(GlobalContext);

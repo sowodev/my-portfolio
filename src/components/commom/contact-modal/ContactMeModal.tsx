@@ -1,6 +1,6 @@
 import { Fragment, useContext, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { GlobalContext } from "./context/GlobalContext";
+import { GlobalContext } from "../context/GlobalContext";
 
 const ContactMeModal = function contactMeModal() {
   const { set_dialog, set_dark } = useContext(GlobalContext);

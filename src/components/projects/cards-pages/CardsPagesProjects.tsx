@@ -1,7 +1,6 @@
 import CardProject from "./CardProject";
 import { NavLink } from "react-router-dom";
-import PaginationController from "../../commom/PaginationController";
-import { useState } from "react";
+import PaginationController from "../../commom/pagination-controller/PaginationController";
 import {
   ProjectType,
   ProjectsController,
@@ -12,15 +11,13 @@ const CardsPagesProjects = function cardsPagesProjects({
 }: {
   projects_controller: ProjectsController;
 }) {
-  const [current_page, setCurrentPage] = useState<number>(1);
-
   return (
     <div className="flex flex-col w-[72rem] h-full py-6 gap-4">
       <div className="w-full h-full">
         {projects_controller.getFilteredProjectsLenght() > 0 ? (
           <div className="grid grid-cols-4 grid-rows-2 gap-8 w-full h-full">
             {projects_controller
-              .showingProjects(current_page - 1)
+              .showingProjects(projects_controller.getCurrentPage() - 1)
               .map((project, index) => {
                 const link: string = project.title
                   .toLowerCase()
@@ -45,11 +42,7 @@ const CardsPagesProjects = function cardsPagesProjects({
         )}
       </div>
       <div>
-        <PaginationController
-          current_page={current_page}
-          total_pages={projects_controller.getTotalPages()}
-          setCurrentPage={setCurrentPage}
-        />
+        <PaginationController projects_controller={projects_controller} />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Select from "react-select";
-import { GlobalContext } from "./context/GlobalContext";
+import { GlobalContext } from "../context/GlobalContext";
 
 export interface Tag {
   id: string;

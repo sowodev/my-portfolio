@@ -25,6 +25,15 @@ function useProjectsController(
   const [total_pages, setTotalPages] = useState<number>(
     filtered_projects.length
   );
+  const [current_page, setCurrentPage] = useState<number>(1);
+
+  function getCurrentPage(): number {
+    return current_page;
+  }
+
+  function setCurrentPageState(page: number): void {
+    setCurrentPage(page);
+  }
 
   function getTotalPages(): number {
     return total_pages;
@@ -32,6 +41,10 @@ function useProjectsController(
 
   function getFilteredProjectsLenght(): number {
     return filtered_projects.length;
+  }
+
+  function pageChangeHandler(hadlePageChanges: (page: number) => void): void {
+    hadlePageChanges(current_page);
   }
 
   function showingProjects(page: number): ProjectType[] {
@@ -44,7 +57,10 @@ function useProjectsController(
 
   function filterMultiCardsByText(text: string): void {
     const filtered = projects_data.filter((project) => {
-      return project.title.includes(text) || project.description.includes(text);
+      return (
+        project.title.toLowerCase().includes(text.toLowerCase()) ||
+        project.description.toLowerCase().includes(text.toLowerCase())
+      );
     });
 
     if (text === "") {
@@ -54,9 +70,9 @@ function useProjectsController(
     }
 
     setTotalPages(
-      filtered.length > 0
-        ? Math.ceil(filtered.length / 8)
-        : Math.ceil(projects_data.length / 8)
+      text === ""
+        ? Math.ceil(projects_data.length / 8)
+        : Math.ceil(filtered.length / 8)
     );
   }
 
@@ -72,15 +88,18 @@ function useProjectsController(
     }
 
     setTotalPages(
-      filtered.length > 0
-        ? Math.ceil(filtered.length / 8)
-        : Math.ceil(projects_data.length / 8)
+      tags.length === 0
+        ? Math.ceil(projects_data.length / 8)
+        : Math.ceil(filtered.length / 8)
     );
   }
 
   return {
+    getCurrentPage,
+    setCurrentPageState,
     getTotalPages,
     getFilteredProjectsLenght,
+    pageChangeHandler,
     showingProjects,
     filterMultiCardsByText,
     filterMultiCardsByTag,

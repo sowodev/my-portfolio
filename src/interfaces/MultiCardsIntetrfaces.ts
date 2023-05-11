@@ -32,8 +32,11 @@ export interface ArticlesController {
 }
 
 export interface ProjectsController {
+  getCurrentPage: () => number;
+  setCurrentPageState: (page: number) => void;
   getTotalPages: () => number;
   getFilteredProjectsLenght: () => number;
+  pageChangeHandler: (hadlePageChanges: (page: number) => void) => void;
   showingProjects: (page: number) => ProjectType[];
   filterMultiCardsByText: (text: string) => void;
   filterMultiCardsByTag: (tags: Tag[]) => void;

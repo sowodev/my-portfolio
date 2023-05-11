@@ -1,4 +1,4 @@
-import Filters from "../components/commom/Filters";
+import Filters from "../components/commom/filters/Filters";
 import PagesCardsArticles from "../components/articles/PagesCardsArticles";
 import useArticlesController from "../hooks/useArticles/useArticlesController";
 import {

@@ -2,7 +2,7 @@ import Chest from "../components/home/Chest";
 import TextPanel from "../components/home/TextPanel";
 import { HomeContext } from "../components/home/HomeContext";
 import { useContext, useState } from "react";
-import CreditsModal from "../components/commom/CreditsModal";
+import CreditsModal from "../components/commom/credits-modal/CreditsModal";
 import { GlobalContext } from "../components/commom/context/GlobalContext";
 
 const Home = function home() {
