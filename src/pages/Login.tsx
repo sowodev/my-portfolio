@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Login = function loginPage() {
   return (
     <div className="flex w-full h-full justify-center mt-20">
@@ -22,10 +24,12 @@ const Login = function loginPage() {
               </label>
               <input
                 className="flex w-[90%] h-[2rem] font-[Lexend] text-[#333333ce] border-b border-slate-300 indent-2 placeholder:font-[Lexend] placeholder:text-gray-200 focus:outline-none focus:border-sky-400 dark:bg-slate-800 dark:placeholder-slate-700 dark:text-slate-300 dark:border-slate-600 dark:focus:border-sky-500"
-                type="text"
+                type="email"
                 name="username"
                 id="username"
                 placeholder="Enter your email"
+                pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
+                required
               />
             </div>
             <div className="flex flex-col w-full items-center">
@@ -41,6 +45,7 @@ const Login = function loginPage() {
                 name="password"
                 id="password"
                 placeholder="Enter your password"
+                required
               />
             </div>
             <div className="flex flex-row w-[90%] justify-between">
@@ -64,7 +69,7 @@ const Login = function loginPage() {
               </a>
             </div>
             <button
-              className="flex bg-gradient-to-b from-sky-400 to-cyan-400 w-[90%] h-[3rem] font-[Lexend] text-white rounded indent-2 justify-center items-center hover:from-sky-500 hover:to-cyan-500"
+              className="flex bg-gradient-to-b from-sky-400 to-cyan-400 w-[90%] h-[3rem] font-[Lexend] text-white rounded indent-2 justify-center items-center transition ease-linear duration-200 hover:scale-105 hover:from-sky-500 hover:to-cyan-500"
               type="submit"
             >
               LOGIN
@@ -95,12 +100,12 @@ const Login = function loginPage() {
           </button>
           <span className="font-[Lexend] font-light text-sm dark:text-slate-200">
             New here?{" "}
-            <a
-              href="#"
+            <NavLink
+              to="/signup"
               className="font-[Lexend] font-light text-sm text-sky-400 hover:text-sky-600"
             >
               Sign Up!
-            </a>
+            </NavLink>
           </span>
         </div>
       </div>
