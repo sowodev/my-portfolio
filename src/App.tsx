@@ -18,7 +18,8 @@ import {
 } from "./components/commom/context/GlobalContext";
 import { useState } from "react";
 import DarkModeBtn from "./components/global-btns/DarkModeBtn";
-import SignUp from "./pages/signup";
+import SignUp from "./pages/SignUp";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   const [open_dialog, setOpenDialog] = useState(false);
@@ -43,6 +44,7 @@ function App() {
             <Route path="/projects/*" element={<ProjectsRoutes />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/test" element={<Test />} />
           </Routes>

@@ -61,12 +61,12 @@ const Login = function loginPage() {
                   </span>
                 </label>
               </div>
-              <a
-                href="#"
+              <NavLink
+                to={"/forgot-password"}
                 className="font-[Lexend] font-light text-sm text-slate-400 hover:text-sky-400 dark:text-slate-200 dark:hover:text-sky-500"
               >
                 Forgot password?
-              </a>
+              </NavLink>
             </div>
             <button
               className="flex bg-gradient-to-b from-sky-400 to-cyan-400 w-[90%] h-[3rem] font-[Lexend] text-white rounded indent-2 justify-center items-center transition ease-linear duration-200 hover:scale-105 hover:from-sky-500 hover:to-cyan-500"
@@ -78,7 +78,7 @@ const Login = function loginPage() {
         </div>
         <div className="flex flex-row w-full my-6 items-center justify-center">
           <hr className="basis-2/5 dark:border-slate-700" />
-          <span className="font-[Lexend] font-extralight text-sm mx-3 text-slate-300 dark:text-slate-700">
+          <span className="font-[Lexend] font-extralight text-sm mx-3 text-slate-300 dark:text-slate-600">
             OR
           </span>
           <hr className="basis-2/5 dark:border-slate-700" />
