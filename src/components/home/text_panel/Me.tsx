@@ -19,15 +19,16 @@ const Me = function me(): ReactElement {
           <hr className="my-4 dark:border-slate-500" />
           <p className="indent-5 font-[Lexend] font-light dark:text-slate-300">
             Hi there, my name is Wendell, I am a brazilian Software Engineer
-            based in São José dos Campos - São Paulo. Currently working with
-            Full Stack Software Development. I am a passionate about computers
-            and technology, so I got a Science and Technology degree with focus
-            on Computer Science at the Federal University of São Paulo, also
-            aquired a little bit of international experience by living in New
-            Zealed for about one year (where I could improve my english). I am
-            guided by developing secure, robust, reliable and scalable systems.
-            I am looking foward to contribute to an international company where
-            I can improve my skills and learn new ones.
+            based in São José dos Campos - São Paulo. With over 3 years of
+            experience as Full Stack Software Developer. I am a passionate about
+            computers and technology, so I got a Science and Technology degree
+            with focus on Computer Science at the Federal University of São
+            Paulo, also aquired a little bit of international experience by
+            living in New Zealed for about one year (where I could improve my
+            english). I am guided by developing secure, robust, reliable and
+            scalable systems. I am looking foward to contribute to an
+            international company where I can improve my skills and learn new
+            ones.
           </p>
         </div>
         <div className="flex flex-row w-full gap-8 text-gray-600 justify-end pb-4">

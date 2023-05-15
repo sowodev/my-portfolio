@@ -5,7 +5,7 @@ import TextCardProjects from "./TextCardProjects";
 type Project = {
   title: string;
   description: string;
-  image: string;
+  img_path: string;
   tags: string[];
 };
 
@@ -23,7 +23,7 @@ const CardProject = function cardProject({ project }: { project: Project }) {
       >
         <img
           className="rounded-t"
-          src={project.image}
+          src={project.img_path}
           alt="img"
           onLoad={() => setImgLoaded(true)}
         />

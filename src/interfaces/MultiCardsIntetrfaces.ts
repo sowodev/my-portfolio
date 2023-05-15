@@ -13,7 +13,7 @@ export type ArticleType = {
 export type ProjectType = {
   title: string;
   description: string;
-  image: string;
+  img_path: string;
   tags: string[];
 };
 
