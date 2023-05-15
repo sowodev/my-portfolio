@@ -17,7 +17,7 @@ const TextPanel = function textPanel() {
   }
 
   return (
-    <div className="flex flex-col w-3/4 h-4/5 mt-16 bg-gradient-to-tl from-[#45bff8] to-[#328bf0] shadow-lg ring-1 ring-slate-900/5 justify-center items-center rounded-lg ">
+    <div className="flex flex-col w-3/4 h-4/5 mt-16 bg-gradient-to-tl from-blue-400  to-sky-400 shadow-lg shadow-sky-300 ring-1 ring-slate-900/5 justify-center items-center rounded-lg dark:from-sky-700 dark:to-blue-950 dark:shadow-sky-800">
       <div className="flex w-full h-[10%] justify-center items-center">
         <div className="flex flex-row w-[80%] h-[80%] bg-[#ffffff3f] border border-[#f5f5f538] rounded-lg justify-center items-center gap-4">
           <div
@@ -57,9 +57,7 @@ const TextPanel = function textPanel() {
           </div>
         </div>
       </div>
-      <div className="w-[95%] h-[85%] bg-white rounded-lg dark:bg-slate-700 transition ease-linear duration-300">
-        {component_to_show}
-      </div>
+      <div className="w-[95%] h-[85%] rounded-lg">{component_to_show}</div>
     </div>
   );
 };

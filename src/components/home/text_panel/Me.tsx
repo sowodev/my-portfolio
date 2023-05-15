@@ -9,14 +9,14 @@ const Me = function me(): ReactElement {
     <>
       <div className="flex flex-col w-full h-full text-white px-6 py-2 justify-between overflow-y-auto">
         <div className="mt-4 prose prose-slate mx-auto">
-          <p className="lead indent-3 font-[Lexend] dark:text-white">
+          <p className="lead indent-3 text-black font-[Lexend] dark:text-white">
             This is the "Me" section, here you can find a brief description
             about myself.
           </p>
-          <div className="text-sm text-slate-500 font-[Lexend] font-extralight dark:text-slate-300">
+          <div className="text-sm font-[Lexend] font-extralight dark:text-slate-300">
             last update: 03/26/2023
           </div>
-          <hr className="my-4 dark:border-slate-500" />
+          <hr className="my-4 border-white dark:border-slate-500" />
           <p className="indent-5 font-[Lexend] font-light dark:text-slate-300">
             Hi there, my name is Wendell, I am a brazilian Software Engineer
             based in São José dos Campos - São Paulo. With over 3 years of
@@ -33,7 +33,7 @@ const Me = function me(): ReactElement {
         </div>
         <div className="flex flex-row w-full gap-8 text-gray-600 justify-end pb-4">
           <a
-            className="flex flex-row gap-3 h-12 ring-1 ring-gray-300 rounded justify-center items-center hover:bg-gray-300 hover:shadow-lg hover:scale-110 ease-in-out duration-300 dark:hover:bg-slate-600"
+            className="flex flex-row gap-3 h-12 ring-1 ring-gray-100 rounded justify-center items-center hover:bg-gray-100 hover:shadow-lg hover:scale-110 ease-in-out duration-300 dark:hover:bg-slate-600"
             href="https://www.github.com/sowodin"
             target="_blank"
             rel="noopener noreferrer"

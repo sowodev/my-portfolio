@@ -13,7 +13,7 @@ const Learning = function learning() {
           <hr className="my-4 dark:border-slate-500" />
           <ul className="font-[Lexend] dark:text-slate-300">
             <li>NextJS</li>
-            <li>GraphQL</li>
+            <li>tRPC</li>
             <li>NoSQL</li>
             <li>Search Engine Optimization</li>
             <li>Test Driven Development</li>

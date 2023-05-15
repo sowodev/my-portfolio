@@ -16,7 +16,7 @@ import {
   DialogType,
   GlobalContext,
 } from "./components/commom/context/GlobalContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DarkModeBtn from "./components/global-btns/DarkModeBtn";
 import SignUp from "./pages/SignUp";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -28,6 +28,14 @@ function App() {
   const set_dark: DarkType = { is_dark, setIsDark };
   const [open_credits, setOpenCredits] = useState(false);
   const set_credits: CreditsType = { open_credits, setOpenCredits };
+
+  useEffect(() => {
+    if (localStorage.getItem("theme")) {
+      setIsDark(localStorage.getItem("theme")!);
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  }, []);
 
   return (
     <div className={`flex flex-col w-full h-screen ${is_dark}`}>
