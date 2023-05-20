@@ -1,3 +1,4 @@
+import { HomeIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 
 const HomeBtn: React.FC = function homeBtn() {
@@ -17,14 +18,16 @@ const HomeBtn: React.FC = function homeBtn() {
               isActive && "drop-shadow-lg"
             }`}
           >
-            <img
-              className={`w-6 h-5 justify-self-center ${
+            <HomeIcon
+              className={`w-6 h-6 justify-self-center ${
+                isActive && "drop-shadow"
+              }`}
+            />
+            <p
+              className={`font-[Blinker] leading-4 ${
                 isActive && "drop-shadow-lg"
               }`}
-              src="/src/assets/imgs/home-icon.svg"
-              alt=""
-            />
-            <p className={`font-[Blinker] ${isActive && "drop-shadow-lg"}`}>
+            >
               Home
             </p>
           </div>

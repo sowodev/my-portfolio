@@ -1,5 +1,5 @@
 import HomeBtn from "./btns/HomeBtn";
-import ArticlesBtn from "./btns/ArticlesBtn";
+import ArticlesBtn from "./btns/BlogBtn";
 import ProjectsBtn from "./btns/ProjectsBtn";
 import LoginBtn from "./btns/LoginBtn";
 import { ReactElement } from "react";

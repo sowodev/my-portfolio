@@ -1,6 +1,7 @@
+import { NewspaperIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 
-const ArticlesBtn: React.FC = function articlesBtn() {
+const BlogBtn: React.FC = function blogBtn() {
   return (
     <NavLink to="/articles" className="flex relative h-full w-full group">
       {({ isActive }) => (
@@ -17,15 +18,17 @@ const ArticlesBtn: React.FC = function articlesBtn() {
               isActive && "drop-shadow-lg"
             }`}
           >
-            <img
-              className={`w-6 h-5 justify-self-center ${
+            <NewspaperIcon
+              className={`w-6 h-6 justify-self-center ${
+                isActive && "drop-shadow"
+              }`}
+            />
+            <span
+              className={`font-[Blinker] leading-4 ${
                 isActive && "drop-shadow-lg"
               }`}
-              src="/src/assets/imgs/articles-icon.svg"
-              alt=""
-            />
-            <span className={`font-[Blinker] ${isActive && "drop-shadow-lg"}`}>
-              Articles
+            >
+              Blog
             </span>
           </div>
         </>
@@ -34,4 +37,4 @@ const ArticlesBtn: React.FC = function articlesBtn() {
   );
 };
 
-export default ArticlesBtn;
+export default BlogBtn;

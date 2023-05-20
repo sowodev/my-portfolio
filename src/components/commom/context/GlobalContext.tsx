@@ -15,6 +15,11 @@ export type DarkType = {
   setIsDark: Dispatch<SetStateAction<string>>;
 };
 
+export type SidebarType = {
+  open_sidebar: boolean;
+  setOpenSidebar: Dispatch<SetStateAction<boolean>>;
+};
+
 const GlobalContext = createContext({
   set_dialog: {
     open_dialog: false,
@@ -28,6 +33,10 @@ const GlobalContext = createContext({
     open_credits: false,
     setOpenCredits: (open: boolean) => {},
   } as CreditsType,
+  set_sidebar: {
+    open_sidebar: false,
+    setOpenSidebar: (open: boolean) => {},
+  } as SidebarType,
 });
 
 export { GlobalContext };

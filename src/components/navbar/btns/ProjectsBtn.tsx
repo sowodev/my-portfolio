@@ -1,3 +1,4 @@
+import { RocketLaunchIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 
 const ProjectsBtn: React.FC = function projectsBtn() {
@@ -17,14 +18,16 @@ const ProjectsBtn: React.FC = function projectsBtn() {
               isActive && "drop-shadow-lg"
             }`}
           >
-            <img
-              className={`w-6 h-5 justify-self-center ${
+            <RocketLaunchIcon
+              className={`w-6 h-6 justify-self-center ${
+                isActive && "drop-shadow"
+              }`}
+            />
+            <span
+              className={`font-[Blinker] leading-4 ${
                 isActive && "drop-shadow-lg"
               }`}
-              src="/src/assets/imgs/projects-icon.svg"
-              alt=""
-            />
-            <span className={`font-[Blinker] ${isActive && "drop-shadow-lg"}`}>
+            >
               Projects
             </span>
           </div>
