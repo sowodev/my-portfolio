@@ -50,22 +50,21 @@ function App() {
           <MarqueeTicker />
         </div>
         <div className="flex relative w-full h-full overflow-hidden z-0 dark:bg-slate-800 transition ease-in-out duration-300">
-          <Transition show={set_sidebar.open_sidebar}>
-            <Transition.Child
-              as={Fragment}
-              enter="transition ease-in-out duration-300 transform"
-              enterFrom="-translate-x-full"
-              enterTo="translate-x-0"
-              leave="transition ease-in-out duration-300 transform"
-              leaveFrom="translate-x-0"
-              leaveTo="-translate-x-full"
-            >
-              <div className={`flex absolute w-60 h-full z-20 bg-neutral-600`}>
-                <Sidebar></Sidebar>
-              </div>
-            </Transition.Child>
-          </Transition>
+          <Sidebar />
           <div className="flex w-full h-full">
+            <Transition show={set_sidebar.open_sidebar}>
+              <Transition.Child
+                as={Fragment}
+                enter="transition ease-in-out duration-300"
+                enterFrom="opacity-0"
+                enterTo="opacity-100"
+                leave="transition ease-in-out duration-300"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
+                <div className="flex fixed top-0 bottom-0 left-0 right-0 z-10 bg-black bg-opacity-25 transition ease-in-out duration-300" />
+              </Transition.Child>
+            </Transition>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/articles/*" element={<ArticlesRoutes />} />
