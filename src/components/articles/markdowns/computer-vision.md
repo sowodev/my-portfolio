@@ -1,4 +1,4 @@
-# Introduction to Computer Vision
+#
 
 Computer Vision is a field of artificial intelligence that focuses on enabling machines to interpret and understand visual data from the world around us. It is an interdisciplinary field that combines techniques from computer science, mathematics, and neuroscience.
 

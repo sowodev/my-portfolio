@@ -62,7 +62,7 @@ function App() {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
               >
-                <div className="flex fixed top-0 bottom-0 left-0 right-0 z-10 bg-black bg-opacity-25 transition ease-in-out duration-300" />
+                <div className="flex fixed inset-0 z-10 bg-black bg-opacity-25 transition ease-in-out duration-300" />
               </Transition.Child>
             </Transition>
             <Routes>

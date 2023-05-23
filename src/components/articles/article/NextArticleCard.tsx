@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
-import { article_type } from "../../../interfaces/MultiCardsIntetrfaces";
+import { ArticleType } from "../../../interfaces/MultiCardsIntetrfaces";
 
 interface Props {
-  article: article_type;
+  article: ArticleType;
 }
 
 const NextArticleCard: React.FC<Props> = ({ article }) => {
@@ -12,6 +12,7 @@ const NextArticleCard: React.FC<Props> = ({ article }) => {
       .toLowerCase()
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^\w\s-]/g, "")
       .trim()
       .replaceAll(" ", "-");
 

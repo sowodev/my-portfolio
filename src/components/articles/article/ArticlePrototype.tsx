@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { article_type } from "../../../interfaces/MultiCardsIntetrfaces";
+import { ArticleType } from "../../../interfaces/MultiCardsIntetrfaces";
 import NextArticleCard from "./NextArticleCard";
 
 const ArticlePrototype = function articlePrototype({
   ArticlesData,
   article,
 }: {
-  ArticlesData: article_type[];
-  article: article_type;
+  ArticlesData: ArticleType[];
+  article: ArticleType;
 }) {
   const [markdown_content, setMarkdownContent] = useState("");
   const contentRef = useRef<HTMLDivElement>(null);
@@ -49,7 +49,11 @@ const ArticlePrototype = function articlePrototype({
         </h3>
         <div className="flex flex-row w-full gap-5 justify-center font-[Lexend] font-light text-sky-500 text-sm">
           {article.tags.map((current, index) => {
-            return <span key={index}>{current}</span>;
+            return (
+              <span key={index}>
+                {current.length > 10 ? current.slice(0, 9) + "..." : current}
+              </span>
+            );
           })}
         </div>
         <div className="flex flex-col w-full">

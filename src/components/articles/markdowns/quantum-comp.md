@@ -1,4 +1,4 @@
-# Introduction to Quantum Computing
+#
 
 Quantum computing is a rapidly evolving field of study that explores the use of quantum mechanics to perform complex calculations that would be impossible with classical computers. Unlike classical bits that can only exist in one of two states (0 or 1), quantum bits, or qubits, can exist in multiple states simultaneously. This allows quantum computers to solve problems at an exponentially faster rate than classical computers.
 

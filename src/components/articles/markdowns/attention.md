@@ -1,4 +1,4 @@
-# "Attention Is All You Need": A Breakthrough in Natural Language Processing
+#
 
 In 2017, Google researchers published a scientific paper titled "Attention Is All You Need", which proposed a new neural network architecture for natural language processing (NLP) tasks. The paper quickly became one of the most cited works in the field and is considered a breakthrough in NLP research. In this article, we will explore the key ideas behind the paper and its impact on NLP research.
 

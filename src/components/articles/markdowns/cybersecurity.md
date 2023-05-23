@@ -1,4 +1,4 @@
-# Cybersecurity: The Importance of Protecting Your Digital Life
+#
 
 In today's digital age, cybersecurity is more important than ever. With the increasing amount of sensitive data being shared online, it is crucial to understand the risks and take steps to protect yourself from cyber threats. In this article, we'll take a closer look at cybersecurity, the various types of cyber attacks, and some tips on how to stay safe online.
 

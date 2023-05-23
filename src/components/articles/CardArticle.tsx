@@ -1,12 +1,12 @@
 import { useState } from "react";
 import TagsList from "./TagsList";
 import TextCard from "./TextCard";
-import { article_type } from "../../interfaces/MultiCardsIntetrfaces";
+import { ArticleType } from "../../interfaces/MultiCardsIntetrfaces";
 
 const CardArticle = function cardArticle({
   article,
 }: {
-  article: article_type;
+  article: ArticleType;
 }) {
   const [imgLoaded, setImgLoaded] = useState(false);
 
