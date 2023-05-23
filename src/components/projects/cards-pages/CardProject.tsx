@@ -17,12 +17,12 @@ const CardProject = function cardProject({ project }: { project: Project }) {
       <div
         className={
           img_loaded
-            ? "flex w-full basis-1/2"
+            ? "flex w-full basis-1/2 rounded-t"
             : "flex w-full basis-1/2 bg-gray-300 animate-pulse"
         }
       >
         <img
-          className="rounded-t"
+          className="rounded-t object-cover"
           src={project.img_path}
           alt="img"
           onLoad={() => setImgLoaded(true)}
