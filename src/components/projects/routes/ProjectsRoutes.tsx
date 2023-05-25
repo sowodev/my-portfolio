@@ -1,32 +1,61 @@
 import { Route, Routes } from "react-router-dom";
 import Projects from "../../../pages/Projects";
-import { ProjectsData, Project } from "../ProjectsData";
+import { ProjectsData } from "../ProjectsData";
 import { ElementsRoutes } from "./ElementsRoutes";
 import NotFound from "../../../pages/NotFound";
 import { useState } from "react";
+import { ProjectType } from "../../../interfaces/MultiCardsIntetrfaces";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
-function sliceDataIntoArrays() {
-  const array_of_arrays: Project[][] = [];
-
-  for (let i = 0; i < ProjectsData.length; i += 8)
-    array_of_arrays.push(ProjectsData.slice(i, i + 8));
-
-  return array_of_arrays;
-}
+type ProjectsDTO = {
+  title: string;
+  description: string;
+  img_name: string;
+  tags: string;
+  created_at: string;
+  updated_at: string;
+};
 
 const ProjectsRoutes = function projectsRoutes() {
-  const [arrays_of_projects, setArraysOfProjects] = useState<Project[][]>(
-    sliceDataIntoArrays()
-  );
+  const [new_projects_data, setNewProjectsData] = useState<ProjectType[]>([]);
+
+  const query = useQuery({
+    queryKey: ["projects"],
+    queryFn: () =>
+      axios.get("http://localhost:3000/projects/").then((res) => {
+        const projects_temp: ProjectType[] = [];
+
+        res.data.forEach((project: ProjectsDTO) => {
+          const project_temp: ProjectType = {
+            title: project.title,
+            description: project.description,
+            img_path: project.img_name,
+            tags: project.tags.split(","),
+          };
+
+          projects_temp.push(project_temp);
+        });
+
+        setNewProjectsData([...projects_temp, ...ProjectsData]);
+
+        return res.data;
+      }),
+  });
+
+  if (query.isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <Routes>
-      <Route index element={<Projects />} />
-      {ProjectsData.map((project: any, index: number) => {
+      <Route index element={<Projects projects_data={new_projects_data} />} />
+      {new_projects_data.map((project: any, index: number) => {
         const link: string = project.title
           .toLowerCase()
           .normalize("NFD")
           .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^\w\s]/gi, "")
           .trim()
           .replaceAll(" ", "-");
 
