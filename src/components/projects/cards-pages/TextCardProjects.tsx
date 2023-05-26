@@ -8,25 +8,25 @@ const TextCardProjects = function textCardProjects({
   img_loaded: boolean;
 }) {
   return (
-    <div className="flex flex-col h-full w-full">
-      <div className="flex w-full basis-1/4 justify-start items-end">
+    <div className="flex h-full w-full flex-col">
+      <div className="flex w-full basis-1/4 items-end justify-start">
         {img_loaded ? (
-          <p className="font-[Lexend] text-sm mx-4 font-normal text-[#333333ce] line-clamp-1 dark:text-white">
+          <p className="mx-4 line-clamp-1 font-[Lexend] text-sm font-normal text-[#333333ce] dark:text-white">
             {title}
           </p>
         ) : (
-          <p className="text-gray-200 mx-4 bg-gray-200 animate-pulse dark:text-slate-700 dark:bg-slate-700">
+          <p className="mx-4 animate-pulse bg-gray-200 text-gray-200 dark:bg-slate-700 dark:text-slate-700">
             {title}
           </p>
         )}
       </div>
-      <div className="flex w-full basis-3/4 justify-center items-center">
+      <div className="flex w-full basis-3/4 items-center justify-center">
         {img_loaded ? (
-          <p className="font-[Lexend] font-light text-sm mx-4 text-justify text-[#333333ce] line-clamp-4 dark:text-slate-300">
+          <p className="mx-4 line-clamp-4 text-justify font-[Lexend] text-sm font-light text-[#333333ce] dark:text-slate-300">
             {description}
           </p>
         ) : (
-          <p className="text-sm mx-4 text-justify text-gray-200 bg-gray-200 animate-pulse dark:text-slate-700 dark:bg-slate-700">
+          <p className="mx-4 animate-pulse bg-gray-200 text-justify text-sm text-gray-200 dark:bg-slate-700 dark:text-slate-700">
             {description}
           </p>
         )}

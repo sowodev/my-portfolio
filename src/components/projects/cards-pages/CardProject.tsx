@@ -13,12 +13,12 @@ const CardProject = function cardProject({ project }: { project: Project }) {
   const [img_loaded, setImgLoaded] = useState(false);
 
   return (
-    <div className="flex flex-col w-[16.5rem] h-[20rem] border border-slate-300 shadow-md rounded hover:bg-slate-100 dark:border-slate-500 dark:hover:bg-slate-700 dark:shadow-slate-600">
+    <div className="flex h-[20rem] w-[16.5rem] flex-col rounded border border-slate-300 shadow-md hover:bg-slate-100 dark:border-slate-500 dark:shadow-slate-600 dark:hover:bg-slate-700">
       <div
         className={
           img_loaded
             ? "flex w-full basis-1/2 rounded-t"
-            : "flex w-full basis-1/2 bg-gray-300 animate-pulse"
+            : "flex w-full basis-1/2 animate-pulse bg-gray-300"
         }
       >
         <img
@@ -28,7 +28,7 @@ const CardProject = function cardProject({ project }: { project: Project }) {
           onLoad={() => setImgLoaded(true)}
         />
       </div>
-      <div className="flex flex-col basis-1/2 w-full">
+      <div className="flex w-full basis-1/2 flex-col">
         <div className="w-full basis-3/4">
           <TextCardProjects
             title={project.title}

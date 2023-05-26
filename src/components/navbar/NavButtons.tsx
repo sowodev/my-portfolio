@@ -17,7 +17,7 @@ const NavButtons = function navButtons() {
       {components_array.map((component, index) => (
         <div
           key={index}
-          className="flex flex-none h-full w-[7rem] justify-center items-center text-white"
+          className="flex h-full w-[7rem] flex-none items-center justify-center text-white"
         >
           {component}
         </div>

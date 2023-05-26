@@ -9,14 +9,14 @@ const Navbar = function () {
   const { set_sidebar } = useContext(GlobalContext);
 
   return (
-    <nav className="flex w-full h-[4.5rem] bg-gradient-to-t from-[#666666] to-[#444444] dark:from-slate-700 dark:to-slate-900">
-      <div className="flex w-full h-full items-center justify-around">
-        <div className="flex flex-row w-fit h-full gap-8 justify-center items-center">
+    <nav className="flex h-[4.5rem] w-full bg-gradient-to-t from-[#666666] to-[#444444] dark:from-slate-700 dark:to-slate-900">
+      <div className="flex h-full w-full items-center justify-around">
+        <div className="flex h-full w-fit flex-row items-center justify-center gap-8">
           <button
-            className="w-fit h-fit"
+            className="h-fit w-fit"
             onClick={() => set_sidebar.setOpenSidebar((c) => !c)}
           >
-            <Bars3Icon className="w-7 h-7 stroke-white rounded hover:bg-slate-100 hover:bg-opacity-10" />
+            <Bars3Icon className="h-7 w-7 rounded stroke-white hover:bg-slate-100 hover:bg-opacity-10" />
           </button>
           <Logo />
         </div>

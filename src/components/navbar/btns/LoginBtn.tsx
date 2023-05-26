@@ -9,7 +9,7 @@ const LoginBtn: React.FC = function loginBtn() {
         data-tooltip-id="my-tooltip"
         data-tooltip-content="Sign in/Sign up"
         data-tooltip-place="bottom"
-        className="flex flex-col relative h-full w-full group"
+        className="group relative flex h-full w-full flex-col"
       >
         {({ isActive }) => (
           <>
@@ -21,12 +21,12 @@ const LoginBtn: React.FC = function loginBtn() {
               alt=""
             />
             <div
-              className={`grid absolute h-full w-full float-none place-content-center ${
+              className={`absolute float-none grid h-full w-full place-content-center ${
                 isActive && "drop-shadow-lg"
               }`}
             >
               <img
-                className={`w-10 h-10 justify-self-center ${
+                className={`h-10 w-10 justify-self-center ${
                   isActive && "drop-shadow-lg"
                 }`}
                 src="/src/assets/imgs/user.svg"
@@ -38,7 +38,7 @@ const LoginBtn: React.FC = function loginBtn() {
       </NavLink>
       <Tooltip
         id="my-tooltip"
-        className="font-[Blinker] absolute z-10 font-light text-sm bg-black bg-opacity-100"
+        className="absolute z-10 bg-black bg-opacity-100 font-[Blinker] text-sm font-light"
       />
     </>
   );

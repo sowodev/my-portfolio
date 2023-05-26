@@ -8,14 +8,14 @@ const Ticker = () => {
 
   return (
     <Marquee pauseOnHover speed={25} play={true}>
-      <div className="flex flex-row w-fit h-fit justify-between items-center mx-8">
+      <div className="mx-8 flex h-fit w-fit flex-row items-center justify-between">
         <span className="flex flex-row">
-          <p className="font-[Lexend] font-bold text-lg">Looking for a job!</p>
-          <p className="font-[Lexend] text-lg px-8">
+          <p className="font-[Lexend] text-lg font-bold">Looking for a job!</p>
+          <p className="px-8 font-[Lexend] text-lg">
             Full Stack Web Developer, currently working with:
           </p>
         </span>
-        <div className="w-1 h-full border-l border-gray-300" />
+        <div className="h-full w-1 border-l border-gray-300" />
         <TechComp name={"TypeScript"} />
         <TechComp name={"React"} />
         <TechComp name={"Tailwind"} />
@@ -29,7 +29,7 @@ const Ticker = () => {
         <TechComp name={"Python"} />
         <TechComp name={"Cpp"} />
         <TechComp name={"Java"} />
-        <span className="font-[Lexend] text-lg px-8 border-l border-gray-700">
+        <span className="border-l border-gray-700 px-8 font-[Lexend] text-lg">
           For more information, please.
         </span>
         <button
@@ -45,7 +45,7 @@ const Ticker = () => {
 
 const MarqueeTicker: React.FC = function marqueeTicker() {
   return (
-    <div className="flex w-full h-[45px] bg-amber-300 justify-center items-center">
+    <div className="flex h-[45px] w-full items-center justify-center bg-amber-300">
       <Ticker />
     </div>
   );

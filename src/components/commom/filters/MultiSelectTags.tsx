@@ -38,7 +38,7 @@ const MultiSelectTags: React.FC<Props> = ({ tags, selectedTags, onChange }) => {
   return (
     <Select
       isMulti
-      className="w-full font-[Lexend] font-light rounded"
+      className="w-full rounded font-[Lexend] font-light"
       options={options}
       value={selectedTags.map((tag) => ({ label: tag.name, value: tag.id }))}
       onChange={handleChange}

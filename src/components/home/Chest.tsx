@@ -5,48 +5,48 @@ const Chest = function chestComponent(): ReactElement {
   const context_object = useContext(HomeContext);
 
   return (
-    <div className="flex relative h-full justify-center items-end">
-      <div className="flex flex-col absolute h-1/5 w-1/2 top-28">
-        <div className="flex flex-none relative basis-1/3 w-full">
+    <div className="relative flex h-full items-end justify-center">
+      <div className="absolute top-28 flex h-1/5 w-1/2 flex-col">
+        <div className="relative flex w-full flex-none basis-1/3">
           <button
-            className="flex absolute drop-shadow-lg w-fit h-fit left-1/3 bottom-0"
+            className="absolute bottom-0 left-1/3 flex h-fit w-fit drop-shadow-lg"
             onClick={() => {
               context_object.setTextToShow("Me");
             }}
           >
-            <img className="w-14 h-7" src="./src/assets/imgs/me.png" alt="" />
+            <img className="h-7 w-14" src="./src/assets/imgs/me.png" alt="" />
           </button>
         </div>
-        <div className="flex flex-none relative basis-1/3 w-full">
+        <div className="relative flex w-full flex-none basis-1/3">
           <button
-            className="flex absolute drop-shadow-lg w-fit h-fit right-12 bottom-0 origin-center"
+            className="absolute bottom-0 right-12 flex h-fit w-fit origin-center drop-shadow-lg"
             onClick={() => {
               context_object.setTextToShow("MyStack");
             }}
           >
             <img
-              className="w-36 h-7"
+              className="h-7 w-36"
               src="./src/assets/imgs/mystack.png"
               alt=""
             />
           </button>
         </div>
-        <div className="flex flex-none relative basis-1/3 w-full">
+        <div className="relative flex w-full flex-none basis-1/3">
           <button
-            className="flex absolute drop-shadow-lg w-fit h-fit left-12 bottom-0 origin-center"
+            className="absolute bottom-0 left-12 flex h-fit w-fit origin-center drop-shadow-lg"
             onClick={() => {
               context_object.setTextToShow("Learning");
             }}
           >
             <img
-              className="w-40 h-8"
+              className="h-8 w-40"
               src="./src/assets/imgs/learning.png"
               alt=""
             />
           </button>
         </div>
       </div>
-      <div className="w-[75%] h-[52%] mb-[11%]">
+      <div className="mb-[11%] h-[52%] w-[75%]">
         <img src="./src/assets/imgs/chest.png" alt="" />
       </div>
     </div>

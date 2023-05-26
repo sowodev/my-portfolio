@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 
 const Logo = function logo() {
   return (
-    <div className="flex w-fit h-full flex-none justify-center items-center">
+    <div className="flex h-full w-fit flex-none items-center justify-center">
       <NavLink to="/" className="logo">
-        <div className="grid w-[313px] h-[70px] place-content-center drop-shadow-lg">
+        <div className="grid h-[70px] w-[313px] place-content-center drop-shadow-lg">
           <img src="/src/assets/imgs/logo.png" alt="logo" />
         </div>
       </NavLink>

@@ -41,17 +41,17 @@ function App() {
   }, []);
 
   return (
-    <div className={`flex flex-col w-full h-screen ${is_dark}`}>
+    <div className={`flex h-screen w-full flex-col ${is_dark}`}>
       <GlobalContext.Provider
         value={{ set_dialog, set_credits, set_dark, set_sidebar }}
       >
-        <div className="flex flex-col z-10 sticky top-0">
+        <div className="sticky top-0 z-10 flex flex-col">
           <Navbar />
           <MarqueeTicker />
         </div>
-        <div className="flex relative w-full h-full overflow-hidden z-0 dark:bg-slate-800 transition ease-in-out duration-300">
+        <div className="relative z-0 flex h-full w-full overflow-hidden transition duration-300 ease-in-out dark:bg-slate-800">
           <Sidebar />
-          <div className="flex w-full h-full">
+          <div className="flex h-full w-full">
             <Transition show={set_sidebar.open_sidebar}>
               <Transition.Child
                 as={Fragment}
@@ -62,7 +62,7 @@ function App() {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
               >
-                <div className="flex fixed inset-0 z-10 bg-black bg-opacity-25 transition ease-in-out duration-300" />
+                <div className="fixed inset-0 z-10 flex bg-black bg-opacity-25 transition duration-300 ease-in-out" />
               </Transition.Child>
             </Transition>
             <Routes>

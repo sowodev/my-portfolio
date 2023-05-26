@@ -12,10 +12,10 @@ const CardsPagesProjects = function cardsPagesProjects({
   projects_controller: ProjectsController;
 }) {
   return (
-    <div className="flex flex-col w-[72rem] h-full py-6 gap-4">
-      <div className="w-full h-full">
+    <div className="flex h-full w-[72rem] flex-col gap-4 py-6">
+      <div className="h-full w-full">
         {projects_controller.getFilteredProjectsLenght() > 0 ? (
-          <div className="grid grid-cols-4 grid-rows-2 gap-8 w-full h-full">
+          <div className="grid h-full w-full grid-cols-4 grid-rows-2 gap-8">
             {projects_controller
               .showingProjects(projects_controller.getCurrentPage() - 1)
               .map((project, index) => {
@@ -35,7 +35,7 @@ const CardsPagesProjects = function cardsPagesProjects({
               })}
           </div>
         ) : (
-          <div className="flex flex-col justify-center items-center w-full h-full">
+          <div className="flex h-full w-full flex-col items-center justify-center">
             <p className="font-[Lexend] text-2xl text-[#333333ce] dark:text-slate-300">
               Ooops! No Projects Were Founded!
             </p>

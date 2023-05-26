@@ -60,24 +60,24 @@ const Sidebar: React.FC = () => {
         leaveTo="-translate-x-full"
       >
         <div
-          className="flex absolute w-60 h-full z-20 bg-neutral-600 dark:bg-slate-700"
+          className="absolute z-20 flex h-full w-60 bg-neutral-600 dark:bg-slate-700"
           ref={sidebar_ref}
         >
-          <div className="flex flex-col w-full h-full justify-between py-12">
-            <div className="flex flex-col w-full h-fit justify-start items-center gap-4">
+          <div className="flex h-full w-full flex-col justify-between py-12">
+            <div className="flex h-fit w-full flex-col items-center justify-start gap-4">
               <NavLink
                 to={"/"}
-                className={`flex w-full h-fit justify-center items-center`}
+                className={`flex h-fit w-full items-center justify-center`}
                 onClick={() => set_sidebar.setOpenSidebar(false)}
               >
                 {({ isActive }) => {
                   return (
                     <div
-                      className={`flex flex-row w-4/5 h-10 rounded justify-start items-center ps-8 gap-4 ${
-                        isActive && `bg-neutral-500 border-l-[6px] border-white`
+                      className={`flex h-10 w-4/5 flex-row items-center justify-start gap-4 rounded ps-8 ${
+                        isActive && `border-l-[6px] border-white bg-neutral-500`
                       } hover:bg-[#606060]`}
                     >
-                      <HomeIcon className={`w-6 h-6 stroke-white`} />
+                      <HomeIcon className={`h-6 w-6 stroke-white`} />
                       <span className="font-[Blinker] text-white">Home</span>
                     </div>
                   );
@@ -85,17 +85,17 @@ const Sidebar: React.FC = () => {
               </NavLink>
               <NavLink
                 to={"/articles"}
-                className={`flex w-full h-fit justify-center items-center`}
+                className={`flex h-fit w-full items-center justify-center`}
                 onClick={() => set_sidebar.setOpenSidebar(false)}
               >
                 {({ isActive }) => {
                   return (
                     <div
-                      className={`flex flex-row w-4/5 h-10 rounded justify-start items-center ps-8 gap-4 ${
-                        isActive && `bg-neutral-500 border-l-[6px] border-white`
+                      className={`flex h-10 w-4/5 flex-row items-center justify-start gap-4 rounded ps-8 ${
+                        isActive && `border-l-[6px] border-white bg-neutral-500`
                       } hover:bg-[#606060]`}
                     >
-                      <NewspaperIcon className={`w-6 h-6 stroke-white`} />
+                      <NewspaperIcon className={`h-6 w-6 stroke-white`} />
                       <span className="font-[Blinker] text-white">Blog</span>
                     </div>
                   );
@@ -103,17 +103,17 @@ const Sidebar: React.FC = () => {
               </NavLink>
               <NavLink
                 to={"/projects"}
-                className={`flex w-full h-fit justify-center items-center`}
+                className={`flex h-fit w-full items-center justify-center`}
                 onClick={() => set_sidebar.setOpenSidebar(false)}
               >
                 {({ isActive }) => {
                   return (
                     <div
-                      className={`flex flex-row w-4/5 h-10 rounded justify-start items-center ps-8 gap-4 ${
-                        isActive && `bg-neutral-500 border-l-[6px] border-white`
+                      className={`flex h-10 w-4/5 flex-row items-center justify-start gap-4 rounded ps-8 ${
+                        isActive && `border-l-[6px] border-white bg-neutral-500`
                       } hover:bg-[#606060]`}
                     >
-                      <RocketLaunchIcon className={`w-6 h-6 stroke-white`} />
+                      <RocketLaunchIcon className={`h-6 w-6 stroke-white`} />
                       <span className="font-[Blinker] text-white">
                         Projects
                       </span>
@@ -123,32 +123,32 @@ const Sidebar: React.FC = () => {
               </NavLink>
               <NavLink
                 to={"/login"}
-                className={`flex w-full h-fit justify-center items-center`}
+                className={`flex h-fit w-full items-center justify-center`}
                 onClick={() => set_sidebar.setOpenSidebar(false)}
               >
                 {({ isActive }) => {
                   return (
                     <div
-                      className={`flex flex-row w-4/5 h-10 rounded justify-start items-center ps-8 gap-4 ${
-                        isActive && `bg-neutral-500 border-l-[6px] border-white`
+                      className={`flex h-10 w-4/5 flex-row items-center justify-start gap-4 rounded ps-8 ${
+                        isActive && `border-l-[6px] border-white bg-neutral-500`
                       } hover:bg-[#606060]`}
                     >
-                      <UserCircleIcon className={`w-6 h-6 stroke-white`} />
+                      <UserCircleIcon className={`h-6 w-6 stroke-white`} />
                       <span className="font-[Blinker] text-white">Sing In</span>
                     </div>
                   );
                 }}
               </NavLink>
             </div>
-            <div className="w-fit h-fit ps-8">
+            <div className="h-fit w-fit ps-8">
               <button
-                className="flex w-9 h-9 rounded shadow-md border border-neutral-500 justify-center items-center hover:bg-neutral-500 hover:scale-110 dark:border-gray-700 dark:bg-slate-800 dark:shadow-slate-600 dark:hover:bg-slate-700 transition ease-in-out duration-300"
+                className="flex h-9 w-9 items-center justify-center rounded border border-neutral-500 shadow-md transition duration-300 ease-in-out hover:scale-110 hover:bg-neutral-500 dark:border-gray-700 dark:bg-slate-800 dark:shadow-slate-600 dark:hover:bg-slate-700"
                 onClick={handleThemeChange}
               >
                 {set_dark.is_dark === "dark" ? (
-                  <SunIcon className="w-5 h-5 stroke-slate-200" />
+                  <SunIcon className="h-5 w-5 stroke-slate-200" />
                 ) : (
-                  <MoonIcon className="w-5 h-5 stroke-white" />
+                  <MoonIcon className="h-5 w-5 stroke-white" />
                 )}
               </button>
             </div>

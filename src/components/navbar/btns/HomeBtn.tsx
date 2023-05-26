@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const HomeBtn: React.FC = function homeBtn() {
   return (
-    <NavLink to="/" className="flex relative h-full w-full group">
+    <NavLink to="/" className="group relative flex h-full w-full">
       {({ isActive }) => (
         <>
           <img
@@ -14,12 +14,12 @@ const HomeBtn: React.FC = function homeBtn() {
             alt=""
           />
           <div
-            className={`grid absolute h-full w-full float-none place-content-center ${
+            className={`absolute float-none grid h-full w-full place-content-center ${
               isActive && "drop-shadow-lg"
             }`}
           >
             <HomeIcon
-              className={`w-6 h-6 justify-self-center ${
+              className={`h-6 w-6 justify-self-center ${
                 isActive && "drop-shadow"
               }`}
             />

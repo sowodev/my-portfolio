@@ -80,13 +80,13 @@ const PaginationController: React.FC<Props> = ({ projects_controller }) => {
   };
 
   return (
-    <div className="flex flex-row h-12 justify-center items-center gap-2 my-2">
+    <div className="my-2 flex h-12 flex-row items-center justify-center gap-2">
       <PaginationBtn
         page_number={0}
         current_page={projects_controller.getCurrentPage()}
         total_pages={projects_controller.getTotalPages()}
         icon={
-          <ChevronLeftIcon className="h-5 w-5 stroke-[#333333ce] pointer-events-none dark:stroke-slate-300" />
+          <ChevronLeftIcon className="pointer-events-none h-5 w-5 stroke-[#333333ce] dark:stroke-slate-300" />
         }
         chevron_direction="left"
         handlePageChange={handlePageChange}
@@ -109,7 +109,7 @@ const PaginationController: React.FC<Props> = ({ projects_controller }) => {
         current_page={projects_controller.getCurrentPage()}
         total_pages={projects_controller.getTotalPages()}
         icon={
-          <ChevronRightIcon className="h-5 w-5 stroke-[#333333ce] pointer-events-none dark:stroke-slate-300" />
+          <ChevronRightIcon className="pointer-events-none h-5 w-5 stroke-[#333333ce] dark:stroke-slate-300" />
         }
         chevron_direction="right"
         handlePageChange={handlePageChange}

@@ -36,18 +36,18 @@ const ArticlePrototype = function articlePrototype({
     });
   return (
     <div
-      className="flex flex-row w-full h-full overflow-scroll pt-12 "
+      className="flex h-full w-full flex-row overflow-scroll pt-12 "
       ref={contentRef}
     >
       <div className="flex basis-[25%]"></div>
-      <div className="flex flex-col h-fit basis-[50%] gap-4" lang="pt-BR">
-        <h1 className="w-full text-5xl text-center font-[Lexend] hyphens-auto dark:text-white">
+      <div className="flex h-fit basis-[50%] flex-col gap-4" lang="pt-BR">
+        <h1 className="w-full text-center font-[Lexend] text-5xl hyphens-auto dark:text-white">
           {article.title}
         </h1>
-        <h3 className="w-full pt-2 text-lg text-center font-[Lexend] font-light text-slate-500 hyphens-auto dark:text-slate-300">
+        <h3 className="w-full pt-2 text-center font-[Lexend] text-lg font-light text-slate-500 hyphens-auto dark:text-slate-300">
           {article.leading}
         </h3>
-        <div className="flex flex-row w-full gap-5 justify-center font-[Lexend] font-light text-sky-500 text-sm">
+        <div className="flex w-full flex-row justify-center gap-5 font-[Lexend] text-sm font-light text-sky-500">
           {article.tags.map((current, index) => {
             return (
               <span key={index}>
@@ -56,24 +56,24 @@ const ArticlePrototype = function articlePrototype({
             );
           })}
         </div>
-        <div className="flex flex-col w-full">
+        <div className="flex w-full flex-col">
           <hr className="my-4 dark:border-slate-500" />
           <img
-            className="w-full aspect-video"
+            className="aspect-video w-full"
             src={article.img_path}
             alt="img"
           />
-          <span className="text-sm text-gray-400 font-light mt-2">
+          <span className="mt-2 text-sm font-light text-gray-400">
             {article.img_credits}
           </span>
           <hr className="my-4 dark:border-slate-500" />
         </div>
-        <div className="flex flex-row w-full font-[Lexend] font-light text-slate-400 text-xs justify-start">
-          <div className="w-16 h-16">
+        <div className="flex w-full flex-row justify-start font-[Lexend] text-xs font-light text-slate-400">
+          <div className="h-16 w-16">
             <img src="/src/assets/imgs/user.svg" alt="" />
           </div>
-          <div className="flex flex-col h-full w-fit">
-            <span className="text-base text-slate-700 w-fit dark:text-white">
+          <div className="flex h-full w-fit flex-col">
+            <span className="w-fit text-base text-slate-700 dark:text-white">
               {article.author}
             </span>
             <span className="w-fit dark:text-slate-300">
@@ -84,16 +84,16 @@ const ArticlePrototype = function articlePrototype({
             </span>
           </div>
         </div>
-        <div className="prose prose-slate mx-auto pb-8 lg:prose-xl dark:prose-invert">
+        <div className="prose prose-slate mx-auto pb-8 dark:prose-invert lg:prose-xl">
           <ReactMarkdown children={markdown_content} />
         </div>
-        <div className="flex flex-col w-full h-80 my-8 rounded bg-slate-100 dark:bg-slate-800">
-          <div className="flex flex-row w-full basis-[15%] items-center rounded-t border-l border-t border-r border-slate-300 dark:border-slate-500">
-            <span className="font-[Lexend] text-2xl indent-4 text-slate-500 dark:text-slate-300">
+        <div className="my-8 flex h-80 w-full flex-col rounded bg-slate-100 dark:bg-slate-800">
+          <div className="flex w-full basis-[15%] flex-row items-center rounded-t border-l border-r border-t border-slate-300 dark:border-slate-500">
+            <span className="indent-4 font-[Lexend] text-2xl text-slate-500 dark:text-slate-300">
               [Read Next]
             </span>
           </div>
-          <div className="flex flex-row w-full h-full border border-slate-300 rounded-b justify-around items-center dark:border-slate-500">
+          <div className="flex h-full w-full flex-row items-center justify-around rounded-b border border-slate-300 dark:border-slate-500">
             <NextArticleCard article={ArticlesData[1]} />
             <NextArticleCard article={ArticlesData[2]} />
             <NextArticleCard article={ArticlesData[3]} />

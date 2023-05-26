@@ -55,20 +55,20 @@ const MyStack = function myStack() {
       }),
   });
 
-  if (query.isLoading) return console.log("Loading...");
+  if (query.isLoading) return <h1>Loading...</h1>;
 
-  if (query.error) return console.log("An error has occurred: " + query.error);
+  if (query.error) return <h1>Loading...</h1>;
 
   return (
     <>
-      <div className="w-full h-full px-6 py-2 overflow-y-auto">
-        <div className="mt-4 prose prose-slate mx-auto">
+      <div className="h-full w-full overflow-y-auto px-6 py-2">
+        <div className="prose prose-slate mx-auto mt-4">
           <p className="lead indent-3 font-[Lexend] dark:text-white">
             This is the "MyStack" section, here I try to show the main tools,
             libraries and frameworks I have been using in my full stack web
             projects.
           </p>
-          <div className="text-sm text-slate-500 font-[Lexend] font-extralight dark:text-slate-300">
+          <div className="font-[Lexend] text-sm font-extralight text-slate-500 dark:text-slate-300">
             last update: 03/26/2023
           </div>
           <hr className="my-4 dark:border-slate-500" />
@@ -79,15 +79,15 @@ const MyStack = function myStack() {
                 {({ open, close }) => (
                   <>
                     <Disclosure.Button
-                      className="flex w-full h-16 mt-4 border border-slate-400 rounded justify-between items-center hover:bg-slate-100 dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-slate-300"
+                      className="mt-4 flex h-16 w-full items-center justify-between rounded border border-slate-400 hover:bg-slate-100 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600"
                       onClick={() => {}}
                     >
-                      <span className="font-[Lexend] text-slate-500 ml-8 dark:text-slate-300">
+                      <span className="ml-8 font-[Lexend] text-slate-500 dark:text-slate-300">
                         {current[0].charAt(0).toUpperCase() +
                           current[0].slice(1)}
                       </span>
                       <ChevronDownIcon
-                        className={`h-5 w-5 mr-4 stroke-[#333333ce] pointer-events-none transform duration-300 ease-linear dark:stroke-slate-300 ${
+                        className={`pointer-events-none mr-4 h-5 w-5 transform stroke-[#333333ce] duration-300 ease-linear dark:stroke-slate-300 ${
                           open ? `rotate-[-180deg]` : `rotate-0`
                         }`}
                       />
@@ -100,7 +100,7 @@ const MyStack = function myStack() {
                       leaveFrom="transform scale-100 opacity-100"
                       leaveTo="transform scale-90 opacity-0"
                     >
-                      <Disclosure.Panel className="flex flex-col w-full mt-8">
+                      <Disclosure.Panel className="mt-8 flex w-full flex-col">
                         {current[1].map((inner_current, inner_index) => {
                           return (
                             <div key={inner_index}>

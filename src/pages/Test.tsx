@@ -22,8 +22,8 @@ const Ticker = () => {
   }, []);
 
   return (
-    <div className="flex relative w-full h-[50px] overflow-hidden bg-[#f2f2f2] justify-center items-center">
-      <div className="flex left-0 items-center animate-marquee whitespace-nowrap gap-4 bg-cyan-200">
+    <div className="relative flex h-[50px] w-full items-center justify-center overflow-hidden bg-[#f2f2f2]">
+      <div className="animate-marquee left-0 flex items-center gap-4 whitespace-nowrap bg-cyan-200">
         {tickerItems.map((item, index) => (
           <div
             key={index}
@@ -35,7 +35,7 @@ const Ticker = () => {
           </div>
         ))}
       </div>
-      <div className="flex absolute left-0 items-center animate-marquee2 whitespace-nowrap gap-4 bg-cyan-200">
+      <div className="animate-marquee2 absolute left-0 flex items-center gap-4 whitespace-nowrap bg-cyan-200">
         {tickerItems.map((item, index) => (
           <div
             key={index}
@@ -54,11 +54,11 @@ const Ticker = () => {
 const Test = function test() {
   const [translate, setTranslate] = useState("0");
   return (
-    <div className="flex flex-col gap-48 h-full w-full justify-center items-center">
+    <div className="flex h-full w-full flex-col items-center justify-center gap-48">
       <div className="h-12">
         <Ticker />
       </div>
-      <div className="flex flex-col w-full h-12 justify-center items-center bg-orange-400">
+      <div className="flex h-12 w-full flex-col items-center justify-center bg-orange-400">
         <div
           className={`flex w-[12rem] bg-sky-300 transition translate-x-${translate} duration-500 ease-in-out`}
         >
@@ -66,7 +66,7 @@ const Test = function test() {
         </div>
       </div>
       <button
-        className="h-10 w-24 bg-pink-300 rounded"
+        className="h-10 w-24 rounded bg-pink-300"
         onClick={() => setTranslate((c) => (c === "0" ? "80" : "0"))}
       >
         Change

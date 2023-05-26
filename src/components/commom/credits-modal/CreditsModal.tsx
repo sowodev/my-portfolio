@@ -43,21 +43,21 @@ const CreditsModal = function creditsModal() {
               >
                 <Dialog.Title
                   as="div"
-                  className="flex flex-row w-full justify-between items-center font-[Lexend] text-lg font-medium leading-6 text-gray-900"
+                  className="flex w-full flex-row items-center justify-between font-[Lexend] text-lg font-medium leading-6 text-gray-900"
                 >
                   <p className={`${dark && `text-white`}`}> Credits!</p>
                   <button
-                    className="w-8 h-8 flex bg-gradient-to-b from-orange-300 to-amber-300 drop-shadow rounded justify-center items-center hover:from-orange-400 hover:to-amber-400 hover:scale-110 transition ease-linear duration-200"
+                    className="flex h-8 w-8 items-center justify-center rounded bg-gradient-to-b from-orange-300 to-amber-300 drop-shadow transition duration-200 ease-linear hover:scale-110 hover:from-orange-400 hover:to-amber-400"
                     onClick={() => set_credits.setOpenCredits(false)}
                   >
-                    <p className="font-light text-center text-white">&times;</p>
+                    <p className="text-center font-light text-white">&times;</p>
                   </button>
                 </Dialog.Title>
 
-                <hr className="border-slate-300 my-2 dark:bg-slate-500" />
-                <div className="flex flex-col w-full">
+                <hr className="my-2 border-slate-300 dark:bg-slate-500" />
+                <div className="flex w-full flex-col">
                   <img
-                    className="w-24 h-24"
+                    className="h-24 w-24"
                     src="/src/assets/imgs/chest-only.png"
                     alt="chest"
                   />
@@ -78,7 +78,7 @@ const CreditsModal = function creditsModal() {
                     https://www.freepik.com/free-vector/treasure-chest-with-gold-coins-and-gems_27777164.htm
                   </a>
                 </div>
-                <hr className="border-slate-300 my-2 dark:bg-slate-500" />
+                <hr className="my-2 border-slate-300 dark:bg-slate-500" />
                 <p
                   className={`font-[Lexend] text-sm font-light leading-6 ${
                     dark && `text-slate-300`
@@ -89,7 +89,7 @@ const CreditsModal = function creditsModal() {
                   the rights reserved, you can find more information about the
                   tools used at "MyStack" section on the home page.
                 </p>
-                <hr className="border-slate-300 my-2 dark:bg-slate-500" />
+                <hr className="my-2 border-slate-300 dark:bg-slate-500" />
                 <p
                   className={`font-[Lexend] text-sm font-light leading-6 ${
                     dark && `text-slate-300`
@@ -105,7 +105,7 @@ const CreditsModal = function creditsModal() {
                 >
                   https://github.com/sowodin/my-portfolio
                 </a>
-                <hr className="border-slate-300 my-2 dark:bg-slate-500" />
+                <hr className="my-2 border-slate-300 dark:bg-slate-500" />
               </Dialog.Panel>
             </Transition.Child>
           </div>

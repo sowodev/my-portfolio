@@ -17,17 +17,17 @@ const TextPanel = function textPanel() {
   }
 
   return (
-    <div className="flex flex-col w-3/4 h-4/5 mt-16 bg-gradient-to-tl from-blue-400  to-sky-400 shadow-lg shadow-sky-300 ring-1 ring-slate-900/5 justify-center items-center rounded-lg dark:from-sky-700 dark:to-blue-950 dark:shadow-sky-800">
-      <div className="flex w-full h-[10%] justify-center items-center">
-        <div className="flex flex-row w-[80%] h-[80%] bg-[#ffffff3f] border border-[#f5f5f538] rounded-lg justify-center items-center gap-4">
+    <div className="mt-16 flex h-4/5 w-3/4 flex-col items-center justify-center  rounded-lg bg-gradient-to-tl from-blue-400 to-sky-400 shadow-lg shadow-sky-300 ring-1 ring-slate-900/5 dark:from-sky-700 dark:to-blue-950 dark:shadow-sky-800">
+      <div className="flex h-[10%] w-full items-center justify-center">
+        <div className="flex h-[80%] w-[80%] flex-row items-center justify-center gap-4 rounded-lg border border-[#f5f5f538] bg-[#ffffff3f]">
           <div
             className={
               context_object.text_to_show === "Me"
-                ? "flex basis-1/3 h-[80%] justify-center items-center rounded ml-[5%] bg-white ring-2 ring-white outline-none ring-opacity-60 ring-offset-2 ring-offset-blue-300 dark:bg-slate-700 dark:ring-slate-700 dark:ring-offset-blue-400"
-                : "flex basis-1/3 h-[80%] justify-center items-center rounded ml-[5%]"
+                ? "ml-[5%] flex h-[80%] basis-1/3 items-center justify-center rounded bg-white outline-none ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-300 dark:bg-slate-700 dark:ring-slate-700 dark:ring-offset-blue-400"
+                : "ml-[5%] flex h-[80%] basis-1/3 items-center justify-center rounded"
             }
           >
-            <div className="w-9 h-5">
+            <div className="h-5 w-9">
               <img src="/src/assets/imgs/me.png" alt="Me" />
             </div>
           </div>
@@ -35,11 +35,11 @@ const TextPanel = function textPanel() {
           <div
             className={
               context_object.text_to_show === "MyStack"
-                ? "flex basis-1/3 h-[80%] justify-center items-center rounded bg-white ring-2 ring-white outline-none ring-opacity-60 ring-offset-2 ring-offset-blue-300 dark:bg-slate-700 dark:ring-slate-700 dark:ring-offset-blue-400"
-                : "flex basis-1/3 h-[80%] justify-center items-center rounded"
+                ? "flex h-[80%] basis-1/3 items-center justify-center rounded bg-white outline-none ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-300 dark:bg-slate-700 dark:ring-slate-700 dark:ring-offset-blue-400"
+                : "flex h-[80%] basis-1/3 items-center justify-center rounded"
             }
           >
-            <div className="w-24 h-5">
+            <div className="h-5 w-24">
               <img src="/src/assets/imgs/mystack.png" alt="MyStack" />
             </div>
           </div>
@@ -47,17 +47,17 @@ const TextPanel = function textPanel() {
           <div
             className={
               context_object.text_to_show === "Learning"
-                ? "flex basis-1/3 h-[80%] justify-center items-center rounded mr-[5%] bg-white ring-2 ring-white outline-none ring-opacity-60 ring-offset-2 ring-offset-blue-300 dark:bg-slate-700 dark:ring-slate-700 dark:ring-offset-blue-400"
-                : "flex basis-1/3 h-[80%] justify-center items-center rounded mr-[5%]"
+                ? "mr-[5%] flex h-[80%] basis-1/3 items-center justify-center rounded bg-white outline-none ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-300 dark:bg-slate-700 dark:ring-slate-700 dark:ring-offset-blue-400"
+                : "mr-[5%] flex h-[80%] basis-1/3 items-center justify-center rounded"
             }
           >
-            <div className="w-28 h-5">
+            <div className="h-5 w-28">
               <img src="/src/assets/imgs/learning.png" alt="Learning" />
             </div>
           </div>
         </div>
       </div>
-      <div className="w-[95%] h-[85%] rounded-lg">{component_to_show}</div>
+      <div className="h-[85%] w-[95%] rounded-lg">{component_to_show}</div>
     </div>
   );
 };
