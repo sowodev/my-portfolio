@@ -29,6 +29,7 @@ function useProjectsController(
 
   function setProjects(data: ProjectType[]): void {
     setFilteredProjects(sliceDataIntoArrays(data));
+    setTotalPages(Math.ceil(data.length / 8));
   }
 
   function getCurrentPage(): number {

@@ -27,15 +27,15 @@ const PaginationController: React.FC<Props> = ({ projects_controller }) => {
       array_of_pages_btns.push(index + 1);
   }
 
-  useEffect(() => {
-    handlePageChange(1);
-  }, [projects_controller.getTotalPages()]);
-
   if (projects_controller.getTotalPages() < 8) {
     arrayFiller(projects_controller.getTotalPages());
   } else {
     arrayFiller(7);
   }
+
+  useEffect(() => {
+    handlePageChange(1);
+  }, [projects_controller.getTotalPages()]);
 
   const handlePageChange = (page_number: number) => {
     projects_controller.setCurrentPageState(page_number);
@@ -92,7 +92,7 @@ const PaginationController: React.FC<Props> = ({ projects_controller }) => {
         handlePageChange={handlePageChange}
       />
 
-      {array_of_pages_btns.map((btn_page_number, index) => {
+      {array_of_pages_btns.map((btn_page_number: number, index: number) => {
         return (
           <PaginationBtn
             key={index}

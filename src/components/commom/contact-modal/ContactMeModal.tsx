@@ -1,6 +1,16 @@
 import { Fragment, useContext, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { GlobalContext } from "../context/GlobalContext";
+import InputField from "./InputField";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import axios from "axios";
+
+type MessageDTO = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 const ContactMeModal = function contactMeModal() {
   const { set_dialog, set_dark } = useContext(GlobalContext);
@@ -10,14 +20,33 @@ const ContactMeModal = function contactMeModal() {
   const [subject, setSubject] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
+  const mutation = useMutation({
+    mutationFn: () =>
+      axios
+        .post("http://localhost:3000/contact-message/", {
+          name,
+          email,
+          subject,
+          message,
+        })
+        .then((res) => res.data),
+  });
+
   const closeModal = () => {
     set_dialog.setOpenDialog(false);
   };
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log(name, email, subject, message);
+
+    mutation.mutate();
+
+    closeModal();
   };
+
+  if (mutation.isSuccess) {
+    console.log("Success: ", mutation);
+  }
 
   return (
     <Transition appear as={Fragment} show={set_dialog.open_dialog}>
@@ -60,77 +89,43 @@ const ContactMeModal = function contactMeModal() {
                 >
                   Leave Me a Message!
                 </Dialog.Title>
-                <form action="submit">
+
+                {/* The Form Starts Here!!! */}
+                <form action="submit" onSubmit={handleSubmit}>
                   <div className="flex h-full w-full flex-col gap-4 py-4">
                     <div className="flex w-full flex-col items-center">
-                      <label
-                        className={`w-full font-[Lexend] font-light ${
-                          dark && "text-slate-300"
-                        }`}
-                        htmlFor="username"
-                      >
-                        Name
-                      </label>
-                      <input
-                        className={
-                          dark
-                            ? `flex h-[2rem] w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-[Lexend] font-light text-slate-300 placeholder:text-gray-500 focus:border-sky-400 focus:outline-none`
-                            : `flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light text-gray-500 placeholder:text-gray-200 focus:border-sky-400 focus:outline-none`
-                        }
-                        type="text"
-                        name="username"
-                        id="username"
-                        placeholder="Enter your name"
-                        onChange={(e) => setName(e.target.value)}
+                      <InputField
+                        label={"Name"}
+                        dark={dark}
+                        type={"text"}
+                        name={"username"}
+                        placeholder={"Enter your name"}
+                        setOnChange={setName}
+                      />
+                    </div>
+                    <div className="flex w-full flex-col items-center">
+                      <InputField
+                        label={"Email"}
+                        dark={dark}
+                        type={"text"}
+                        name={"useremail"}
+                        placeholder={"Enter your email"}
+                        setOnChange={setEmail}
+                      />
+                    </div>
+                    <div className="flex w-full flex-col items-center">
+                      <InputField
+                        label={"Subject"}
+                        dark={dark}
+                        type={"text"}
+                        name={"usersubject"}
+                        placeholder={"Enter the subject"}
+                        setOnChange={setSubject}
                       />
                     </div>
                     <div className="flex w-full flex-col items-center">
                       <label
-                        className={`w-full font-[Lexend] font-light ${
-                          dark && "text-slate-300"
-                        }`}
-                        htmlFor="useremail"
-                      >
-                        Email
-                      </label>
-                      <input
-                        className={
-                          dark
-                            ? `flex h-[2rem] w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-[Lexend] font-light text-slate-300 placeholder:text-gray-500 focus:border-sky-400 focus:outline-none`
-                            : `flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light text-gray-500 placeholder:text-gray-200 focus:border-sky-400 focus:outline-none`
-                        }
-                        type="text"
-                        name="useremail"
-                        id="useremail"
-                        placeholder="Enter your email"
-                        onChange={(e) => setEmail(e.target.value)}
-                      />
-                    </div>
-                    <div className="flex w-full flex-col items-center">
-                      <label
-                        className={`w-full font-[Lexend] font-light ${
-                          dark && "text-slate-300"
-                        }`}
-                        htmlFor="usersubject"
-                      >
-                        Subject
-                      </label>
-                      <input
-                        className={
-                          dark
-                            ? `flex h-[2rem] w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-[Lexend] font-light text-slate-300 placeholder:text-gray-500 focus:border-sky-400 focus:outline-none`
-                            : `flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light text-gray-500 placeholder:text-gray-200 focus:border-sky-400 focus:outline-none`
-                        }
-                        type="text"
-                        name="usersubject"
-                        id="usersubject"
-                        placeholder="Enter the subject"
-                        onChange={(e) => setSubject(e.target.value)}
-                      />
-                    </div>
-                    <div className="flex w-full flex-col items-center">
-                      <label
-                        className={`w-full font-[Lexend] font-light ${
+                        className={`w-full font-[Lexend] font-light after:ml-0.5 after:text-red-500 after:content-['*'] ${
                           dark && "text-slate-300"
                         }`}
                         htmlFor="message"
@@ -138,6 +133,7 @@ const ContactMeModal = function contactMeModal() {
                         Message
                       </label>
                       <textarea
+                        required
                         className={
                           dark
                             ? `flex w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-[Lexend] font-light text-slate-300 placeholder:text-gray-500 focus:border-sky-400 focus:outline-none`
@@ -162,14 +158,14 @@ const ContactMeModal = function contactMeModal() {
                       Cancel
                     </button>
                     <button
-                      type="button"
+                      type="submit"
                       className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-gradient-to-b from-sky-400 to-cyan-400 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:from-sky-500 hover:to-cyan-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={handleSubmit}
                     >
                       Send
                     </button>
                   </div>
                 </form>
+                {/* The Form Ends Here!!! */}
               </Dialog.Panel>
             </Transition.Child>
           </div>

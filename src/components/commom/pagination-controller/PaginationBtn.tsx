@@ -22,12 +22,12 @@ const PaginationBtn: React.FC<BtnProps> = ({
   const name_of_class: string = icon
     ? chevron_direction === "left"
       ? `flex h-8 w-10 rounded justify-center items-center ${
-          current_page === 1
+          current_page === 1 || total_pages === 0
             ? "bg-slate-200 cursor-not-allowed dark:bg-slate-500"
             : "hover:bg-slate-100 dark:hover:bg-slate-700"
         }`
       : `flex h-8 w-10 rounded justify-center items-center ${
-          current_page === total_pages
+          current_page === total_pages || total_pages === 0
             ? "bg-gray-200 cursor-not-allowed dark:bg-slate-500"
             : "hover:bg-gray-100 dark:hover:bg-slate-700"
         }`
