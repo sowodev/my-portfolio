@@ -27,6 +27,10 @@ function useProjectsController(
   );
   const [current_page, setCurrentPage] = useState<number>(1);
 
+  function setProjects(data: ProjectType[]): void {
+    setFilteredProjects(sliceDataIntoArrays(data));
+  }
+
   function getCurrentPage(): number {
     return current_page;
   }
@@ -95,6 +99,7 @@ function useProjectsController(
   }
 
   return {
+    setProjects,
     getCurrentPage,
     setCurrentPageState,
     getTotalPages,

@@ -32,6 +32,7 @@ export interface ArticlesController {
 }
 
 export interface ProjectsController {
+  setProjects: (projects: ProjectType[]) => void;
   getCurrentPage: () => number;
   setCurrentPageState: (page: number) => void;
   getTotalPages: () => number;

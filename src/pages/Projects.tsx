@@ -1,15 +1,12 @@
-import { ProjectType } from "../interfaces/MultiCardsIntetrfaces";
+import { ProjectsController } from "../interfaces/MultiCardsIntetrfaces";
 import Filters from "../components/commom/filters/Filters";
 import CardsPagesProjects from "../components/projects/cards-pages/CardsPagesProjects";
-import useProjectsController from "../hooks/useProjects/useProjectsController";
 
 const Projects = function projects({
-  projects_data,
+  projects_controller,
 }: {
-  projects_data: ProjectType[];
+  projects_controller: ProjectsController;
 }) {
-  const projects_controller = useProjectsController(projects_data);
-
   return (
     <div className="flex flex-row h-full w-full">
       <div className="flex relative h-full basis-1/4 justify-center">
