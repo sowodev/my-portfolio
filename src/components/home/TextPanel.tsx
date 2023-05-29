@@ -3,6 +3,9 @@ import MyStack from "./text_panel/MyStack";
 import Learning from "./text_panel/Learning";
 import { HomeContext } from "./HomeContext";
 import { useContext } from "react";
+import me_img from "/src/assets/imgs/me.png";
+import tech_stack from "/src/assets/imgs/mystack.png";
+import learning_img from "/src/assets/imgs/learning.png";
 
 const TextPanel = function textPanel() {
   const context_object = useContext(HomeContext);
@@ -28,7 +31,7 @@ const TextPanel = function textPanel() {
             }
           >
             <div className="h-5 w-9">
-              <img src="/src/assets/imgs/me.png" alt="Me" />
+              <img src={me_img} alt="Me" />
             </div>
           </div>
 
@@ -40,7 +43,7 @@ const TextPanel = function textPanel() {
             }
           >
             <div className="h-5 w-24">
-              <img src="/src/assets/imgs/mystack.png" alt="MyStack" />
+              <img src={tech_stack} alt="MyStack" />
             </div>
           </div>
 
@@ -52,7 +55,7 @@ const TextPanel = function textPanel() {
             }
           >
             <div className="h-5 w-28">
-              <img src="/src/assets/imgs/learning.png" alt="Learning" />
+              <img src={learning_img} alt="Learning" />
             </div>
           </div>
         </div>

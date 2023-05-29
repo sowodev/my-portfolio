@@ -1,6 +1,9 @@
-import { ReactElement, useContext, useState } from "react";
+import { ReactElement, useContext } from "react";
 import { HomeContext } from "./HomeContext";
-import chest_treasure from "/src/assets/imgs/chest.png";
+import treasure_chest from "/src/assets/imgs/chest.png";
+import me_img from "/src/assets/imgs/me.png";
+import mystack_img from "/src/assets/imgs/mystack.png";
+import learning_img from "/src/assets/imgs/learning.png";
 
 const Chest = function chestComponent(): ReactElement {
   const context_object = useContext(HomeContext);
@@ -15,7 +18,7 @@ const Chest = function chestComponent(): ReactElement {
               context_object.setTextToShow("Me");
             }}
           >
-            <img className="h-7 w-14" src="./src/assets/imgs/me.png" alt="" />
+            <img className="h-7 w-14" src={me_img} alt="Me" />
           </button>
         </div>
         <div className="relative flex w-full flex-none basis-1/3">
@@ -25,11 +28,7 @@ const Chest = function chestComponent(): ReactElement {
               context_object.setTextToShow("MyStack");
             }}
           >
-            <img
-              className="h-7 w-36"
-              src="./src/assets/imgs/mystack.png"
-              alt=""
-            />
+            <img className="h-7 w-36" src={mystack_img} alt="Tech Stack" />
           </button>
         </div>
         <div className="relative flex w-full flex-none basis-1/3">
@@ -39,16 +38,12 @@ const Chest = function chestComponent(): ReactElement {
               context_object.setTextToShow("Learning");
             }}
           >
-            <img
-              className="h-8 w-40"
-              src="./src/assets/imgs/learning.png"
-              alt=""
-            />
+            <img className="h-8 w-40" src={learning_img} alt="Learning" />
           </button>
         </div>
       </div>
       <div className="mb-[11%] h-[52%] w-[75%]">
-        <img src={chest_treasure} alt="" />
+        <img src={treasure_chest} alt="treasure chest" />
       </div>
     </div>
   );

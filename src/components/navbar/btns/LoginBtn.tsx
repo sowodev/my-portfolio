@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
+import light from "/src/assets/imgs/light.svg";
+import user from "/src/assets/imgs/user.svg";
 
 const LoginBtn: React.FC = function loginBtn() {
   return (
@@ -17,7 +19,7 @@ const LoginBtn: React.FC = function loginBtn() {
               className={`relative h-full w-full ${
                 !isActive && "opacity-0 group-hover:opacity-30"
               }`}
-              src="/src/assets/imgs/light.svg"
+              src={light}
               alt=""
             />
             <div
@@ -29,7 +31,7 @@ const LoginBtn: React.FC = function loginBtn() {
                 className={`h-10 w-10 justify-self-center ${
                   isActive && "drop-shadow-lg"
                 }`}
-                src="/src/assets/imgs/user.svg"
+                src={user}
                 alt=""
               />
             </div>

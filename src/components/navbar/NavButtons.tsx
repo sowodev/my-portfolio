@@ -1,5 +1,5 @@
 import HomeBtn from "./btns/HomeBtn";
-import ArticlesBtn from "./btns/BlogBtn";
+import BlogBtn from "./btns/BlogBtn";
 import ProjectsBtn from "./btns/ProjectsBtn";
 import LoginBtn from "./btns/LoginBtn";
 import { ReactElement } from "react";
@@ -7,7 +7,7 @@ import { ReactElement } from "react";
 const NavButtons = function navButtons() {
   const components_array: ReactElement[] = [
     <HomeBtn />,
-    <ArticlesBtn />,
+    <BlogBtn />,
     <ProjectsBtn />,
     <LoginBtn />,
   ];
