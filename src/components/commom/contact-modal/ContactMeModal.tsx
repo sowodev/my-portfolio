@@ -23,12 +23,15 @@ const ContactMeModal = function contactMeModal() {
   const mutation = useMutation({
     mutationFn: () =>
       axios
-        .post("http://localhost:3000/contact-message/", {
-          name,
-          email,
-          subject,
-          message,
-        })
+        .post(
+          "https://my-portfolio-be-production.up.railway.app/contact-message/",
+          {
+            name,
+            email,
+            subject,
+            message,
+          }
+        )
         .then((res) => res.data),
   });
 

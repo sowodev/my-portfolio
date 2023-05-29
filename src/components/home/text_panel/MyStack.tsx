@@ -48,11 +48,13 @@ const MyStack = function myStack() {
   const query: UseQueryResult<any, unknown> = useQuery({
     queryKey: ["stack"],
     queryFn: () =>
-      axios.get("http://localhost:3000/tech-stack/").then((res) => {
-        setTechStack(setNewStack(res.data));
+      axios
+        .get("https://my-portfolio-be-production.up.railway.app/tech-stack/")
+        .then((res) => {
+          setTechStack(setNewStack(res.data));
 
-        return res.data;
-      }),
+          return res.data;
+        }),
   });
 
   if (query.isLoading) return <h1>Loading...</h1>;

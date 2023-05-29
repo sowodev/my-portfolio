@@ -36,30 +36,32 @@ const ArticlesRoutes = function articlesRoutes() {
   const query = useQuery({
     queryKey: ["articles"],
     queryFn: () =>
-      axios.get("http://localhost:3000/posts/").then((res) => {
-        const posts_temp: PostsType[] = [];
+      axios
+        .get("https://my-portfolio-be-production.up.railway.app/posts/")
+        .then((res) => {
+          const posts_temp: PostsType[] = [];
 
-        res.data.forEach((post: PostsDTO) => {
-          const tags: string[] = post.tags.split(",");
-          const post_temp: PostsType = {
-            img_path: post.name_img,
-            title: post.title,
-            leading: post.leading_content,
-            content_path: post.md_name,
-            published_date: post.created_at,
-            updated_date: post.updated_at,
-            tags: tags,
-            author: post.author,
-            img_credits: post.img_credits,
-          };
+          res.data.forEach((post: PostsDTO) => {
+            const tags: string[] = post.tags.split(",");
+            const post_temp: PostsType = {
+              img_path: post.name_img,
+              title: post.title,
+              leading: post.leading_content,
+              content_path: post.md_name,
+              published_date: post.created_at,
+              updated_date: post.updated_at,
+              tags: tags,
+              author: post.author,
+              img_credits: post.img_credits,
+            };
 
-          posts_temp.push(post_temp);
-        });
+            posts_temp.push(post_temp);
+          });
 
-        setPosts(posts_temp);
+          setPosts(posts_temp);
 
-        return res.data;
-      }),
+          return res.data;
+        }),
   });
 
   if (query.isLoading) return <h1>Loading...</h1>;
