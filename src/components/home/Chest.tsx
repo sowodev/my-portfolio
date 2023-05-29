@@ -1,5 +1,6 @@
 import { ReactElement, useContext, useState } from "react";
 import { HomeContext } from "./HomeContext";
+import chest_treasure from "/src/assets/imgs/chest.png";
 
 const Chest = function chestComponent(): ReactElement {
   const context_object = useContext(HomeContext);
@@ -47,7 +48,7 @@ const Chest = function chestComponent(): ReactElement {
         </div>
       </div>
       <div className="mb-[11%] h-[52%] w-[75%]">
-        <img src="./src/assets/imgs/chest.png" alt="" />
+        <img src={chest_treasure} alt="" />
       </div>
     </div>
   );
