@@ -88,14 +88,14 @@ const Login = function loginPage() {
             className="flex h-[3rem] w-[90%] items-center justify-center border border-slate-300 indent-2 font-[Lexend] text-slate-500 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-700"
             type="button"
           >
-            <img className="h-5 w-5" src="/src/assets/imgs/google.svg" />
+            <img className="h-5 w-5" src="/imgs/google.svg" />
             Enter With Google Account
           </button>
           <button
             className="flex h-[3rem] w-[90%] items-center justify-center border border-slate-300 indent-2 font-[Lexend] text-slate-500 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-700"
             type="button"
           >
-            <img className="h-5 w-5" src="/src/assets/imgs/microsoft.svg" />
+            <img className="h-5 w-5" src="/imgs/microsoft.svg" />
             Enter With Microsoft Account
           </button>
           <span className="font-[Lexend] text-sm font-light dark:text-slate-200">
