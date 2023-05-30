@@ -9,7 +9,7 @@ const StackComp = function stackComp({
   quote: string;
   desc: string;
 }) {
-  const src: string = "./src/assets/imgs/mystack/" + icon + ".svg";
+  const src: string = "/public/imgs/mystack/" + icon + ".svg";
   return (
     <div className="flex flex-col">
       <div className="flex h-fit w-fit flex-row items-center">

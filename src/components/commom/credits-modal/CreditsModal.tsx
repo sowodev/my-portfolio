@@ -58,7 +58,7 @@ const CreditsModal = function creditsModal() {
                 <div className="flex w-full flex-col">
                   <img
                     className="h-24 w-24"
-                    src="/public/imgs/chest-only.png"
+                    src="/imgs/chest-only.png"
                     alt="chest"
                   />
                   <p
