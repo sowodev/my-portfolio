@@ -1,6 +1,5 @@
 import { NewspaperIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
-import light from "/src/assets/imgs/light.svg";
 
 const BlogBtn: React.FC = function blogBtn() {
   return (
@@ -11,7 +10,7 @@ const BlogBtn: React.FC = function blogBtn() {
             className={`relative h-full w-full ${
               !isActive && "opacity-0 group-hover:opacity-30"
             }`}
-            src={light}
+            src="/imgs/light.svg"
             alt=""
           />
           <div

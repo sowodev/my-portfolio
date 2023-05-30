@@ -1,6 +1,5 @@
 import { HomeIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
-import light from "/src/assets/imgs/light.svg";
 
 const HomeBtn: React.FC = function homeBtn() {
   return (
@@ -11,7 +10,7 @@ const HomeBtn: React.FC = function homeBtn() {
             className={`relative h-full w-full ${
               !isActive && "opacity-0 group-hover:opacity-30"
             }`}
-            src={light}
+            src="/imgs/light.svg"
             alt=""
           />
           <div

@@ -42,8 +42,8 @@ const Me = function me(): ReactElement {
               className="ml-5 h-7 w-7"
               src={
                 set_dark.is_dark === "dark"
-                  ? "./src/assets/imgs/mystack/github-white.svg"
-                  : "./src/assets/imgs/mystack/github.svg"
+                  ? "/imgs/mystack/github-white.svg"
+                  : "/imgs/mystack/github.svg"
               }
               alt="gh"
             />

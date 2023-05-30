@@ -1,9 +1,5 @@
 import { ReactElement, useContext } from "react";
 import { HomeContext } from "./HomeContext";
-import treasure_chest from "/src/assets/imgs/chest.png";
-import me_img from "/src/assets/imgs/me.png";
-import mystack_img from "/src/assets/imgs/mystack.png";
-import learning_img from "/src/assets/imgs/learning.png";
 
 const Chest = function chestComponent(): ReactElement {
   const context_object = useContext(HomeContext);
@@ -18,7 +14,7 @@ const Chest = function chestComponent(): ReactElement {
               context_object.setTextToShow("Me");
             }}
           >
-            <img className="h-7 w-14" src={me_img} alt="Me" />
+            <img className="h-7 w-14" src="/imgs/me.png" alt="Me" />
           </button>
         </div>
         <div className="relative flex w-full flex-none basis-1/3">
@@ -28,7 +24,11 @@ const Chest = function chestComponent(): ReactElement {
               context_object.setTextToShow("MyStack");
             }}
           >
-            <img className="h-7 w-36" src={mystack_img} alt="Tech Stack" />
+            <img
+              className="h-7 w-36"
+              src="/imgs/mystack.png"
+              alt="Tech Stack"
+            />
           </button>
         </div>
         <div className="relative flex w-full flex-none basis-1/3">
@@ -38,12 +38,12 @@ const Chest = function chestComponent(): ReactElement {
               context_object.setTextToShow("Learning");
             }}
           >
-            <img className="h-8 w-40" src={learning_img} alt="Learning" />
+            <img className="h-8 w-40" src="/imgs/learning.png" alt="Learning" />
           </button>
         </div>
       </div>
       <div className="mb-[11%] h-[52%] w-[75%]">
-        <img src={treasure_chest} alt="treasure chest" />
+        <img src="/imgs/chest.png" alt="treasure chest" />
       </div>
     </div>
   );
