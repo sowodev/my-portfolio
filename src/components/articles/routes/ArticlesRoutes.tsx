@@ -5,6 +5,7 @@ import NotFound from "../../../pages/NotFound";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import LoadingComponent from "../../loading/LoadingComponent";
 
 type PostsDTO = {
   title: string;
@@ -62,7 +63,7 @@ const ArticlesRoutes = function articlesRoutes() {
       }),
   });
 
-  if (query.isLoading) return <h1>Loading...</h1>;
+  if (query.isLoading) return <LoadingComponent />;
 
   return (
     <Routes>

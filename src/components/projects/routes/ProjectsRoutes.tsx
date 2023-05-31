@@ -8,6 +8,7 @@ import { ProjectType } from "../../../interfaces/MultiCardsIntetrfaces";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import useProjectsController from "../../../hooks/useProjects/useProjectsController";
+import LoadingComponent from "../../loading/LoadingComponent";
 
 type ProjectsDTO = {
   title: string;
@@ -47,7 +48,7 @@ const ProjectsRoutes = function projectsRoutes() {
   });
 
   if (query.isLoading) {
-    return <div>Loading...</div>;
+    return <LoadingComponent />;
   }
 
   return (

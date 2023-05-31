@@ -4,6 +4,7 @@ import { Disclosure, Transition } from "@headlessui/react";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useState } from "react";
+import LoadingComponent from "../../loading/LoadingComponent";
 
 type stack = {
   name: string;
@@ -55,9 +56,9 @@ const MyStack = function myStack() {
       }),
   });
 
-  if (query.isLoading) return <h1>Loading...</h1>;
+  if (query.isLoading) return <LoadingComponent />;
 
-  if (query.error) return <h1>Loading...</h1>;
+  if (query.error) return <h1>error...</h1>;
 
   return (
     <>
