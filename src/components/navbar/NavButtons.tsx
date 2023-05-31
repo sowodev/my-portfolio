@@ -1,7 +1,6 @@
 import HomeBtn from "./btns/HomeBtn";
 import BlogBtn from "./btns/BlogBtn";
 import ProjectsBtn from "./btns/ProjectsBtn";
-import LoginBtn from "./btns/LoginBtn";
 import { ReactElement } from "react";
 
 const NavButtons = function navButtons() {
@@ -9,11 +8,10 @@ const NavButtons = function navButtons() {
     <HomeBtn />,
     <BlogBtn />,
     <ProjectsBtn />,
-    <LoginBtn />,
   ];
 
   return (
-    <div className="flex h-full w-fit">
+    <div className="hidden h-full w-fit md:flex">
       {components_array.map((component, index) => (
         <div
           key={index}
