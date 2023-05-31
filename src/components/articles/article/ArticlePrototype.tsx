@@ -70,7 +70,7 @@ const ArticlePrototype = function articlePrototype({
         </div>
         <div className="flex w-full flex-row justify-start font-[Lexend] text-xs font-light text-slate-400">
           <div className="h-16 w-16">
-            <img src="/src/assets/imgs/user.svg" alt="" />
+            <img src="/imgs/user.svg" alt="" />
           </div>
           <div className="flex h-full w-fit flex-col">
             <span className="w-fit text-base text-slate-700 dark:text-white">

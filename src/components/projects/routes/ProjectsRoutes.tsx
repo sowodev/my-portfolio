@@ -25,27 +25,25 @@ const ProjectsRoutes = function projectsRoutes() {
   const query = useQuery({
     queryKey: ["projects"],
     queryFn: () =>
-      axios
-        .get("https://my-portfolio-be-production.up.railway.app/projects/")
-        .then((res) => {
-          const projects_temp: ProjectType[] = [];
+      axios.get(import.meta.env.VITE_DATABASE_PROJECTS).then((res) => {
+        const projects_temp: ProjectType[] = [];
 
-          res.data.forEach((project: ProjectsDTO) => {
-            const project_temp: ProjectType = {
-              title: project.title,
-              description: project.description,
-              img_path: project.img_name,
-              tags: project.tags.split(","),
-            };
+        res.data.forEach((project: ProjectsDTO) => {
+          const project_temp: ProjectType = {
+            title: project.title,
+            description: project.description,
+            img_path: project.img_name,
+            tags: project.tags.split(","),
+          };
 
-            projects_temp.push(project_temp);
-          });
+          projects_temp.push(project_temp);
+        });
 
-          setNewProjectsData([...projects_temp, ...ProjectsData]);
-          projects_controller.setProjects([...projects_temp, ...ProjectsData]);
+        setNewProjectsData([...projects_temp, ...ProjectsData]);
+        projects_controller.setProjects([...projects_temp, ...ProjectsData]);
 
-          return res.data;
-        }),
+        return res.data;
+      }),
   });
 
   if (query.isLoading) {
