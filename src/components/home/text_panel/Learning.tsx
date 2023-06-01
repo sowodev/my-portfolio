@@ -3,14 +3,9 @@ const Learning = function learning() {
     <>
       <div className="h-full w-full overflow-y-auto px-6 py-2">
         <div className="prose prose-slate mx-auto mt-4">
-          <p className="lead indent-3 font-[Lexend] dark:text-white">
-            This is the "Learning" section, here I try to show what I want to
-            learn or deepen my knowledge about it, in the near future.
+          <p className="mb-2 text-justify font-[Lexend] text-3xl font-bold dark:text-white">
+            My phylosophy: keep learning, keep improving, keep overcoming!
           </p>
-          <div className="font-[Lexend] text-sm font-extralight text-slate-500 dark:text-slate-300">
-            last update: 03/26/2023
-          </div>
-          <hr className="my-4 dark:border-slate-500" />
           <ul className="font-[Lexend] dark:text-slate-300">
             <li>NextJS</li>
             <li>tRPC</li>

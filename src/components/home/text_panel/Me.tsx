@@ -9,15 +9,11 @@ const Me = function me(): ReactElement {
     <>
       <div className="flex h-full w-full flex-col justify-between overflow-y-auto px-6 py-2 text-white">
         <div className="prose prose-slate mx-auto mt-4">
-          <p className="lead indent-3 font-[Lexend] text-black dark:text-white">
-            This is the "Me" section, here you can find a brief description
-            about myself.
+          <p className="mb-2 text-justify font-[Lexend] text-3xl font-bold dark:text-white">
+            Software Engineer working with Fullstack Web Development, building
+            secure, robust, reliable and scalable systems.
           </p>
-          <div className="font-[Lexend] text-sm font-extralight dark:text-slate-300">
-            last update: 03/26/2023
-          </div>
-          <hr className="my-4 border-white dark:border-slate-500" />
-          <p className="indent-5 font-[Lexend] font-light dark:text-slate-300">
+          <p className="mt-2 text-justify indent-5 font-[Lexend] font-light dark:text-slate-300">
             Hi there, my name is Wendell, I am a brazilian Software Engineer
             based in São José dos Campos - São Paulo. With over 3 years of
             experience as Full Stack Software Developer. I am a passionate about
@@ -25,15 +21,13 @@ const Me = function me(): ReactElement {
             with focus on Computer Science at the Federal University of São
             Paulo, also aquired a little bit of international experience by
             living in New Zealed for about one year (where I could improve my
-            english). I am guided by developing secure, robust, reliable and
-            scalable systems. I am looking foward to contribute to an
-            international company where I can improve my skills and learn new
-            ones.
+            english). I am looking foward to work with an international company,
+            so I can level up my game as well as the company.
           </p>
         </div>
         <div className="flex w-full flex-row justify-end gap-8 pb-4 text-gray-600">
           <a
-            className="flex h-12 flex-row items-center justify-center gap-3 rounded ring-1 ring-gray-100 duration-300 ease-in-out hover:scale-110 hover:bg-gray-100 hover:shadow-lg dark:hover:bg-slate-600"
+            className="flex h-12 flex-row items-center justify-center gap-3 rounded ring-1 ring-slate-500 duration-300 ease-in-out hover:scale-110 hover:bg-black hover:bg-opacity-10 hover:shadow-lg dark:hover:bg-black dark:hover:bg-opacity-10"
             href="https://www.github.com/sowodin"
             target="_blank"
             rel="noopener noreferrer"
@@ -47,15 +41,15 @@ const Me = function me(): ReactElement {
               }
               alt="gh"
             />
-            <span className="mr-5 font-[Lexend] dark:text-slate-300">
+            <span className="mr-5 font-[Lexend] font-bold text-slate-700 dark:text-white">
               Github
             </span>
           </a>
           <button
-            className="flex h-12 flex-row items-center justify-center gap-3 rounded bg-gradient-to-b from-sky-400 to-cyan-400 duration-300 ease-in-out hover:scale-110 hover:from-sky-500 hover:to-cyan-500 hover:shadow-lg dark:hover:from-sky-400 dark:hover:to-cyan-400"
+            className="flex h-12 flex-row items-center justify-center gap-3 rounded bg-gradient-to-b from-green-400 to-emerald-400 duration-300 ease-in-out hover:scale-110 hover:from-green-500 hover:to-emerald-500 hover:shadow-lg dark:hover:from-green-500 dark:hover:to-emerald-500"
             onClick={() => set_dialog.setOpenDialog(true)}
           >
-            <EnvelopeIcon className="ml-5 h-7 w-7 stroke-slate-100" />
+            <EnvelopeIcon className="ml-5 h-7 w-7 stroke-white" />
             <span className="mr-5 font-[Lexend] text-white dark:text-slate-100">
               Hire Me!
             </span>

@@ -152,14 +152,14 @@ const ContactMeModal = function contactMeModal() {
                   <div className="flex w-full justify-between">
                     <button
                       type="button"
-                      className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-gradient-to-b from-orange-300 to-amber-300 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:from-orange-400 hover:to-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-gradient-to-b from-yellow-300 to-amber-300 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:from-yellow-400 hover:to-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
                       Cancel
                     </button>
                     <button
                       type="submit"
-                      className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-gradient-to-b from-sky-400 to-cyan-400 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:from-sky-500 hover:to-cyan-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-gradient-to-b from-cyan-400 to-sky-400 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:from-cyan-500 hover:to-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                     >
                       Send
                     </button>
