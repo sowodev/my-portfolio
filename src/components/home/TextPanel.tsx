@@ -17,9 +17,9 @@ const TextPanel = function textPanel() {
   }
 
   return (
-    <div className="mt-16 flex h-4/5 w-3/4 flex-col items-center justify-center  rounded-lg bg-gradient-to-tl from-blue-400 to-sky-400 shadow-lg shadow-sky-300 ring-1 ring-slate-900/5 dark:from-sky-700 dark:to-blue-950 dark:shadow-sky-800">
+    <div className="mt-4 lg:mt-16 flex w-[95%] h-[95%] lg:h-4/5 md:w-3/4 flex-col items-center justify-center  rounded-lg bg-gradient-to-tl from-blue-400 to-sky-400 shadow-lg shadow-sky-300 ring-1 ring-slate-900/5 dark:from-sky-700 dark:to-blue-950 dark:shadow-sky-800">
       <div className="flex h-[10%] w-full items-center justify-center">
-        <div className="flex h-[80%] w-[80%] flex-row items-center justify-center gap-4 rounded-lg border border-[#f5f5f538] bg-[#ffffff3f]">
+        <div className="flex w-[95%] h-[80%] md:w-[80%] flex-row items-center justify-center gap-4 rounded-lg border border-[#f5f5f538] bg-[#ffffff3f]">
           <button
             className={
               context_object.text_to_show === "Me"
@@ -29,7 +29,7 @@ const TextPanel = function textPanel() {
             onClick={() => context_object.setTextToShow("Me")}
             disabled={context_object.text_to_show === "Me"}
           >
-            <div className="h-5 w-9">
+            <div className="h-5 w-8 md:w-9">
               <img src="/imgs/me.png" alt="Me" />
             </div>
           </button>
@@ -43,7 +43,7 @@ const TextPanel = function textPanel() {
             onClick={() => context_object.setTextToShow("MyStack")}
             disabled={context_object.text_to_show === "MyStack"}
           >
-            <div className="h-5 w-24">
+            <div className="h-5 w-20 md:w-24">
               <img src="/imgs/mystack.png" alt="MyStack" />
             </div>
           </button>
@@ -57,7 +57,7 @@ const TextPanel = function textPanel() {
             onClick={() => context_object.setTextToShow("Learning")}
             disabled={context_object.text_to_show === "Learning"}
           >
-            <div className="h-5 w-28">
+            <div className="w-20 h-5 md:w-28">
               <img src="/imgs/learning.png" alt="Learning" />
             </div>
           </button>

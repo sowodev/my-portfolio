@@ -11,7 +11,7 @@ const MyStack = function myStack() {
     <>
       <div className="h-full w-full overflow-y-auto px-6 py-2">
         <div className="prose prose-slate mx-auto mt-4">
-          <p className="mb-2 text-justify font-[Lexend] text-3xl font-bold dark:text-white">
+          <p className="mb-2 text-justify font-[Lexend] text-lg md:text-2xl lg:text-3xl font-bold dark:text-white">
             🛠️ Tech Stack
           </p>
 
@@ -24,7 +24,7 @@ const MyStack = function myStack() {
                       className="mt-4 flex h-16 w-full items-center justify-between rounded border border-slate-500 hover:bg-black hover:bg-opacity-10 dark:text-slate-300 dark:hover:bg-black dark:hover:bg-opacity-10"
                       onClick={() => {}}
                     >
-                      <span className="ml-8 font-[Lexend] font-bold text-lg text-slate-700 dark:text-white">
+                      <span className="ml-8 font-[Lexend] font-bold text-md lg:text-lg text-slate-700 dark:text-white">
                         {current.stack_name}
                       </span>
                       <ChevronDownIcon
