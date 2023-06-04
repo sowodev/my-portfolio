@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Login = function loginPage() {
   return (
-    <div className="mt-20 flex h-full w-full justify-center">
+    <div className="mt-20 flex h-fit w-full justify-center">
       <div className="flex h-[38rem] w-[29rem] flex-col rounded-lg border border-slate-300 shadow-lg dark:border-slate-500 dark:shadow-slate-700">
         <div className="flex w-full basis-[15%] items-center justify-center">
           <h1 className="font-[Lexend] text-3xl text-slate-700 dark:text-white">

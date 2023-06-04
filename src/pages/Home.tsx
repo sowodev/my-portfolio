@@ -18,7 +18,7 @@ const Home = function home() {
 
   return (
     <div
-      className="flex flex-col h-full w-full overflow-y-auto lg:flex-row md:overflow-hidden"
+      className="flex flex-col h-full w-full overflow-y-scroll overflow-x-hidden lg:flex-row md:overflow-hidden"
       ref={home_ref}
     >
       <HomeContext.Provider value={{ text_to_show, setTextToShow }}>

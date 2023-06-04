@@ -16,7 +16,7 @@ const Learning = function learning() {
             <li>Design Thinking</li>
             <li>Cloud Services</li>
             <li>Rust Programming Language ❤️</li>
-            <li>A pure functional Programming Language</li>
+            <li>A pure functional Programming Language ⚡️</li>
             <li>Deepen my knowledge in Machine Learning 🦾</li>
             <li>
               Intersection between Machine Learning 🦾, Quantum Computing 🧠 and

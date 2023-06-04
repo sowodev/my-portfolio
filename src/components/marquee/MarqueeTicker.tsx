@@ -7,7 +7,7 @@ const Ticker = () => {
   const { set_dialog } = useContext(GlobalContext);
 
   return (
-    <Marquee pauseOnHover speed={25} play={true}>
+    <Marquee pauseOnHover speed={50} play={true}>
       <div className="mx-8 flex h-fit w-fit flex-row items-center justify-between">
         <span className="flex flex-row">
           <p className="font-[Lexend] text-lg font-bold">Looking for a job!</p>
@@ -19,16 +19,16 @@ const Ticker = () => {
         <TechComp name={"TypeScript"} />
         <TechComp name={"React"} />
         <TechComp name={"Tailwind"} />
-        <TechComp name={"Html"} />
-        <TechComp name={"Css"} />
+        {/* <TechComp name={"Html"} />
+        <TechComp name={"Css"} /> */}
         <TechComp name={"Nest"} />
         <TechComp name={"MySQL"} />
         <TechComp name={"Docker"} />
         <TechComp name={"Linux"} />
         <TechComp name={"Github"} />
-        <TechComp name={"Python"} />
+        {/* <TechComp name={"Python"} />
         <TechComp name={"Cpp"} />
-        <TechComp name={"Java"} />
+        <TechComp name={"Java"} /> */}
         <span className="border-l border-gray-700 px-8 font-[Lexend] text-lg">
           For more information, please.
         </span>
