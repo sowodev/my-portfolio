@@ -1,6 +1,6 @@
 const ForgotPassword = function forgotPassword() {
   return (
-    <div className="mt-20 flex h-full w-full justify-center">
+    <div className="md:mt-20 flex h-fit w-full justify-center">
       <div className="flex h-[28rem] w-[29rem] flex-col rounded-lg border border-slate-300 shadow-lg dark:border-slate-500 dark:shadow-slate-700">
         <div className="flex w-full basis-[21%] items-center justify-center">
           <h1 className="font-[Lexend] text-3xl text-slate-700 dark:text-white">

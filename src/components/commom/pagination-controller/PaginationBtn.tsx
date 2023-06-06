@@ -21,17 +21,17 @@ const PaginationBtn: React.FC<BtnProps> = ({
   const display_element: ReactElement | number = icon ? icon : page_number;
   const name_of_class: string = icon
     ? chevron_direction === "left"
-      ? `flex h-8 w-10 rounded justify-center items-center ${
+      ? `flex h-6 w-8 md:h-8 md:w-10 rounded justify-center items-center ${
           current_page === 1 || total_pages === 0
             ? "bg-slate-200 cursor-not-allowed dark:bg-slate-500"
             : "hover:bg-slate-100 dark:hover:bg-slate-700"
         }`
-      : `flex h-8 w-10 rounded justify-center items-center ${
+      : `flex h-6 w-8 md:h-8 md:w-10 rounded justify-center items-center ${
           current_page === total_pages || total_pages === 0
             ? "bg-gray-200 cursor-not-allowed dark:bg-slate-500"
             : "hover:bg-gray-100 dark:hover:bg-slate-700"
         }`
-    : `flex h-8 w-10 font-[Lexend] font-light text-sm rounded justify-center items-center ${
+    : `flex h-6 w-8 md:h-8 md:w-10 font-[Lexend] font-light text-sm rounded justify-center items-center ${
         current_page === page_number
           ? "bg-gradient-to-b from-sky-300 to-cyan-300 text-white cursor-not-allowed dark:text-slate-800 dark:from-sky-400 dark:to-cyan-400"
           : "hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-700"
@@ -44,7 +44,7 @@ const PaginationBtn: React.FC<BtnProps> = ({
       (page_number === total_pages - 1 &&
         current_page < total_pages - 3 &&
         total_pages > 7) ? (
-        <EllipsisHorizontalIcon className="h-8 w-10 stroke-slate-300 dark:stroke-slate-500" />
+        <EllipsisHorizontalIcon className="h-6 w-8 md:h-8 md:w-10 stroke-slate-300 dark:stroke-slate-500" />
       ) : (
         <button
           className={name_of_class}

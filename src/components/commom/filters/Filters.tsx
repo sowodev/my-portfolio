@@ -30,7 +30,7 @@ const Filters = function filters({
 
   return (
     <>
-      <div className="fixed top-[12.8rem] flex w-[23rem] flex-col gap-1">
+      <div className="flex w-[23rem] flex-col gap-1">
         <form className="mb-4 mt-4 flex flex-col gap-4">
           <div className="ml-4 flex flex-col gap-1">
             <p className="font-[Lexend] text-sm text-[#333333ce] dark:text-slate-300">

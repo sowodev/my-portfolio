@@ -9,10 +9,10 @@ const Projects = function projects({
 }) {
   return (
     <div className="flex h-full w-full flex-row">
-      <div className="relative flex h-full basis-1/4 justify-center">
+      <div className="hidden lg:flex h-full basis-1/4 justify-center">
         <Filters multi_card_controller={projects_controller} />
       </div>
-      <div className="flex h-full basis-3/4 items-center justify-start">
+      <div className="flex h-fit lg:h-full w-full lg:basis-3/4 items-center justify-center lg:justify-start">
         <CardsPagesProjects projects_controller={projects_controller} />
       </div>
     </div>
