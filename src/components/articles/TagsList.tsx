@@ -1,19 +1,22 @@
 const TagsList = function tagsList({ tags }: { tags: string[] }) {
+  const tag1: string = tags[0].trim();
+  const tag2: string = tags[1].trim();
+  const tag3: string = tags[2].trim();
   return (
-    <div className="mr-8 flex h-[85%] w-[50%] flex-row items-center justify-around">
-      <div className="flex h-[90%] basis-[30%] items-center justify-center">
+    <div className="lg:mr-8 flex h-full md:h-[85%] mx-8 lg:mx-0 w-[95%] lg:w-[50%] flex-row items-center justify-between">
+      <div className="flex h-full w-fit lg:basis-[30%] items-center justify-center">
         <p className="font-[Lexend] text-xs font-light text-[#26B1FF]">
-          {tags[0].length > 10 ? tags[0].slice(0, 9) + "..." : tags[0]}
+          {tag1.length >= 14 ? tag1.slice(0, 13) + "..." : tag1}
         </p>
       </div>
-      <div className="flex h-[90%] basis-[30%] items-center justify-center">
+      <div className="flex h-full w-fit lg:basis-[30%] items-center justify-center">
         <p className="font-[Lexend] text-xs font-light text-[#26B1FF]">
-          {tags[1].length > 10 ? tags[1].slice(0, 9) + "..." : tags[1]}
+          {tag2.length >= 14 ? tag2.slice(0, 13) + "..." : tag2}
         </p>
       </div>
-      <div className="flex h-[90%] basis-[30%] items-center justify-center">
+      <div className="flex h-full w-fit lg:basis-[30%] items-center justify-center">
         <p className="font-[Lexend] text-xs font-light text-[#26B1FF]">
-          {tags[2].length > 10 ? tags[2].slice(0, 9) + "..." : tags[2]}
+          {tag3.length >= 14 ? tag3.slice(0, 13) + "..." : tag3}
         </p>
       </div>
     </div>

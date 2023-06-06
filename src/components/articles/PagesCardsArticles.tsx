@@ -8,7 +8,7 @@ const PagesCardsArticles = function pagesCardsArticles({
   articles_controller: ArticlesController;
 }) {
   return (
-    <div className="flex h-full w-full flex-col items-center gap-6">
+    <div className="flex h-full w-full flex-col items-center gap-6 md:gap-10">
       {articles_controller.showingArticles().map((article, index) => {
         const link =
           "/articles/" +
@@ -20,7 +20,11 @@ const PagesCardsArticles = function pagesCardsArticles({
             .trim()
             .replaceAll(" ", "-");
         return (
-          <NavLink key={index} to={link} className="flex w-[85%] snap-center">
+          <NavLink
+            key={index}
+            to={link}
+            className="flex w-[95%] md:w-[85%] snap-center"
+          >
             <CardArticle article={article} />
           </NavLink>
         );
@@ -28,11 +32,11 @@ const PagesCardsArticles = function pagesCardsArticles({
       <div className="relative flex w-full flex-col items-center justify-center">
         <div className="fixed bottom-8 flex h-12 w-52 flex-row">
           <button
-            className={`flex h-full w-52 items-center  justify-center rounded bg-gradient-to-b from-sky-400 to-cyan-400 shadow-lg transition duration-300 ease-linear ${
-              articles_controller.checkDisabledBtn() && "cursor-not-allowed"
-            } hover:scale-110 hover:from-sky-500 hover:to-cyan-500`}
+            className={`${
+              articles_controller.checkDisabledBtn() ? "hidden" : "flex"
+            } h-full w-52 items-center  justify-center rounded bg-gradient-to-b from-sky-400 to-cyan-400 shadow-lg transition duration-300 ease-linear  hover:scale-110 hover:from-sky-500 hover:to-cyan-500`}
             onClick={() => articles_controller.addMoreArticles()}
-            disabled={articles_controller.checkDisabledBtn()}
+            hidden={articles_controller.checkDisabledBtn()}
           >
             <span className="font-[Lexend] text-lg text-white">
               + Show More

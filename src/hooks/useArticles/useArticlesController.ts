@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 
 function useArticlesController(articles: ArticleType[]): ArticlesController {
   const [filtered_articles, setFilteredArticles] = useState(articles);
-  const [disabled_btn, setDisabledBtn] = useState(false);
   const [cutEnd, setCutEnd] = useState(4);
 
   function showingArticles(): ArticleType[] {
@@ -26,15 +25,14 @@ function useArticlesController(articles: ArticleType[]): ArticlesController {
   }
 
   function addMoreArticles(): void {
-    if (cutEnd < articles.length) {
-      setCutEnd(cutEnd + 4);
-    } else {
-      setDisabledBtn(true);
-    }
+    if (cutEnd < articles.length)
+      setCutEnd((c) =>
+        articles.length - c < 4 ? c + (articles.length - c) : c + 4
+      );
   }
 
   function checkDisabledBtn(): boolean {
-    return disabled_btn;
+    return cutEnd >= articles.length;
   }
 
   function filterMultiCardsByText(text: string): void {

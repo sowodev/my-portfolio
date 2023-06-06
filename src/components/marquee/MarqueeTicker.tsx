@@ -10,7 +10,9 @@ const Ticker = () => {
     <Marquee pauseOnHover speed={50} play={true}>
       <div className="mx-8 flex h-fit w-fit flex-row items-center justify-between">
         <span className="flex flex-row">
-          <p className="font-[Lexend] text-lg font-bold">Looking for a job!</p>
+          <p className="font-[Lexend] text-lg font-bold">
+            🔊 <span className="text-red-500">Looking for a job!</span> 🔊
+          </p>
           <p className="px-8 font-[Lexend] text-lg">
             Full Stack Web Developer, currently working with:
           </p>

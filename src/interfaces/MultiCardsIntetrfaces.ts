@@ -8,6 +8,7 @@ export type ArticleType = {
   tags: string[];
   author: string;
   img_credits: string;
+  thumb_img_path: string;
 };
 
 export type ProjectType = {

@@ -16,14 +16,14 @@ const Article = function articles({
 
   return (
     <div className="flex h-full w-full flex-row overflow-scroll scroll-smooth">
-      <div className="flex h-full basis-1/4 justify-center">
+      <div className="h-full basis-0 lg:basis-1/4 justify-center hidden lg:flex">
         <Filters multi_card_controller={articles_controller} />
       </div>
-      <div className="flex h-fit basis-3/4">
-        <div className="flex basis-2/3 items-center justify-center pt-8">
+      <div className="flex h-fit basis-full lg:basis-3/4 justify-center">
+        <div className="flex basis-full lg:basis-2/3 items-center justify-center pt-8">
           <PagesCardsArticles articles_controller={articles_controller} />
         </div>
-        <div className="flex h-full basis-1/3 justify-center"></div>
+        <div className="flex h-full basis-0 lg:basis-1/3 justify-center"></div>
       </div>
     </div>
   );
