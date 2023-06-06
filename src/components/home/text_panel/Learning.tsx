@@ -8,9 +8,9 @@ const Learning = function learning() {
           </p>
           <ul className="font-[Lexend] text-sm lg:text-base dark:text-slate-300">
             <li>NextJS</li>
-            <li>tRPC</li>
+            <li>React Native</li>
             <li>NoSQL</li>
-            <li>Search Engine Optimization</li>
+            <li>Data Analysis</li>
             <li>Test Driven Development</li>
             <li>Clean Architecture</li>
             <li>Design Thinking</li>
