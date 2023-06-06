@@ -6,30 +6,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import LoadingComponent from "../../loading/LoadingComponent";
-
-type PostsDTO = {
-  title: string;
-  leading_content: string;
-  md_name: string;
-  author: string;
-  name_img: string;
-  img_credits: string;
-  tags: string;
-  created_at: string;
-  updated_at: string;
-};
-
-type PostsType = {
-  img_path: string;
-  title: string;
-  leading: string;
-  content_path: string;
-  published_date: string;
-  updated_date: string;
-  tags: string[];
-  author: string;
-  img_credits: string;
-};
+import { PostsType, PostsDTO } from "../../../interfaces/MultiCardsIntetrfaces";
 
 const ArticlesRoutes = function articlesRoutes() {
   const [posts, setPosts] = useState<PostsType[]>([]);
@@ -52,6 +29,7 @@ const ArticlesRoutes = function articlesRoutes() {
             tags: tags,
             author: post.author,
             img_credits: post.img_credits,
+            thumb_img_path: post.thumb_img_path,
           };
 
           posts_temp.push(post_temp);

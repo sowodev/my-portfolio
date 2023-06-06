@@ -1,16 +1,16 @@
 import {
   ArticlesController,
-  ArticleType,
+  PostsType,
   Tag,
 } from "../../interfaces/MultiCardsIntetrfaces";
 
 import { useState, useEffect } from "react";
 
-function useArticlesController(articles: ArticleType[]): ArticlesController {
+function useArticlesController(articles: PostsType[]): ArticlesController {
   const [filtered_articles, setFilteredArticles] = useState(articles);
   const [cutEnd, setCutEnd] = useState(4);
 
-  function showingArticles(): ArticleType[] {
+  function showingArticles(): PostsType[] {
     if (filtered_articles.length > 0) {
       return filtered_articles.slice(
         0,
@@ -52,7 +52,7 @@ function useArticlesController(articles: ArticleType[]): ArticlesController {
     setFilteredArticles(filtered);
   }
 
-  function getArticles(): ArticleType[] {
+  function getArticles(): PostsType[] {
     return articles;
   }
 

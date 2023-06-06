@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { ArticleType } from "../../../interfaces/MultiCardsIntetrfaces";
+import { PostsType } from "../../../interfaces/MultiCardsIntetrfaces";
 import NextArticleCard from "./NextArticleCard";
 
 const ArticlePrototype = function articlePrototype({
   ArticlesData,
   article,
 }: {
-  ArticlesData: ArticleType[];
-  article: ArticleType;
+  ArticlesData: PostsType[];
+  article: PostsType;
 }) {
   const [markdown_content, setMarkdownContent] = useState("");
   const contentRef = useRef<HTMLDivElement>(null);
@@ -52,11 +52,7 @@ const ArticlePrototype = function articlePrototype({
         </h3>
         <div className="flex w-full flex-row justify-center gap-5 font-[Lexend] text-xs lg:text-sm font-light text-sky-500">
           {article.tags.map((current, index) => {
-            return (
-              <span key={index}>
-                {current.length > 15 ? current.slice(0, 14) + "..." : current}
-              </span>
-            );
+            return <span key={index}>{current}</span>;
           })}
         </div>
         <div className="flex w-full flex-col">
@@ -72,31 +68,31 @@ const ArticlePrototype = function articlePrototype({
           <hr className="mx-4 lg:mx-0 my-4 dark:border-slate-500" />
         </div>
         <div className="flex w-full flex-row justify-start font-[Lexend] text-xs font-light text-slate-400">
-          <div className="ps-4 h-16 w-16">
+          <div className="ps-4 lg:ps-0 h-16 w-16">
             <img src="/imgs/user.svg" alt="" />
           </div>
           <div className="flex h-full w-fit flex-col">
             <span className="w-fit text-sm lg:text-base text-slate-700 dark:text-white">
               {article.author}
             </span>
-            <span className="w-fit text-xs lg:text-base dark:text-slate-300">
+            <span className="w-fit text-xs dark:text-slate-300">
               Published: {new Date(article.published_date).toLocaleString()}
             </span>
-            <span className="w-fit text-xs lg:text-base dark:text-slate-300">
+            <span className="w-fit text-xs dark:text-slate-300">
               Last Update: {new Date(article.updated_date).toLocaleString()}
             </span>
           </div>
         </div>
-        <div className="md:prose prose-sm prose-slate mx-6 md:mx-auto pb-8 dark:prose-invert lg:prose-xl">
+        <div className="prose lg:prose-xl prose-slate mx-6 md:mx-auto pb-8 dark:prose-invert">
           <ReactMarkdown children={markdown_content} />
         </div>
-        <div className="my-8 flex h-full w-[90%] lg:h-80 lg:w-full flex-col rounded bg-slate-100 dark:bg-slate-800 self-center">
-          <div className="flex w-full lg:basis-[15%] lg:flex-row items-center rounded-t border-l border-r border-t border-slate-300 dark:border-slate-500">
+        <div className="my-8 flex h-full w-[90%] lg:h-fit lg:w-full flex-col rounded border border-slate-300 bg-gray-100 dark:bg-slate-800 dark:border-slate-500 self-center">
+          <div className="flex w-full lg:basis-[15%] lg:flex-row items-center rounded-t border-b border-slate-300 dark:border-slate-500">
             <span className="indent-4 font-[Lexend] text-2xl text-slate-500 dark:text-slate-300">
               [Read Next]
             </span>
           </div>
-          <div className="flex h-full w-full gap-4 md:gap-2 py-2 flex-col md:flex-row items-center justify-around rounded-b border border-slate-300 dark:border-slate-500">
+          <div className="flex h-full w-full gap-4 md:gap-2 py-2 flex-col md:flex-row items-center justify-around ">
             <NextArticleCard article={ArticlesData[3]} />
             <NextArticleCard article={ArticlesData[1]} />
             <NextArticleCard article={ArticlesData[4]} />

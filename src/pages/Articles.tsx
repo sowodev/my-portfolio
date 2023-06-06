@@ -3,13 +3,13 @@ import PagesCardsArticles from "../components/articles/PagesCardsArticles";
 import useArticlesController from "../hooks/useArticles/useArticlesController";
 import {
   ArticlesController,
-  ArticleType,
+  PostsType,
 } from "../interfaces/MultiCardsIntetrfaces";
 
 const Article = function articles({
   ArticlesData,
 }: {
-  ArticlesData: ArticleType[];
+  ArticlesData: PostsType[];
 }) {
   const articles_controller: ArticlesController =
     useArticlesController(ArticlesData);

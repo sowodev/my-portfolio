@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
-import { ArticleType } from "../../../interfaces/MultiCardsIntetrfaces";
+import { PostsType } from "../../../interfaces/MultiCardsIntetrfaces";
 
 interface Props {
-  article: ArticleType;
+  article: PostsType;
 }
 
 const NextArticleCard: React.FC<Props> = ({ article }) => {
@@ -29,7 +29,7 @@ const NextArticleCard: React.FC<Props> = ({ article }) => {
         />
       </div>
       <div className="flex h-1/2 w-full items-center p-4">
-        <span className="line-clamp-3 lg:line-clamp-5 text-left lg:text-center font-[Lexend] text-sm lg:text-base text-slate-700 hyphens-auto dark:text-slate-300">
+        <span className="line-clamp-3 text-left lg:text-center font-[Lexend] text-sm lg:text-base text-slate-700 hyphens-auto dark:text-slate-300">
           {article.title}
         </span>
       </div>

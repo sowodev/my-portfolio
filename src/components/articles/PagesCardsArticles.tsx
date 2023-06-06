@@ -8,7 +8,7 @@ const PagesCardsArticles = function pagesCardsArticles({
   articles_controller: ArticlesController;
 }) {
   return (
-    <div className="flex h-full w-full flex-col items-center gap-6 md:gap-10">
+    <div className="flex h-full w-full flex-col items-center gap-6 md:gap-10 lg:gap-6">
       {articles_controller.showingArticles().map((article, index) => {
         const link =
           "/articles/" +

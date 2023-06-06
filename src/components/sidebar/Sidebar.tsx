@@ -60,7 +60,7 @@ const Sidebar: React.FC = () => {
         leaveTo="-translate-x-full"
       >
         <div
-          className="fixed z-20 flex h-full w-60 bg-neutral-600 dark:bg-slate-700"
+          className="fixed z-20 flex top-[7.3125rem] bottom-0 w-60 bg-neutral-600 dark:bg-slate-700"
           ref={sidebar_ref}
         >
           <div className="flex h-full w-full flex-col justify-between py-12">
