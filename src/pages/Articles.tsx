@@ -1,10 +1,7 @@
 import Filters from "../components/commom/filters/Filters";
 import PagesCardsArticles from "../components/articles/PagesCardsArticles";
-import useArticlesController from "../hooks/useArticles/useArticlesController";
-import {
-  ArticlesController,
-  PostsType,
-} from "../interfaces/MultiCardsIntetrfaces";
+import useArticlesController from "../components/articles/hooks/useArticlesController";
+import { ArticlesController, PostsType } from "../utils/MultiCardsIntetrfaces";
 
 const Article = function articles({
   ArticlesData,

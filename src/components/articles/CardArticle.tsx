@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TagsList from "./TagsList";
 import TextCard from "./TextCard";
-import { PostsType } from "../../interfaces/MultiCardsIntetrfaces";
+import { PostsType } from "../../utils/MultiCardsIntetrfaces";
 
 const CardArticle = function cardArticle({ article }: { article: PostsType }) {
   const [imgLoaded, setImgLoaded] = useState(false);

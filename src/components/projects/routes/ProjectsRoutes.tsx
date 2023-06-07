@@ -4,10 +4,10 @@ import { ProjectsData } from "../ProjectsData";
 import { ElementsRoutes } from "./ElementsRoutes";
 import NotFound from "../../../pages/NotFound";
 import { useState } from "react";
-import { ProjectType } from "../../../interfaces/MultiCardsIntetrfaces";
+import { ProjectType } from "../../../utils/MultiCardsIntetrfaces";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import useProjectsController from "../../../hooks/useProjects/useProjectsController";
+import useProjectsController from "../hooks/useProjectsController";
 import LoadingComponent from "../../loading/LoadingComponent";
 
 type ProjectsDTO = {

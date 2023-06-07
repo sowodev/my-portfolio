@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import LoadingComponent from "../../loading/LoadingComponent";
-import { PostsType, PostsDTO } from "../../../interfaces/MultiCardsIntetrfaces";
+import { PostsType, PostsDTO } from "../../../utils/MultiCardsIntetrfaces";
 
 const ArticlesRoutes = function articlesRoutes() {
   const [posts, setPosts] = useState<PostsType[]>([]);

@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Blinker";
-  src: url("./assets/fonts/Blinker/Blinker-Regular.ttf");
+  src: url("/fonts/Blinker/Blinker-Regular.ttf");
 }
 
 @font-face {
   font-family: "Lexend";
-  src: url("./assets/fonts/Lexend/Lexend-VariableFont_wght.ttf");
+  src: url("/fonts/Lexend/Lexend-VariableFont_wght.ttf");
 }
 
 @font-face {
   font-family: "Wallpoet";
-  src: url("./assets/fonts/Wallpoet/Wallpoet-Regular.ttf");
+  src: url("/fonts/Wallpoet/Wallpoet-Regular.ttf");
 }
 
 body {

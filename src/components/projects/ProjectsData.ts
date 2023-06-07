@@ -1,4 +1,4 @@
-import { ProjectType } from "../../interfaces/MultiCardsIntetrfaces";
+import { ProjectType } from "../../utils/MultiCardsIntetrfaces";
 
 export const ProjectsData: ProjectType[] = [
   {

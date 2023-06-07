@@ -4,7 +4,7 @@ import PaginationController from "../../commom/pagination-controller/PaginationC
 import {
   ProjectType,
   ProjectsController,
-} from "../../../interfaces/MultiCardsIntetrfaces";
+} from "../../../utils/MultiCardsIntetrfaces";
 import { RefObject, useEffect, useRef, useState } from "react";
 
 const CardsPagesProjects = function cardsPagesProjects({
@@ -12,22 +12,11 @@ const CardsPagesProjects = function cardsPagesProjects({
 }: {
   projects_controller: ProjectsController;
 }) {
-  const contentRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (contentRef.current) {
-      contentRef.current.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, [projects_controller.getCurrentPage()]);
-
   return (
-    <div
-      className="flex h-full lg:h-full max-w-full w-fit lg:w-[72rem] flex-col gap-4 py-6 justify-center items-center overflow-scroll"
-      ref={contentRef}
-    >
+    <div className="flex h-fit w-fit lg:h-full lg:w-[72rem] flex-col gap-4 py-6 justify-center items-center">
       <div className="h-full w-fit lg:w-full">
         {projects_controller.getFilteredProjectsLenght() > 0 ? (
-          <div className="grid h-fit w-fit lg:w-full grid-cols-1 grid-rows-[8] md:grid-cols-2 md:grid-rows-4 lg:grid-cols-4 lg:grid-rows-2 gap-4 lg:gap-8">
+          <div className="grid w-fit lg:w-full grid-cols-1 grid-rows-[8] md:grid-cols-2 md:grid-rows-4 lg:grid-cols-4 lg:grid-rows-2 gap-4 lg:gap-8">
             {projects_controller
               .showingProjects(projects_controller.getCurrentPage() - 1)
               .map((project, index) => {
@@ -54,9 +43,7 @@ const CardsPagesProjects = function cardsPagesProjects({
           </div>
         )}
       </div>
-      <div>
-        <PaginationController projects_controller={projects_controller} />
-      </div>
+      <PaginationController projects_controller={projects_controller} />
     </div>
   );
 };

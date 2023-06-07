@@ -49,9 +49,9 @@ function App() {
           <Navbar />
           <MarqueeTicker />
         </div>
-        <div className="relative z-0 flex h-full w-full overflow-auto transition duration-300 ease-in-out dark:bg-slate-800">
+        <div className="relative z-0 flex h-full lg:h-full w-full overflow-auto transition duration-300 ease-in-out dark:bg-slate-800">
           <Sidebar />
-          <div className="flex h-full w-full">
+          <div className="flex h-full lg:h-full w-full overflow-auto">
             <Transition show={set_sidebar.open_sidebar}>
               <Transition.Child
                 as={Fragment}

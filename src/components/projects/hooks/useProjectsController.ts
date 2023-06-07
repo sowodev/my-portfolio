@@ -2,7 +2,7 @@ import {
   ProjectType,
   ProjectsController,
   Tag,
-} from "../../interfaces/MultiCardsIntetrfaces";
+} from "../../../utils/MultiCardsIntetrfaces";
 import { useState } from "react";
 
 function sliceDataIntoArrays(projects: ProjectType[]): ProjectType[][] {

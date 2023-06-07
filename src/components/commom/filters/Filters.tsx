@@ -4,7 +4,7 @@ import {
   ArticlesController,
   ProjectsController,
   Tag,
-} from "../../../interfaces/MultiCardsIntetrfaces";
+} from "../../../utils/MultiCardsIntetrfaces";
 
 const Filters = function filters({
   multi_card_controller,

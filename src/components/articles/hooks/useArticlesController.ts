@@ -2,7 +2,7 @@ import {
   ArticlesController,
   PostsType,
   Tag,
-} from "../../interfaces/MultiCardsIntetrfaces";
+} from "../../../utils/MultiCardsIntetrfaces";
 
 import { useState, useEffect } from "react";
 
