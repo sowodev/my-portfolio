@@ -1,13 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import Projects from "../../../pages/Projects";
 import { ProjectsData } from "../ProjectsData";
-import { ElementsRoutes } from "./ElementsRoutes";
+import { ElementsMap } from "./ElementsMap";
 import NotFound from "../../../pages/NotFound";
-import { useState } from "react";
 import { ProjectType } from "../../../utils/MultiCardsIntetrfaces";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import useProjectsController from "../hooks/useProjectsController";
 import LoadingComponent from "../../loading/LoadingComponent";
 
 type ProjectsDTO = {
@@ -20,9 +18,6 @@ type ProjectsDTO = {
 };
 
 const ProjectsRoutes = function projectsRoutes() {
-  const [new_projects_data, setNewProjectsData] = useState<ProjectType[]>([]);
-  const projects_controller = useProjectsController([]);
-
   const query = useQuery({
     queryKey: ["projects"],
     queryFn: () =>
@@ -37,13 +32,26 @@ const ProjectsRoutes = function projectsRoutes() {
             tags: project.tags.split(","),
           };
 
+          project_temp.tags.forEach((tag, index) => {
+            project_temp.tags[index] = tag.trim();
+          });
+
           projects_temp.push(project_temp);
         });
 
-        setNewProjectsData([...projects_temp, ...ProjectsData]);
-        projects_controller.setProjects([...projects_temp, ...ProjectsData]);
+        const MockedProjectsData: ProjectType[] = [];
+        for (let i = 0; i < 77; i++) {
+          const project_temp: ProjectType = {
+            title: ProjectsData[0].title + " " + i,
+            description: ProjectsData[0].description + " " + i,
+            img_path: ProjectsData[0].img_path,
+            tags: ProjectsData[0].tags,
+          };
 
-        return res.data;
+          MockedProjectsData.push(project_temp);
+        }
+
+        return [...projects_temp, ...MockedProjectsData];
       }),
   });
 
@@ -53,27 +61,26 @@ const ProjectsRoutes = function projectsRoutes() {
 
   return (
     <Routes>
-      <Route
-        index
-        element={<Projects projects_controller={projects_controller} />}
-      />
-      {new_projects_data.map((project: any, index: number) => {
-        const link: string = project.title
-          .toLowerCase()
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
-          .replace(/[^\w\s]/gi, "")
-          .trim()
-          .replaceAll(" ", "-");
+      <Route index element={<Projects projects_data={query.data ?? []} />} />
+      {query.data &&
+        query.data.length > 0 &&
+        query.data.map((project: ProjectType, index: number) => {
+          const link: string = project.title
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/[^\w\s]/gi, "")
+            .trim()
+            .replaceAll(" ", "-");
 
-        return (
-          <Route
-            key={index}
-            path={link}
-            element={ElementsRoutes.get(project.title)}
-          />
-        );
-      })}
+          return (
+            <Route
+              key={index}
+              path={link}
+              element={ElementsMap.get(project.title)}
+            />
+          );
+        })}
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

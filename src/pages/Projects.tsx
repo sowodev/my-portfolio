@@ -1,14 +1,20 @@
-import { ProjectsController } from "../utils/MultiCardsIntetrfaces";
+import { ProjectType } from "../utils/MultiCardsIntetrfaces";
 import Filters from "../components/commom/filters/Filters";
 import CardsPagesProjects from "../components/projects/cards-pages/CardsPagesProjects";
 import { RefObject, useEffect, useRef } from "react";
+import useProjectsController from "../components/projects/hooks/useProjectsController";
 
 const Projects = function projects({
-  projects_controller,
+  projects_data,
 }: {
-  projects_controller: ProjectsController;
+  projects_data: ProjectType[];
 }) {
+  const projects_controller = useProjectsController(projects_data);
   const contentRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    projects_controller.setProjects(projects_data);
+  }, [projects_data]);
 
   useEffect(() => {
     if (contentRef.current) {

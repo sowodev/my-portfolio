@@ -3,7 +3,7 @@ import "react-tooltip/dist/react-tooltip.css";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
-import ArticlesRoutes from "./components/articles/routes/ArticlesRoutes";
+import BlogRoutes from "./components/blog/routes/BlogRoutes";
 import ProjectsRoutes from "./components/projects/routes/ProjectsRoutes";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
@@ -67,7 +67,7 @@ function App() {
             </Transition>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/articles/*" element={<ArticlesRoutes />} />
+              <Route path="/articles/*" element={<BlogRoutes />} />
               <Route path="/projects/*" element={<ProjectsRoutes />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />

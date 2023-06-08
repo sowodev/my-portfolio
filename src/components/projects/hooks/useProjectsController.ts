@@ -1,9 +1,8 @@
 import {
   ProjectType,
   ProjectsController,
-  Tag,
 } from "../../../utils/MultiCardsIntetrfaces";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function sliceDataIntoArrays(projects: ProjectType[]): ProjectType[][] {
   const array_of_arrays: ProjectType[][] = [];
@@ -26,6 +25,21 @@ function useProjectsController(
     filtered_projects.length
   );
   const [current_page, setCurrentPage] = useState<number>(1);
+  const [tags, setTags] = useState<string[]>([]);
+
+  // useEffect to make sure we are gonna have the tags array filled whenever the project's data is available
+  useEffect(() => {
+    const tags_aux: string[] = [];
+    projects_data.forEach((projects: ProjectType) => {
+      projects.tags.forEach((tag) => {
+        if (!tags_aux.some((t) => t === tag)) {
+          tags_aux.push(tag);
+        }
+      });
+    });
+
+    setTags(tags_aux);
+  }, [projects_data]);
 
   function setProjects(data: ProjectType[]): void {
     setFilteredProjects(sliceDataIntoArrays(data));
@@ -81,9 +95,9 @@ function useProjectsController(
     );
   }
 
-  function filterMultiCardsByTag(tags: Tag[]): void {
+  function filterMultiCardsByTag(tags: string[]): void {
     const filtered = projects_data.filter((project) => {
-      return tags.some((tag) => project.tags.includes(tag.name));
+      return tags.some((tag) => project.tags.includes(tag));
     });
 
     if (tags.length === 0) {
@@ -99,6 +113,10 @@ function useProjectsController(
     );
   }
 
+  function getTags(): string[] {
+    return tags;
+  }
+
   return {
     setProjects,
     getCurrentPage,
@@ -109,6 +127,7 @@ function useProjectsController(
     showingProjects,
     filterMultiCardsByText,
     filterMultiCardsByTag,
+    getTags,
   };
 }
 

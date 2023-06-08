@@ -1,18 +1,18 @@
-import CardArticle from "./CardArticle";
+import PostCard from "./PostCard";
 import { NavLink } from "react-router-dom";
-import { ArticlesController } from "../../utils/MultiCardsIntetrfaces";
+import { PostsController } from "../../utils/MultiCardsIntetrfaces";
 
-const PagesCardsArticles = function pagesCardsArticles({
-  articles_controller,
+const CardsPagesBlog = function cardsPagesBlog({
+  posts_controller,
 }: {
-  articles_controller: ArticlesController;
+  posts_controller: PostsController;
 }) {
   return (
     <div className="flex h-full w-full flex-col items-center gap-6 md:gap-10 lg:gap-6">
-      {articles_controller.showingArticles().map((article, index) => {
+      {posts_controller.showingPosts().map((post, index) => {
         const link =
           "/articles/" +
-          article.title
+          post.title
             .toLowerCase()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
@@ -25,7 +25,7 @@ const PagesCardsArticles = function pagesCardsArticles({
             to={link}
             className="flex w-[95%] md:w-[85%] snap-center"
           >
-            <CardArticle article={article} />
+            <PostCard post={post} />
           </NavLink>
         );
       })}
@@ -33,10 +33,10 @@ const PagesCardsArticles = function pagesCardsArticles({
         <div className="fixed bottom-8 flex h-12 w-52 flex-row">
           <button
             className={`${
-              articles_controller.checkDisabledBtn() ? "hidden" : "flex"
+              posts_controller.checkDisabledBtn() ? "hidden" : "flex"
             } h-full w-52 items-center  justify-center rounded bg-gradient-to-b from-sky-400 to-cyan-400 shadow-lg transition duration-300 ease-linear  hover:scale-110 hover:from-sky-500 hover:to-cyan-500`}
-            onClick={() => articles_controller.addMoreArticles()}
-            hidden={articles_controller.checkDisabledBtn()}
+            onClick={() => posts_controller.addMorePosts()}
+            hidden={posts_controller.checkDisabledBtn()}
           >
             <span className="font-[Lexend] text-lg text-white">
               + Show More
@@ -48,4 +48,4 @@ const PagesCardsArticles = function pagesCardsArticles({
   );
 };
 
-export default PagesCardsArticles;
+export default CardsPagesBlog;

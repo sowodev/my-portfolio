@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MultiSelectTags from "./MultiSelectTags";
 import {
   ArticlesController,
   ProjectsController,
-  Tag,
 } from "../../../utils/MultiCardsIntetrfaces";
 
 const Filters = function filters({
@@ -11,26 +10,21 @@ const Filters = function filters({
 }: {
   multi_card_controller: ArticlesController | ProjectsController;
 }) {
-  const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [tags, setTags] = useState<string[]>([]);
 
-  const handleTagSelection = (tags: Tag[]) => {
+  const handleTagSelection = (tags: string[]) => {
     setSelectedTags(tags);
     multi_card_controller.filterMultiCardsByTag(tags);
   };
 
-  const tags: Tag[] = [
-    { id: "1", name: "5g" },
-    { id: "2", name: "IoT" },
-    { id: "3", name: "AI" },
-    { id: "4", name: "Cloud" },
-    { id: "5", name: "BlockChain" },
-    { id: "6", name: "Cybersecurity" },
-    { id: "7", name: "Data" },
-  ];
+  useEffect(() => {
+    setTags(() => multi_card_controller.getTags());
+  }, [multi_card_controller]);
 
   return (
     <>
-      <div className="flex w-[23rem] flex-col gap-1">
+      <div className="flex fixed w-[23rem] flex-col gap-1">
         <form className="mb-4 mt-4 flex flex-col gap-4">
           <div className="ml-4 flex flex-col gap-1">
             <p className="font-[Lexend] text-sm text-[#333333ce] dark:text-slate-300">

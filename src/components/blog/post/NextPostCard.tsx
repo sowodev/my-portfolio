@@ -2,13 +2,13 @@ import { NavLink } from "react-router-dom";
 import { PostsType } from "../../../utils/MultiCardsIntetrfaces";
 
 interface Props {
-  article: PostsType;
+  post: PostsType;
 }
 
-const NextArticleCard: React.FC<Props> = ({ article }) => {
+const NextPostCard: React.FC<Props> = ({ post }) => {
   const link =
     "/articles/" +
-    article.title
+    post.title
       .toLowerCase()
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
@@ -24,17 +24,17 @@ const NextArticleCard: React.FC<Props> = ({ article }) => {
       <div className="h-1/2 w-full">
         <img
           className="h-full w-full rounded-t object-cover"
-          src={article.thumb_img_path}
-          alt={article.title}
+          src={post.thumb_img_path}
+          alt={post.title}
         />
       </div>
       <div className="flex h-1/2 w-full items-center p-4">
         <span className="line-clamp-3 text-left lg:text-center font-[Lexend] text-sm lg:text-base text-slate-700 hyphens-auto dark:text-slate-300">
-          {article.title}
+          {post.title}
         </span>
       </div>
     </NavLink>
   );
 };
 
-export default NextArticleCard;
+export default NextPostCard;

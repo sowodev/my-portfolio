@@ -31,18 +31,14 @@ export type ProjectType = {
   tags: string[];
 };
 
-export type Tag = {
-  id: string;
-  name: string;
-};
-
-export interface ArticlesController {
-  getArticles: () => PostsType[];
-  showingArticles: () => PostsType[];
-  addMoreArticles: () => void;
+export interface PostsController {
+  getPosts: () => PostsType[];
+  showingPosts: () => PostsType[];
+  addMorePosts: () => void;
   checkDisabledBtn: () => boolean;
   filterMultiCardsByText: (text: string) => void;
-  filterMultiCardsByTag: (tags: Tag[]) => void;
+  filterMultiCardsByTag: (tags: string[]) => void;
+  getTags: () => string[];
 }
 
 export interface ProjectsController {
@@ -54,5 +50,6 @@ export interface ProjectsController {
   pageChangeHandler: (hadlePageChanges: (page: number) => void) => void;
   showingProjects: (page: number) => ProjectType[];
   filterMultiCardsByText: (text: string) => void;
-  filterMultiCardsByTag: (tags: Tag[]) => void;
+  filterMultiCardsByTag: (tags: string[]) => void;
+  getTags: () => string[];
 }

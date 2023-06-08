@@ -3,7 +3,7 @@ import TagsList from "./TagsList";
 import TextCard from "./TextCard";
 import { PostsType } from "../../utils/MultiCardsIntetrfaces";
 
-const CardArticle = function cardArticle({ article }: { article: PostsType }) {
+const PostCard = function postCard({ post }: { post: PostsType }) {
   const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
@@ -17,21 +17,21 @@ const CardArticle = function cardArticle({ article }: { article: PostsType }) {
       >
         <img
           className="h-full w-full rounded-t md:rounded-l"
-          src={article.thumb_img_path}
+          src={post.thumb_img_path}
           alt=""
           onLoad={() => setImgLoaded(true)}
         />
       </div>
       <div className="flex h-[45%] w-full md:h-full md:w-2/3 lg:w-[70%] flex-col">
         <div className="flex h-[85%] w-full items-center justify-center">
-          <TextCard title={article.title} leading={article.leading} />
+          <TextCard title={post.title} leading={post.leading} />
         </div>
         <div className="flex h-[15%] w-full flex-row items-center justify-center">
-          <TagsList tags={article.tags} />
+          <TagsList tags={post.tags} />
         </div>
       </div>
     </div>
   );
 };
 
-export default CardArticle;
+export default PostCard;

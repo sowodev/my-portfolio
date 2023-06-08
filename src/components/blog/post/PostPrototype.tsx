@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { PostsType } from "../../../utils/MultiCardsIntetrfaces";
-import NextArticleCard from "./NextArticleCard";
+import NextPostCard from "./NextPostCard";
 
-const ArticlePrototype = function articlePrototype({
-  ArticlesData,
-  article,
+const PostPrototype = function postPrototype({
+  BlogData,
+  post,
 }: {
-  ArticlesData: PostsType[];
-  article: PostsType;
+  BlogData: PostsType[];
+  post: PostsType;
 }) {
   const [markdown_content, setMarkdownContent] = useState("");
   const contentRef = useRef<HTMLDivElement>(null);
@@ -19,7 +19,7 @@ const ArticlePrototype = function articlePrototype({
     }
   }, [markdown_content]);
 
-  fetch(article.content_path)
+  fetch(post.content_path)
     .then((response) => {
       if (!response.ok) {
         throw new Error(
@@ -45,13 +45,13 @@ const ArticlePrototype = function articlePrototype({
         lang="en-US"
       >
         <h1 className="max-w-full lg:w-full text-center font-[Lexend] text-2xl mx-6 md:text-3xl lg:text-5xl hyphens-auto dark:text-white">
-          {article.title}
+          {post.title}
         </h1>
         <h3 className="max-w-full lg:w-full pt-2 text-center font-[Lexend] text-sm mx-6 md:text-lg font-light text-slate-500 hyphens-auto dark:text-slate-300">
-          {article.leading}
+          {post.leading}
         </h3>
         <div className="flex w-full flex-row justify-center gap-5 font-[Lexend] text-xs lg:text-sm font-light text-sky-500">
-          {article.tags.map((current, index) => {
+          {post.tags.map((current, index) => {
             return <span key={index}>{current}</span>;
           })}
         </div>
@@ -59,11 +59,11 @@ const ArticlePrototype = function articlePrototype({
           <hr className="mx-4 lg:mx-0 my-4 dark:border-slate-500" />
           <img
             className="px-4 lg:px-0 aspect-video w-full"
-            src={article.img_path}
+            src={post.img_path}
             alt="img"
           />
           <span className="px-4 lg:px-0 mt-2 text-xs lg:text-sm font-extralight lg:font-light text-gray-400">
-            {article.img_credits}
+            {post.img_credits}
           </span>
           <hr className="mx-4 lg:mx-0 my-4 dark:border-slate-500" />
         </div>
@@ -73,13 +73,13 @@ const ArticlePrototype = function articlePrototype({
           </div>
           <div className="flex h-full w-fit flex-col">
             <span className="w-fit text-sm lg:text-base text-slate-700 dark:text-white">
-              {article.author}
+              {post.author}
             </span>
             <span className="w-fit text-xs dark:text-slate-300">
-              Published: {new Date(article.published_date).toLocaleString()}
+              Published: {new Date(post.published_date).toLocaleString()}
             </span>
             <span className="w-fit text-xs dark:text-slate-300">
-              Last Update: {new Date(article.updated_date).toLocaleString()}
+              Last Update: {new Date(post.updated_date).toLocaleString()}
             </span>
           </div>
         </div>
@@ -93,10 +93,10 @@ const ArticlePrototype = function articlePrototype({
             </span>
           </div>
           <div className="flex h-full w-full gap-4 md:gap-2 py-2 flex-col md:flex-row items-center justify-around ">
-            <NextArticleCard article={ArticlesData[3]} />
-            <NextArticleCard article={ArticlesData[1]} />
-            <NextArticleCard article={ArticlesData[4]} />
-            <NextArticleCard article={ArticlesData[2]} />
+            <NextPostCard post={BlogData[3]} />
+            <NextPostCard post={BlogData[1]} />
+            <NextPostCard post={BlogData[4]} />
+            <NextPostCard post={BlogData[2]} />
           </div>
         </div>
       </div>
@@ -105,4 +105,4 @@ const ArticlePrototype = function articlePrototype({
   );
 };
 
-export default ArticlePrototype;
+export default PostPrototype;

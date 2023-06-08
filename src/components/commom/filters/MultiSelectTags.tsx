@@ -2,15 +2,10 @@ import React, { useContext, useState } from "react";
 import Select from "react-select";
 import { GlobalContext } from "../context/GlobalContext";
 
-export interface Tag {
-  id: string;
-  name: string;
-}
-
 interface Props {
-  tags: Tag[];
-  selectedTags: Tag[];
-  onChange: (tags: Tag[]) => void;
+  tags: string[];
+  selectedTags: string[];
+  onChange: (tags: string[]) => void;
 }
 
 const MultiSelectTags: React.FC<Props> = ({ tags, selectedTags, onChange }) => {
@@ -19,15 +14,14 @@ const MultiSelectTags: React.FC<Props> = ({ tags, selectedTags, onChange }) => {
   const dark: boolean = set_dark.is_dark === "dark";
 
   const options = tags.map((tag) => ({
-    label: tag.name,
-    value: tag.id,
+    label: tag,
+    value: tag,
   }));
 
   const handleChange = (selectedOptions: any) => {
-    const newSelectedTags = selectedOptions.map((option: any) => ({
-      id: option.value,
-      name: option.label,
-    }));
+    const newSelectedTags = selectedOptions.map(
+      (option: any) => option.value as string
+    );
     onChange(newSelectedTags);
   };
 
@@ -40,7 +34,7 @@ const MultiSelectTags: React.FC<Props> = ({ tags, selectedTags, onChange }) => {
       isMulti
       className="w-full rounded font-[Lexend] font-light"
       options={options}
-      value={selectedTags.map((tag) => ({ label: tag.name, value: tag.id }))}
+      value={selectedTags.map((tag) => ({ label: tag, value: tag }))}
       onChange={handleChange}
       onInputChange={handleInputChange}
       inputValue={inputValue}
