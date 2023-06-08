@@ -77,7 +77,11 @@ const ProjectsRoutes = function projectsRoutes() {
             <Route
               key={index}
               path={link}
-              element={ElementsMap.get(project.title)}
+              element={
+                project.title.includes("Filler")
+                  ? ElementsMap.get("Filler Project")
+                  : ElementsMap.get(project.title)
+              }
             />
           );
         })}

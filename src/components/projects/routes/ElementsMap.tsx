@@ -1,22 +1,24 @@
 import Timers from "../timers/Timers";
 import Tasks from "../tasks/Tasks";
-import Agenda from "../agenda/Agenda";
-import Notes from "../notes/Notes";
-import Books from "../books/Books";
-import Goals from "../goals/Goals";
-import Wishlist from "../wishlist/Wishlist";
-import YoutubeDown from "../youtubedown/YoutubeDown";
+import Scheduler from "../scheduler/Scheduler";
+import ProductivityDashboard from "../prodash/ProductivityDashboard";
+import Chat from "../chat/Chat";
+import Dentist from "../dentist/Dentist";
+import Nas from "../nas/Nas";
+import Nft from "../nft/Nft";
+import FillerProject from "../filler/FillerProject";
 
 export const ElementsMap: Map<string, JSX.Element> = new Map<
   string,
   JSX.Element
 >();
 
-ElementsMap.set("Productivity Dashboard", <Books />);
+ElementsMap.set("Productivity Dashboard", <ProductivityDashboard />);
 ElementsMap.set("Countdown Timer", <Timers />);
 ElementsMap.set("Tasks Manager", <Tasks />);
-ElementsMap.set("Scheduler", <Agenda />);
-ElementsMap.set("Nas File Manager", <Notes />);
-ElementsMap.set("NFT Shop", <Goals />);
-ElementsMap.set("Dentist", <Wishlist />);
-ElementsMap.set("Chat", <YoutubeDown />);
+ElementsMap.set("Scheduler", <Scheduler />);
+ElementsMap.set("Nas File Manager", <Nas />);
+ElementsMap.set("NFT Shop", <Nft />);
+ElementsMap.set("Dentist", <Dentist />);
+ElementsMap.set("Chat", <Chat />);
+ElementsMap.set("Filler Project", <FillerProject />);
