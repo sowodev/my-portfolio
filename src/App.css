@@ -14,13 +14,8 @@
 }
 
 @font-face {
-  font-family: "Digital";
-  src: url("/fonts/ds_digital/DS-DIGI.TTF");
-}
-
-@font-face {
-  font-family: "DigitalBold";
-  src: url("/fonts/ds_digital/DS-DIGIB.TTF");
+  font-family: "digital-bold";
+  src: url("/fonts/digital/digital_bold.ttf");
 }
 
 body {

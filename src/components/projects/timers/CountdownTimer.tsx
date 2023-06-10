@@ -16,7 +16,7 @@ const CountdownTimer: React.FC = function countdownTimer() {
           Countdown Timer
         </div>
         <div className="flex flex-col w-full basis-[90%] justify-center items-center gap-12">
-          <div className="flex w-3/5 h-1/4 rounded-lg font-[DigitalBold] text-green-400 text-9xl justify-center items-center border border-[#f5f5f538] bg-[#ffffff3f] dark:bg-[#ffffff19] dark:text-green-600">
+          <div className="flex w-3/5 h-1/4 rounded-lg font-[digital-bold] text-green-400 text-9xl justify-center items-center border border-[#f5f5f538] bg-[#ffffff3f] dark:bg-[#ffffff19] dark:text-green-600">
             06:54:39
           </div>
           <div className="flex flex-row font-sans gap-8">

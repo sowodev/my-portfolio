@@ -7,7 +7,7 @@ const Blog = function articles({ BlogData }: { BlogData: PostsType[] }) {
   const posts_controller: PostsController = usePostsController(BlogData);
 
   return (
-    <div className="flex h-full w-full flex-row overflow-scroll scroll-smooth">
+    <div className="flex h-full w-full flex-row overflow-y-auto scroll-smooth">
       <div className="h-full basis-0 lg:basis-1/4 justify-center hidden lg:flex">
         <Filters multi_card_controller={posts_controller} />
       </div>
