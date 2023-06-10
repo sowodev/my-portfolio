@@ -13,6 +13,16 @@
   src: url("/fonts/Wallpoet/Wallpoet-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Digital";
+  src: url("/fonts/ds_digital/DS-DIGI.TTF");
+}
+
+@font-face {
+  font-family: "DigitalBold";
+  src: url("/fonts/ds_digital/DS-DIGIB.TTF");
+}
+
 body {
   width: 100vw;
   height: 100vh;

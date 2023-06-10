@@ -1,5 +1,13 @@
+import CountdownTimer from "./CountdownTimer";
+import TimersList from "./TimersList";
+
 const Timers = function timers() {
-  return <h1 className="flex self-center bg-sky-200 text-2xl">Timers</h1>;
+  return (
+    <div className="flex w-full h-full justify-center items-center">
+      <TimersList />
+      <CountdownTimer />
+    </div>
+  );
 };
 
 export default Timers;
