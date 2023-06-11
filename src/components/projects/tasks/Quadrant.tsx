@@ -1,8 +1,13 @@
+import { Task } from "./MockedTasksData";
+import TaskCard from "./TaskCard";
+import { PlusSmallIcon } from "@heroicons/react/24/outline";
+
 type QuadrantProps = {
   color: string;
+  tasks: Task[];
 };
 
-const Quadrant: React.FC<QuadrantProps> = function quandrant({ color }) {
+const Quadrant: React.FC<QuadrantProps> = function quandrant({ color, tasks }) {
   const tail_color =
     color === "yellow"
       ? "bg-[#ffed49]"
@@ -12,16 +17,24 @@ const Quadrant: React.FC<QuadrantProps> = function quandrant({ color }) {
       ? "bg-[#8dff99]"
       : "bg-[#ffb978]";
   return (
-    <div className="flex flex-row w-[97%] h-[97%] bg-gray-100 border border-gray-400">
-      <div className="flex flex-col h-full basis-1/3">
+    <div className="flex flex-row w-[48%] h-[48%] bg-gray-100 border border-gray-400">
+      <div className="flex flex-col relative h-full basis-1/3">
         <div
           className={`flex w-full h-[10%] justify-center items-center border-e border-b border-gray-400 border-dashed ${tail_color}`}
         >
           <span className="h-fit w-fit font-[Lexend]">To Do</span>
         </div>
-        <div className="flex w-full h-[90%] border-e border-gray-400 border-dashed">
-          TODO body
+        <div className="w-full h-[90%] border-e border-gray-400 border-dashed overflow-y-auto">
+          <div className="flex flex-col w-full h-fit my-2 gap-2 justify-center items-center">
+            {tasks.map(
+              (task: Task, index: number) =>
+                task.status === "To Do" && <TaskCard key={index} task={task} />
+            )}
+          </div>
         </div>
+        <button className="absolute bottom-2 left-2 h-9 w-9 border border-gray-300 bg-white rounded-3xl drop-shadow-md hover:bg-gray-200">
+          <PlusSmallIcon className="w-full h-full" />
+        </button>
       </div>
       <div className="flex flex-col h-full basis-1/3">
         <div
@@ -29,8 +42,15 @@ const Quadrant: React.FC<QuadrantProps> = function quandrant({ color }) {
         >
           <span className="h-fit w-fit font-[Lexend]">In Progress</span>
         </div>
-        <div className="flex w-full h-[90%] border-e border-gray-400 border-dashed">
-          INPROGRESS body
+        <div className="w-full h-[90%] border-e border-gray-400 border-dashed overflow-y-auto">
+          <div className="flex flex-col w-full h-fit my-2 gap-2 justify-center items-center">
+            {tasks.map(
+              (task: Task, index: number) =>
+                task.status === "In Progress" && (
+                  <TaskCard key={index} task={task} />
+                )
+            )}
+          </div>
         </div>
       </div>
       <div className="flex flex-col h-full basis-1/3">
@@ -39,7 +59,14 @@ const Quadrant: React.FC<QuadrantProps> = function quandrant({ color }) {
         >
           <span className="h-fit w-fit font-[Lexend]">Done</span>
         </div>
-        <div className="flex w-full h-[90%]">DONE body</div>
+        <div className="w-full h-[90%] overflow-y-auto">
+          <div className="flex flex-col w-full h-fit my-2 gap-2 justify-center items-center">
+            {tasks.map(
+              (task: Task, index: number) =>
+                task.status === "Done" && <TaskCard key={index} task={task} />
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
