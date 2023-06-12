@@ -15,11 +15,11 @@ const Me = function me(): ReactElement {
         <p className="my-2 lg:mt-2 text-sm md:text-base text-justify indent-5 font-[Lexend] font-light dark:text-slate-300">
           Hi there, my name is Wendell Oliveira, I am a brazilian Software
           Engineer based in São José dos Campos - São Paulo. With over 3 years
-          of experience as Full Stack Software Developer. I am a passionate
-          about computers and technology, so I got a Science and Technology
-          degree with focus on Computer Science at the Federal University of São
-          Paulo, also aquired a little bit of international experience by living
-          in New Zealed for about one year.{" "}
+          of experience as Fullstack Software Developer. I am a passionate about
+          computers and technology, so I got a Science and Technology degree
+          with focus on Computer Science at the Federal University of São Paulo,
+          also aquired a little bit of international experience by living in New
+          Zealed for about one year.{" "}
           <span className="font-bold">
             I am here to guide and build your way through the most difficult
             parts, when building state of the art web applications.

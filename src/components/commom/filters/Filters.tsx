@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import MultiSelectTags from "./MultiSelectTags";
 import {
-  ArticlesController,
+  PostsController,
   ProjectsController,
 } from "../../../utils/MultiCardsIntetrfaces";
 
 const Filters = function filters({
   multi_card_controller,
 }: {
-  multi_card_controller: ArticlesController | ProjectsController;
+  multi_card_controller: PostsController | ProjectsController;
 }) {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [tags, setTags] = useState<string[]>([]);

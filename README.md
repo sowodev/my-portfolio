@@ -2,8 +2,6 @@
 
 ## Hi there welcome to my portfolio repository, this project is quite recent, so there is a lot of work to do, but I'm making it open already, so anyone that is interested can follow my development process
 
----
-
 ### Right now I am focused on developing all the system, but I will be improving the Documentation really soon
 
 For now, have a glimpse of the stack that I am using:
@@ -23,3 +21,15 @@ For now, have a glimpse of the stack that I am using:
 <img align="left" alt="GitHub" width="27px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 <img align="left" alt="Figma" width="27px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" />
 <img align="left" alt="VSCode" width="27px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
+
+<br />
+<br />
+<br />
+
+---
+
+### For Deploying I am using
+
+- **Planet Scale**: for MySQL Database.
+- **Railway App**: for the NestJS Backend.
+- **Netlify**: for the React Frontend.
