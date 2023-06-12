@@ -1,5 +1,7 @@
+import WorkingInProgress from "../WorkingInProgress";
+
 const ProductivityDashboard = function productivityDashboard() {
-  return <h1>Pro Dash</h1>;
+  return <WorkingInProgress />;
 };
 
 export default ProductivityDashboard;

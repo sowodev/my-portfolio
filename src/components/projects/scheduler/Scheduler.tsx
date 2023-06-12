@@ -1,5 +1,11 @@
+import CalendarComponent from "./Calendar";
+
 const Scheduler = function scheduler() {
-  return <h1 className="flex self-center bg-sky-200 text-2xl">Scheduler</h1>;
+  return (
+    <div className="flex w-full h-full justify-center items-center">
+      <CalendarComponent />
+    </div>
+  );
 };
 
 export default Scheduler;

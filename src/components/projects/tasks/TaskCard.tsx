@@ -6,7 +6,7 @@ type TaskProp = {
 
 const TaskCard: React.FC<TaskProp> = function taskCard({ task }) {
   return (
-    <div className="min-h-[5.2rem] w-[90%] bg-white">
+    <div className="min-h-[5.2rem] drop-shadow w-[90%] bg-white">
       <span>{task.title}</span>
     </div>
   );

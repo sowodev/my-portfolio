@@ -32,8 +32,8 @@ const Quadrant: React.FC<QuadrantProps> = function quandrant({ color, tasks }) {
             )}
           </div>
         </div>
-        <button className="absolute bottom-2 left-2 h-9 w-9 border border-gray-300 bg-white rounded-3xl drop-shadow-md hover:bg-gray-200">
-          <PlusSmallIcon className="w-full h-full" />
+        <button className="absolute bg-cyan-300 bottom-2 left-2 h-8 w-8 rounded-3xl drop-shadow-md hover:bg-cyan-400">
+          <PlusSmallIcon className="w-full h-full stroke-gray-100" />
         </button>
       </div>
       <div className="flex flex-col h-full basis-1/3">
