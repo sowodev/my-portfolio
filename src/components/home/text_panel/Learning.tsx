@@ -10,9 +10,9 @@ const Learning = function learning() {
             <li>NextJS</li>
             <li>React Native</li>
             <li>NoSQL</li>
-            <li>Data Analysis</li>
             <li>Test Driven Development</li>
             <li>Clean Architecture</li>
+            <li>Data Analysis</li>
             <li>Design Thinking</li>
             <li>Cloud Services</li>
             <li>Rust Programming Language ❤️</li>
