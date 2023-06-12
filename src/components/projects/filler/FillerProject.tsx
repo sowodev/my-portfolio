@@ -1,5 +1,7 @@
+import WorkInProgress from "../WorkingInProgress";
+
 const FillerProject: React.FC = function fillerProject() {
-  return <h1>FillerProject</h1>;
+  return <WorkInProgress project="Filler Project" />;
 };
 
 export default FillerProject;

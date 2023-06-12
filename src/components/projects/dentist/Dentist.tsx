@@ -1,5 +1,7 @@
+import WorkInProgress from "../WorkingInProgress";
+
 const Dentist: React.FC = function dentist() {
-  return <h1>Dentist</h1>;
+  return <WorkInProgress project="Dentist" />;
 };
 
 export default Dentist;

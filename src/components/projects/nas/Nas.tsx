@@ -1,5 +1,7 @@
+import WorkInProgress from "../WorkingInProgress";
+
 const Nas: React.FC = function nas() {
-  return <h1>Nas</h1>;
+  return <WorkInProgress project="Nas File Manager" />;
 };
 
 export default Nas;

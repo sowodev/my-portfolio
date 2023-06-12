@@ -9,13 +9,13 @@ const CalendarComponent: React.FC = function calendar() {
       <div>
         <FullCalendar
           plugins={[timeGridPlugin, dayGridPlugin, interactionPlugin]}
-          initialView="timeGridWeek"
+          initialView="dayGridMonth"
           headerToolbar={{
             left: "prev,next today",
             center: "title",
             right: "dayGridMonth,timeGridWeek,timeGridDay",
           }}
-          locale="pt-br"
+          locale="en-us"
           longPressDelay={1000}
           eventLongPressDelay={1000}
           selectLongPressDelay={1000}
@@ -24,13 +24,6 @@ const CalendarComponent: React.FC = function calendar() {
           allDaySlot={false}
           editable={true}
           height="700px"
-          buttonText={{
-            today: "Hoje",
-            month: "Mês",
-            week: "Semana",
-            day: "Dia",
-            list: "Lista",
-          }}
         />
       </div>
     </div>

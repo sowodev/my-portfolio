@@ -1,5 +1,7 @@
+import WorkInProgress from "../WorkingInProgress";
+
 const PodOfCast: React.FC = function podOfCast() {
-  return <h1>PodOfCast</h1>;
+  return <WorkInProgress project="Pod Of Cast" />;
 };
 
 export default PodOfCast;
