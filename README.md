@@ -1,3 +1,9 @@
+<img src="public/imgs/logo.png" align="center" width="500px" style="padding-right:10px;" />
+
+<br />
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e32d80e8-98db-41b6-abc9-29df0a054289/deploy-status)](https://app.netlify.com/sites/wendelloliveira/deploys)
+
 # This is the Wendell Oliveira Portfolio
 
 ## Hi there welcome to my portfolio repository, this project is quite recent, so there is a lot of work to do, but I'm making it open already, so anyone that is interested can follow my development process
@@ -33,3 +39,6 @@ For now, have a glimpse of the stack that I am using:
 - **Planet Scale**: for MySQL Database.
 - **Railway App**: for the NestJS Backend.
 - **Netlify**: for the React Frontend.
+
+> **Warning**
+> Do not submit any PR to this repo

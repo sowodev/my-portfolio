@@ -18,7 +18,7 @@ const StackComp = function stackComp({
           alt={name}
           src={src}
         />{" "}
-        <h3 className="my-0 font-bold lg:font-normal text-sm lg:text-base h-full w-full dark:text-white">
+        <h3 className="my-0 font-[Lexend] font-bold lg:font-normal text-sm lg:text-base h-full w-full dark:text-white">
           {name}
         </h3>
       </div>

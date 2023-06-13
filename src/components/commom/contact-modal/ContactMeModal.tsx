@@ -218,10 +218,12 @@ const ContactMeModal = function contactMeModal() {
                       <hr className="basis-2/5 dark:border-slate-700" />
                     </div>
                     <div className="flex flex-col font-[Lexend] w-full justify-center items-center">
-                      <p>Reach me out, through my email:</p>
+                      <p className={dark ? `text-white` : `text-slate-700`}>
+                        Reach me out, through my email:
+                      </p>
                       <a
                         href="mailto:wendelloliveirasud@gmail.com"
-                        className="ml-2 text-blue-500 dark:text-slate-600"
+                        className={dark ? `text-blue-400` : `text-blue-500`}
                       >
                         wendelloliveirasud@gmail.com
                       </a>
