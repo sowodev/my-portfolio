@@ -34,6 +34,8 @@ const TextPanel = function textPanel() {
             </div>
           </button>
 
+          <div className="w-0 h-[80%] border-s border-[#ffffff3f]" />
+
           <button
             className={
               context_object.text_to_show === "MyStack"
@@ -47,6 +49,8 @@ const TextPanel = function textPanel() {
               <img src="/imgs/mystack.png" alt="MyStack" />
             </div>
           </button>
+
+          <div className="w-0 h-[80%] border-s border-[#ffffff3f]" />
 
           <button
             className={
