@@ -51,7 +51,7 @@ const Chest = function chestComponent(): ReactElement {
         </div>
       </div>
       <div className="mb-[30%] md:mb-0 md:h-3/4 md:w-[60%] lg:mb-[11%] lg:h-[52%] lg:w-[75%]">
-        <img src="/imgs/chest.png" alt="treasure chest" />
+        <img src="/imgs/chest.webp" alt="treasure chest" />
       </div>
     </div>
   );
