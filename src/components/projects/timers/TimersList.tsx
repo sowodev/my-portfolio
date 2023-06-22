@@ -1,7 +1,13 @@
 import { TimersMockedData } from "./TimersMockedData";
 import { ClockIcon, TrashIcon } from "@heroicons/react/24/outline";
 
-const TimersList: React.FC = function timersList() {
+type Props = {
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const TimersList: React.FC<Props> = function timersList({
+  setShowModal,
+}: Props) {
   return (
     <div className="flex h-full basis-[30%] font-[Lexend] justify-center items-center">
       <div className="flex flex-col w-[90%] h-4/5 py-4 gap-4 border border-gray-300 rounded justify-around items-center dark:border-gray-700">
@@ -21,7 +27,7 @@ const TimersList: React.FC = function timersList() {
                     timer.id === 1 && "bg-gray-200"
                   } dark:hover:bg-gray-700 dark:text-gray-300`}
                 >
-                  {timer.name}
+                  {timer.title}
                 </button>
                 <button className="flex w-[13%] h-full border-s-[1px] border-gray-300 rounded-e-lg justify-center items-center hover:bg-red-200 dark:border-gray-700 dark:hover:bg-red-400">
                   <TrashIcon className="w-5 h-5 dark:stroke-gray-300" />
@@ -30,8 +36,11 @@ const TimersList: React.FC = function timersList() {
             </li>
           ))}
         </ul>
-        <button className="bg-gradient-to-b from-cyan-400 to-sky-400 text-white p-4 rounded transition duration-300 ease-in-out hover:scale-110 hover:from-cyan-500 hover:to-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
-          Add New Timer
+        <button
+          className="bg-gradient-to-b from-cyan-400 to-sky-400 text-white p-4 rounded transition duration-300 ease-in-out hover:scale-110 hover:from-cyan-500 hover:to-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+          onClick={() => setShowModal(true)}
+        >
+          Add Timer
         </button>
       </div>
     </div>
