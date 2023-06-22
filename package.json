@@ -26,6 +26,7 @@
     "react-big-calendar": "^1.8.1",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.5.2",
+    "react-hook-form": "^7.45.0",
     "react-markdown": "^8.0.6",
     "react-router-dom": "^6.8.1",
     "react-select": "^5.7.2",
