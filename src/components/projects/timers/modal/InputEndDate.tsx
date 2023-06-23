@@ -1,8 +1,9 @@
-import { ReactElement } from "react";
-import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
+import { ReactElement } from 'react';
+import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
+import { FormValues } from '../hooks/types';
 
 type Props = {
-  register: UseFormRegister<FieldValues>;
+  register: UseFormRegister<FormValues>;
   errors: FieldErrors<FieldValues>;
 };
 
@@ -15,7 +16,7 @@ const InputEndDate: React.FC<Props> = function inputEndDate({
       <label
         htmlFor="end_date"
         className={`w-full font-[Lexend] font-light after:ml-0.5 after:text-red-500 after:content-['*'] ${
-          false && "text-slate-300"
+          false && 'text-slate-300'
         }`}
       >
         End Date
@@ -25,14 +26,12 @@ const InputEndDate: React.FC<Props> = function inputEndDate({
         id="end_date"
         className={
           false
-            ? `flex h-[2rem] w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-[Lexend] font-light text-slate-300 placeholder:text-slate-500 focus:border-sky-400 focus:outline-none`
-            : `flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light text-slate-300 placeholder:text-slate-300 focus:border-sky-400 focus:outline-none`
+            ? `flex h-[2rem] w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-[Lexend] font-light text-slate-300 focus:border-sky-400 focus:outline-none`
+            : `flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light text-gray-500 focus:border-sky-400 focus:outline-none`
         }
-        {...register("end_date", { required: true })}
+        {...register('end_date', { required: true })}
       />
-      {errors.end_date && (
-        <span className="text-xs text-red-500">End date is required</span>
-      )}
+      {errors.end_date && <span className="text-xs text-red-500">End date is required</span>}
     </div>
   );
 };
