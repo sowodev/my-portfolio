@@ -7,7 +7,8 @@ import InputTitle from './InputTitle';
 import InputDescription from './InputDescription';
 import InputEndDate from './InputEndDate';
 import InputEndTime from './InputEndTime';
-import { TimersListController } from '../hooks/types';
+import { FormValues, TimersListController, Timer } from '../hooks/types';
+import { v4 as uuidv4 } from 'uuid';
 
 type Props = {
   timers_list_controller: TimersListController;
@@ -15,16 +16,7 @@ type Props = {
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-type FormValues = {
-  title: string;
-  description: string;
-  end_date?: Date;
-  end_time?: Date;
-  timer_type: 'end_by_date' | 'end_by_time';
-  time?: number;
-};
-
-const AddTimerModal: React.FC<Props> = function addTimerModal({
+const TimerModal: React.FC<Props> = function timerModal({
   timers_list_controller,
   show_modal,
   setShowModal,
@@ -34,13 +26,11 @@ const AddTimerModal: React.FC<Props> = function addTimerModal({
 
   // Form Validation
   const {
-    control,
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormValues>();
 
   // Modal Controls
   const closeModal = () => {
@@ -49,9 +39,35 @@ const AddTimerModal: React.FC<Props> = function addTimerModal({
     reset();
   };
 
-  const closeModalOnSuccess = () => {};
+  const onSubmit: SubmitHandler<FormValues> = (e: FormValues) => {
+    if (e.timer_type === 'end_by_date') {
+      const timer: Timer = {
+        uuid: uuidv4(),
+        title: e.title,
+        description: e.description,
+        end_date: e.end_date,
+        is_completed: false,
+        type: timer_type,
+        is_selected: timers_list_controller.getTimers().length === 0 ? true : false,
+      };
+      timers_list_controller.setTimer(timer);
+    }
 
-  const onSubmit = (e: any) => {
+    if (e.timer_type === 'end_by_time') {
+      const timer: Timer = {
+        uuid: uuidv4(),
+        title: e.title,
+        description: e.description,
+        time_to_end: e.end_time,
+        is_completed: false,
+        type: timer_type,
+        is_selected: timers_list_controller.getTimers().length === 0 ? true : false,
+      };
+      timers_list_controller.setTimer(timer);
+    }
+
+    closeModal();
+
     console.log(e);
   };
   // End modal controls
@@ -100,19 +116,14 @@ const AddTimerModal: React.FC<Props> = function addTimerModal({
                     <XMarkIcon className="h-7" />
                   </button>
                 </Dialog.Title>
-                <TypeBtnGroup timer_type={timer_type} setTimerType={setTimerType} />
+                <TypeBtnGroup timer_type={timer_type} setTimerType={setTimerType} reset={reset} />
 
                 {/* The Form Starts Here!!! */}
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 p-4">
                   <InputTitle register={register} errors={errors} />
                   <InputDescription register={register} errors={errors} />
                   {timer_type === 'end_by_time' ? (
-                    <InputEndTime
-                      control={control}
-                      register={register}
-                      errors={errors}
-                      dark={false}
-                    />
+                    <InputEndTime register={register} errors={errors} dark={false} />
                   ) : (
                     <InputEndDate register={register} errors={errors} />
                   )}
@@ -143,4 +154,4 @@ const AddTimerModal: React.FC<Props> = function addTimerModal({
   );
 };
 
-export default AddTimerModal;
+export default TimerModal;
