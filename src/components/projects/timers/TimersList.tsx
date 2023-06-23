@@ -1,11 +1,13 @@
-import { TimersMockedData } from "./TimersMockedData";
-import { ClockIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { ClockIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { TimersListController } from './hooks/types';
 
 type Props = {
+  timers_list_controller: TimersListController;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const TimersList: React.FC<Props> = function timersList({
+  timers_list_controller,
   setShowModal,
 }: Props) {
   return (
@@ -13,7 +15,7 @@ const TimersList: React.FC<Props> = function timersList({
       <div className="flex flex-col w-[90%] h-4/5 py-4 gap-4 border border-gray-300 rounded justify-around items-center dark:border-gray-700">
         <span className="text-4xl dark:text-white">Timers List</span>
         <ul className="flex flex-col w-full h-full px-12 overflow-y-scroll gap-4">
-          {TimersMockedData.map((timer) => (
+          {timers_list_controller.getTimers().map((timer) => (
             <li
               key={timer.id}
               className="flex w-full h-fit rounded-lg border border-gray-300 dark:border-gray-700"
@@ -24,7 +26,7 @@ const TimersList: React.FC<Props> = function timersList({
                 </button>
                 <button
                   className={`flex w-[74%] h-full hover:bg-gray-100 justify-start items-center indent-4 ${
-                    timer.id === 1 && "bg-gray-200"
+                    timer.id === 1 && 'bg-gray-200'
                   } dark:hover:bg-gray-700 dark:text-gray-300`}
                 >
                   {timer.title}
@@ -37,7 +39,7 @@ const TimersList: React.FC<Props> = function timersList({
           ))}
         </ul>
         <button
-          className="bg-gradient-to-b from-cyan-400 to-sky-400 text-white p-4 rounded transition duration-300 ease-in-out hover:scale-110 hover:from-cyan-500 hover:to-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+          className="bg-sky-400 text-white p-4 rounded transition duration-300 ease-in-out hover:scale-110 hover:bg-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           onClick={() => setShowModal(true)}
         >
           Add Timer
