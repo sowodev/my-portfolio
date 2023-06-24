@@ -1,14 +1,11 @@
-import { Fragment, useContext, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { GlobalContext } from "../context/GlobalContext";
-import InputField from "./InputField";
-import { useMutation, useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import LoadingComponent from "../../loading/LoadingComponent";
-import {
-  ArchiveBoxXMarkIcon,
-  CheckCircleIcon,
-} from "@heroicons/react/24/outline";
+import { Fragment, useContext, useState } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import { GlobalContext } from '../context/GlobalContext';
+import InputField from './InputField';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import LoadingComponent from '../../loading/LoadingComponent';
+import { ArchiveBoxXMarkIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 
 type MessageDTO = {
   name: string;
@@ -19,11 +16,11 @@ type MessageDTO = {
 
 const ContactMeModal = function contactMeModal() {
   const { set_dialog, set_dark } = useContext(GlobalContext);
-  const dark: boolean = set_dark.is_dark === "dark";
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [subject, setSubject] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
+  const dark: boolean = set_dark.is_dark === 'dark';
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [subject, setSubject] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
 
   const mutation = useMutation({
     mutationFn: () =>
@@ -89,16 +86,16 @@ const ContactMeModal = function contactMeModal() {
                 <Dialog.Title
                   as="h4"
                   className={`font-[Lexend] text-lg font-medium leading-6 text-gray-900 ${
-                    dark && "text-white"
+                    dark && 'text-white'
                   }`}
                 >
                   {mutation.isLoading
-                    ? "Sending Message..."
+                    ? 'Sending Message...'
                     : mutation.isError
-                    ? "Error Sending The Message"
+                    ? 'Error Sending The Message'
                     : mutation.isSuccess
-                    ? "Message Successeful"
-                    : "Leave Me a Message!"}
+                    ? 'Message Successeful'
+                    : 'Leave Me a Message!'}
                 </Dialog.Title>
 
                 {/* The Form Starts Here!!! */}
@@ -108,12 +105,12 @@ const ContactMeModal = function contactMeModal() {
                   <div className="flex h-full w-full flex-col gap-4 py-4 justify-center items-center">
                     <CheckCircleIcon className="w-16 h-16 stroke-green-500" />
                     <p className="font-[Lexend] text-lg">
-                      <b>Yeeeeah, all good!</b> Thank you very much for your
-                      message. I will do my best to answer as soon as possible!
+                      <b>Yeeeeah, all good!</b> Thank you very much for your message. I will do my
+                      best to answer as soon as possible!
                     </p>
                     <button
                       type="button"
-                      className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-gradient-to-b from-cyan-400 to-sky-400 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:from-cyan-500 hover:to-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-sky-400 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:bg-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={closeModalOnSuccess}
                     >
                       Confirm
@@ -123,12 +120,12 @@ const ContactMeModal = function contactMeModal() {
                   <div className="flex h-full w-full flex-col gap-4 py-4 justify-center items-center">
                     <ArchiveBoxXMarkIcon className="w-16 h-16 stroke-red-500" />
                     <p className="font-[Lexend] text-lg">
-                      <b>Sorry!</b> Seems that something went wrong while
-                      submitting your message. Please, refresh and try again!
+                      <b>Sorry!</b> Seems that something went wrong while submitting your message.
+                      Please, refresh and try again!
                     </p>
                     <button
                       type="button"
-                      className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-gradient-to-b from-yellow-300 to-amber-300 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:from-yellow-400 hover:to-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-amber-300 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
                       Close
@@ -140,38 +137,38 @@ const ContactMeModal = function contactMeModal() {
                       <div className="flex h-full w-full flex-col gap-4 py-4">
                         <div className="flex w-full flex-col items-center">
                           <InputField
-                            label={"Name"}
+                            label={'Name'}
                             dark={dark}
-                            type={"text"}
-                            name={"username"}
-                            placeholder={"Enter your name"}
+                            type={'text'}
+                            name={'username'}
+                            placeholder={'Enter your name'}
                             setOnChange={setName}
                           />
                         </div>
                         <div className="flex w-full flex-col items-center">
                           <InputField
-                            label={"Email"}
+                            label={'Email'}
                             dark={dark}
-                            type={"text"}
-                            name={"useremail"}
-                            placeholder={"email@example.com"}
+                            type={'text'}
+                            name={'useremail'}
+                            placeholder={'email@example.com'}
                             setOnChange={setEmail}
                           />
                         </div>
                         <div className="flex w-full flex-col items-center">
                           <InputField
-                            label={"Subject"}
+                            label={'Subject'}
                             dark={dark}
-                            type={"text"}
-                            name={"usersubject"}
-                            placeholder={"Enter the subject"}
+                            type={'text'}
+                            name={'usersubject'}
+                            placeholder={'Enter the subject'}
                             setOnChange={setSubject}
                           />
                         </div>
                         <div className="flex w-full flex-col items-center">
                           <label
                             className={`w-full font-[Lexend] font-light after:ml-0.5 after:text-red-500 after:content-['*'] ${
-                              dark && "text-slate-300"
+                              dark && 'text-slate-300'
                             }`}
                             htmlFor="message"
                           >
@@ -197,14 +194,14 @@ const ContactMeModal = function contactMeModal() {
                       <div className="flex w-full justify-between">
                         <button
                           type="button"
-                          className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-gradient-to-b from-yellow-300 to-amber-300 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:from-yellow-400 hover:to-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-amber-300 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           onClick={closeModal}
                         >
                           Cancel
                         </button>
                         <button
                           type="submit"
-                          className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-gradient-to-b from-cyan-400 to-sky-400 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:from-cyan-500 hover:to-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-sky-400 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:bg-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                         >
                           Send
                         </button>

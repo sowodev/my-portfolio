@@ -4,13 +4,11 @@ import { ReactElement } from 'react';
 type Props = {
   timer_type: 'end_by_date' | 'end_by_time';
   setTimerType: React.Dispatch<React.SetStateAction<'end_by_date' | 'end_by_time'>>;
-  reset: () => void;
 };
 
 const TypeBtnGroup: React.FC<Props> = function typeBtnGroup({
   timer_type,
   setTimerType,
-  reset,
 }: Props): ReactElement {
   return (
     <div
@@ -24,7 +22,6 @@ const TypeBtnGroup: React.FC<Props> = function typeBtnGroup({
             : 'flex flex-row gap-1 basis-1/2 h-full justify-center items-center rounded-l hover:bg-black hover:bg-opacity-5'
         }
         onClick={(e) => {
-          reset();
           setTimerType('end_by_time');
         }}
         disabled={timer_type === 'end_by_time'}
@@ -40,7 +37,6 @@ const TypeBtnGroup: React.FC<Props> = function typeBtnGroup({
             : 'flex flex-row gap-1 basis-1/2 h-full justify-center items-center rounded-r hover:bg-black hover:bg-opacity-5'
         }
         onClick={() => {
-          reset();
           setTimerType('end_by_date');
         }}
         disabled={timer_type === 'end_by_date'}

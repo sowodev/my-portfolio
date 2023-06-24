@@ -5,23 +5,23 @@ import { TimersListController } from '../hooks/types';
 
 type Props = {
   timers_list_controller: TimersListController;
+  show_delete_modal: boolean;
+  setShowDeleteModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const DeleteConfirmationModal: React.FC<Props> = ({
   timers_list_controller,
+  show_delete_modal,
+  setShowDeleteModal,
 }: Props): ReactElement => {
   const handleDeleteTimer = () => {
-    timers_list_controller.deleteTimer(timers_list_controller.timer_to_delete);
-    timers_list_controller.setShowDeleteModal(false);
+    timers_list_controller.deleteTimer(timers_list_controller.getTimerToDelete());
+    setShowDeleteModal(false);
   };
 
   return (
-    <Transition appear as={Fragment} show={timers_list_controller.show_delete_modal}>
-      <Dialog
-        as="div"
-        className="relative z-10"
-        onClose={() => timers_list_controller.setShowDeleteModal(false)}
-      >
+    <Transition appear as={Fragment} show={show_delete_modal}>
+      <Dialog as="div" className="relative z-10" onClose={() => setShowDeleteModal(false)}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -61,7 +61,7 @@ const DeleteConfirmationModal: React.FC<Props> = ({
                   Delete Timer!
                   <button
                     className="flex rounded hover:bg-gray-100"
-                    onClick={() => timers_list_controller.setShowDeleteModal(false)}
+                    onClick={() => setShowDeleteModal(false)}
                   >
                     <XMarkIcon className="h-7" />
                   </button>
@@ -75,7 +75,7 @@ const DeleteConfirmationModal: React.FC<Props> = ({
                     <span className="text-red-500">
                       {
                         timers_list_controller.getSingleTimer(
-                          timers_list_controller.timer_to_delete,
+                          timers_list_controller.getTimerToDelete(),
                         )?.title
                       }
                     </span>
@@ -84,7 +84,7 @@ const DeleteConfirmationModal: React.FC<Props> = ({
                   <div className="flex flex-row w-full justify-between items-center mt-4">
                     <button
                       className="flex h-12 px-4 items-center justify-center rounded bg-amber-300 font-[Lexend] text-white text-center transition duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={() => timers_list_controller.setShowDeleteModal(false)}
+                      onClick={() => setShowDeleteModal(false)}
                     >
                       Cancel
                     </button>
