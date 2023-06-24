@@ -4,14 +4,10 @@ import { ReactElement } from 'react';
 
 type Props = {
   timers_list_controller: TimersListController;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
-  setShowDeleteModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const TimersList: React.FC<Props> = function timersList({
   timers_list_controller,
-  setShowModal,
-  setShowDeleteModal,
 }: Props): ReactElement {
   const changeSelectedTimer = (timer_uuid: string) => {
     timers_list_controller.setSelectedTimer(timer_uuid);
@@ -29,7 +25,14 @@ const TimersList: React.FC<Props> = function timersList({
                 className="flex w-full h-fit rounded-lg border border-gray-300 dark:border-gray-700"
               >
                 <div className="flex flex-row w-full h-12 font-light rounded-lg justify-between items-center">
-                  <button className="flex w-[13%] h-full border-e-[1px] border-gray-300 justify-center items-center rounded-s-lg hover:bg-emerald-100 dark:border-gray-700 dark:hover:bg-green-700">
+                  <button
+                    className="flex w-[13%] h-full border-e-[1px] border-gray-300 justify-center items-center rounded-s-lg hover:bg-emerald-200 dark:border-gray-700 dark:hover:bg-green-700"
+                    onClick={() => {
+                      timers_list_controller.setToEdit(true);
+                      timers_list_controller.setTimerToEdit(timer);
+                      timers_list_controller.setShowModal(true);
+                    }}
+                  >
                     <ClockIcon className="w-5 h-5 dark:stroke-gray-300" />
                   </button>
                   <button
@@ -46,8 +49,8 @@ const TimersList: React.FC<Props> = function timersList({
                   <button
                     className="flex w-[13%] h-full border-s-[1px] border-gray-300 rounded-e-lg justify-center items-center hover:bg-red-300 dark:border-gray-700 dark:hover:bg-red-400"
                     onClick={() => {
-                      setShowDeleteModal(true);
-                      timers_list_controller.setDeleteTimer(timer.uuid);
+                      timers_list_controller.setShowDeleteModal(true);
+                      timers_list_controller.setTimerToDelete(timer.uuid);
                     }}
                   >
                     <TrashIcon className="w-5 h-5 dark:stroke-gray-300" />
@@ -59,7 +62,7 @@ const TimersList: React.FC<Props> = function timersList({
         </ul>
         <button
           className=" bg-sky-400 text-white h-12 px-4 rounded transition duration-300 ease-in-out hover:scale-110 hover:bg-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-          onClick={() => setShowModal(true)}
+          onClick={() => timers_list_controller.setShowModal(true)}
         >
           Add Timer
         </button>
