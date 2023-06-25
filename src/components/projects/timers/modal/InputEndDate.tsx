@@ -22,14 +22,13 @@ const InputEndDate: React.FC<Props> = function inputEndDate({
         End Date
       </label>
       <input
-        type="datetime-local"
+        type="date"
         id="end_date"
         className={
           false
-            ? `flex h-[2rem] w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-[Lexend] font-light text-slate-300 focus:border-sky-400 focus:outline-none`
-            : `flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light text-gray-500 focus:border-sky-400 focus:outline-none`
+            ? `flex h-[2rem] w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-[Lexend] font-light text-slate-300 placeholder:text-slate-500 focus:border-sky-400 focus:outline-none`
+            : `flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light text-gray-500 placeholder:text-slate-300 focus:border-sky-400 focus:outline-none`
         }
-        {...register('end_date', { required: true })}
       />
       {errors.end_date && <span className="text-xs text-red-500">End date is required</span>}
     </div>
