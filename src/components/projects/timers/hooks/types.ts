@@ -37,7 +37,7 @@ export type TimersListController = {
 export type FormValues = {
   title: string;
   description: string;
-  end_date?: Date;
+  end_date?: string;
   end_time?: number;
   timer_type: 'end_by_date' | 'end_by_time';
   time?: 'minutes' | 'hours';

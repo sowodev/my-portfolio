@@ -34,7 +34,6 @@ const TimerModal: React.FC<Props> = function timerModal({
       setValue('title', timers_list_controller.timer_to_edit!.title);
       setValue('description', timers_list_controller.timer_to_edit!.description);
 
-      // TODO: Fix this
       if (timers_list_controller.timer_to_edit!.type === 'end_by_date') {
         console.log(timers_list_controller.timer_to_edit!.end_date);
 
@@ -58,6 +57,8 @@ const TimerModal: React.FC<Props> = function timerModal({
   };
 
   const onSubmit: SubmitHandler<FormValues> = (e: FormValues) => {
+    console.log(e);
+
     if (e.timer_type === 'end_by_date') {
       const timer: Timer = {
         uuid: timers_list_controller.to_edit
@@ -151,7 +152,7 @@ const TimerModal: React.FC<Props> = function timerModal({
                     false && 'text-white'
                   }`}
                 >
-                  Create Timer!
+                  {timers_list_controller.to_edit ? 'Save Timer!' : 'Create Timer!'}
                   <button className="flex rounded hover:bg-gray-100" onClick={closeModal}>
                     <XMarkIcon className="h-7" />
                   </button>

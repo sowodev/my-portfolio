@@ -15,9 +15,19 @@ function useTimersListController(): TimersListController {
   }
 
   function deleteTimer(timer_uuid: string): void {
+    let select: string = '';
+
     setTimers((t: Timer[]): Timer[] =>
-      t.filter((timer: Timer): boolean => timer.uuid !== timer_uuid),
+      t.filter((timer: Timer): boolean => {
+        if (timer.uuid === timer_uuid && timer.is_selected) {
+          if (timers[0].uuid === timer_uuid) select = timers[1].uuid;
+          else select = timers[0].uuid;
+        }
+        return timer.uuid !== timer_uuid;
+      }),
     );
+
+    if (select) setSelectedTimer(select);
   }
 
   function updateTimer(timer: Timer): void {
