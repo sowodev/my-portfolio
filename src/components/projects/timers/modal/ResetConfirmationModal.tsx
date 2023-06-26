@@ -15,7 +15,7 @@ const DeleteConfirmationModal: React.FC<Props> = ({
   setShowDeleteModal,
 }: Props): ReactElement => {
   const handleDeleteTimer = () => {
-    timers_list_controller.deleteTimer(timers_list_controller.getTimerToDelete());
+    timers_list_controller.deleteTimer(timers_list_controller.timer_to_delete);
     setShowDeleteModal(false);
   };
 
@@ -75,7 +75,7 @@ const DeleteConfirmationModal: React.FC<Props> = ({
                     <span className="text-red-500">
                       {
                         timers_list_controller.getSingleTimer(
-                          timers_list_controller.getTimerToDelete(),
+                          timers_list_controller.timer_to_delete,
                         )?.title
                       }
                     </span>

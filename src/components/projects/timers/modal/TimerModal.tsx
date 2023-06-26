@@ -29,19 +29,19 @@ const TimerModal: React.FC<Props> = function timerModal({
     setValue,
   } = useForm<FormValues>();
 
+  // TODO: REFACTOR THIS
   useEffect(() => {
     if (timers_list_controller.to_edit) {
       setValue('title', timers_list_controller.timer_to_edit!.title);
       setValue('description', timers_list_controller.timer_to_edit!.description);
 
       if (timers_list_controller.timer_to_edit!.type === 'end_by_date') {
-        console.log(timers_list_controller.timer_to_edit!.end_date);
-
         setValue('end_date', timers_list_controller.timer_to_edit!.end_date);
+        setValue('end_date_time', timers_list_controller.timer_to_edit!.end_date_time);
       }
 
       if (timers_list_controller.timer_to_edit!.type === 'end_by_time') {
-        setValue('end_time', timers_list_controller.timer_to_edit!.time_to_end);
+        setValue('end_time', timers_list_controller.timer_to_edit!.initial_time_to_end);
         setValue('time', timers_list_controller.timer_to_edit!.time_type);
       }
       setTimerType(timers_list_controller.timer_to_edit!.type);
@@ -56,10 +56,9 @@ const TimerModal: React.FC<Props> = function timerModal({
     reset();
   };
 
+  // TODO: REFACTOR THIS
   const onSubmit: SubmitHandler<FormValues> = (e: FormValues) => {
-    console.log(e);
-
-    if (e.timer_type === 'end_by_date') {
+    if (timer_type === 'end_by_date') {
       const timer: Timer = {
         uuid: timers_list_controller.to_edit
           ? timers_list_controller.timer_to_edit!.uuid
@@ -67,6 +66,7 @@ const TimerModal: React.FC<Props> = function timerModal({
         title: e.title,
         description: e.description,
         end_date: e.end_date,
+        end_date_time: e.end_date_time,
         is_completed: false,
         type: timer_type,
         is_selected:
@@ -74,8 +74,6 @@ const TimerModal: React.FC<Props> = function timerModal({
             ? true
             : timers_list_controller.to_edit
             ? timers_list_controller.timer_to_edit!.is_selected
-              ? true
-              : false
             : false,
       };
       if (timers_list_controller.to_edit) {
@@ -83,7 +81,7 @@ const TimerModal: React.FC<Props> = function timerModal({
       } else timers_list_controller.setTimer(timer);
     }
 
-    if (e.timer_type === 'end_by_time') {
+    if (timer_type === 'end_by_time') {
       const timer: Timer = {
         uuid: timers_list_controller.to_edit
           ? timers_list_controller.timer_to_edit!.uuid
@@ -91,6 +89,7 @@ const TimerModal: React.FC<Props> = function timerModal({
         title: e.title,
         description: e.description,
         time_to_end: e.end_time,
+        initial_time_to_end: e.end_time,
         is_completed: false,
         type: timer_type,
         time_type: e.time,
@@ -99,8 +98,6 @@ const TimerModal: React.FC<Props> = function timerModal({
             ? true
             : timers_list_controller.to_edit
             ? timers_list_controller.timer_to_edit!.is_selected
-              ? true
-              : false
             : false,
       };
       if (timers_list_controller.to_edit) timers_list_controller.updateTimer(timer);
@@ -108,8 +105,6 @@ const TimerModal: React.FC<Props> = function timerModal({
     }
 
     closeModal();
-
-    console.log(e);
   };
   // End modal controls
 
