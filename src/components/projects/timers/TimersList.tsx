@@ -1,12 +1,14 @@
 import { ClockIcon, TrashIcon } from '@heroicons/react/24/outline';
-import { Timer, TimersListController } from './hooks/types';
+import { Timer, TimerController, TimersListController } from './hooks/types';
 import { ReactElement } from 'react';
 
 type Props = {
+  timer_controller: TimerController;
   timers_list_controller: TimersListController;
 };
 
 const TimersList: React.FC<Props> = function timersList({
+  timer_controller,
   timers_list_controller,
 }: Props): ReactElement {
   const changeSelectedTimer = (timer_uuid: string) => {
@@ -41,7 +43,10 @@ const TimersList: React.FC<Props> = function timersList({
                         ? `flex bg-gray-200 w-[74%] h-full justify-start items-center indent-4 dark:text-gray-300 cursor-not-allowed dark:bg-slate-700`
                         : `flex w-[74%] h-full hover:bg-gray-100 justify-start items-center indent-4 dark:hover:bg-slate-700 dark:text-gray-300`
                     }
-                    onClick={() => changeSelectedTimer(timer.uuid)}
+                    onClick={(): void => {
+                      changeSelectedTimer(timer.uuid);
+                      timer_controller.setTimer(timer);
+                    }}
                     disabled={timer.is_selected}
                   >
                     {timer.title}

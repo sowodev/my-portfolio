@@ -19,10 +19,13 @@ function useTimersListController(): TimersListController {
 
     setTimers((t: Timer[]): Timer[] =>
       t.filter((timer: Timer): boolean => {
-        if (timer.uuid === timer_uuid && timer.is_selected) {
-          if (timers[0].uuid === timer_uuid) select = timers[1].uuid;
-          else select = timers[0].uuid;
+        if (t.length > 1) {
+          if (timer.uuid === timer_uuid && timer.is_selected) {
+            if (timers[0].uuid === timer_uuid) select = timers[1].uuid;
+            else select = timers[0].uuid;
+          }
         }
+
         return timer.uuid !== timer_uuid;
       }),
     );
@@ -31,8 +34,6 @@ function useTimersListController(): TimersListController {
   }
 
   function updateTimer(timer: Timer): void {
-    console.log('timer', timer);
-
     setTimers((t: Timer[]): Timer[] =>
       t.map((t: Timer): Timer => {
         if (t.uuid === timer.uuid) {
@@ -62,6 +63,10 @@ function useTimersListController(): TimersListController {
     );
   }
 
+  function getSelectedTimer(): Timer | undefined {
+    return timers.find((timer: Timer): boolean => timer.is_selected);
+  }
+
   return {
     // States
     to_edit,
@@ -81,6 +86,7 @@ function useTimersListController(): TimersListController {
     getTimers,
     getSingleTimer,
     setSelectedTimer,
+    getSelectedTimer,
   };
 }
 
