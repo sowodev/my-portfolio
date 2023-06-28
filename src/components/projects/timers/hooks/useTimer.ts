@@ -52,30 +52,26 @@ function useTimer(default_timer: Timer): TimerController {
   }
 
   function convertFromHoursToMiliSeconds(hours: number): number {
-    const hours_ms = hours * 60 * 60 * 1000;
+    const hours_ms: number = hours * 60 * 60 * 1000;
     return hours_ms;
   }
 
   function convertFromMinutesToMiliSeconds(minutes: number): number {
-    const minutes_ms = minutes * 60 * 1000;
+    const minutes_ms: number = minutes * 60 * 1000;
     return minutes_ms;
   }
 
   function convertFromMiliSecondsToRemainingTimer(miliseconds: number): RemainingTime {
-    const days = Math.floor(miliseconds / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((miliseconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((miliseconds % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((miliseconds % (1000 * 60)) / 1000);
+    const days: number = Math.floor(miliseconds / (1000 * 60 * 60 * 24));
+    const hours: number = Math.floor((miliseconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes: number = Math.floor((miliseconds % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds: number = Math.floor((miliseconds % (1000 * 60)) / 1000);
 
     return { days, hours, minutes, seconds };
   }
 
-  function pauseTimer(): void {
-    setTimer((t: Timer): Timer => ({ ...t, is_paused: true }));
-  }
-
-  function resumeTimer(): void {
-    setTimer((t: Timer): Timer => ({ ...t, is_paused: false }));
+  function togglePause(): void {
+    setTimer((t: Timer): Timer => ({ ...t, is_paused: !t.is_paused }));
   }
 
   function resetTimer(): void {
@@ -94,8 +90,7 @@ function useTimer(default_timer: Timer): TimerController {
     timer,
     setTimer,
     remaining_time,
-    pauseTimer,
-    resumeTimer,
+    togglePause,
     resetTimer,
     deleteTimer,
     completeTimer,

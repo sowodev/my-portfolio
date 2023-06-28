@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TimersMockedData } from '../TimersMockedData';
 import { Timer, TimersListController } from './types';
 
@@ -9,28 +9,35 @@ function useTimersListController(): TimersListController {
   const [show_delete_modal, setShowDeleteModal] = useState<boolean>(false);
   const [timer_to_delete, setTimerToDelete] = useState<string>('');
   const [timer_to_edit, setTimerToEdit] = useState<Timer | undefined>(undefined);
+  const [change_selected, setChangeSelected] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (change_selected) {
+      setSelectedTimer(timers[0].uuid);
+      setChangeSelected(false);
+    }
+  }, [timers]);
 
   function setTimer(timer: Timer): void {
     setTimers((t: Timer[]): Timer[] => [...t, timer]);
   }
 
-  function deleteTimer(timer_uuid: string): void {
-    let select: string = '';
+  function getTimers(): Timer[] {
+    return timers;
+  }
 
+  function deleteTimer(timer_uuid: string): void {
     setTimers((t: Timer[]): Timer[] =>
       t.filter((timer: Timer): boolean => {
         if (t.length > 1) {
           if (timer.uuid === timer_uuid && timer.is_selected) {
-            if (timers[0].uuid === timer_uuid) select = timers[1].uuid;
-            else select = timers[0].uuid;
+            setChangeSelected(true);
           }
         }
 
         return timer.uuid !== timer_uuid;
       }),
     );
-
-    if (select) setSelectedTimer(select);
   }
 
   function updateTimer(timer: Timer): void {
@@ -42,10 +49,6 @@ function useTimersListController(): TimersListController {
         return t;
       }),
     );
-  }
-
-  function getTimers(): Timer[] {
-    return timers;
   }
 
   function getSingleTimer(timer_uuid: string): Timer | undefined {

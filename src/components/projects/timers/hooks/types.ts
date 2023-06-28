@@ -41,8 +41,7 @@ export type TimerController = {
   timer: Timer;
   setTimer(timer: Timer): void;
   remaining_time: RemainingTime;
-  pauseTimer(): void;
-  resumeTimer(): void;
+  togglePause(): void;
   resetTimer(): void;
   deleteTimer(): void;
   completeTimer(): void;

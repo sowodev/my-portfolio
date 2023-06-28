@@ -1,6 +1,6 @@
 import { ArrowPathIcon, PauseIcon, PlayIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { ReactElement } from 'react';
-import { TimerController } from './hooks/types';
+import { TimerController, Timer } from './hooks/types';
 
 type Props = {
   timer_controller: TimerController;
@@ -52,14 +52,29 @@ const CountdownTimer: React.FC<Props> = function countdownTimer({
             </div>
           </div>
           <div className="flex flex-row font-sans gap-8">
-            <button className="px-4 h-12 bg-green-300 rounded-lg hover:bg-green-400 dark:bg-green-400 dark:hover:bg-green-500">
+            <button
+              className={
+                timer_controller.timer.type === 'end_by_date'
+                  ? `hidden`
+                  : `px-4 h-12 bg-green-300 rounded-lg hover:bg-green-400 dark:bg-green-400 dark:hover:bg-green-500`
+              }
+              onClick={(): void => {
+                timer_controller.togglePause();
+              }}
+            >
               {timer_controller.timer.is_paused ? (
                 <PlayIcon className="w-5 h-5" />
               ) : (
                 <PauseIcon className="w-5 h-5" />
               )}
             </button>
-            <button className="px-4 h-12 bg-blue-300 rounded-lg hover:bg-blue-400 dark:bg-blue-400 dark:hover:bg-blue-500">
+            <button
+              className={
+                timer_controller.timer.type === 'end_by_date'
+                  ? `hidden`
+                  : `px-4 h-12 bg-blue-300 rounded-lg hover:bg-blue-400 dark:bg-blue-400 dark:hover:bg-blue-500`
+              }
+            >
               <ArrowPathIcon className="w-5 h-5" />
             </button>
             <button className="px-4 h-12 bg-red-300 rounded-lg hover:bg-red-400 dark:bg-red-400 dark:hover:bg-red-500">
