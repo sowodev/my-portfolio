@@ -1,19 +1,25 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
-import React, { Fragment, ReactElement } from 'react';
-import { TimersListController } from '../hooks/types';
+import React, { Fragment, ReactElement, useEffect } from 'react';
+import { EmptyTimer, TimerController, TimersListController } from '../hooks/types';
 
 type Props = {
+  timer_controller: TimerController;
   timers_list_controller: TimersListController;
 };
 
 const DeleteConfirmationModal: React.FC<Props> = ({
+  timer_controller,
   timers_list_controller,
 }: Props): ReactElement => {
   const handleDeleteTimer = () => {
     timers_list_controller.deleteTimer(timers_list_controller.timer_to_delete);
     timers_list_controller.setShowDeleteModal(false);
   };
+
+  useEffect((): void => {
+    timer_controller.setTimer(timers_list_controller.getSelectedTimer() ?? EmptyTimer);
+  }, [timers_list_controller.getTimers()]);
 
   return (
     <Transition appear as={Fragment} show={timers_list_controller.show_delete_modal}>

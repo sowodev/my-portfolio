@@ -19,8 +19,14 @@ const Timers = function timers() {
         timers_list_controller={timers_list_controller}
       />
       <CountdownTimer timer_controller={timer_controller} />
-      <TimerModal timers_list_controller={timers_list_controller} />
-      <DeleteConfirmationModal timers_list_controller={timers_list_controller} />
+      <TimerModal
+        timer_controller={timer_controller}
+        timers_list_controller={timers_list_controller}
+      />
+      <DeleteConfirmationModal
+        timer_controller={timer_controller}
+        timers_list_controller={timers_list_controller}
+      />
     </div>
   );
 };

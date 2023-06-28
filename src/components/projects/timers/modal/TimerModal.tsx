@@ -7,14 +7,16 @@ import InputTitle from './InputTitle';
 import InputDescription from './InputDescription';
 import InputEndDate from './InputEndDate';
 import InputEndTime from './InputEndTime';
-import { FormValues, TimersListController, Timer } from '../hooks/types';
+import { FormValues, TimersListController, Timer, TimerController } from '../hooks/types';
 import { v4 as uuidv4 } from 'uuid';
 
 type Props = {
+  timer_controller: TimerController;
   timers_list_controller: TimersListController;
 };
 
 const TimerModal: React.FC<Props> = function timerModal({
+  timer_controller,
   timers_list_controller,
 }: Props): ReactElement {
   // Controll the type of timer
@@ -100,8 +102,14 @@ const TimerModal: React.FC<Props> = function timerModal({
             ? timers_list_controller.timer_to_edit!.is_selected
             : false,
       };
-      if (timers_list_controller.to_edit) timers_list_controller.updateTimer(timer);
-      else timers_list_controller.setTimer(timer);
+      if (timers_list_controller.to_edit) {
+        timers_list_controller.updateTimer(timer);
+        if (timers_list_controller.timer_to_edit!.is_selected) {
+          timer_controller.setTimer(timer);
+        }
+      } else {
+        timers_list_controller.setTimer(timer);
+      }
     }
 
     closeModal();
