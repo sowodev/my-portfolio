@@ -11,9 +11,9 @@ const TimersList: React.FC<Props> = function timersList({
   timer_controller,
   timers_list_controller,
 }: Props): ReactElement {
-  const changeSelectedTimer = (timer_uuid: string) => {
+  function changeSelectedTimer(timer_uuid: string): void {
     timers_list_controller.setSelectedTimer(timer_uuid);
-  };
+  }
 
   return (
     <div className="flex h-full basis-[30%] font-[Lexend] justify-center items-center">

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { TimerController, RemainingTime, Timer } from './types';
+import { TimerController, RemainingTime, Timer, EmptyTimer } from './types';
 
 function useTimer(default_timer: Timer): TimerController {
   const [remaining_time, setRemainingTime] = useState<RemainingTime>({
@@ -9,6 +9,7 @@ function useTimer(default_timer: Timer): TimerController {
     seconds: 0,
   });
   const [timer, setTimer] = useState<Timer>(default_timer);
+  const [show_reset_modal, setShowResetModal] = useState<boolean>(false);
 
   useEffect(() => {
     let time_to_end: number = 0;
@@ -18,13 +19,14 @@ function useTimer(default_timer: Timer): TimerController {
     if (timer.is_paused) return;
 
     if (timer.type === 'end_by_date') {
+      if (timer.uuid === 'empty_timer') {
+        time_to_end = 0;
+        setRemainingTime(convertFromMiliSecondsToRemainingTimer(time_to_end));
+        return;
+      }
       time_to_end = convertFromDateToMiliSeconds(timer.end_date ?? '', '00:00');
     } else if (timer.type === 'end_by_time') {
-      if (timer.time_type === 'hours') {
-        time_to_end = convertFromHoursToMiliSeconds(timer.time_to_end ?? 0);
-      } else if (timer.time_type === 'minutes') {
-        time_to_end = convertFromMinutesToMiliSeconds(timer.time_to_end ?? 0);
-      }
+      time_to_end = timer.time_to_end_in_ms ?? 0;
     }
 
     setRemainingTime(convertFromMiliSecondsToRemainingTimer(time_to_end));
@@ -37,6 +39,7 @@ function useTimer(default_timer: Timer): TimerController {
       }
 
       time_to_end -= 1000;
+      timer.time_to_end_in_ms = time_to_end;
 
       setRemainingTime(convertFromMiliSecondsToRemainingTimer(time_to_end));
     }, 1000);
@@ -49,16 +52,6 @@ function useTimer(default_timer: Timer): TimerController {
     const date_ms = new Date(date_to_convert).getTime();
     const now_ms = new Date().getTime();
     return date_ms - now_ms;
-  }
-
-  function convertFromHoursToMiliSeconds(hours: number): number {
-    const hours_ms: number = hours * 60 * 60 * 1000;
-    return hours_ms;
-  }
-
-  function convertFromMinutesToMiliSeconds(minutes: number): number {
-    const minutes_ms: number = minutes * 60 * 1000;
-    return minutes_ms;
   }
 
   function convertFromMiliSecondsToRemainingTimer(miliseconds: number): RemainingTime {
@@ -75,7 +68,12 @@ function useTimer(default_timer: Timer): TimerController {
   }
 
   function resetTimer(): void {
-    setTimer((t: Timer): Timer => ({ ...t, is_stopped: true }));
+    setTimer((t: Timer): Timer => ({ ...t, time_to_end_in_ms: t.initial_time_to_end_in_ms }));
+
+    timer.is_paused &&
+      setRemainingTime(
+        convertFromMiliSecondsToRemainingTimer(timer.initial_time_to_end_in_ms ?? 0),
+      );
   }
 
   function deleteTimer(): void {
@@ -90,6 +88,8 @@ function useTimer(default_timer: Timer): TimerController {
     timer,
     setTimer,
     remaining_time,
+    show_reset_modal,
+    setShowResetModal,
     togglePause,
     resetTimer,
     deleteTimer,

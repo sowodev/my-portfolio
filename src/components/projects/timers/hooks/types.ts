@@ -5,8 +5,8 @@ export type Timer = {
   type: 'end_by_date' | 'end_by_time';
   end_date?: string;
   end_date_time?: string;
-  time_to_end?: number;
-  initial_time_to_end?: number;
+  time_to_end_in_ms?: number;
+  initial_time_to_end_in_ms?: number;
   time_type?: 'minutes' | 'hours';
   is_selected: boolean;
   is_completed: boolean;
@@ -41,6 +41,8 @@ export type TimerController = {
   timer: Timer;
   setTimer(timer: Timer): void;
   remaining_time: RemainingTime;
+  show_reset_modal: boolean;
+  setShowResetModal(show: boolean): void;
   togglePause(): void;
   resetTimer(): void;
   deleteTimer(): void;
@@ -66,7 +68,7 @@ export type FormValues = {
 };
 
 export const EmptyTimer: Timer = {
-  uuid: '',
+  uuid: 'empty_timer',
   title: '',
   description: '',
   type: 'end_by_date',
@@ -74,7 +76,7 @@ export const EmptyTimer: Timer = {
   end_date_time: '',
   is_selected: false,
   is_completed: false,
-  is_paused: true,
+  is_paused: false,
   is_stopped: false,
   is_favorite: false,
   created_at: '',
