@@ -6,11 +6,13 @@ import { EmptyTimer, TimerController, TimersListController } from '../hooks/type
 type Props = {
   timer_controller: TimerController;
   timers_list_controller: TimersListController;
+  dark_mode: boolean;
 };
 
 const DeleteConfirmationModal: React.FC<Props> = ({
   timer_controller,
   timers_list_controller,
+  dark_mode,
 }: Props): ReactElement => {
   const handleDeleteTimer = () => {
     timers_list_controller.deleteTimer(timers_list_controller.timer_to_delete);
@@ -53,7 +55,7 @@ const DeleteConfirmationModal: React.FC<Props> = ({
             >
               <Dialog.Panel
                 className={
-                  false
+                  dark_mode
                     ? `w-full max-w-md transform overflow-hidden rounded-lg bg-slate-700 p-6 text-left align-middle shadow-xl transition-all`
                     : `w-full max-w-md transform overflow-hidden rounded-lg bg-white p-6 text-left align-middle shadow-xl transition-all`
                 }
@@ -61,12 +63,14 @@ const DeleteConfirmationModal: React.FC<Props> = ({
                 <Dialog.Title
                   as="div"
                   className={`flex flex-row font-[Lexend] text-lg font-medium leading-6 text-gray-900 justify-between ${
-                    false && 'text-white'
+                    dark_mode && 'text-white'
                   }`}
                 >
                   Delete Timer!
                   <button
-                    className="flex rounded hover:bg-gray-100"
+                    className={`flex rounded hover:bg-gray-100 ${
+                      dark_mode && `hover:bg-slate-600`
+                    }`}
                     onClick={() => timers_list_controller.setShowDeleteModal(false)}
                   >
                     <XMarkIcon className="h-7" />
@@ -76,7 +80,9 @@ const DeleteConfirmationModal: React.FC<Props> = ({
                 {/* The Form Starts Here!!! */}
                 <div className="flex flex-col justify-center items-center my-4">
                   <ExclamationTriangleIcon className="h-10 stroke-red-500" />
-                  <span className="font-[Lexend] text-lg font-light">
+                  <span
+                    className={`font-[Lexend] text-lg font-light ${dark_mode && `text-slate-300`}`}
+                  >
                     {`Are you sure about deleting`}{' '}
                     <span className="text-red-500">
                       {

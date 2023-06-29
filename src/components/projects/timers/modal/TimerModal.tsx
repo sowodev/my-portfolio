@@ -13,11 +13,13 @@ import { v4 as uuidv4 } from 'uuid';
 type Props = {
   timer_controller: TimerController;
   timers_list_controller: TimersListController;
+  dark_mode: boolean;
 };
 
 const TimerModal: React.FC<Props> = function timerModal({
   timer_controller,
   timers_list_controller,
+  dark_mode,
 }: Props): ReactElement {
   // Controll the type of timer
   const [timer_type, setTimerType] = useState<'end_by_date' | 'end_by_time'>('end_by_time');
@@ -43,7 +45,11 @@ const TimerModal: React.FC<Props> = function timerModal({
       }
 
       if (timers_list_controller.timer_to_edit!.type === 'end_by_time') {
-        setValue('end_time', timers_list_controller.timer_to_edit!.initial_time_to_end);
+        const initial_time_to_end: number =
+          timers_list_controller.timer_to_edit!.time_type === 'minutes'
+            ? timers_list_controller.timer_to_edit!.initial_time_to_end_in_ms! / 60000
+            : timers_list_controller.timer_to_edit!.initial_time_to_end_in_ms! / 3600000;
+        setValue('end_time', initial_time_to_end);
         setValue('time', timers_list_controller.timer_to_edit!.time_type);
       }
       setTimerType(timers_list_controller.timer_to_edit!.type);
@@ -84,14 +90,17 @@ const TimerModal: React.FC<Props> = function timerModal({
     }
 
     if (timer_type === 'end_by_time') {
+      const ms: number = e.time === 'minutes' ? e.end_time! * 60000 : e.end_time! * 3600000;
       const timer: Timer = {
         uuid: timers_list_controller.to_edit
           ? timers_list_controller.timer_to_edit!.uuid
           : uuidv4(),
         title: e.title,
         description: e.description,
-        time_to_end: e.end_time,
-        initial_time_to_end: e.end_time,
+        time_to_end_in_ms: ms,
+        initial_time_to_end_in_ms: timers_list_controller.to_edit
+          ? timers_list_controller.timer_to_edit!.initial_time_to_end_in_ms
+          : ms,
         is_completed: false,
         type: timer_type,
         time_type: e.time,
@@ -144,7 +153,7 @@ const TimerModal: React.FC<Props> = function timerModal({
             >
               <Dialog.Panel
                 className={
-                  false
+                  dark_mode
                     ? `w-full max-w-md transform overflow-hidden rounded-lg bg-slate-700 p-6 text-left align-middle shadow-xl transition-all`
                     : `w-full max-w-md transform overflow-hidden rounded-lg bg-white p-6 text-left align-middle shadow-xl transition-all`
                 }
@@ -152,11 +161,16 @@ const TimerModal: React.FC<Props> = function timerModal({
                 <Dialog.Title
                   as="div"
                   className={`flex flex-row font-[Lexend] text-lg font-medium leading-6 text-gray-900 justify-between ${
-                    false && 'text-white'
+                    dark_mode && 'text-white'
                   }`}
                 >
                   {timers_list_controller.to_edit ? 'Save Timer!' : 'Create Timer!'}
-                  <button className="flex rounded hover:bg-gray-100" onClick={closeModal}>
+                  <button
+                    className={`flex rounded hover:bg-gray-100 ${
+                      dark_mode && `hover:bg-slate-600`
+                    }`}
+                    onClick={closeModal}
+                  >
                     <XMarkIcon className="h-7" />
                   </button>
                 </Dialog.Title>
@@ -164,12 +178,12 @@ const TimerModal: React.FC<Props> = function timerModal({
 
                 {/* The Form Starts Here!!! */}
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 p-4">
-                  <InputTitle register={register} errors={errors} />
-                  <InputDescription register={register} errors={errors} />
+                  <InputTitle register={register} errors={errors} dark_mode={dark_mode} />
+                  <InputDescription register={register} errors={errors} dark_mode={dark_mode} />
                   {timer_type === 'end_by_time' ? (
-                    <InputEndTime register={register} errors={errors} dark={false} />
+                    <InputEndTime register={register} errors={errors} dark_mode={dark_mode} />
                   ) : (
-                    <InputEndDate register={register} errors={errors} />
+                    <InputEndDate register={register} errors={errors} dark_mode={dark_mode} />
                   )}
                   <div className="flex w-full justify-between font-[Lexend] text-white">
                     <button
