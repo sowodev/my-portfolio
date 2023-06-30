@@ -16,6 +16,7 @@
     "@fullcalendar/interaction": "^6.1.8",
     "@fullcalendar/react": "^6.1.8",
     "@headlessui/react": "^1.7.13",
+    "@hello-pangea/dnd": "^16.3.0",
     "@heroicons/react": "^2.0.15",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tanstack/react-query": "^4.29.7",

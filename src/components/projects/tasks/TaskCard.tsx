@@ -1,14 +1,26 @@
-import { Task } from "./MockedTasksData";
+import { ReactElement } from 'react';
+import { Task } from './MockedTasksData';
+import { Draggable, DraggableProvided } from '@hello-pangea/dnd';
 
-type TaskProp = {
+type TaskProps = {
+  index: number;
   task: Task;
 };
 
-const TaskCard: React.FC<TaskProp> = function taskCard({ task }) {
+const TaskCard: React.FC<TaskProps> = function taskCard({ index, task }: TaskProps) {
   return (
-    <div className="min-h-[5.2rem] drop-shadow w-[90%] bg-white">
-      <span>{task.title}</span>
-    </div>
+    <Draggable key={task.id} draggableId={task.id} index={index}>
+      {(provided) => (
+        <div
+          className="min-h-[5.2rem] drop-shadow w-[90%] bg-white"
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+        >
+          <span>{task.title}</span>
+        </div>
+      )}
+    </Draggable>
   );
 };
 
