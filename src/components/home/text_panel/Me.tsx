@@ -7,21 +7,21 @@ const Me = function me(): ReactElement {
 
   return (
     <div className="flex h-full w-full flex-col justify-between overflow-y-auto px-6 lg:py-2 text-white">
-      <div className="prose prose-slate mx-auto mt-4 lg:mt-16">
+      <div className="prose prose-slate mx-auto mt-4 md:mt-3 lg:mt-12">
         <p className="mb-2 text-justify font-[Lexend] text-md md:text-2xl lg:text-3xl font-bold dark:text-white ">
           Software Engineer working with Fullstack Web Development, building secure, robust,
           reliable and scalable systems.
         </p>
         <p className="my-2 lg:mt-2 text-sm md:text-base text-justify indent-5 font-[Lexend] font-light dark:text-slate-300">
           Hi there, my name is Wendell Oliveira, I am a Brazilian Software Engineer based in São
-          José dos Campos - São Paulo. With over 3 years of experience as Full stack Software
-          Developer. I am a passionate about computers and technology, so I got a Science and
-          Technology degree with focus on Computer Science at the Federal University of São Paulo,
-          also acquired a little bit of international experience by living in New Zealed for about
-          one year.{' '}
+          José dos Campos - São Paulo. With over 3 years of experience as a Full Stack Software
+          Developer. I am a passionate about computers and technology. I have got a Science and
+          Technology bachelor's degree with focus on Computer Science at the Federal University of
+          São Paulo, I have gained valuable international experience by living in New Zealand for
+          approximately one year.{' '}
           <span className="font-bold">
-            I am here to guide and build your way through the most difficult parts, when building
-            state of the art web applications.
+            My primary goal is to guide and assist you in overcoming the most challenging aspects of
+            building state-of-the-art web applications.
           </span>
         </p>
       </div>
