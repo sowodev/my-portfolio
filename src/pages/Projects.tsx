@@ -1,14 +1,10 @@
-import { ProjectType } from "../utils/MultiCardsIntetrfaces";
-import Filters from "../components/commom/filters/Filters";
-import CardsPagesProjects from "../components/projects/cards-pages/CardsPagesProjects";
-import { RefObject, useEffect, useRef } from "react";
-import useProjectsController from "../components/projects/hooks/useProjectsController";
+import { ProjectType } from '../utils/MultiCardsIntetrfaces';
+import Filters from '../components/commom/filters/Filters';
+import CardsPagesProjects from '../components/projects/cards-pages/CardsPagesProjects';
+import { RefObject, useEffect, useRef } from 'react';
+import useProjectsController from '../components/projects/hooks/useProjectsController';
 
-const Projects = function projects({
-  projects_data,
-}: {
-  projects_data: ProjectType[];
-}) {
+const Projects = function projects({ projects_data }: { projects_data: ProjectType[] }) {
   const projects_controller = useProjectsController(projects_data);
   const contentRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
 
@@ -18,15 +14,12 @@ const Projects = function projects({
 
   useEffect(() => {
     if (contentRef.current) {
-      contentRef.current.scrollTo({ top: 0, behavior: "smooth" });
+      contentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [projects_controller.getCurrentPage()]);
 
   return (
-    <div
-      className="flex h-full lg:h-full w-full flex-row overflow-y-scroll"
-      ref={contentRef}
-    >
+    <div className="flex h-full lg:h-full w-full flex-row overflow-y-scroll" ref={contentRef}>
       <div className="hidden lg:flex h-full basis-1/4 justify-center">
         <Filters multi_card_controller={projects_controller} />
       </div>
