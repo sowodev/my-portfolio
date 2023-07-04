@@ -34,7 +34,7 @@ const ColumnContainer: React.FC<ColumnContainerProps> = function columnContainer
 
       {/* Start Droppable Column */}
       <Droppable droppableId={uuidv4()}>
-        {(provided) => (
+        {(provided: DroppableProvided): ReactElement => (
           <div
             className={
               column === 'Done'
@@ -44,9 +44,11 @@ const ColumnContainer: React.FC<ColumnContainerProps> = function columnContainer
             {...provided.droppableProps}
             ref={provided.innerRef}
           >
-            {tasks.map((task: Task, index: number) => (
-              <TaskCard key={task.id} index={index} task={task} />
-            ))}
+            {tasks.map(
+              (task: Task, index: number): ReactElement => (
+                <TaskCard key={task.id} index={index} task={task} color={color} />
+              ),
+            )}
             {provided.placeholder}
           </div>
         )}

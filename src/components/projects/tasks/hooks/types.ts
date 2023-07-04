@@ -29,3 +29,12 @@ export type TasksController = {
   updateTask: (task: Task) => void;
   deleteTask: (task: Task) => void;
 };
+
+export const ConvertDifficultiesFromNumsToSvgs = [
+  'none',
+  'green-dif.svg',
+  'yellow-dif.svg',
+  'orange-dif.svg',
+  'red-dif.svg',
+  'purple-dif.svg',
+];
