@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Task } from './hooks/types';
+import { Task, TasksController } from './hooks/types';
 import { Draggable, DraggableProvided } from '@hello-pangea/dnd';
 import { ConvertDifficultiesFromNumsToSvgs } from './hooks/types';
 import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/outline';
@@ -7,13 +7,15 @@ import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/outline';
 type TaskProps = {
   index: number;
   task: Task;
-  color: string;
+  tail_color: string;
+  tasks_controller: TasksController;
 };
 
 const TaskCard: React.FC<TaskProps> = function taskCard({
   index,
   task,
-  color,
+  tail_color,
+  tasks_controller,
 }: TaskProps): ReactElement {
   return (
     <Draggable key={task.id} draggableId={task.id} index={index}>
@@ -25,9 +27,9 @@ const TaskCard: React.FC<TaskProps> = function taskCard({
           {...provided.dragHandleProps}
         >
           <div className="flex flex-row justify-start items-center h-full w-full">
-            <div className={`flex h-full w-1 ${color}`}></div>
+            <div className={`flex h-full w-1 ${tail_color}`}></div>
             <div className="flex w-full h-full font-[Lexend] p-2 gap-2 justify-start items-start">
-              <input className="rounded-xl mt-1 cursor-pointer" type="checkbox" />
+              <input className="accent-sky-300 rounded-xl mt-1 cursor-pointer" type="checkbox" />
               <div className="flex flex-col w-full h-full">
                 <div className="flex flex-col w-full h-full">
                   <span className="font-light text-sm line-clamp-1">{task.title}</span>
@@ -36,16 +38,21 @@ const TaskCard: React.FC<TaskProps> = function taskCard({
                   </span>
                 </div>
                 <div className="flex w-full h-fit gap-2 justify-end items-end">
-                  <TrashIcon className={`h-4 bg-gray-100 rounded-sm stroke-red-500`} />
-                  <PencilSquareIcon className={`h-4 bg-gray-100 rounded-sm stroke-sky-500`} />
+                  <button onClick={() => tasks_controller.setShowDeleteTaskModal(true)}>
+                    <TrashIcon className={`h-4 bg-gray-100 rounded-sm stroke-red-500`} />
+                  </button>
+                  <button onClick={() => tasks_controller.setShowEditTaskModal(true)}>
+                    <PencilSquareIcon className={`h-4 bg-gray-100 rounded-sm stroke-sky-500`} />
+                  </button>
+
                   <img
-                    className="h-4 bg-gray-100 rounded-sm"
+                    className="h-4 bg-gray-100 rounded-sm cursor-default"
                     src={`/imgs/projects/tasks/${
                       ConvertDifficultiesFromNumsToSvgs[task.difficulty]
                     }`}
                   />
                   <img
-                    className="h-4 bg-gray-100 rounded-sm"
+                    className="h-4 bg-gray-100 rounded-sm cursor-default"
                     src="/imgs/projects/tasks/hourglass.svg"
                   />
                 </div>
