@@ -5,20 +5,47 @@ import { DragDropContext } from '@hello-pangea/dnd';
 import TaskModal from './modal/TaskModal';
 import { TasksController } from './hooks/types';
 import useTasks from './hooks/useTasks';
+import DeleteTaskConfirmationModal from './modal/DeleteTaskConfirmationModal';
+import EditModalWorkingOn from './modal/EditModalWorkingOn';
 
 const Tasks: React.FC = function tasks(): ReactElement {
   const tasks_controller: TasksController = useTasks();
 
   const handleDragEnd = (result: any) => {
-    /*     if (!result.destination) return;
+    const { destination, source, draggableId } = result;
 
-    const items = Array.from(tasks_state.get(result.source.droppableId) ?? []);
-    const [reorderedItem] = items.splice(result.source.index, 1);
-    items.splice(result.destination.index, 0, reorderedItem);
+    if (!destination) return;
 
-    const newTasksState = new Map<string, Task[]>(tasks_state);
-    newTasksState.set(result.source.droppableId, items);
-    setTasks(newTasksState); */
+    if (destination.droppableId === source.droppableId && destination.index === source.index)
+      return;
+
+    // DroppableId is in the format of: column|color ex: 'To Do|red'
+    const start_drag: string[] = source.droppableId.split('|');
+    const finish_drag: string[] = destination.droppableId.split('|');
+
+    if (
+      start_drag[0] === finish_drag[0] &&
+      start_drag[1] === finish_drag[1] &&
+      source.index !== destination.index
+    ) {
+      // If the user is reordering tasks within the same column
+      tasks_controller.reorderTasks(start_drag[0], start_drag[1], source.index, destination.index);
+    }
+
+    if (start_drag[0] !== finish_drag[0] || start_drag[1] !== finish_drag[1]) {
+      // If the user is moving a task to a different column
+      tasks_controller.moveTask(
+        start_drag[0],
+        start_drag[1],
+        finish_drag[0],
+        finish_drag[1],
+        source.index,
+        destination.index,
+        draggableId,
+      );
+    }
+
+    return;
   };
 
   return (
@@ -34,22 +61,22 @@ const Tasks: React.FC = function tasks(): ReactElement {
           <DragDropContext onDragEnd={handleDragEnd}>
             <Quadrant
               color="red"
-              tasks={tasks_controller.tasks.get('red') ?? []}
+              tasks_columns={tasks_controller.tasks.get('red') ?? { '': [] }}
               tasks_controller={tasks_controller}
             />
             <Quadrant
               color="orange"
-              tasks={tasks_controller.tasks.get('orange') ?? []}
+              tasks_columns={tasks_controller.tasks.get('orange') ?? { '': [] }}
               tasks_controller={tasks_controller}
             />
             <Quadrant
               color="yellow"
-              tasks={tasks_controller.tasks.get('yellow') ?? []}
+              tasks_columns={tasks_controller.tasks.get('yellow') ?? { '': [] }}
               tasks_controller={tasks_controller}
             />
             <Quadrant
               color="green"
-              tasks={tasks_controller.tasks.get('green') ?? []}
+              tasks_columns={tasks_controller.tasks.get('green') ?? { '': [] }}
               tasks_controller={tasks_controller}
             />
           </DragDropContext>
@@ -59,6 +86,8 @@ const Tasks: React.FC = function tasks(): ReactElement {
         <span className="font-[Lexend] text-lg">URGENT</span>
       </div>
       <TaskModal tasks_controller={tasks_controller} />
+      <DeleteTaskConfirmationModal tasks_controller={tasks_controller} />
+      <EditModalWorkingOn tasks_controller={tasks_controller} />
     </div>
   );
 };

@@ -3,20 +3,19 @@ import { Task, TasksController } from './hooks/types';
 import TaskCard from './TaskCard';
 import AddTaskBtn from './AddTaskBtn';
 import { Droppable, DroppableProvided } from '@hello-pangea/dnd';
-import { v4 as uuidv4 } from 'uuid';
 
 type ColumnContainerProps = {
-  column_index: number;
   column: string;
   color: string;
+  tail_color: string;
   tasks: Task[];
   tasks_controller: TasksController;
 };
 
 const ColumnContainer: React.FC<ColumnContainerProps> = function columnContainer({
-  column_index,
   column,
   color,
+  tail_color,
   tasks,
   tasks_controller,
 }: ColumnContainerProps): ReactElement {
@@ -25,15 +24,15 @@ const ColumnContainer: React.FC<ColumnContainerProps> = function columnContainer
       <div
         className={
           column === 'Done'
-            ? `flex w-full h-[10%] justify-center items-center border-b border-gray-400 border-dashed ${color}`
-            : `flex w-full h-[10%] justify-center items-center border-e border-b border-gray-400 border-dashed ${color}`
+            ? `flex w-full h-[10%] justify-center items-center border-b border-gray-400 border-dashed ${tail_color}`
+            : `flex w-full h-[10%] justify-center items-center border-e border-b border-gray-400 border-dashed ${tail_color}`
         }
       >
         <span className="h-fit w-fit font-[Lexend]">{column}</span>
       </div>
 
       {/* Start Droppable Column */}
-      <Droppable droppableId={uuidv4()}>
+      <Droppable droppableId={column + '|' + color}>
         {(provided: DroppableProvided): ReactElement => (
           <div
             className={
@@ -46,7 +45,13 @@ const ColumnContainer: React.FC<ColumnContainerProps> = function columnContainer
           >
             {tasks.map(
               (task: Task, index: number): ReactElement => (
-                <TaskCard key={task.id} index={index} task={task} color={color} />
+                <TaskCard
+                  key={task.id}
+                  index={index}
+                  task={task}
+                  tail_color={tail_color}
+                  tasks_controller={tasks_controller}
+                />
               ),
             )}
             {provided.placeholder}
