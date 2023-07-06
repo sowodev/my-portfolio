@@ -13,7 +13,8 @@ const DeleteTaskConfirmationModal: React.FC<Props> = ({
   const dark_mode: boolean = false;
   const handleDeleteTask = () => {
     // TODO: Call delete task function here
-
+    tasks_controller.deleteTask();
+    tasks_controller.setTaskToDelete(null);
     tasks_controller.setShowDeleteTaskModal(false);
   };
 
@@ -80,7 +81,7 @@ const DeleteTaskConfirmationModal: React.FC<Props> = ({
                     className={`font-[Lexend] text-sm font-light ${dark_mode && `text-slate-300`}`}
                   >
                     {`Do you really want to delete the task`}{' '}
-                    <span className="text-red-500">Task Name</span>
+                    <span className="text-red-500">{tasks_controller.task_to_delete?.title}</span>
                     {`? This action is irreversible!`}
                   </span>
                   <div className="flex flex-row w-full text-sm justify-between items-center mt-4">
