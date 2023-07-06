@@ -33,9 +33,11 @@ export type TasksController = {
   setShowDeleteTaskModal: (show_delete_task_modal: boolean) => void;
   show_edit_task_modal: boolean;
   setShowEditTaskModal: (show_edit_task_modal: boolean) => void;
+  task_to_delete: Task | null;
+  setTaskToDelete: (task_to_delete: Task | null) => void;
   createTask: (task: Task) => void;
   updateTask: (task: Task) => void;
-  deleteTask: (task: Task) => void;
+  deleteTask: () => void;
   reorderTasks: (
     column_name: string,
     priority: string,

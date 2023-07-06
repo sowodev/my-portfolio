@@ -278,8 +278,8 @@ export const TasksMockedData: Task[] = [
   },
   {
     id: '26',
-    title: 'Task 25',
-    description: 'Task 25 description',
+    title: 'Task 26',
+    description: 'Task 26 description',
     status: 'In Progress',
     priority: 'green',
     difficulty: 'very_high',
