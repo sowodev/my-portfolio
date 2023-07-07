@@ -14,7 +14,7 @@ export type Task = {
   description: string;
   status: 'To Do' | 'In Progress' | 'Done';
   priority: 'red' | 'orange' | 'yellow' | 'green';
-  difficulty: 'very_low' | 'low' | 'medium' | 'high' | 'very_high';
+  difficulty: 'very_easy' | 'easy' | 'medium' | 'hard' | 'very_hard';
   estimated_time: number;
   due_date: string;
   due_time: string;
@@ -51,14 +51,13 @@ export type TasksController = {
     priority_to: string,
     index_from: number,
     index_to: number,
-    task_id: string,
   ) => void;
 };
 
 export const ConvertDifficultiesFromNumsToSvgs = {
-  very_low: 'green-dif.svg',
-  low: 'yellow-dif.svg',
+  very_easy: 'green-dif.svg',
+  easy: 'yellow-dif.svg',
   medium: 'orange-dif.svg',
-  high: 'red-dif.svg',
-  very_high: 'purple-dif.svg',
+  hard: 'red-dif.svg',
+  very_hard: 'purple-dif.svg',
 };

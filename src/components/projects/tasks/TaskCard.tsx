@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ChangeEvent, ReactElement } from 'react';
 import { Task, TasksController } from './hooks/types';
 import { Draggable, DraggableProvided } from '@hello-pangea/dnd';
 import { ConvertDifficultiesFromNumsToSvgs } from './hooks/types';
@@ -29,7 +29,15 @@ const TaskCard: React.FC<TaskProps> = function taskCard({
           <div className="flex flex-row justify-start items-center h-full w-full">
             <div className={`flex h-full w-1 ${tail_color}`}></div>
             <div className="flex w-full h-full font-[Lexend] p-2 gap-2 justify-start items-start">
-              <input className={`accent-sky-300 rounded-xl mt-1 cursor-pointer`} type="checkbox" />
+              <input
+                className={`accent-sky-300 rounded-xl mt-1 cursor-pointer`}
+                type="checkbox"
+                onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                  //tasks_controller.moveTask()
+                  console.log(e.target.checked);
+                }}
+                defaultChecked={task.status === 'Done'}
+              />
               <div className="flex flex-col w-full h-full">
                 <div className="flex flex-col w-full h-full">
                   <span className="font-light text-sm line-clamp-1">{task.title}</span>
