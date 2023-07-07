@@ -36,12 +36,11 @@ const Tasks: React.FC = function tasks(): ReactElement {
       // If the user is moving a task to a different column
       tasks_controller.moveTask(
         start_drag[0],
-        start_drag[1],
         finish_drag[0],
+        start_drag[1],
         finish_drag[1],
         source.index,
         destination.index,
-        draggableId,
       );
     }
 

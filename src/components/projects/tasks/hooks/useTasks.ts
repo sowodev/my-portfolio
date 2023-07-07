@@ -2,16 +2,17 @@ import { useState } from 'react';
 import { Task, TasksController, TasksColumn } from './types';
 import { TasksMockedData } from '../MockedTasksData';
 
-type ColumnName = 'To Do' | 'In Progress' | 'Done';
+type ColumnType = 'To Do' | 'In Progress' | 'Done';
+type PriorityType = 'red' | 'orange' | 'yellow' | 'green';
 
-function tasksByPriority(tasks: Task[]) {
+function tasksByPriority(tasks: Task[]): Map<string, TasksColumn> {
   const tasksByPriorityMap = new Map<string, TasksColumn>();
   tasksByPriorityMap.set('red', { 'To Do': [], 'In Progress': [], Done: [] });
   tasksByPriorityMap.set('orange', { 'To Do': [], 'In Progress': [], Done: [] });
   tasksByPriorityMap.set('yellow', { 'To Do': [], 'In Progress': [], Done: [] });
   tasksByPriorityMap.set('green', { 'To Do': [], 'In Progress': [], Done: [] });
 
-  tasks.forEach((task) => {
+  tasks.forEach((task): void => {
     switch (task.priority) {
       case 'red':
         tasksByPriorityMap.get('red')?.[task.status].push(task);
@@ -34,15 +35,24 @@ function tasksByPriority(tasks: Task[]) {
 }
 
 function useTasks(): TasksController {
+  // TODO: [Optimization] Use useMemo() to avoid re-rendering when tasks are updated
+  // TODO: [Optimization] Use useCallback() to avoid re-rendering when functions are updated
+  // TODO: [Optimization] Break down tasks by quadrant
   const [tasks, setTasks] = useState<Map<string, TasksColumn>>(tasksByPriority(TasksMockedData));
   const [show_tasks_modal, setShowTasksModal] = useState<boolean>(false);
   const [show_delete_task_modal, setShowDeleteTaskModal] = useState<boolean>(false);
   const [show_edit_task_modal, setShowEditTaskModal] = useState<boolean>(false);
   const [task_to_delete, setTaskToDelete] = useState<Task | null>(null);
 
-  function createTask(task: Task) {}
+  function createTask(task: Task): void {
+    // Example: {"red" : {"To Do" : [task1, task2, task3], "In Progress" : [task4, task5], "Done" : [task6]}}
+    setTasks((current_tasks: Map<string, TasksColumn>): Map<string, TasksColumn> => {
+      current_tasks.get(task.priority)?.[task.status].push(task);
+      return new Map<string, TasksColumn>(current_tasks);
+    });
+  }
 
-  function updateTask(task: Task) {}
+  function updateTask(task: Task): void {}
 
   function deleteTask(): void {
     if (task_to_delete === null) {
@@ -92,8 +102,23 @@ function useTasks(): TasksController {
     priority_to: string,
     index_from: number,
     index_to: number,
-    task_id: string,
-  ): void {}
+  ): void {
+    setTasks((current_tasks: Map<string, TasksColumn>): Map<string, TasksColumn> => {
+      let task: Task = current_tasks
+        .get(priority_from)
+        ?.[column_name_from].splice(index_from, 1)[0]!;
+
+      task = {
+        ...task,
+        status: column_name_to as ColumnType,
+        priority: priority_to as PriorityType,
+      };
+
+      current_tasks.get(priority_to)?.[column_name_to].splice(index_to, 0, task);
+
+      return new Map<string, TasksColumn>(current_tasks);
+    });
+  }
 
   return {
     tasks,

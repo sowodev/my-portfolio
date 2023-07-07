@@ -10,7 +10,7 @@ const AddTaskBtn: React.FC<Props> = function addTaskBtn({ tasks_controller }: Pr
   return (
     <button
       className="absolute bg-cyan-300 bottom-2 left-2 h-8 w-8 rounded-3xl drop-shadow-md hover:bg-cyan-400"
-      onClick={() => tasks_controller.setShowTasksModal(true)}
+      onClick={(): void => tasks_controller.setShowTasksModal(true)}
     >
       <PlusSmallIcon className="w-full h-full stroke-gray-100" />
     </button>

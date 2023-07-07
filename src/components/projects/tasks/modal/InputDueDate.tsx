@@ -8,7 +8,7 @@ type Props = {
   dark_mode: boolean;
 };
 
-const InputDueDate: React.FC<Props> = function inputEndDate({
+const InputDueDate: React.FC<Props> = function inputDueDate({
   register,
   errors,
   dark_mode,
@@ -17,7 +17,7 @@ const InputDueDate: React.FC<Props> = function inputEndDate({
     <div className="flex w-full flex-row justify-between items-center">
       <div className="flex flex-col basis-[48%]">
         <label
-          htmlFor="end_date"
+          htmlFor="due_date"
           className={`w-full font-[Lexend] font-light after:ml-0.5 after:text-red-500 after:content-['*'] ${
             dark_mode && 'text-slate-300'
           }`}
@@ -26,7 +26,7 @@ const InputDueDate: React.FC<Props> = function inputEndDate({
         </label>
         <input
           type="date"
-          id="end_date"
+          id="due_date"
           className={
             dark_mode
               ? `flex h-[2rem] w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-[Lexend] font-light text-slate-300 placeholder:text-slate-500 focus:border-sky-400 focus:outline-none`
@@ -38,14 +38,16 @@ const InputDueDate: React.FC<Props> = function inputEndDate({
       </div>
       <div className="flex flex-col basis-[48%]">
         <label
-          htmlFor="end_date_time"
-          className={`w-full font-[Lexend] font-light ${dark_mode && 'text-slate-300'}`}
+          htmlFor="due_date_time"
+          className={`w-full font-[Lexend] font-light after:ml-0.5 after:text-red-500 after:content-['*'] ${
+            dark_mode && 'text-slate-300'
+          }`}
         >
-          at ?
+          At
         </label>
         <input
           type="time"
-          id="end_date_time"
+          id="due_date_time"
           defaultValue={'00:00'}
           className={`flex h-[2rem] w-full border-b border-[#B0B0B0] ${
             dark_mode ? 'bg-slate-700 text-slate-300' : 'bg-white text-slate-500'
