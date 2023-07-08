@@ -1,9 +1,12 @@
-import CalendarComponent from "./Calendar";
+import React from 'react';
+import CalendarComponent from './Calendar';
+import WorkingInProgress from '../WorkingInProgress';
 
-const Scheduler = function scheduler() {
+const Scheduler: React.FC = function scheduler(): React.ReactElement {
+  const [is_finished, setIsFinished] = React.useState(false);
   return (
     <div className="flex w-full h-full justify-center items-center">
-      <CalendarComponent />
+      {is_finished ? <CalendarComponent /> : <WorkingInProgress project="Scheduler" />}
     </div>
   );
 };

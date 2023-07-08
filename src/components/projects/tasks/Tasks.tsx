@@ -1,6 +1,6 @@
 import Quadrant from './Quadrant';
 import { ChevronUpIcon, ChevronLeftIcon } from '@heroicons/react/24/outline';
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import { DragDropContext } from '@hello-pangea/dnd';
 import TaskModal from './modal/TaskModal';
 import { TasksController } from './hooks/types';

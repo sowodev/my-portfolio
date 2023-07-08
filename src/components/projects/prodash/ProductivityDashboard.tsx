@@ -2,7 +2,7 @@ import { useState } from 'react';
 import WorkingInProgress from '../WorkingInProgress';
 
 const ProductivityDashboard = function productivityDashboard() {
-  const [isFinished, setIsFinished] = useState(false);
+  const [isFinished, setIsFinished] = useState(true);
 
   return isFinished ? (
     <WorkingInProgress project="Productivity Dashboard" />

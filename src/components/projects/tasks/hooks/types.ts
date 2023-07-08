@@ -8,13 +8,17 @@ export type FormValues = {
   due_date_time: string;
 };
 
+export type ColumnType = 'To Do' | 'In Progress' | 'Done';
+export type PriorityType = 'red' | 'orange' | 'yellow' | 'green';
+export type DifficultyType = 'very_easy' | 'easy' | 'medium' | 'hard' | 'very_hard';
+
 export type Task = {
   id: string;
   title: string;
   description: string;
-  status: 'To Do' | 'In Progress' | 'Done';
-  priority: 'red' | 'orange' | 'yellow' | 'green';
-  difficulty: 'very_easy' | 'easy' | 'medium' | 'hard' | 'very_hard';
+  status: ColumnType;
+  priority: PriorityType;
+  difficulty: DifficultyType;
   estimated_time: number;
   due_date: string;
   due_time: string;
@@ -35,6 +39,8 @@ export type TasksController = {
   setShowEditTaskModal: (show_edit_task_modal: boolean) => void;
   task_to_delete: Task | null;
   setTaskToDelete: (task_to_delete: Task | null) => void;
+  new_task_priority: PriorityType;
+  setNewTaskPriority: (new_task_priority: PriorityType) => void;
   createTask: (task: Task) => void;
   updateTask: (task: Task) => void;
   deleteTask: () => void;

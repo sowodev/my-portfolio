@@ -6,12 +6,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../../../../utils/shadcn-ui/select';
+import { DifficultyType } from '../hooks/types';
 
 type Props = {
+  setDifficulty: (difficulty: DifficultyType) => void;
   dark_mode: boolean;
 };
 
 const InputDifficulty: React.FC<Props> = function inputDifficulty({
+  setDifficulty,
   dark_mode,
 }: Props): ReactElement {
   return (
@@ -24,9 +27,12 @@ const InputDifficulty: React.FC<Props> = function inputDifficulty({
       >
         Difficulty
       </label>
-      <Select>
+      <Select
+        defaultValue="very_easy"
+        onValueChange={(e): void => setDifficulty(e as DifficultyType)}
+      >
         <SelectTrigger className={`font-[Lexend] font-light text-slate-500`}>
-          <SelectValue placeholder="Choose" />
+          <SelectValue />
         </SelectTrigger>
         <SelectContent className="font-[Lexend] font-light text-sm">
           <SelectItem value="very_easy">
