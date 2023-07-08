@@ -1,12 +1,12 @@
 import { ReactElement } from 'react';
-import { Task, TasksController } from './hooks/types';
+import { PriorityType, Task, TasksController } from './hooks/types';
 import TaskCard from './TaskCard';
 import AddTaskBtn from './AddTaskBtn';
 import { Droppable, DroppableProvided } from '@hello-pangea/dnd';
 
 type ColumnContainerProps = {
   column: string;
-  color: string;
+  color: PriorityType;
   tail_color: string;
   tasks: Task[];
   tasks_controller: TasksController;
@@ -60,7 +60,7 @@ const ColumnContainer: React.FC<ColumnContainerProps> = function columnContainer
       </Droppable>
       {/* End Droppable Column */}
 
-      {column === 'To Do' && <AddTaskBtn tasks_controller={tasks_controller} />}
+      {column === 'To Do' && <AddTaskBtn tasks_controller={tasks_controller} color={color} />}
     </div>
   );
 };

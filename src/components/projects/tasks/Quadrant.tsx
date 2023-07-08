@@ -1,9 +1,9 @@
 import { ReactElement } from 'react';
-import { Task, TasksController, TasksColumn } from './hooks/types';
+import { Task, TasksController, TasksColumn, PriorityType } from './hooks/types';
 import ColumnContainer from './ColumnContainer';
 
 type QuadrantProps = {
-  color: string;
+  color: PriorityType;
   tasks_columns: TasksColumn;
   tasks_controller: TasksController;
 };

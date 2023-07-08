@@ -1,9 +1,6 @@
 import { useState } from 'react';
-import { Task, TasksController, TasksColumn } from './types';
+import { Task, TasksController, TasksColumn, PriorityType, ColumnType } from './types';
 import { TasksMockedData } from '../MockedTasksData';
-
-type ColumnType = 'To Do' | 'In Progress' | 'Done';
-type PriorityType = 'red' | 'orange' | 'yellow' | 'green';
 
 function tasksByPriority(tasks: Task[]): Map<string, TasksColumn> {
   const tasksByPriorityMap = new Map<string, TasksColumn>();
@@ -43,8 +40,11 @@ function useTasks(): TasksController {
   const [show_delete_task_modal, setShowDeleteTaskModal] = useState<boolean>(false);
   const [show_edit_task_modal, setShowEditTaskModal] = useState<boolean>(false);
   const [task_to_delete, setTaskToDelete] = useState<Task | null>(null);
+  const [new_task_priority, setNewTaskPriority] = useState<PriorityType>('red');
 
   function createTask(task: Task): void {
+    console.log('Got', task);
+
     // Example: {"red" : {"To Do" : [task1, task2, task3], "In Progress" : [task4, task5], "Done" : [task6]}}
     setTasks((current_tasks: Map<string, TasksColumn>): Map<string, TasksColumn> => {
       current_tasks.get(task.priority)?.[task.status].push(task);
@@ -52,6 +52,7 @@ function useTasks(): TasksController {
     });
   }
 
+  // TODO: to be implemented
   function updateTask(task: Task): void {}
 
   function deleteTask(): void {
@@ -131,6 +132,8 @@ function useTasks(): TasksController {
     setShowEditTaskModal,
     task_to_delete,
     setTaskToDelete,
+    new_task_priority,
+    setNewTaskPriority,
     createTask,
     updateTask,
     deleteTask,

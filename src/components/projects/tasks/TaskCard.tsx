@@ -26,15 +26,20 @@ const TaskCard: React.FC<TaskProps> = function taskCard({
           {...provided.draggableProps}
           {...provided.dragHandleProps}
         >
-          <div className="flex flex-row justify-start items-center h-full w-full">
+          <div className="flex flex-row justify-start items-center h-full w-full hover:bg-slate-50">
             <div className={`flex h-full w-1 ${tail_color}`}></div>
             <div className="flex w-full h-full font-[Lexend] p-2 gap-2 justify-start items-start">
               <input
                 className={`accent-sky-300 rounded-xl mt-1 cursor-pointer`}
                 type="checkbox"
-                onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                  //tasks_controller.moveTask()
-                  console.log(e.target.checked);
+                onChange={(e: ChangeEvent<HTMLInputElement>): void => {
+                  if (e.target.checked) {
+                    //move task to done
+                    //tasks_controller.moveTask()
+                  } else {
+                    //move task to in progress
+                    //tasks_controller.moveTask()
+                  }
                 }}
                 defaultChecked={task.status === 'Done'}
               />
@@ -47,14 +52,14 @@ const TaskCard: React.FC<TaskProps> = function taskCard({
                 </div>
                 <div className="flex w-full h-fit gap-2 justify-end items-end">
                   <button
-                    onClick={() => {
+                    onClick={(): void => {
                       tasks_controller.setTaskToDelete(task);
                       tasks_controller.setShowDeleteTaskModal(true);
                     }}
                   >
                     <TrashIcon className={`h-4 bg-gray-100 rounded-sm stroke-red-500`} />
                   </button>
-                  <button onClick={() => tasks_controller.setShowEditTaskModal(true)}>
+                  <button onClick={(): void => tasks_controller.setShowEditTaskModal(true)}>
                     <PencilSquareIcon className={`h-4 bg-gray-100 rounded-sm stroke-sky-500`} />
                   </button>
 

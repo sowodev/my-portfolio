@@ -1,8 +1,8 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import { Fragment, ReactElement } from 'react';
+import { Fragment, ReactElement, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { FormValues, Task, TasksController } from '../hooks/types';
+import { DifficultyType, FormValues, Task, TasksController } from '../hooks/types';
 import InputTitle from './InputTitle';
 import InputDescription from './InputDescription';
 import InputDueDate from './InputDueDate';
@@ -24,6 +24,7 @@ const TaskModal: React.FC<Props> = function taskModal({ tasks_controller }: Prop
     setValue,
   } = useForm<FormValues>();
   const dark_mode = false;
+  const [difficulty, setDifficulty] = useState<DifficultyType>('very_easy');
 
   const onSubmit = (data: FormValues): void => {
     const task: Task = {
@@ -33,8 +34,8 @@ const TaskModal: React.FC<Props> = function taskModal({ tasks_controller }: Prop
       due_date: data.due_date,
       estimated_time: data.estimated_time,
       status: 'To Do',
-      priority: 'red',
-      difficulty: 'easy',
+      priority: tasks_controller.new_task_priority,
+      difficulty: difficulty,
       due_time: data.due_date_time,
     };
 
@@ -108,7 +109,7 @@ const TaskModal: React.FC<Props> = function taskModal({ tasks_controller }: Prop
                   <InputDescription register={register} errors={errors} dark_mode={dark_mode} />
                   <InputEstimatedTime register={register} errors={errors} dark_mode={dark_mode} />
                   <InputDueDate register={register} errors={errors} dark_mode={dark_mode} />
-                  <InputDifficulty dark_mode={dark_mode} />
+                  <InputDifficulty setDifficulty={setDifficulty} dark_mode={dark_mode} />
                   <div className="flex flex-row w-full font-[Lexend] text-white justify-between items-center mt-4">
                     <button
                       className="flex h-10 px-2 items-center justify-center rounded bg-amber-300 text-center transition duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
