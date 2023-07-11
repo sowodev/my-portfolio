@@ -33,6 +33,7 @@ const TaskModal: React.FC<Props> = function taskModal({ tasks_controller }: Prop
       description: data.description,
       due_date: data.due_date,
       estimated_time: data.estimated_time,
+      time_type: data.time_type,
       status: 'To Do',
       priority: tasks_controller.new_task_priority,
       difficulty: difficulty,

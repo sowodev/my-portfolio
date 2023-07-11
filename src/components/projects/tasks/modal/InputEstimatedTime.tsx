@@ -35,13 +35,18 @@ const InputEstimatedTime: React.FC<Props> = function inputEstimatedTime({
           className={
             dark_mode
               ? `flex h-[2rem] w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-[Lexend] font-light text-slate-300 placeholder:text-slate-500 focus:border-sky-400 focus:outline-none`
-              : `flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light text-gray-500 placeholder:text-slate-300 focus:border-sky-400 focus:outline-none`
+              : `flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light text-gray-500 placeholder:text-slate-200 focus:border-sky-400 focus:outline-none`
           }
-          {...register('estimated_time', { required: true })}
+          {...register('estimated_time', { required: true, max: 60, min: 0 })}
         />
-        {errors.end_time && (
-          <span className="text-xs text-red-500">Estimated time is required</span>
-        )}
+        {errors.estimated_time &&
+          (errors.estimated_time.type === 'max' ? (
+            <span className="text-xs text-red-500">Too big number max is 60</span>
+          ) : errors.estimated_time.type === 'min' ? (
+            <span className="text-xs text-red-500">Too small number min is 0</span>
+          ) : (
+            <span className="text-xs text-red-500">Estimated time is required</span>
+          ))}
       </div>
       <div className="flex flex-col w-[48%]">
         <label
@@ -54,7 +59,7 @@ const InputEstimatedTime: React.FC<Props> = function inputEstimatedTime({
         </label>
         <select
           {...register('time_type')}
-          className={`flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light placeholder:text-slate-300 focus:border-sky-400 focus:outline-none ${
+          className={`flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light placeholder:text-slate-200 focus:border-sky-400 focus:outline-none ${
             dark_mode ? 'bg-slate-700 text-slate-300' : 'bg-white text-gray-500'
           }`}
           id="time-type"

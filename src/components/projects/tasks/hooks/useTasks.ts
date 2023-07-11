@@ -43,8 +43,6 @@ function useTasks(): TasksController {
   const [new_task_priority, setNewTaskPriority] = useState<PriorityType>('red');
 
   function createTask(task: Task): void {
-    console.log('Got', task);
-
     // Example: {"red" : {"To Do" : [task1, task2, task3], "In Progress" : [task4, task5], "Done" : [task6]}}
     setTasks((current_tasks: Map<string, TasksColumn>): Map<string, TasksColumn> => {
       current_tasks.get(task.priority)?.[task.status].push(task);
@@ -121,6 +119,40 @@ function useTasks(): TasksController {
     });
   }
 
+  function moveTaskToDone(task: Task): void {
+    setTasks((current_tasks: Map<string, TasksColumn>): Map<string, TasksColumn> => {
+      const task_to_move: Task = current_tasks
+        .get(task.priority)
+        ?.[task.status].splice(
+          current_tasks.get(task.priority)?.[task.status].indexOf(task)!,
+          1,
+        )[0]!;
+
+      task_to_move.status = 'Done';
+
+      current_tasks.get(task.priority)?.['Done'].push(task_to_move);
+
+      return new Map<string, TasksColumn>(current_tasks);
+    });
+  }
+
+  function moveTaskFromDone(task: Task): void {
+    setTasks((current_tasks: Map<string, TasksColumn>): Map<string, TasksColumn> => {
+      const task_to_move: Task = current_tasks
+        .get(task.priority)
+        ?.[task.status].splice(
+          current_tasks.get(task.priority)?.[task.status].indexOf(task)!,
+          1,
+        )[0]!;
+
+      task_to_move.status = 'To Do';
+
+      current_tasks.get(task.priority)?.['To Do'].push(task_to_move);
+
+      return new Map<string, TasksColumn>(current_tasks);
+    });
+  }
+
   return {
     tasks,
     setTasks,
@@ -139,6 +171,8 @@ function useTasks(): TasksController {
     deleteTask,
     reorderTasks,
     moveTask,
+    moveTaskToDone,
+    moveTaskFromDone,
   };
 }
 

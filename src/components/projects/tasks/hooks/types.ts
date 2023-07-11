@@ -20,6 +20,7 @@ export type Task = {
   priority: PriorityType;
   difficulty: DifficultyType;
   estimated_time: number;
+  time_type: 'minutes' | 'hours';
   due_date: string;
   due_time: string;
 };
@@ -58,6 +59,8 @@ export type TasksController = {
     index_from: number,
     index_to: number,
   ) => void;
+  moveTaskToDone: (task: Task) => void;
+  moveTaskFromDone: (task: Task) => void;
 };
 
 export const ConvertDifficultiesFromNumsToSvgs = {

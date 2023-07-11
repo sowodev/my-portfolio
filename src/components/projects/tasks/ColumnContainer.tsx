@@ -37,8 +37,8 @@ const ColumnContainer: React.FC<ColumnContainerProps> = function columnContainer
           <div
             className={
               column === 'Done'
-                ? `flex flex-col py-2 gap-2 justify-start items-center w-full h-[90%] overflow-y-auto`
-                : `flex flex-col py-2 gap-2 justify-start items-center w-full h-[90%] border-e border-gray-400 border-dashed overflow-y-auto`
+                ? `flex flex-col pt-2 justify-start items-center w-full h-[90%] overflow-y-auto`
+                : `flex flex-col pt-2 justify-start items-center w-full h-[90%] border-e border-gray-400 border-dashed overflow-y-auto`
             }
             {...provided.droppableProps}
             ref={provided.innerRef}
