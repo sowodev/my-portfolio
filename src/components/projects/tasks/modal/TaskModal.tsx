@@ -2,7 +2,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Fragment, ReactElement, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { DifficultyType, FormValues, Task, TasksController } from '../hooks/types';
+import { DifficultyType, FormValues, Task, TasksController, TimeType } from '../hooks/types';
 import InputTitle from './InputTitle';
 import InputDescription from './InputDescription';
 import InputDueDate from './InputDueDate';
@@ -25,15 +25,17 @@ const TaskModal: React.FC<Props> = function taskModal({ tasks_controller }: Prop
   } = useForm<FormValues>();
   const dark_mode = false;
   const [difficulty, setDifficulty] = useState<DifficultyType>('very_easy');
+  const [time_type, setTimeType] = useState<TimeType>('hours');
+  const [due_date, setDueDate] = useState<Date>(new Date());
 
   const onSubmit = (data: FormValues): void => {
     const task: Task = {
       id: uuidv4(),
       title: data.title,
       description: data.description,
-      due_date: data.due_date,
+      due_date: due_date,
       estimated_time: data.estimated_time,
-      time_type: data.time_type,
+      time_type: time_type,
       status: 'To Do',
       priority: tasks_controller.new_task_priority,
       difficulty: difficulty,
@@ -108,8 +110,20 @@ const TaskModal: React.FC<Props> = function taskModal({ tasks_controller }: Prop
                 >
                   <InputTitle register={register} errors={errors} dark_mode={dark_mode} />
                   <InputDescription register={register} errors={errors} dark_mode={dark_mode} />
-                  <InputEstimatedTime register={register} errors={errors} dark_mode={dark_mode} />
-                  <InputDueDate register={register} errors={errors} dark_mode={dark_mode} />
+                  <InputEstimatedTime
+                    time_type={time_type}
+                    setTimeType={setTimeType}
+                    register={register}
+                    errors={errors}
+                    dark_mode={dark_mode}
+                  />
+                  <InputDueDate
+                    due_date={due_date}
+                    setDueDate={setDueDate}
+                    register={register}
+                    errors={errors}
+                    dark_mode={dark_mode}
+                  />
                   <InputDifficulty setDifficulty={setDifficulty} dark_mode={dark_mode} />
                   <div className="flex flex-row w-full font-[Lexend] text-white justify-between items-center mt-4">
                     <button

@@ -3,14 +3,13 @@ export type FormValues = {
   description: string;
   difficulty: number;
   estimated_time: number;
-  time_type: 'minutes' | 'hours';
-  due_date: string;
   due_date_time: string;
 };
 
 export type ColumnType = 'To Do' | 'In Progress' | 'Done';
 export type PriorityType = 'red' | 'orange' | 'yellow' | 'green';
 export type DifficultyType = 'very_easy' | 'easy' | 'medium' | 'hard' | 'very_hard';
+export type TimeType = 'minutes' | 'hours';
 
 export type Task = {
   id: string;
@@ -21,7 +20,7 @@ export type Task = {
   difficulty: DifficultyType;
   estimated_time: number;
   time_type: 'minutes' | 'hours';
-  due_date: string;
+  due_date: Date;
   due_time: string;
 };
 

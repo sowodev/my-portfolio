@@ -1,18 +1,19 @@
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
-import { FormValues } from '../hooks/types';
+import { FormValues, TimeType } from '../hooks/types';
+import TimeTypeSelect from './TimeTypeSelect';
 
 type Props = {
+  time_type: string;
+  setTimeType: React.Dispatch<React.SetStateAction<TimeType>>;
   register: UseFormRegister<FormValues>;
   errors: FieldErrors<FieldValues>;
   dark_mode: boolean;
 };
 
-const handleChange = (selectedOptions: any) => {
-  console.log(selectedOptions);
-};
-
 const InputEstimatedTime: React.FC<Props> = function inputEstimatedTime({
+  time_type,
+  setTimeType,
   register,
   errors,
   dark_mode,
@@ -57,17 +58,7 @@ const InputEstimatedTime: React.FC<Props> = function inputEstimatedTime({
         >
           In
         </label>
-        <select
-          {...register('time_type')}
-          className={`flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light placeholder:text-slate-200 focus:border-sky-400 focus:outline-none ${
-            dark_mode ? 'bg-slate-700 text-slate-300' : 'bg-white text-gray-500'
-          }`}
-          id="time-type"
-          defaultValue={'hours'}
-        >
-          <option value="hours">Hours</option>
-          <option value="minutes">Minutes</option>
-        </select>
+        <TimeTypeSelect time_type={time_type} setTimeType={setTimeType} />
       </div>
     </div>
   );
