@@ -20,7 +20,7 @@ const InputEstimatedTime: React.FC<Props> = function inputEstimatedTime({
 }: Props): ReactElement {
   return (
     <div className="flex flex-row w-full justify-between items-center">
-      <div className="flex flex-col w-[48%]">
+      <div className="flex flex-col w-[58%]">
         <label
           htmlFor="end_time"
           className={`w-full font-[Lexend] font-light after:ml-0.5 after:text-red-500 after:content-['*'] ${
@@ -38,7 +38,7 @@ const InputEstimatedTime: React.FC<Props> = function inputEstimatedTime({
               ? `flex h-[2rem] w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-[Lexend] font-light text-slate-300 placeholder:text-slate-500 focus:border-sky-400 focus:outline-none`
               : `flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light text-gray-500 placeholder:text-slate-200 focus:border-sky-400 focus:outline-none`
           }
-          {...register('estimated_time', { required: true, max: 60, min: 0 })}
+          {...register('estimated_time', { required: true, max: 1000, min: 0 })}
         />
         {errors.estimated_time &&
           (errors.estimated_time.type === 'max' ? (
@@ -49,7 +49,7 @@ const InputEstimatedTime: React.FC<Props> = function inputEstimatedTime({
             <span className="text-xs text-red-500">Estimated time is required</span>
           ))}
       </div>
-      <div className="flex flex-col w-[48%]">
+      <div className="flex flex-col w-[38%]">
         <label
           htmlFor="time"
           className={`w-full font-[Lexend] font-light after:ml-0.5 after:text-red-500 after:content-['*'] ${
@@ -58,7 +58,7 @@ const InputEstimatedTime: React.FC<Props> = function inputEstimatedTime({
         >
           In
         </label>
-        <TimeTypeSelect time_type={time_type} setTimeType={setTimeType} />
+        <TimeTypeSelect time_type={time_type} setTimeType={setTimeType} dark_mode={dark_mode} />
       </div>
     </div>
   );

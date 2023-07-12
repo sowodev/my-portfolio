@@ -24,8 +24,8 @@ const TaskCard: React.FC<TaskProps> = function taskCard({
         <div
           className={
             task.status === 'Done'
-              ? 'min-h-[6rem] mb-2 w-[90%] bg-gray-200'
-              : 'min-h-[6rem] mb-2 w-[90%] bg-white hover:bg-slate-50'
+              ? 'min-h-[6rem] mb-2 w-[90%] bg-gray-200 dark:bg-gray-600'
+              : 'min-h-[6rem] mb-2 w-[90%] bg-white hover:bg-slate-50 dark:border-y dark:border-r dark:border-gray-500 dark:bg-gray-700'
           }
           ref={provided.innerRef}
           {...provided.draggableProps}
@@ -51,16 +51,18 @@ const TaskCard: React.FC<TaskProps> = function taskCard({
                       }}
                       defaultChecked={task.status === 'Done'}
                     />
-                    <span className="font-light text-sm line-clamp-1">{task.title}</span>
+                    <span className="font-light text-sm line-clamp-1 dark:text-white">
+                      {task.title}
+                    </span>
                   </div>
-                  <span className="font-light text-xs text-gray-500 line-clamp-2">
+                  <span className="font-light text-xs ps-2 text-gray-500 line-clamp-2 dark:text-gray-400">
                     {task.description}
                   </span>
                 </div>
                 <div className="flex flex-row w-full basis-1/3 justify-center items-center">
                   <div className="h-full basis-1/2">
-                    <span className="font-[Lexend] text-[0.7rem] font-light text-gray-400">
-                      {new Date(task.due_date).toDateString()}
+                    <span className="font-[Lexend] text-[0.7rem] font-light text-gray-400 dark:text-gray-500">
+                      • {task.due_date && new Date(task.due_date).toDateString()}
                     </span>
                   </div>
                   <div className="flex h-full basis-1/2 gap-2 justify-end items-center">
@@ -75,14 +77,16 @@ const TaskCard: React.FC<TaskProps> = function taskCard({
                         className={
                           task.status === 'Done'
                             ? `h-[18px] stroke-red-400`
-                            : `h-[18px] bg-gray-100 stroke-red-400`
+                            : `h-[18px] bg-gray-100 stroke-red-400 dark:bg-transparent`
                         }
                       />
                     </button>
                     <button onClick={(): void => tasks_controller.setShowEditTaskModal(true)}>
                       <PencilSquareIcon
                         className={
-                          task.status === 'Done' ? `hidden` : `h-[18px] bg-gray-100 stroke-sky-400`
+                          task.status === 'Done'
+                            ? `hidden`
+                            : `h-[18px] bg-gray-100 stroke-sky-400 dark:bg-transparent`
                         }
                       />
                     </button>
@@ -97,7 +101,7 @@ const TaskCard: React.FC<TaskProps> = function taskCard({
                       className={
                         task.status === 'Done'
                           ? `h-[18px] cursor-default`
-                          : `h-[18px] bg-gray-100 cursor-default`
+                          : `h-[18px] bg-gray-100 cursor-default dark:bg-transparent`
                       }
                       src={`/imgs/projects/tasks/${
                         ConvertDifficultiesFromNumsToSvgs[task.difficulty]
@@ -112,7 +116,7 @@ const TaskCard: React.FC<TaskProps> = function taskCard({
                       className={
                         task.status === 'Done'
                           ? `h-[18px] cursor-default`
-                          : `h-[18px] bg-gray-100 cursor-default`
+                          : `h-[18px] bg-gray-100 cursor-default dark:bg-transparent`
                       }
                       src="/imgs/projects/tasks/hourglass.svg"
                     />

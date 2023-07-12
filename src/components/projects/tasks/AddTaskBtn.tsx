@@ -13,13 +13,13 @@ const AddTaskBtn: React.FC<Props> = function addTaskBtn({
 }: Props): ReactElement {
   return (
     <button
-      className="absolute bg-cyan-300 bottom-2 left-2 h-8 w-8 rounded-3xl drop-shadow-md hover:bg-cyan-400"
+      className="absolute bg-cyan-300 bottom-2 left-2 h-8 w-8 rounded-3xl drop-shadow-md hover:bg-cyan-400 dark:bg-cyan-500 dark:hover:bg-cyan-600"
       onClick={(): void => {
         tasks_controller.setNewTaskPriority(color);
         tasks_controller.setShowTasksModal(true);
       }}
     >
-      <PlusSmallIcon className="w-full h-full stroke-gray-100" />
+      <PlusSmallIcon className="w-full h-full stroke-gray-100 dark:stroke-gray-700" />
     </button>
   );
 };

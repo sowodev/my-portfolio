@@ -2,7 +2,14 @@ import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Fragment, ReactElement, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { DifficultyType, FormValues, Task, TasksController, TimeType } from '../hooks/types';
+import {
+  DarkType,
+  DifficultyType,
+  FormValues,
+  Task,
+  TasksController,
+  TimeType,
+} from '../hooks/types';
 import InputTitle from './InputTitle';
 import InputDescription from './InputDescription';
 import InputDueDate from './InputDueDate';
@@ -12,9 +19,13 @@ import InputDifficulty from './InputDifficulty';
 
 type Props = {
   tasks_controller: TasksController;
+  set_dark: DarkType;
 };
 
-const TaskModal: React.FC<Props> = function taskModal({ tasks_controller }: Props): ReactElement {
+const TaskModal: React.FC<Props> = function taskModal({
+  tasks_controller,
+  set_dark,
+}: Props): ReactElement {
   // Form Validation
   const {
     register,
@@ -23,10 +34,10 @@ const TaskModal: React.FC<Props> = function taskModal({ tasks_controller }: Prop
     formState: { errors },
     setValue,
   } = useForm<FormValues>();
-  const dark_mode = false;
+  const dark_mode: boolean = set_dark.is_dark === 'dark' ? true : false;
   const [difficulty, setDifficulty] = useState<DifficultyType>('very_easy');
   const [time_type, setTimeType] = useState<TimeType>('hours');
-  const [due_date, setDueDate] = useState<Date>(new Date());
+  const [due_date, setDueDate] = useState<Date | undefined>(undefined);
 
   const onSubmit = (data: FormValues): void => {
     const task: Task = {
@@ -45,11 +56,13 @@ const TaskModal: React.FC<Props> = function taskModal({ tasks_controller }: Prop
     tasks_controller.createTask(task);
 
     reset();
+    setDueDate(undefined);
     tasks_controller.setShowTasksModal(false);
   };
 
   const closeModal = (): void => {
     reset();
+    setDueDate(undefined);
     tasks_controller.setShowTasksModal(false);
   };
 

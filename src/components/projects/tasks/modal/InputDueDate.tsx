@@ -1,10 +1,11 @@
 import { ReactElement } from 'react';
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
 import { FormValues } from '../hooks/types';
+import DatePicker from '../../../../utils/datepicker/DatePicker';
 
 type Props = {
-  due_date: Date;
-  setDueDate: React.Dispatch<React.SetStateAction<Date>>;
+  due_date: Date | undefined;
+  setDueDate: React.Dispatch<React.SetStateAction<Date | undefined>>;
   register: UseFormRegister<FormValues>;
   errors: FieldErrors<FieldValues>;
   dark_mode: boolean;
@@ -19,31 +20,26 @@ const InputDueDate: React.FC<Props> = function inputDueDate({
 }: Props): ReactElement {
   return (
     <div className="flex w-full flex-row justify-between items-center">
-      <div className="flex flex-col basis-[48%]">
+      <div className="flex flex-col basis-[58%]">
         <label
           htmlFor="due_date"
-          className={`w-full font-[Lexend] font-light after:ml-0.5 after:text-red-500 after:content-['*'] ${
-            dark_mode && 'text-slate-300'
-          }`}
+          className={`w-full font-[Lexend] font-light ${dark_mode && 'text-slate-300'}`}
         >
           Due Date
         </label>
-        <input
-          type="date"
-          id="due_date"
-          className={
-            dark_mode
-              ? `flex h-[2rem] w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-[Lexend] font-light text-slate-300 placeholder:text-slate-500 focus:border-sky-400 focus:outline-none`
-              : `flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light text-gray-500 placeholder:text-slate-300 focus:border-sky-400 focus:outline-none`
-          }
+        <DatePicker
+          due_date={due_date}
+          setDueDate={setDueDate}
+          className={`h-[2rem] w-full rounded-none border-b border-[#B0B0B0] ${
+            dark_mode ? 'bg-slate-700 text-gray-300' : 'bg-transparent text-gray-500'
+          } indent-2 font-[Lexend] font-light placeholder:text-gray-500 focus:border-sky-400 focus:outline-none`}
+          dark_mode={dark_mode}
         />
       </div>
-      <div className="flex flex-col basis-[48%]">
+      <div className="flex flex-col basis-[38%]">
         <label
           htmlFor="due_date_time"
-          className={`w-full font-[Lexend] font-light after:ml-0.5 after:text-red-500 after:content-['*'] ${
-            dark_mode && 'text-slate-300'
-          }`}
+          className={`w-full font-[Lexend] font-light ${dark_mode && 'text-slate-300'}`}
         >
           At
         </label>
