@@ -62,9 +62,9 @@ const DatePicker: React.FC<Props> = ({
                     'h-8 w-8 p-0 font-[Lexend] font-light text-white rounded hover:bg-gray-500',
                     due_date && 'aria-selected:opacity-100',
                   ),
-                  day_selected: 'bg-gray-600 text-slate-800 focus:bg-gray-600',
+                  day_selected: 'bg-gray-600 text-[#1e293b] focus:bg-gray-600',
                   day_today: 'border border-gray-500',
-                  day_disabled: 'text-slate-600 hover:bg-transparent',
+                  day_disabled: 'text-[#475569] hover:bg-transparent',
                 }
               : {
                   caption: 'flex font-[Lexend] justify-center pt-1 relative items-center',
