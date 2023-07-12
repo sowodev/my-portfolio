@@ -1,14 +1,18 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import React, { Fragment, ReactElement, useEffect } from 'react';
-import { TasksController } from '../hooks/types';
+import { DarkType, TasksController } from '../hooks/types';
 
 type Props = {
   tasks_controller: TasksController;
+  set_dark: DarkType;
 };
 
-const EditModalWorkingOn: React.FC<Props> = ({ tasks_controller }: Props): ReactElement => {
-  const dark_mode: boolean = false;
+const EditModalWorkingOn: React.FC<Props> = ({
+  tasks_controller,
+  set_dark,
+}: Props): ReactElement => {
+  const dark_mode: boolean = set_dark.is_dark === 'dark' ? true : false;
   const handleDeleteTimer = () => {
     tasks_controller.setShowEditTaskModal(false);
   };

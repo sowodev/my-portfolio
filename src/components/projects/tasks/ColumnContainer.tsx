@@ -24,8 +24,8 @@ const ColumnContainer: React.FC<ColumnContainerProps> = function columnContainer
       <div
         className={
           column === 'Done'
-            ? `flex w-full h-[10%] justify-center items-center border-b border-gray-400 border-dashed ${tail_color}`
-            : `flex w-full h-[10%] justify-center items-center border-e border-b border-gray-400 border-dashed ${tail_color}`
+            ? `flex w-full h-[10%] justify-center items-center border-b border-gray-400 border-dashed dark:border-gray-600 ${tail_color}`
+            : `flex w-full h-[10%] justify-center items-center border-e border-b border-gray-400 border-dashed dark:border-gray-600 ${tail_color}`
         }
       >
         <span className="h-fit w-fit font-[Lexend]">{column}</span>
@@ -38,7 +38,7 @@ const ColumnContainer: React.FC<ColumnContainerProps> = function columnContainer
             className={
               column === 'Done'
                 ? `flex flex-col pt-2 justify-start items-center w-full h-[90%] overflow-y-auto`
-                : `flex flex-col pt-2 justify-start items-center w-full h-[90%] border-e border-gray-400 border-dashed overflow-y-auto`
+                : `flex flex-col pt-2 justify-start items-center w-full h-[90%] border-e border-gray-400 border-dashed overflow-y-auto dark:border-gray-600`
             }
             {...provided.droppableProps}
             ref={provided.innerRef}

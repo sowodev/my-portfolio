@@ -1,15 +1,17 @@
 import Quadrant from './Quadrant';
 import { ChevronUpIcon, ChevronLeftIcon } from '@heroicons/react/24/outline';
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useContext } from 'react';
 import { DragDropContext } from '@hello-pangea/dnd';
 import TaskModal from './modal/TaskModal';
 import { TasksController } from './hooks/types';
 import useTasks from './hooks/useTasks';
 import DeleteTaskConfirmationModal from './modal/DeleteTaskConfirmationModal';
 import EditModalWorkingOn from './modal/EditModalWorkingOn';
+import { GlobalContext } from '../../commom/context/GlobalContext';
 
 const Tasks: React.FC = function tasks(): ReactElement {
   const tasks_controller: TasksController = useTasks();
+  const { set_dark } = useContext(GlobalContext);
 
   const handleDragEnd = (result: any) => {
     const { destination, source, draggableId } = result;
@@ -49,13 +51,13 @@ const Tasks: React.FC = function tasks(): ReactElement {
 
   return (
     <div className="flex flex-col w-full h-full max-w-screen max-h-screen justify-center items-center">
-      <div className="flex relative w-[95%] h-[95%] mt-2 border-s-4 border-b-4 border-dashed border-gray-300">
-        <span className="flex absolute text-lg -left-[4.5rem] h-fit w-fit font-[Lexend] transform -rotate-90 self-center">
+      <div className="flex relative w-[95%] h-[95%] mt-2 border-s-4 border-b-4 border-dashed border-gray-300 dark:border-slate-600">
+        <span className="flex absolute text-lg -left-[4.5rem] h-fit w-fit font-[Lexend] transform -rotate-90 self-center dark:text-white">
           IMPORTANT
         </span>
-        <ChevronUpIcon className="absolute -top-3 -left-4 w-7 h-7 stroke-gray-300 stroke-[3]" />
-        <ChevronLeftIcon className="absolute -bottom-4 left-2 w-7 h-7 stroke-gray-300 stroke-[3]" />
-        <ChevronLeftIcon className="absolute -bottom-4 -right-[0.6rem] w-7 h-7 stroke-gray-300 stroke-[3]" />
+        <ChevronUpIcon className="absolute -top-3 -left-4 w-7 h-7 stroke-gray-300 stroke-[3] dark:stroke-slate-600" />
+        <ChevronLeftIcon className="absolute -bottom-4 left-2 w-7 h-7 stroke-gray-300 stroke-[3] dark:stroke-slate-600" />
+        <ChevronLeftIcon className="absolute -bottom-4 -right-[0.6rem] w-7 h-7 stroke-gray-300 stroke-[3] dark:stroke-slate-600" />
         <div className="flex flex-wrap w-full h-full pb-2 gap-x-4 justify-center items-center">
           <DragDropContext onDragEnd={handleDragEnd}>
             <Quadrant
@@ -82,11 +84,11 @@ const Tasks: React.FC = function tasks(): ReactElement {
         </div>
       </div>
       <div className="flex w-full h-[5%] place-content-center">
-        <span className="font-[Lexend] text-lg">URGENT</span>
+        <span className="font-[Lexend] text-lg dark:text-white">URGENT</span>
       </div>
-      <TaskModal tasks_controller={tasks_controller} />
-      <DeleteTaskConfirmationModal tasks_controller={tasks_controller} />
-      <EditModalWorkingOn tasks_controller={tasks_controller} />
+      <TaskModal tasks_controller={tasks_controller} set_dark={set_dark} />
+      <DeleteTaskConfirmationModal tasks_controller={tasks_controller} set_dark={set_dark} />
+      <EditModalWorkingOn tasks_controller={tasks_controller} set_dark={set_dark} />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Task, TasksController, TasksColumn, PriorityType } from './hooks/types';
+import { TasksController, TasksColumn, PriorityType, DarkType } from './hooks/types';
 import ColumnContainer from './ColumnContainer';
 
 type QuadrantProps = {
@@ -22,7 +22,7 @@ const Quadrant: React.FC<QuadrantProps> = function quandrant({
       ? 'bg-[#8dff99]'
       : 'bg-[#ffb978]';
   return (
-    <div className="flex flex-row w-[48%] h-[48%] bg-gray-100 border border-gray-400">
+    <div className="flex flex-row w-[48%] h-[48%] bg-gray-100 border border-gray-400 dark:bg-gray-700 dark:border-gray-600">
       <ColumnContainer
         key={0}
         column="To Do"
