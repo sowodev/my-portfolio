@@ -1,11 +1,7 @@
-import CardProject from "./CardProject";
-import { NavLink } from "react-router-dom";
-import PaginationController from "../../commom/pagination-controller/PaginationController";
-import {
-  ProjectType,
-  ProjectsController,
-} from "../../../utils/MultiCardsIntetrfaces";
-import { RefObject, useEffect, useRef, useState } from "react";
+import { NavLink } from 'react-router-dom';
+import { ProjectsController } from '../../../utils/MultiCardsIntetrfaces';
+import PaginationController from '../../commom/pagination-controller/PaginationController';
+import CardProject from './CardProject';
 
 const CardsPagesProjects = function cardsPagesProjects({
   projects_controller,
@@ -22,11 +18,11 @@ const CardsPagesProjects = function cardsPagesProjects({
               .map((project, index) => {
                 const link: string = project.title
                   .toLowerCase()
-                  .normalize("NFD")
-                  .replace(/[\u0300-\u036f]/g, "")
-                  .replace(/[^\w\s]/gi, "")
+                  .normalize('NFD')
+                  .replace(/[\u0300-\u036f]/g, '')
+                  .replace(/[^\w\s]/gi, '')
                   .trim()
-                  .replaceAll(" ", "-");
+                  .replaceAll(' ', '-');
 
                 return (
                   <NavLink key={index} to={link}>
