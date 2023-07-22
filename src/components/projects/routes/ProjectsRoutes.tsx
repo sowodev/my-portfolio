@@ -1,25 +1,26 @@
-import { Route, Routes } from "react-router-dom";
-import Projects from "../../../pages/Projects";
-import { ProjectsData } from "../ProjectsData";
-import { ElementsMap } from "./ElementsMap";
-import NotFound from "../../../pages/NotFound";
-import { ProjectType } from "../../../utils/MultiCardsIntetrfaces";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import LoadingComponent from "../../loading/LoadingComponent";
+import { Route, Routes } from 'react-router-dom';
+import Projects from '../../../pages/Projects';
+import { ProjectsData } from '../ProjectsData';
+import { ElementsMap } from './ElementsMap';
+import NotFound from '../../../pages/NotFound';
+import { ProjectType } from '../../../utils/MultiCardsIntetrfaces';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import LoadingComponent from '../../loading/LoadingComponent';
 
 type ProjectsDTO = {
   title: string;
   description: string;
   img_name: string;
   tags: string;
+  redirect_url: string;
   created_at: string;
   updated_at: string;
 };
 
 const ProjectsRoutes = function projectsRoutes() {
   const query = useQuery({
-    queryKey: ["projects"],
+    queryKey: ['projects'],
     queryFn: () =>
       axios.get(import.meta.env.VITE_DATABASE_PROJECTS).then((res) => {
         const projects_temp: ProjectType[] = [];
@@ -29,7 +30,8 @@ const ProjectsRoutes = function projectsRoutes() {
             title: project.title,
             description: project.description,
             img_path: project.img_name,
-            tags: project.tags.split(","),
+            tags: project.tags.split(','),
+            redirect_url: project.redirect_url,
           };
 
           project_temp.tags.forEach((tag, index) => {
@@ -42,10 +44,11 @@ const ProjectsRoutes = function projectsRoutes() {
         const MockedProjectsData: ProjectType[] = [];
         for (let i = 0; i < 77; i++) {
           const project_temp: ProjectType = {
-            title: ProjectsData[0].title + " " + i,
-            description: ProjectsData[0].description + " " + i,
+            title: ProjectsData[0].title + ' ' + i,
+            description: ProjectsData[0].description + ' ' + i,
             img_path: ProjectsData[0].img_path,
             tags: ProjectsData[0].tags,
+            redirect_url: ProjectsData[0].redirect_url,
           };
 
           MockedProjectsData.push(project_temp);
@@ -67,19 +70,19 @@ const ProjectsRoutes = function projectsRoutes() {
         query.data.map((project: ProjectType, index: number) => {
           const link: string = project.title
             .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .replace(/[^\w\s]/gi, "")
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^\w\s]/gi, '')
             .trim()
-            .replaceAll(" ", "-");
+            .replaceAll(' ', '-');
 
           return (
             <Route
               key={index}
               path={link}
               element={
-                project.title.includes("Filler")
-                  ? ElementsMap.get("Filler Project")
+                project.title.includes('Filler')
+                  ? ElementsMap.get('Filler Project')
                   : ElementsMap.get(project.title)
               }
             />

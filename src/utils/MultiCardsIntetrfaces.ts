@@ -29,6 +29,7 @@ export type ProjectType = {
   description: string;
   img_path: string;
   tags: string[];
+  redirect_url: string;
 };
 
 export interface PostsController {

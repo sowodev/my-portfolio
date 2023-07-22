@@ -25,7 +25,11 @@ const CardsPagesProjects = function cardsPagesProjects({
                   .replaceAll(' ', '-');
 
                 return (
-                  <NavLink key={index} to={link}>
+                  <NavLink
+                    key={index}
+                    to={project.redirect_url === '' ? link : project.redirect_url}
+                    target={project.redirect_url === '' ? '_self' : '_blank'}
+                  >
                     <CardProject key={index} project={project} />
                   </NavLink>
                 );
