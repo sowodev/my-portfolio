@@ -1,5 +1,5 @@
-import { ReactElement, useContext } from "react";
-import { HomeContext } from "./HomeContext";
+import { ReactElement, useContext } from 'react';
+import { HomeContext } from './HomeContext';
 
 const Chest = function chestComponent(): ReactElement {
   const context_object = useContext(HomeContext);
@@ -11,42 +11,30 @@ const Chest = function chestComponent(): ReactElement {
           <button
             className="flex h-fit w-fit drop-shadow-lg"
             onClick={() => {
-              context_object.setTextToShow("Me");
+              context_object.setTextToShow('Me');
             }}
           >
-            <img
-              className="h-6 w-12 lg:h-7 lg:w-14"
-              src="/imgs/me.png"
-              alt="Me"
-            />
+            <img className="h-6 w-12 lg:h-7 lg:w-14" src="/imgs/me.png" alt="Me" />
           </button>
         </div>
         <div className="flex w-full flex-none basis-1/3 justify-end items-center">
           <button
             className="flex h-fit w-fit origin-center drop-shadow-lg"
             onClick={() => {
-              context_object.setTextToShow("MyStack");
+              context_object.setTextToShow('MyStack');
             }}
           >
-            <img
-              className="h-6 w-20 lg:h-7 lg:w-36"
-              src="/imgs/mystack.png"
-              alt="Tech Stack"
-            />
+            <img className="h-6 w-20 lg:h-7 lg:w-36" src="/imgs/mystack.png" alt="Tech Stack" />
           </button>
         </div>
         <div className="flex w-full flex-none basis-1/3 justify-start items-end">
           <button
             className="flex h-fit w-fit origin-center drop-shadow-lg"
             onClick={() => {
-              context_object.setTextToShow("Learning");
+              context_object.setTextToShow('Learning');
             }}
           >
-            <img
-              className="h-6 w-24 lg:h-8 lg:w-40"
-              src="/imgs/learning.png"
-              alt="Learning"
-            />
+            <img className="h-6 w-24 lg:h-8 lg:w-40" src="/imgs/learning.png" alt="Learning" />
           </button>
         </div>
       </div>

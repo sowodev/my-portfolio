@@ -1,21 +1,26 @@
 @font-face {
-  font-family: "Blinker";
-  src: url("/fonts/Blinker/Blinker-Regular.ttf");
+  font-family: 'Blinker';
+  src: url('/fonts/Blinker/Blinker-Regular.ttf');
 }
 
 @font-face {
-  font-family: "Lexend";
-  src: url("/fonts/Lexend/Lexend-VariableFont_wght.ttf");
+  font-family: 'Lexend';
+  src: url('/fonts/Lexend/Lexend-VariableFont_wght.ttf');
 }
 
 @font-face {
-  font-family: "Wallpoet";
-  src: url("/fonts/Wallpoet/Wallpoet-Regular.ttf");
+  font-family: 'Wallpoet';
+  src: url('/fonts/Wallpoet/Wallpoet-Regular.ttf');
 }
 
 @font-face {
-  font-family: "digital-bold";
-  src: url("/fonts/digital/digital_bold.ttf");
+  font-family: 'digital-bold';
+  src: url('/fonts/digital/digital_bold.ttf');
+}
+
+@font-face {
+  font-family: 'Goldman';
+  src: url('/fonts/Goldman/Goldman-Regular.ttf');
 }
 
 body {
