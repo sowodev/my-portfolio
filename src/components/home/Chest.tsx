@@ -6,35 +6,47 @@ const Chest = function chestComponent(): ReactElement {
 
   return (
     <div className="relative flex h-full items-end justify-center">
-      <div className="absolute top-20 md:top-2 lg:top-28 flex w-[80%] h-1/4 lg:h-1/5 md:w-2/5 lg:w-1/2 flex-col">
-        <div className="flex w-full flex-none basis-1/3 justify-center items-end">
+      <div className="absolute top-20 md:top-2 lg:top-28 flex w-[80%] h-1/4 lg:h-1/5 md:w-2/5 lg:w-1/2 flex-row">
+        <div className="flex h-full flex-none basis-1/3 justify-center items-end">
           <button
             className="flex h-fit w-fit drop-shadow-lg"
             onClick={() => {
-              context_object.setTextToShow('Me');
+              context_object.setTextToShow('Services');
             }}
           >
-            <img className="h-6 w-12 lg:h-7 lg:w-14" src="/imgs/me.png" alt="Me" />
+            <img
+              className="w-20 h-5 md:w-24 md:h-7 drop-shadow"
+              src={`/imgs/services.png`}
+              alt={'Services'}
+            />
           </button>
         </div>
-        <div className="flex w-full flex-none basis-1/3 justify-end items-center">
+        <div className="flex h-full flex-none basis-1/3 justify-center items-center">
           <button
             className="flex h-fit w-fit origin-center drop-shadow-lg"
             onClick={() => {
-              context_object.setTextToShow('MyStack');
+              context_object.setTextToShow('Tools');
             }}
           >
-            <img className="h-6 w-20 lg:h-7 lg:w-36" src="/imgs/mystack.png" alt="Tech Stack" />
+            <img
+              className="w-20 h-5 md:w-24 md:h-7 drop-shadow"
+              src="/imgs/tools.png"
+              alt="Tools"
+            />
           </button>
         </div>
-        <div className="flex w-full flex-none basis-1/3 justify-start items-end">
+        <div className="flex h-full flex-none basis-1/3 justify-start items-end">
           <button
             className="flex h-fit w-fit origin-center drop-shadow-lg"
             onClick={() => {
-              context_object.setTextToShow('Learning');
+              context_object.setTextToShow('About');
             }}
           >
-            <img className="h-6 w-24 lg:h-8 lg:w-40" src="/imgs/learning.png" alt="Learning" />
+            <img
+              className="w-20 h-5 md:w-24 md:h-7 drop-shadow"
+              src="/imgs/about.png"
+              alt="About"
+            />
           </button>
         </div>
       </div>

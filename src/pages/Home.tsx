@@ -1,18 +1,18 @@
-import Chest from "../components/home/Chest";
-import TextPanel from "../components/home/TextPanel";
-import { HomeContext } from "../components/home/HomeContext";
-import { RefObject, useContext, useEffect, useRef, useState } from "react";
-import CreditsModal from "../components/commom/credits-modal/CreditsModal";
-import { GlobalContext } from "../components/commom/context/GlobalContext";
+import Chest from '../components/home/Chest';
+import TextPanel from '../components/home/TextPanel';
+import { HomeContext } from '../components/home/HomeContext';
+import { RefObject, useContext, useEffect, useRef, useState } from 'react';
+import CreditsModal from '../components/commom/credits-modal/CreditsModal';
+import { GlobalContext } from '../components/commom/context/GlobalContext';
 
 const Home = function home() {
-  const [text_to_show, setTextToShow] = useState("Me");
+  const [text_to_show, setTextToShow] = useState('Services');
   const { set_credits } = useContext(GlobalContext);
   const home_ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (home_ref.current) {
-      home_ref.current.scrollTo({ top: 0, behavior: "smooth" });
+      home_ref.current.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [text_to_show]);
 

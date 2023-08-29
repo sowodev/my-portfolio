@@ -1,7 +1,7 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
 const HomeContext = createContext({
-  text_to_show: "Me",
+  text_to_show: 'Services',
   setTextToShow: (text: string) => {},
 });
 
