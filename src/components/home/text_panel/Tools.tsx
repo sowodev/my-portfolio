@@ -1,10 +1,10 @@
-import StackComp from "./StackComp";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { Disclosure, Transition } from "@headlessui/react";
-import { useState } from "react";
-import { TechStackData, stack } from "./TechStackData";
+import StackComp from './StackComp';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { Disclosure, Transition } from '@headlessui/react';
+import React, { useState } from 'react';
+import { TechStackData, stack } from './TechStackData';
 
-const MyStack = function myStack() {
+const Tools: React.FC = function tools(): React.ReactElement {
   const [tech_stack, setTechStack] = useState<stack[]>(TechStackData);
 
   return (
@@ -42,21 +42,19 @@ const MyStack = function myStack() {
                       leaveTo="transform scale-90 opacity-0"
                     >
                       <Disclosure.Panel className="mt-8 flex w-full flex-col">
-                        {current.stack_value.map(
-                          (inner_current, inner_index) => {
-                            return (
-                              <div key={inner_index}>
-                                <StackComp
-                                  name={inner_current.name}
-                                  icon={inner_current.icon}
-                                  quote={inner_current.quote}
-                                  desc={inner_current.desc}
-                                />
-                                <hr className="my-4 border-slate-500" />
-                              </div>
-                            );
-                          }
-                        )}
+                        {current.stack_value.map((inner_current, inner_index) => {
+                          return (
+                            <div key={inner_index}>
+                              <StackComp
+                                name={inner_current.name}
+                                icon={inner_current.icon}
+                                quote={inner_current.quote}
+                                desc={inner_current.desc}
+                              />
+                              <hr className="my-4 border-slate-500" />
+                            </div>
+                          );
+                        })}
                       </Disclosure.Panel>
                     </Transition>
                   </>
@@ -70,4 +68,4 @@ const MyStack = function myStack() {
   );
 };
 
-export default MyStack;
+export default Tools;

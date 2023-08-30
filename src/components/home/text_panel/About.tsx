@@ -1,13 +1,13 @@
-import { ReactElement, useContext } from 'react';
+import { useContext } from 'react';
 import { GlobalContext } from '../../commom/context/GlobalContext';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 
-const Me = function me(): ReactElement {
+const About: React.FC = function about(): React.ReactElement {
   const { set_dialog, set_dark } = useContext(GlobalContext);
 
   return (
     <div className="flex h-full w-full flex-col justify-between overflow-y-auto px-6 lg:py-2 text-slate-700">
-      <div className="prose prose-slate mx-auto mt-4 md:mt-3 lg:mt-12">
+      <div className="prose prose-slate mx-auto mt-4 md:mt-3">
         <p className="mb-2 text-justify font-[Lexend] text-md md:text-2xl lg:text-3xl font-bold dark:text-white ">
           Software Engineer working with Fullstack Web Development, building secure, robust,
           reliable and scalable systems.
@@ -74,4 +74,4 @@ const Me = function me(): ReactElement {
   );
 };
 
-export default Me;
+export default About;
