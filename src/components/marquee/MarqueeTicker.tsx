@@ -1,9 +1,9 @@
-import TechComp from "./TechComp";
-import Marquee from "react-fast-marquee";
-import { useContext } from "react";
-import { GlobalContext } from "../commom/context/GlobalContext";
+import TechComp from './TechComp';
+import Marquee from 'react-fast-marquee';
+import React, { useContext } from 'react';
+import { GlobalContext } from '../commom/context/GlobalContext';
 
-const Ticker = () => {
+const Ticker: React.FC = (): React.ReactElement => {
   const { set_dialog } = useContext(GlobalContext);
 
   return (
@@ -18,19 +18,14 @@ const Ticker = () => {
           </p>
         </span>
         <div className="h-full w-1 border-l border-gray-300" />
-        <TechComp name={"TypeScript"} />
-        <TechComp name={"React"} />
-        <TechComp name={"Tailwind"} />
-        {/* <TechComp name={"Html"} />
-        <TechComp name={"Css"} /> */}
-        <TechComp name={"Nest"} />
-        <TechComp name={"MySQL"} />
-        <TechComp name={"Docker"} />
-        <TechComp name={"Linux"} />
-        <TechComp name={"Github"} />
-        {/* <TechComp name={"Python"} />
-        <TechComp name={"Cpp"} />
-        <TechComp name={"Java"} /> */}
+        <TechComp name={'TypeScript'} />
+        <TechComp name={'React'} />
+        <TechComp name={'Tailwind'} />
+        <TechComp name={'Nest'} />
+        <TechComp name={'MySQL'} />
+        <TechComp name={'Docker'} />
+        <TechComp name={'Linux'} />
+        <TechComp name={'Github'} />
         <span className="border-l border-gray-700 px-8 font-[Lexend] text-lg">
           For more information, please.
         </span>
@@ -45,7 +40,7 @@ const Ticker = () => {
   );
 };
 
-const MarqueeTicker: React.FC = function marqueeTicker() {
+const MarqueeTicker: React.FC = function marqueeTicker(): React.ReactElement {
   return (
     <div className="flex h-[45px] w-full items-center justify-center bg-amber-300">
       <Ticker />
