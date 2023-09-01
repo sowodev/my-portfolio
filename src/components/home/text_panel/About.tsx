@@ -9,16 +9,17 @@ const About: React.FC = function about(): React.ReactElement {
     <div className="flex h-full w-full flex-col justify-between overflow-y-auto px-6 lg:py-2 text-slate-700">
       <div className="prose prose-slate mx-auto mt-4 md:mt-3">
         <p className="mb-2 text-justify font-[Lexend] text-md md:text-2xl lg:text-3xl font-bold dark:text-white ">
-          Software Engineer working with Fullstack Web Development, building secure, robust,
+          Software Engineer working with Full Stack Web Development, building secure, robust,
           reliable and scalable systems.
         </p>
         <p className="my-2 lg:mt-2 text-sm md:text-base text-justify indent-5 font-[Lexend] font-light dark:text-slate-300">
           Hi there, my name is Wendell Oliveira, I am a Brazilian Software Engineer based in São
           José dos Campos - São Paulo. With over 3 years of experience as a Full Stack Software
-          Developer. I am a passionate about computers and technology. I have got a Science and
-          Technology bachelor's degree with focus on Computer Science at the Federal University of
-          São Paulo, I have gained valuable international experience by living in New Zealand for
-          approximately one year.{' '}
+          Developer. I am a completely passionate about computers and technology. I got a Science
+          and Technology bachelor's degree with focus on Computer Science at the Federal University
+          of São Paulo. I have been dedicating the past few years of my life mastering the art of
+          building relentless software, so that I can make a huge difference wherever I go, guiding
+          those who I work with to the highest standards when deploying high quality software.{' '}
           <span className="font-bold">
             My primary goal is to guide and assist you in overcoming the most challenging aspects of
             building state-of-the-art web applications.
@@ -43,7 +44,7 @@ const About: React.FC = function about(): React.ReactElement {
         </a>
         <a
           className="flex h-12 flex-row items-center justify-center gap-3 rounded ring-1 ring-slate-500 duration-300 ease-in-out hover:scale-110 hover:bg-black hover:bg-opacity-10 hover:shadow-md lg:hover:shadow-lg dark:hover:bg-black dark:hover:bg-opacity-10"
-          href="https://www.github.com/sowodin"
+          href="https://www.github.com/sowodev"
           target="_blank"
           rel="noopener noreferrer"
         >

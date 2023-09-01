@@ -7,11 +7,12 @@ const Ticker: React.FC = (): React.ReactElement => {
   const { set_dialog } = useContext(GlobalContext);
 
   return (
-    <Marquee pauseOnHover speed={50} play={true}>
+    <Marquee pauseOnHover speed={75} play={true}>
       <div className="mx-8 flex h-fit w-fit flex-row items-center justify-between">
         <span className="flex flex-row">
           <p className="font-[Lexend] text-lg font-bold">
-            🔊 <span className="text-red-500">Looking for a job!</span> 🔊
+            🥷 <span className="text-red-500">Looking for a highly skilled software engineer?</span>{' '}
+            🥷
           </p>
           <p className="px-8 font-[Lexend] text-lg">
             Full Stack Web Developer, currently working with:
@@ -27,14 +28,14 @@ const Ticker: React.FC = (): React.ReactElement => {
         <TechComp name={'Linux'} />
         <TechComp name={'Github'} />
         <span className="border-l border-gray-700 px-8 font-[Lexend] text-lg">
-          For more information, please.
+          For more information.{' '}
+          <button
+            className="font-[Lexend] text-lg font-normal text-sky-400 underline hover:text-sky-600"
+            onClick={() => set_dialog.setOpenDialog(true)}
+          >
+            Contact Me!
+          </button>
         </span>
-        <button
-          className="font-[Lexend] text-lg font-normal text-sky-400 underline hover:text-sky-600"
-          onClick={() => set_dialog.setOpenDialog(true)}
-        >
-          Contact Me!
-        </button>
       </div>
     </Marquee>
   );
