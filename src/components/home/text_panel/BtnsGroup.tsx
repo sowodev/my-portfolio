@@ -1,4 +1,6 @@
+import { Transition } from '@headlessui/react';
 import SingleBtn from './SingleBtn';
+import { Fragment } from 'react';
 
 type Props = {
   text_to_show: string;
@@ -7,16 +9,33 @@ type Props = {
 
 const BtnsGroup: React.FC<Props> = ({ text_to_show, setTextToShow }: Props): React.ReactElement => {
   return (
-    <div className="flex w-[95%] h-[80%] px-[5%] md:w-[80%] flex-row items-center justify-center gap-4 rounded-lg border border-[#f5f5f538] bg-[#ffffff3f]">
-      <SingleBtn name={'Services'} text_to_show={text_to_show} setTextToShow={setTextToShow} />
+    <div className="flex w-[95%] h-[80%] md:w-[80%] items-center justify-center gap-4 rounded-lg border border-[#f5f5f538] bg-[#ffffff3f]">
+      <div className="flex flex-row h-full w-full justify-center items-center">
+        <SingleBtn
+          key={'Services'}
+          name={'Services'}
+          text_to_show={text_to_show}
+          setTextToShow={setTextToShow}
+        />
 
-      <div className="w-0 h-[80%] border-s border-[#ffffff3f]" />
+        <div className="w-0 h-[80%] border-s border-[#ffffff3f]" />
 
-      <SingleBtn name={'Tools'} text_to_show={text_to_show} setTextToShow={setTextToShow} />
+        <SingleBtn
+          key={'Tools'}
+          name={'Tools'}
+          text_to_show={text_to_show}
+          setTextToShow={setTextToShow}
+        />
 
-      <div className="w-0 h-[80%] border-s border-[#ffffff3f]" />
+        <div className="w-0 h-[80%] border-s border-[#ffffff3f]" />
 
-      <SingleBtn name={'About'} text_to_show={text_to_show} setTextToShow={setTextToShow} />
+        <SingleBtn
+          key={'About'}
+          name={'About'}
+          text_to_show={text_to_show}
+          setTextToShow={setTextToShow}
+        />
+      </div>
     </div>
   );
 };

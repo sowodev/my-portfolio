@@ -95,7 +95,7 @@ const ContactMeModal = function contactMeModal() {
                     ? 'Error Sending The Message'
                     : mutation.isSuccess
                     ? 'Message Successeful'
-                    : 'Leave Me a Message!'}
+                    : 'Leave Us a Message!'}
                 </Dialog.Title>
 
                 {/* The Form Starts Here!!! */}
@@ -185,7 +185,7 @@ const ContactMeModal = function contactMeModal() {
                             id="message"
                             rows={5}
                             cols={50}
-                            placeholder="Leave me a message!"
+                            placeholder="How can we help you?"
                             onChange={(e) => setMessage(e.target.value)}
                           />
                         </div>

@@ -7,7 +7,7 @@ const Ticker: React.FC = (): React.ReactElement => {
   const { set_dialog } = useContext(GlobalContext);
 
   return (
-    <Marquee pauseOnHover speed={75} play={true}>
+    <Marquee pauseOnHover speed={50} play={true}>
       <div className="mx-8 flex h-fit w-fit flex-row items-center justify-between">
         <span className="flex flex-row">
           <p className="font-[Lexend] text-lg font-bold">
@@ -33,7 +33,7 @@ const Ticker: React.FC = (): React.ReactElement => {
             className="font-[Lexend] text-lg font-normal text-sky-400 underline hover:text-sky-600"
             onClick={() => set_dialog.setOpenDialog(true)}
           >
-            Contact Me!
+            Contact Us!
           </button>
         </span>
       </div>

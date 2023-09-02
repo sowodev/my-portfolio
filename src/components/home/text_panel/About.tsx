@@ -67,7 +67,7 @@ const About: React.FC = function about(): React.ReactElement {
         >
           <EnvelopeIcon className="ml-2 h-5 w-5 md:ml-5 md:h-7 md:w-7 stroke-white" />
           <span className="mr-2 md:mr-5 font-[Lexend] text-sm md:text-base text-white dark:text-slate-100">
-            Hire Me!
+            Hire Us!
           </span>
         </button>
       </div>

@@ -19,7 +19,7 @@ const Services: React.FC = function services(): React.ReactElement {
             <div className="flex flex-col w-full h-full p-3 items-center justify-center rounded-lg border border-[#f5f5f538] bg-[#ffffff3f]">
               <div className="flex flex-col w-full h-[65%] text-slate-700">
                 <span className="text-lg">Design and/or Develop Your Web Application</span>
-                <span className="text-sm font-light">
+                <span className="text-sm font-light indent-4">
                   We are going to bring your 😴 dream projects to life!
                 </span>
               </div>
@@ -41,7 +41,7 @@ const Services: React.FC = function services(): React.ReactElement {
             <div className="flex flex-col w-full h-full p-3 items-center justify-center rounded-lg border border-[#f5f5f538] bg-[#ffffff3f]">
               <div className="flex flex-col w-full h-[65%] text-slate-700">
                 <span className="text-lg">Fix and/or Optimize Your Web Application</span>
-                <span className="text-sm font-light">
+                <span className="text-sm font-light indent-4">
                   We are going to make your web app 🛡️safer, ⚡faster and 🍹smoother!
                 </span>
               </div>
@@ -63,7 +63,7 @@ const Services: React.FC = function services(): React.ReactElement {
             <div className="flex flex-col w-full h-full p-3 items-center justify-center rounded-lg border border-[#f5f5f538] bg-[#ffffff3f]">
               <div className="flex flex-col w-full h-[65%] text-slate-700">
                 <span className="text-lg">Consulting About Your Web Application</span>
-                <span className="text-sm font-light">
+                <span className="text-sm font-light indent-4">
                   We are going to guide your softwares projects 🤓. So you can make more money 🤑!
                 </span>
               </div>
