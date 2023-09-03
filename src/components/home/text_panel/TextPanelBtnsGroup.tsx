@@ -1,6 +1,4 @@
-import { Transition } from '@headlessui/react';
 import SingleBtn from './SingleBtn';
-import { Fragment } from 'react';
 
 type Props = {
   text_to_show: string;

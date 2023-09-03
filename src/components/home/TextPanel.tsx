@@ -3,7 +3,7 @@ import Tools from './text_panel/Tools';
 import Services from './text_panel/Services';
 import { HomeContext } from './HomeContext';
 import React, { useContext } from 'react';
-import BtnsGroup from './text_panel/BtnsGroup';
+import BtnsGroup from './text_panel/TextPanelBtnsGroup';
 
 const TextPanel: React.FC = function textPanel(): React.ReactElement {
   const context_object = useContext(HomeContext);
