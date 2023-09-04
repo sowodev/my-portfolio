@@ -9,7 +9,7 @@ const Tools: React.FC = function tools(): React.ReactElement {
 
   return (
     <>
-      <div className="h-full w-full overflow-y-auto px-6 py-2">
+      <div className="h-full w-full bg-gradient-to-tl from-blue-400 to-sky-400 overflow-y-auto px-6 py-2">
         <div className="prose prose-slate mx-auto mt-4">
           <p className="mb-2 text-justify font-[Lexend] text-lg md:text-2xl lg:text-3xl font-bold dark:text-white">
             🛠️ Tech Stack
