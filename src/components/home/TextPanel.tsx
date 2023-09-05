@@ -8,6 +8,7 @@ import { Transition } from '@headlessui/react';
 
 const TextPanel: React.FC = function textPanel(): React.ReactElement {
   const context_object = useContext(HomeContext);
+  const [prev_text, setPrevText] = useState('');
 
   const text_panel_component: Map<string, React.ReactElement> = new Map([
     ['About', <About />],
@@ -15,9 +16,7 @@ const TextPanel: React.FC = function textPanel(): React.ReactElement {
     ['Services', <Services />],
   ]);
 
-  const [prev_text, setPrevText] = useState('');
-
-  useEffect(() => {
+  useEffect((): void => {
     setPrevText(context_object.text_to_show);
   }, [context_object.text_to_show]);
 
@@ -29,19 +28,21 @@ const TextPanel: React.FC = function textPanel(): React.ReactElement {
           setTextToShow={context_object.setTextToShow}
         />
       </div>
-      <div className="h-[85%] w-[95%] rounded-lg">
+      <div className="h-[85%] w-[95%] rounded-lg overflow-y-auto">
         <Transition
           as={Fragment}
           show={context_object.text_to_show === prev_text}
-          enter="transition transform ease-in-out duration-300"
-          enterFrom="scale-50"
-          enterTo="scale-100"
-          leave="transition transform ease-in-out duration-300"
-          leaveFrom="scale-100"
-          leaveTo="scale-50"
           key={context_object.text_to_show}
         >
-          <Transition.Child>
+          <Transition.Child
+            className={`flex w-full h-full flex-col items-center justify-center`}
+            enter="transition transform ease-in-out duration-300"
+            enterFrom="scale-50"
+            enterTo="scale-100"
+            leave="transition transform ease-in-out duration-300"
+            leaveFrom="scale-100"
+            leaveTo="scale-50"
+          >
             {text_panel_component.get(context_object.text_to_show)}
           </Transition.Child>
         </Transition>
