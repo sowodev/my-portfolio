@@ -1,9 +1,9 @@
-import { EnvelopeIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline';
 import React, { useContext } from 'react';
 import { GlobalContext } from '../../commom/context/GlobalContext';
 
 const Services: React.FC = function services(): React.ReactElement {
-  const { set_dialog, set_dark } = useContext(GlobalContext);
+  const { set_dialog, set_details, set_dark } = useContext(GlobalContext);
 
   return (
     <div className="flex flex-col h-full w-full px-6 py-2">
@@ -22,16 +22,22 @@ const Services: React.FC = function services(): React.ReactElement {
                 We are going to bring your 😴 dream projects to life!
               </span>
             </div>
-            <div className="flex w-full h-[35%] justify-between items-center">
-              <span className="text-xs font-light dark:text-white">
-                for more information, contact us. ➡️
-              </span>
+            <div className="flex w-full h-[35%] justify-end items-center gap-2">
               <button
-                className="flex h-8 flex-row items-center justify-center gap-3 rounded bg-green-400 duration-300 ease-in-out hover:scale-110 hover:bg-green-500 hover:shadow-md lg:hover:shadow-lg dark:hover:from-green-500 dark:hover:to-emerald-500"
-                onClick={() => set_dialog.setOpenDialog(true)}
+                className="flex h-8 flex-row items-center justify-center gap-1 rounded bg-amber-300 duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-md lg:hover:shadow-lg"
+                onClick={(): void => set_details.setOpenDetailsDialog(true)}
               >
-                <EnvelopeIcon className="ml-2 h-5 w-5 md:ml-5 stroke-white" />
-                <span className="mr-2 md:mr-5 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
+                <ExclamationCircleIcon className="ml-2 h-5 w-5 stroke-white" />
+                <span className="mr-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
+                  More Details!
+                </span>
+              </button>
+              <button
+                className="flex h-8 flex-row items-center justify-center gap-1 rounded bg-green-400 duration-300 ease-in-out hover:scale-110 hover:bg-green-500 hover:shadow-md lg:hover:shadow-lg"
+                onClick={(): void => set_dialog.setOpenDialog(true)}
+              >
+                <EnvelopeIcon className="ml-2 h-5 w-5 stroke-white" />
+                <span className="mr-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
                   Hire Us!
                 </span>
               </button>
@@ -46,16 +52,22 @@ const Services: React.FC = function services(): React.ReactElement {
                 We are going to make your web app 🛡️safer, ⚡faster and 🍹smoother!
               </span>
             </div>
-            <div className="flex w-full h-[35%] justify-between items-center">
-              <span className="text-xs font-light dark:text-white">
-                for more information, contact us. ➡️
-              </span>
+            <div className="flex w-full h-[35%] justify-end items-center gap-2">
               <button
-                className="flex h-8 flex-row items-center justify-center gap-3 rounded bg-green-400 duration-300 ease-in-out hover:scale-110 hover:bg-green-500 hover:shadow-md lg:hover:shadow-lg dark:hover:from-green-500 dark:hover:to-emerald-500"
-                onClick={() => set_dialog.setOpenDialog(true)}
+                className="flex h-8 flex-row items-center justify-center gap-1 rounded bg-amber-300 duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-md lg:hover:shadow-lg"
+                onClick={(): void => set_details.setOpenDetailsDialog(true)}
               >
-                <EnvelopeIcon className="ml-2 h-5 w-5 md:ml-5 stroke-white" />
-                <span className="mr-2 md:mr-5 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
+                <ExclamationCircleIcon className="ml-2 h-5 w-5 stroke-white" />
+                <span className="mr-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
+                  More Details!
+                </span>
+              </button>
+              <button
+                className="flex h-8 flex-row items-center justify-center gap-1 rounded bg-green-400 duration-300 ease-in-out hover:scale-110 hover:bg-green-500 hover:shadow-md lg:hover:shadow-lg"
+                onClick={(): void => set_dialog.setOpenDialog(true)}
+              >
+                <EnvelopeIcon className="ml-2 h-5 w-5 stroke-white" />
+                <span className="mr-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
                   Hire Us!
                 </span>
               </button>
@@ -70,16 +82,22 @@ const Services: React.FC = function services(): React.ReactElement {
                 We are going to guide your softwares projects 🤓. So you can make more money 🤑!
               </span>
             </div>
-            <div className="flex w-full h-[35%] justify-between items-center">
-              <span className="text-xs font-light dark:text-white">
-                for more information, contact us. ➡️
-              </span>
+            <div className="flex w-full h-[35%] justify-end items-center gap-2">
               <button
-                className="flex h-8 flex-row items-center justify-center gap-3 rounded bg-green-400 duration-300 ease-in-out hover:scale-110 hover:bg-green-500 hover:shadow-md lg:hover:shadow-lg dark:hover:from-green-500 dark:hover:to-emerald-500"
-                onClick={() => set_dialog.setOpenDialog(true)}
+                className="flex h-8 flex-row items-center justify-center gap-1 rounded bg-amber-300 duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-md lg:hover:shadow-lg"
+                onClick={(): void => set_details.setOpenDetailsDialog(true)}
               >
-                <EnvelopeIcon className="ml-2 h-5 w-5 md:ml-5 stroke-white" />
-                <span className="mr-2 md:mr-5 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
+                <ExclamationCircleIcon className="ml-2 h-5 w-5 stroke-white" />
+                <span className="mr-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
+                  More Details!
+                </span>
+              </button>
+              <button
+                className="flex h-8 flex-row items-center justify-center gap-1 rounded bg-green-400 duration-300 ease-in-out hover:scale-110 hover:bg-green-500 hover:shadow-md lg:hover:shadow-lg"
+                onClick={(): void => set_dialog.setOpenDialog(true)}
+              >
+                <EnvelopeIcon className="ml-2 h-5 w-5 stroke-white" />
+                <span className="mr-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
                   Hire Us!
                 </span>
               </button>

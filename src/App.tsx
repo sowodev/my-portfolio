@@ -15,12 +15,14 @@ import {
   DarkType,
   DialogType,
   GlobalContext,
+  DetailsDialogType,
 } from './components/commom/context/GlobalContext';
 import { Fragment, useEffect, useState } from 'react';
 import SignUp from './pages/SignUp';
 import ForgotPassword from './pages/ForgotPassword';
 import Sidebar from './components/sidebar/Sidebar';
 import { Transition } from '@headlessui/react';
+import MoreDetailsModal from './components/home/text_panel/services_details/MoreDetailsModal';
 
 function App() {
   const [open_dialog, setOpenDialog] = useState(false);
@@ -31,6 +33,8 @@ function App() {
   const set_credits: CreditsType = { open_credits, setOpenCredits };
   const [open_sidebar, setOpenSidebar] = useState(false);
   const set_sidebar = { open_sidebar, setOpenSidebar };
+  const [open_details_dialog, setOpenDetailsDialog] = useState(false);
+  const set_details: DetailsDialogType = { open_details_dialog, setOpenDetailsDialog };
 
   useEffect(() => {
     if (localStorage.getItem('theme')) {
@@ -42,7 +46,9 @@ function App() {
 
   return (
     <div className={`flex h-screen w-full flex-col ${is_dark}`}>
-      <GlobalContext.Provider value={{ set_dialog, set_credits, set_dark, set_sidebar }}>
+      <GlobalContext.Provider
+        value={{ set_dialog, set_credits, set_dark, set_sidebar, set_details }}
+      >
         <div className="sticky top-0 z-10 flex flex-col">
           <Navbar />
           <MarqueeTicker />
@@ -76,6 +82,7 @@ function App() {
           </div>
         </div>
         <ContactMeModal />
+        <MoreDetailsModal />
       </GlobalContext.Provider>
     </div>
   );

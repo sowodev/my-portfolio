@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, createContext } from "react";
+import { Dispatch, SetStateAction, createContext } from 'react';
 
 export type DialogType = {
   open_dialog: boolean;
@@ -20,13 +20,18 @@ export type SidebarType = {
   setOpenSidebar: Dispatch<SetStateAction<boolean>>;
 };
 
+export type DetailsDialogType = {
+  open_details_dialog: boolean;
+  setOpenDetailsDialog: Dispatch<SetStateAction<boolean>>;
+};
+
 const GlobalContext = createContext({
   set_dialog: {
     open_dialog: false,
     setOpenDialog: (open: boolean) => {},
   } as DialogType,
   set_dark: {
-    is_dark: "light",
+    is_dark: 'light',
     setIsDark: (is_dark: string) => {},
   } as DarkType,
   set_credits: {
@@ -37,6 +42,10 @@ const GlobalContext = createContext({
     open_sidebar: false,
     setOpenSidebar: (open: boolean) => {},
   } as SidebarType,
+  set_details: {
+    open_details_dialog: false,
+    setOpenDetailsDialog: (open: boolean) => {},
+  } as DetailsDialogType,
 });
 
 export { GlobalContext };
