@@ -20,10 +20,13 @@ const Ticker: React.FC = (): React.ReactElement => {
         </span>
         <div className="h-full w-1 border-l border-gray-300" />
         <TechComp name={'TypeScript'} />
+        <TechComp name={'Next'} />
         <TechComp name={'React'} />
-        <TechComp name={'Tailwind'} />
         <TechComp name={'Nest'} />
+        <TechComp name={'Node'} />
+        <TechComp name={'Tailwind'} />
         <TechComp name={'MySQL'} />
+        <TechComp name={'Mongo'} />
         <TechComp name={'Docker'} />
         <TechComp name={'Linux'} />
         <TechComp name={'Github'} />
