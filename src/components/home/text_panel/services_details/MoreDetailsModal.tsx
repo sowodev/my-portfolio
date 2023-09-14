@@ -1,6 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react';
 import React, { Fragment, useContext } from 'react';
 import { GlobalContext } from '../../../commom/context/GlobalContext';
+import MoreDetailsModalPanelDevelop from './MoreDetailsModalPanelDevelop';
 
 const MoreDetailsModal: React.FC = function moreDetailsModal(): React.ReactElement {
   const { set_details, set_dark } = useContext(GlobalContext);
@@ -43,19 +44,7 @@ const MoreDetailsModal: React.FC = function moreDetailsModal(): React.ReactEleme
                     : `w-full max-w-md transform overflow-hidden rounded-lg bg-white p-6 text-left align-middle shadow-xl transition-all`
                 }
               >
-                <Dialog.Title
-                  as="h4"
-                  className={`font-[Lexend] text-lg font-medium leading-6 text-gray-900 ${
-                    dark && 'text-white'
-                  }`}
-                >
-                  {'More Details!'}
-                </Dialog.Title>
-
-                {/* The Form Starts Here!!! */}
-                {<h1>Under Implementation!</h1>}
-
-                {/* The Form Ends Here!!! */}
+                <MoreDetailsModalPanelDevelop dark={dark} closeModal={closeModal} />
               </Dialog.Panel>
             </Transition.Child>
           </div>

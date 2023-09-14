@@ -19,7 +19,7 @@ const Services: React.FC = function services(): React.ReactElement {
             <div className="flex flex-col w-full h-[65%] text-slate-700 dark:text-white">
               <span className="text-lg">Design and/or Develop Your Web Application</span>
               <span className="text-sm font-light indent-4 dark:text-slate-200">
-                We are going to bring your 😴 dream projects to life!
+                • We are going to bring your 😴 dream projects to life!
               </span>
             </div>
             <div className="flex w-full h-[35%] justify-end items-center gap-2">
@@ -38,7 +38,7 @@ const Services: React.FC = function services(): React.ReactElement {
               >
                 <EnvelopeIcon className="ml-2 h-5 w-5 stroke-white" />
                 <span className="mr-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
-                  Hire Us!
+                  Hire Now!
                 </span>
               </button>
             </div>
@@ -49,7 +49,7 @@ const Services: React.FC = function services(): React.ReactElement {
             <div className="flex flex-col w-full h-[65%] text-slate-700 dark:text-white">
               <span className="text-lg">Fix and/or Optimize Your Web Application</span>
               <span className="text-sm font-light indent-4 dark:text-slate-200">
-                We are going to make your web app 🛡️safer, ⚡faster and 🍹smoother!
+                • We are going to make your web app 🛡️safer, ⚡faster and 🍹smoother!
               </span>
             </div>
             <div className="flex w-full h-[35%] justify-end items-center gap-2">
@@ -68,7 +68,7 @@ const Services: React.FC = function services(): React.ReactElement {
               >
                 <EnvelopeIcon className="ml-2 h-5 w-5 stroke-white" />
                 <span className="mr-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
-                  Hire Us!
+                  Hire Now!
                 </span>
               </button>
             </div>
@@ -79,7 +79,7 @@ const Services: React.FC = function services(): React.ReactElement {
             <div className="flex flex-col w-full h-[65%] text-slate-700 dark:text-white">
               <span className="text-lg">Consulting About Your Web Application</span>
               <span className="text-sm font-light indent-4 dark:text-slate-200">
-                We are going to guide your softwares projects 🤓. So you can make more money 🤑!
+                • We are going to guide your softwares projects 🤓. So you can make more money 🤑!
               </span>
             </div>
             <div className="flex w-full h-[35%] justify-end items-center gap-2">
@@ -98,7 +98,7 @@ const Services: React.FC = function services(): React.ReactElement {
               >
                 <EnvelopeIcon className="ml-2 h-5 w-5 stroke-white" />
                 <span className="mr-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
-                  Hire Us!
+                  Hire Now!
                 </span>
               </button>
             </div>
