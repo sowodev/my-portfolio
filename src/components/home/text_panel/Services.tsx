@@ -25,7 +25,10 @@ const Services: React.FC = function services(): React.ReactElement {
             <div className="flex w-full h-[35%] justify-end items-center gap-2">
               <button
                 className="flex h-8 flex-row items-center justify-center gap-1 rounded bg-amber-300 duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-md lg:hover:shadow-lg"
-                onClick={(): void => set_details.setOpenDetailsDialog(true)}
+                onClick={(): void => {
+                  set_details.setOpenDetailsDialog(true);
+                  set_details.setDetailsModal('develop');
+                }}
               >
                 <ExclamationCircleIcon className="ml-2 h-5 w-5 stroke-white" />
                 <span className="mr-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
@@ -55,7 +58,10 @@ const Services: React.FC = function services(): React.ReactElement {
             <div className="flex w-full h-[35%] justify-end items-center gap-2">
               <button
                 className="flex h-8 flex-row items-center justify-center gap-1 rounded bg-amber-300 duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-md lg:hover:shadow-lg"
-                onClick={(): void => set_details.setOpenDetailsDialog(true)}
+                onClick={(): void => {
+                  set_details.setOpenDetailsDialog(true);
+                  set_details.setDetailsModal('fix');
+                }}
               >
                 <ExclamationCircleIcon className="ml-2 h-5 w-5 stroke-white" />
                 <span className="mr-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
@@ -85,7 +91,10 @@ const Services: React.FC = function services(): React.ReactElement {
             <div className="flex w-full h-[35%] justify-end items-center gap-2">
               <button
                 className="flex h-8 flex-row items-center justify-center gap-1 rounded bg-amber-300 duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-md lg:hover:shadow-lg"
-                onClick={(): void => set_details.setOpenDetailsDialog(true)}
+                onClick={(): void => {
+                  set_details.setOpenDetailsDialog(true);
+                  set_details.setDetailsModal('consult');
+                }}
               >
                 <ExclamationCircleIcon className="ml-2 h-5 w-5 stroke-white" />
                 <span className="mr-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">

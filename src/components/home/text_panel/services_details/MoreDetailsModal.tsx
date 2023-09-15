@@ -2,6 +2,8 @@ import { Dialog, Transition } from '@headlessui/react';
 import React, { Fragment, useContext } from 'react';
 import { GlobalContext } from '../../../commom/context/GlobalContext';
 import MoreDetailsModalPanelDevelop from './MoreDetailsModalPanelDevelop';
+import MoreDetailsModalPanelFix from './MoreDetailsModalPanelFix';
+import MoreDetailsModalPanelConsult from './MoreDetailsModalPanelConsult';
 
 const MoreDetailsModal: React.FC = function moreDetailsModal(): React.ReactElement {
   const { set_details, set_dark } = useContext(GlobalContext);
@@ -10,6 +12,12 @@ const MoreDetailsModal: React.FC = function moreDetailsModal(): React.ReactEleme
   const closeModal = (): void => {
     set_details.setOpenDetailsDialog(false);
   };
+
+  const more_details_modal_map: Map<string, React.ReactElement> = new Map([
+    ['develop', <MoreDetailsModalPanelDevelop dark={dark} closeModal={closeModal} />],
+    ['fix', <MoreDetailsModalPanelFix dark={dark} closeModal={closeModal} />],
+    ['consult', <MoreDetailsModalPanelConsult dark={dark} closeModal={closeModal} />],
+  ]);
 
   return (
     <Transition appear as={Fragment} show={set_details.open_details_dialog}>
@@ -44,7 +52,7 @@ const MoreDetailsModal: React.FC = function moreDetailsModal(): React.ReactEleme
                     : `w-full max-w-md transform overflow-hidden rounded-lg bg-white p-6 text-left align-middle shadow-xl transition-all`
                 }
               >
-                <MoreDetailsModalPanelDevelop dark={dark} closeModal={closeModal} />
+                {more_details_modal_map.get(set_details.details_modal)}
               </Dialog.Panel>
             </Transition.Child>
           </div>
