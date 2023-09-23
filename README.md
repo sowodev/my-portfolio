@@ -8,23 +8,25 @@
 
 # Sowodev Portfolio
 
-Welcome to my portfolio website, showcasing a collection of my work, skills, and experiences as a developer. This portfolio serves as a window into my world as a passionate coder, designer, and problem solver. Feel free to explore, learn more about me, and discover the projects I've worked on.
+Welcome to my portfolio website, showcasing a collection of my work, skills, and experiences as a full stack web developer. This portfolio serves as a window into my world as a passionate coder, designer, and problem solver. Feel free to explore, learn more about me, and discover the projects I've worked on.
 
 ## Table of Contents
 
 1. [About Me](#about-me)
 2. [Projects](#projects)
 3. [Skills](#skills)
-4. [Contact](#contact)
-5. [Deployment](#deployment)
+4. [Stack](#stack-used)
+5. [Contact](#contact)
+6. [Deployment](#deployment)
+7. [Acknowledgment](#acknowledgment)
 
 ## About Me
 
-I am a dedicated and creative developer with a passion for building web applications that not only function seamlessly but also provide an outstanding user experience. My journey in the world of development started several years ago, and I've had the opportunity to work on a diverse range of projects.
+I am a dedicated and creative full stack web developer with a passion for building high quality web applications that not only work flawlessly but also provide an excellent user experience, also being robust, reliable, secure and scalable. I have been dedicating the past few years of my life mastering the art of building relentless software, so that I can make a huge difference wherever I go, guiding those who I work with to the highest standards when deploying state-of-the-art web applications.
 
 **Key Highlights:**
 
-- 🌐 Full-stack developer with expertise in both front-end and back-end technologies.
+- 🌐 Full-stack web developer with expertise in both front-end and back-end technologies.
 - 💡 Strong problem-solving skills and a knack for finding elegant solutions.
 - 🚀 Adept at working with various programming languages, libraries, and frameworks.
 - 🎨 A passion for design, with an eye for creating visually appealing and user-friendly interfaces.
@@ -32,22 +34,23 @@ I am a dedicated and creative developer with a passion for building web applicat
 
 ## Projects
 
-### Project 1: [Project Name 1](#)
+### Project 1: [Tasks Manager with Smooth Drag and Drop](https://www.sowodev.com/projects/tasks-manager)
 
-![Project Name 1](https://www.sowodev.com/assets/images/project1.jpg)
-_Description:_ A brief description of Project 1, including its goals, technologies used, and your role in the project.
+![Tasks Manager](public/imgs/readme/tasks-management-imple.webp)
+<br>
+_Description:_ A full tasks manager application, create, update, read and delete tasks, with a beatiful and smooth drag and drop.
 
-### Project 2: [Project Name 2](#)
+### Project 2: [Countdown Timer](https://www.sowodev.com/projects/countdown-timer)
 
-![Project Name 2](https://www.sowodev.com/assets/images/project2.jpg)
-_Description:_ A brief description of Project 2, including its goals, technologies used, and your role in the project.
+![Countdown Timer](public/imgs/readme/countdown-timer-imple.webp)
+_Description:_ A full countdown timer application manager, create, update, read and delete timers, with custom hours and dates.
 
-### Project 3: [Project Name 3](#)
+### Project 3: [Nft Shop Landing Page](https://nftshop-wendelloliveira.netlify.app/)
 
-![Project Name 3](https://www.sowodev.com/assets/images/project3.jpg)
-_Description:_ A brief description of Project 3, including its goals, technologies used, and your role in the project.
+![Nft Shop Landing Page](public/imgs/readme/nft-shop-landing-page.webp)
+_Description:_ A beatiful Nft Shop Landing page (needs some improvement).
 
-Explore more of my projects on my [GitHub profile](https://github.com/sowodev).
+Explore more of my projects on my [Portfolio Website](https://www.sowodev.com/).
 
 ## Skills
 
@@ -56,22 +59,23 @@ Here are some of the skills and technologies I have expertise in:
 - **Front-end Development:**
 
   - HTML5, CSS3, JavaScript
-  - React.js, Vue.js, Angular
+  - React.js, Next.js, Tailwind CSS
+  - React Query, React Router
   - Responsive web design
   - UI/UX design principles
 
 - **Back-end Development:**
 
-  - Node.js, Express.js
-  - Python, Django
+  - Node.js, Nest.js
   - RESTful APIs
+  - Typeorm
   - Database design and management (SQL and NoSQL)
 
 - **DevOps:**
 
-  - Docker, Kubernetes
+  - Docker
   - Continuous Integration/Continuous Deployment (CI/CD)
-  - Cloud platforms (AWS, Azure, GCP)
+  - Cloud Deploy
 
 - **Other:**
   - Version control (Git)
@@ -98,23 +102,6 @@ Here are some of the skills and technologies I have expertise in:
           <td width="60">
                <div align="center"><img align="center" alt="git" width="50" height="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" /><br>Git</div>
           </td>
-      </tr>   
-      <tr>
-          <td width="60">
-               <div align="center"><img align="center" alt="docker" width="50" height="50" src="https://techstack-generator.vercel.app/docker-icon.svg" />Docker</div>
-          </td>   
-          <td width="60">
-               <div align="center"><img align="center" alt="next" width="50" height="50" src="https://skillicons.dev/icons?i=next" />Next</div>
-          </td>          
-          <td width="60">
-               <div align="center"><img align="center" alt="github" width="50" height="50" src="https://techstack-generator.vercel.app/github-icon.svg" />Github</div>
-          </td>
-                    <td width="60">
-               <div align="center"><img align="center" alt="tailwind" width="50" height="50" src="https://skillicons.dev/icons?i=tailwind" />Tailwind</div>
-          </td>
-          <td width="60">
-               <div align="center"><img align="center" alt="postman" width="50" height="50" src="https://skillicons.dev/icons?i=postman" />Postman</div>
-          </td>             
       </tr>
       <tr>
           <td width="60">
@@ -132,40 +119,40 @@ Here are some of the skills and technologies I have expertise in:
           <td width="60">
                <div align="center"><img align="center" alt="mysql" width="50" height="50" src="https://techstack-generator.vercel.app/mysql-icon.svg" />MySQL</div>
           </td>                                
-      </tr>
+      </tr>   
       <tr>
           <td width="60">
-               <div align="center"><img align="center" alt="mongodb" width="50" height="50" src="https://skillicons.dev/icons?i=mongo" />MongoDB</div>
-          </td>     
-          <td width="60">
-               <div align="center"><img align="center" alt="cpp" width="50" height="50" src="https://techstack-generator.vercel.app/cpp-icon.svg" />C++</div>
-          </td>           
-          <td width="60">
-               <div align="center"><img align="center" alt="python" width="50" height="50" src="https://techstack-generator.vercel.app/python-icon.svg" />Python</div>
-          </td>                      
-          <td width="60">
-               <div align="center"><img align="center" alt="java" width="50" height="50" src="https://techstack-generator.vercel.app/java-icon.svg" />Java</div>
+               <div align="center"><img align="center" alt="github" width="50" height="50" src="https://techstack-generator.vercel.app/github-icon.svg" />Github</div>
+          </td>
+                    <td width="60">
+               <div align="center"><img align="center" alt="tailwind" width="50" height="50" src="https://skillicons.dev/icons?i=tailwind" />Tailwind</div>
           </td>
           <td width="60">
-               <div align="center"><img align="center" alt="restapi" width="50" height="50" src="https://techstack-generator.vercel.app/restapi-icon.svg" />RESTApi</div>
-          </td>                 
-      </tr>
-      <tr>         
-          <td width="60">
-               <div align="center"><img align="center" alt="typeorm" width="50" height="50" src="./imgs/typeorm.svg" />TypeORM</div>
-          </td>          
+               <div align="center"><img align="center" alt="postman" width="50" height="50" src="https://skillicons.dev/icons?i=postman" />Postman</div>
+          </td> 
           <td width="60">
                <div align="center"><img align="center" alt="vite" width="50" height="50" src="https://skillicons.dev/icons?i=vite" />Vite</div>
           </td> 
           <td width="60">
                <div align="center"><img align="center" alt="vscode" width="50" height="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />VSCode</div>
-          </td>            
+          </td>                  
+      </tr>
+      <tr>
+          <td width="60">
+               <div align="center"><img align="center" alt="restapi" width="50" height="50" src="https://techstack-generator.vercel.app/restapi-icon.svg" />RESTApi</div>
+          </td>                 
+          <td width="60">
+               <div align="center"><img align="center" alt="mongodb" width="50" height="50" src="https://skillicons.dev/icons?i=mongo" />MongoDB</div>
+          </td>
+          <td width="60">
+               <div align="center"><img align="center" alt="typeorm" width="50" height="50" src="public/imgs/readme/typeorm.svg" />TypeORM</div>
+          </td>                      
           <td width="60">
                <div align="center"><img align="center" alt="figma" width="50" height="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" />Figma</div>
           </td>
           <td width="60">
                <div align="center"><img align="center" alt="prettier" width="50" height="50" src="https://techstack-generator.vercel.app/prettier-icon.svg" />Prettier</div>
-          </td>                                  
+          </td>     
       </tr>      
    </table>
 </div>
@@ -185,3 +172,25 @@ Thank you for visiting my portfolio, and I look forward to connecting with you!
 - **Planet Scale**: for MySQL Database.
 - **Cyclic**: for the NestJS Backend.
 - **Netlify**: for the React Frontend.
+
+## Next Steps
+
+- Translate to brazilian portuguese and add a language choice button.
+- Add Auth.
+- Create a Next.js version
+- Improve Backend.
+- Add Store.
+- Add Some More Projects like:
+   <details>
+   <summary>Next projects list</summary>
+     
+     - [ ] Car Shop.
+     - [ ] An AI SaaS.
+     - [ ] Real time chat with WebSockets.
+     - [ ] A game accesories finder.
+   </details>
+- Refactor And Test
+
+## Acknowledgment
+
+There is much work to do, so keep that in mind. If you want, feel free to use any part of the code. Any questions or suggestion, please get it touch through my contact section.
