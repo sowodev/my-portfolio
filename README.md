@@ -22,7 +22,7 @@ Welcome to my portfolio website, showcasing a collection of my work, skills, and
 
 ## About Me
 
-I am a dedicated and creative full stack web developer with a passion for building high quality web applications that not only work flawlessly but also provide an excellent user experience, also being robust, reliable, secure and scalable. I have been dedicating the past few years of my life mastering the art of building relentless software, so that I can make a huge difference wherever I go, guiding those who I work with to the highest standards when deploying state-of-the-art web applications.
+I am a dedicated and creative full stack web developer with a passion for building high quality web applications that not only work flawlessly but also provide an excellent user experience, also being robust, reliable, secure and scalable.
 
 **Key Highlights:**
 
@@ -142,7 +142,7 @@ Here are some of the skills and technologies I have expertise in:
                <div align="center"><img align="center" alt="restapi" width="50" height="50" src="https://techstack-generator.vercel.app/restapi-icon.svg" />RESTApi</div>
           </td>                 
           <td width="60">
-               <div align="center"><img align="center" alt="mongodb" width="50" height="50" src="https://skillicons.dev/icons?i=mongo" />MongoDB</div>
+               <div align="center"><img align="center" alt="markdown" width="50" height="50" src="https://skillicons.dev/icons?i=md" />Markdown</div>
           </td>
           <td width="60">
                <div align="center"><img align="center" alt="typeorm" width="50" height="50" src="public/imgs/readme/typeorm.svg" />TypeORM</div>
@@ -193,4 +193,4 @@ Thank you for visiting my portfolio, and I look forward to connecting with you!
 
 ## Acknowledgment
 
-There is much work to do, so keep that in mind. If you want, feel free to use any part of the code. Any questions or suggestion, please get it touch through my contact section.
+There is much work to do, so keep that in mind. If you want, feel free to use any part of the code. Any questions or suggestion, please get it touch through my contact section. Also leave it a star, please 🤩!
