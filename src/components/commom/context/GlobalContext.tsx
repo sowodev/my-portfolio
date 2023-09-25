@@ -21,8 +21,6 @@ export type SidebarType = {
 };
 
 export type DetailsDialogType = {
-  details_modal: 'develop' | 'fix' | 'consult';
-  setDetailsModal: Dispatch<SetStateAction<'develop' | 'fix' | 'consult'>>;
   open_details_dialog: boolean;
   setOpenDetailsDialog: Dispatch<SetStateAction<boolean>>;
 };
@@ -45,8 +43,6 @@ const GlobalContext = createContext({
     setOpenSidebar: (open: boolean) => {},
   } as SidebarType,
   set_details: {
-    details_modal: 'develop',
-    setDetailsModal: (details_modal: 'develop' | 'fix' | 'consult') => {},
     open_details_dialog: false,
     setOpenDetailsDialog: (open: boolean) => {},
   } as DetailsDialogType,

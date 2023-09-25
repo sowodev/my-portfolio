@@ -41,11 +41,7 @@ const SingleBtn: React.FC<SingleBtnProps> = ({
         onClick={(): void => setTextToShow(name)}
         disabled={text_to_show === name}
       >
-        <img
-          className="w-20 h-5 md:w-24 md:h-7  drop-shadow"
-          src={`/imgs/${name.toLowerCase()}.png`}
-          alt={name}
-        />
+        <span className="font-[Goldman] font-semibold text-2xl text-slate-700">{name}</span>
       </button>
     </div>
   );

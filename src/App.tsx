@@ -34,10 +34,7 @@ function App() {
   const [open_sidebar, setOpenSidebar] = useState(false);
   const set_sidebar = { open_sidebar, setOpenSidebar };
   const [open_details_dialog, setOpenDetailsDialog] = useState(false);
-  const [details_modal, setDetailsModal] = useState<'develop' | 'fix' | 'consult'>('develop');
   const set_details: DetailsDialogType = {
-    details_modal,
-    setDetailsModal,
     open_details_dialog,
     setOpenDetailsDialog,
   };
