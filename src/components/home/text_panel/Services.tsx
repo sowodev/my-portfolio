@@ -10,27 +10,32 @@ const Services: React.FC = function services(): React.ReactElement {
       <div className="prose prose-slate mx-auto mt-4">
         <p className="mb-2 text-justify font-[Lexend] text-lg md:text-2xl lg:text-3xl font-bold dark:text-white">
           Looking for someone to build or fix your web application?{' '}
-          <span className="text-amber-200 underline">Your search ends here.</span>
         </p>
       </div>
-      <div className="flex flex-col w-[95%] h-3/5 md:w-[85%] p-5 mt-8 font-[Lexend] items-center justify-between rounded-lg border border-[#f5f5f538] bg-[#ffffff3f]">
+      <div className="flex flex-col w-[95%] h-fit md:w-[85%] gap-4 p-5 mt-8 font-[Lexend] items-center justify-between rounded-lg border border-[#f5f5f538] bg-[#ffffff3f]">
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col w-full text-slate-700 dark:text-white">
-            <span className="text-2xl">Design and/or Develop Your Web Application</span>
+          <div className="flex flex-col text-slate-700 dark:text-white">
+            <span className="sm:text-sm md:text-lg lg:text-2xl">
+              Design and/or Develop Your Web Application
+            </span>
             <span className="text-sm font-light text-slate-600 indent-4 dark:text-slate-200">
-              • We are going to bring your 😴 dream web application to life!
+              ✅ We are going to bring your 😴 dream web application to life!
             </span>
           </div>
-          <div className="flex flex-col w-full text-slate-700 dark:text-white">
-            <span className="text-2xl">Fix and/or Optimize Your Web Application</span>
+          <div className="flex flex-col text-slate-700 dark:text-white">
+            <span className="sm:text-sm md:text-lg lg:text-2xl">
+              Fix and/or Optimize Your Web Application
+            </span>
             <span className="text-sm font-light text-slate-600 indent-4 dark:text-slate-200">
-              • We are going to make your web application 🛡️safer, ⚡faster and 🍹smoother!
+              ✅ We are going to make your web application 🛡️safer, ⚡faster and 🍹smoother!
             </span>
           </div>
-          <div className="flex flex-col w-full text-slate-700 dark:text-white">
-            <span className="text-2xl">Consultancy About Your Web Application</span>
+          <div className="flex flex-col w text-slate-700 dark:text-white">
+            <span className="sm:text-sm md:text-lg lg:text-2xl">
+              Consultancy About Your Web Application
+            </span>
             <span className="text-sm font-light text-slate-600 indent-4 dark:text-slate-200">
-              • We are going to guide your web application projects 🤓. So you can ship faster and
+              ✅ We are going to guide your web application projects 🤓. So you can ship faster and
               make money 🤑!
             </span>
           </div>

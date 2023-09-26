@@ -85,7 +85,7 @@ const ContactMeModal = function contactMeModal() {
               >
                 <Dialog.Title
                   as="h4"
-                  className={`font-[Lexend] text-lg font-medium leading-6 text-gray-900 ${
+                  className={`flex font-[Lexend] text-lg font-medium leading-6 text-gray-900 justify-between items-center ${
                     dark && 'text-white'
                   }`}
                 >
@@ -96,6 +96,12 @@ const ContactMeModal = function contactMeModal() {
                     : mutation.isSuccess
                     ? 'Message Successeful'
                     : 'Leave Us a Message!'}
+                  <button
+                    className="flex rounded px-2 py-1 hover:bg-slate-100"
+                    onClick={closeModal}
+                  >
+                    ✖
+                  </button>
                 </Dialog.Title>
 
                 {/* The Form Starts Here!!! */}
@@ -194,16 +200,20 @@ const ContactMeModal = function contactMeModal() {
                       <div className="flex w-full justify-between">
                         <button
                           type="button"
-                          className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-amber-300 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          className="flex h-8 flex-row items-center justify-center gap-1 rounded bg-amber-400 duration-300 ease-in-out hover:scale-110 hover:bg-amber-500 hover:shadow-md lg:hover:shadow-lg"
                           onClick={closeModal}
                         >
-                          Cancel
+                          <span className="mx-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
+                            Cancel
+                          </span>
                         </button>
                         <button
                           type="submit"
-                          className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-sky-400 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:bg-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          className="flex h-8 flex-row items-center justify-center gap-1 rounded bg-sky-400 duration-300 ease-in-out hover:scale-110 hover:bg-sky-500 hover:shadow-md lg:hover:shadow-lg"
                         >
-                          Send
+                          <span className="mx-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
+                            Send
+                          </span>
                         </button>
                       </div>
                     </form>
