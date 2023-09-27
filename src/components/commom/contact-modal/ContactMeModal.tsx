@@ -97,7 +97,9 @@ const ContactMeModal = function contactMeModal() {
                     ? 'Message Successeful'
                     : 'Leave Us a Message!'}
                   <button
-                    className="flex rounded px-2 py-1 hover:bg-slate-100"
+                    className={`flex rounded px-2 py-1 hover:bg-slate-100 ${
+                      dark && `hover:bg-slate-600`
+                    }`}
                     onClick={closeModal}
                   >
                     ✖

@@ -52,14 +52,22 @@ const MoreDetailsModal: React.FC = function moreDetailsModal(): React.ReactEleme
                 >
                   More Details!
                   <button
-                    className="flex rounded px-2 py-1 hover:bg-slate-100"
+                    className={`flex rounded px-2 py-1 hover:bg-slate-100 ${
+                      dark && `hover:bg-slate-600`
+                    }`}
                     onClick={closeModal}
                   >
                     ✖
                   </button>
                 </Dialog.Title>
-                <span className="font-[Lexend] text-slate-800">Why?</span>
-                <ol className="flex flex-col bg-slate-100 font-light rounded-lg text-justify p-3 list-decimal list-inside gap-3 font-[Lexend] text-slate-800">
+                <span className={`font-[Lexend] text-slate-800  ${dark && `text-white`}`}>
+                  Why?
+                </span>
+                <ol
+                  className={`flex flex-col bg-slate-100 font-light rounded-lg text-justify p-3 list-decimal list-inside gap-3 font-[Lexend] text-slate-800 ${
+                    dark && `bg-slate-600 text-white`
+                  }`}
+                >
                   <li>
                     Do you have a web application idea and need a professional to transform your
                     idea into software, from the design to the development?
@@ -76,8 +84,14 @@ const MoreDetailsModal: React.FC = function moreDetailsModal(): React.ReactEleme
                   </li>
                   <li>We have the solution for you, contact us!</li>
                 </ol>
-                <span className="font-[Lexend] text-slate-800">How?</span>
-                <ol className="flex flex-col bg-slate-100 font-light rounded-lg text-justify p-3 list-decimal list-inside gap-3 font-[Lexend] text-slate-800">
+                <span className={`font-[Lexend] text-slate-800  ${dark && `text-white`}`}>
+                  How?
+                </span>
+                <ol
+                  className={`flex flex-col bg-slate-100 font-light rounded-lg text-justify p-3 list-decimal list-inside gap-3 font-[Lexend] text-slate-800 ${
+                    dark && `bg-slate-600 text-white`
+                  }`}
+                >
                   <li>
                     Get in touch with us for free, through the button:{' '}
                     <button
