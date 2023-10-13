@@ -5,27 +5,18 @@ import {
   RocketLaunchIcon,
   SunIcon,
   UserCircleIcon,
-} from "@heroicons/react/24/outline";
-import React, {
-  Fragment,
-  RefObject,
-  useContext,
-  useEffect,
-  useRef,
-} from "react";
-import { Transition } from "@headlessui/react";
-import { GlobalContext } from "../commom/context/GlobalContext";
-import { NavLink } from "react-router-dom";
+} from '@heroicons/react/24/outline';
+import React, { Fragment, RefObject, useContext, useEffect, useRef } from 'react';
+import { Transition } from '@headlessui/react';
+import { GlobalContext } from '../commom/context/GlobalContext';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar: React.FC = () => {
   const sidebar_ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
   const { set_dark, set_sidebar } = useContext(GlobalContext);
 
   const handleOutsideClick = (e: MouseEvent) => {
-    if (
-      sidebar_ref.current &&
-      !sidebar_ref.current.contains(e.target as Node)
-    ) {
+    if (sidebar_ref.current && !sidebar_ref.current.contains(e.target as Node)) {
       set_sidebar.setOpenSidebar(false);
     }
   };
@@ -33,18 +24,15 @@ const Sidebar: React.FC = () => {
   const handleThemeChange = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
 
-    set_dark.setIsDark(set_dark.is_dark === "light" ? "dark" : "light");
-    localStorage.setItem(
-      "theme",
-      set_dark.is_dark === "light" ? "dark" : "light"
-    );
+    set_dark.setIsDark(set_dark.is_dark === 'light' ? 'dark' : 'light');
+    localStorage.setItem('theme', set_dark.is_dark === 'light' ? 'dark' : 'light');
   };
 
   // useEffect for handling outside click
   useEffect(() => {
-    document.addEventListener("click", handleOutsideClick);
+    document.addEventListener('click', handleOutsideClick);
     return () => {
-      document.removeEventListener("click", handleOutsideClick);
+      document.removeEventListener('click', handleOutsideClick);
     };
   }, []);
 
@@ -60,13 +48,13 @@ const Sidebar: React.FC = () => {
         leaveTo="-translate-x-full"
       >
         <div
-          className="fixed z-20 flex top-[7.3125rem] bottom-0 w-60 bg-neutral-600 dark:bg-slate-700"
+          className="fixed z-20 flex h-[calc(100vh-104px)] w-60 bg-neutral-600 dark:bg-slate-700"
           ref={sidebar_ref}
         >
           <div className="flex h-full w-full flex-col justify-between py-12">
             <div className="flex h-fit w-full flex-col items-center justify-start gap-4">
               <NavLink
-                to={"/"}
+                to={'/'}
                 className={`flex h-fit w-full items-center justify-center`}
                 onClick={() => set_sidebar.setOpenSidebar(false)}
               >
@@ -84,7 +72,7 @@ const Sidebar: React.FC = () => {
                 }}
               </NavLink>
               <NavLink
-                to={"/articles"}
+                to={'/articles'}
                 className={`flex h-fit w-full items-center justify-center`}
                 onClick={() => set_sidebar.setOpenSidebar(false)}
               >
@@ -102,7 +90,7 @@ const Sidebar: React.FC = () => {
                 }}
               </NavLink>
               <NavLink
-                to={"/projects"}
+                to={'/projects'}
                 className={`flex h-fit w-full items-center justify-center`}
                 onClick={() => set_sidebar.setOpenSidebar(false)}
               >
@@ -114,15 +102,13 @@ const Sidebar: React.FC = () => {
                       } hover:bg-[#606060]`}
                     >
                       <RocketLaunchIcon className={`h-6 w-6 stroke-white`} />
-                      <span className="font-[Blinker] text-white">
-                        Projects
-                      </span>
+                      <span className="font-[Blinker] text-white">Projects</span>
                     </div>
                   );
                 }}
               </NavLink>
               <NavLink
-                to={"/login"}
+                to={'/login'}
                 className={`flex h-fit w-full items-center justify-center`}
                 onClick={() => set_sidebar.setOpenSidebar(false)}
               >
@@ -145,7 +131,7 @@ const Sidebar: React.FC = () => {
                 className="flex h-9 w-9 items-center justify-center rounded border border-neutral-500 shadow-md transition duration-300 ease-in-out hover:scale-110 hover:bg-neutral-500 dark:border-gray-700 dark:bg-slate-800 dark:shadow-slate-600 dark:hover:bg-slate-700"
                 onClick={handleThemeChange}
               >
-                {set_dark.is_dark === "dark" ? (
+                {set_dark.is_dark === 'dark' ? (
                   <SunIcon className="h-5 w-5 stroke-slate-200" />
                 ) : (
                   <MoonIcon className="h-5 w-5 stroke-white" />

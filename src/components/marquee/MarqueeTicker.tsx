@@ -46,7 +46,7 @@ const Ticker: React.FC = (): React.ReactElement => {
 
 const MarqueeTicker: React.FC = function marqueeTicker(): React.ReactElement {
   return (
-    <div className="flex h-[45px] w-full items-center justify-center bg-amber-300">
+    <div className="flex h-[40px] w-full items-center justify-center bg-amber-300">
       <Ticker />
     </div>
   );

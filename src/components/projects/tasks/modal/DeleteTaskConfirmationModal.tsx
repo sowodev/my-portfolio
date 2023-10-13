@@ -67,7 +67,7 @@ const DeleteTaskConfirmationModal: React.FC<Props> = ({
                 >
                   Delete Task!
                   <button
-                    className={`flex rounded justify-center items-center hover:bg-gray-100 ${
+                    className={`flex p-2 rounded justify-center items-center hover:bg-gray-100 ${
                       dark_mode && `hover:bg-slate-600`
                     }`}
                     onClick={() => tasks_controller.setShowDeleteTaskModal(false)}
@@ -88,13 +88,13 @@ const DeleteTaskConfirmationModal: React.FC<Props> = ({
                   </span>
                   <div className="flex flex-row w-full text-sm justify-between items-center mt-4">
                     <button
-                      className="flex h-10 px-2 items-center justify-center rounded bg-amber-300 font-[Lexend] text-white text-center transition duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="flex px-4 py-2 items-center justify-center rounded bg-amber-300 font-[Lexend] text-white text-center transition duration-300 ease-in-out hover:bg-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={() => tasks_controller.setShowDeleteTaskModal(false)}
                     >
                       Cancel
                     </button>
                     <button
-                      className="flex h-10 px-2 items-center justify-center rounded bg-red-400 font-[Lexend] text-white text-center transition duration-300 ease-in-out hover:scale-110 hover:bg-red-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="flex px-4 py-2 items-center justify-center rounded bg-red-400 font-[Lexend] text-white text-center transition duration-300 ease-in-out hover:bg-red-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={handleDeleteTask}
                     >
                       Delete

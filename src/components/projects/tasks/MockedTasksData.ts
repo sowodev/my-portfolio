@@ -11,7 +11,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'very_easy',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -23,7 +23,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'medium',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -35,7 +35,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'very_hard',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -47,7 +47,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'hard',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -59,7 +59,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'very_hard',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -71,7 +71,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'medium',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -83,7 +83,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'easy',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -95,7 +95,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'very_hard',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -107,7 +107,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'very_hard',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -119,7 +119,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'hard',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -131,7 +131,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'medium',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -143,7 +143,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'hard',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -155,7 +155,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'very_hard',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -167,7 +167,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'medium',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -179,7 +179,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'easy',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -191,7 +191,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'very_easy',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -203,7 +203,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'very_easy',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -215,7 +215,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'medium',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -227,7 +227,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'very_easy',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -239,7 +239,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'easy',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -251,7 +251,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'medium',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -263,7 +263,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'medium',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -275,7 +275,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'very_easy',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -287,7 +287,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'easy',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -299,7 +299,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'hard',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -311,7 +311,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'very_hard',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -323,7 +323,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'medium',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
   {
@@ -335,7 +335,7 @@ export const TasksMockedData: Task[] = [
     difficulty: 'easy',
     estimated_time: 60,
     time_type: 'minutes',
-    due_date: '2021-01-01',
+    due_date: new Date('2021-01-01'),
     due_time: '12:00',
   },
 ];

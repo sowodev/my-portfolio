@@ -8,19 +8,19 @@ const Tools: React.FC = function tools(): React.ReactElement {
   const [tech_stack, setTechStack] = useState<stack[]>(TechStackData);
 
   return (
-    <div className="h-full w-full px-6 py-2">
-      <div className="prose prose-slate mx-auto mt-4">
-        <p className="mb-2 text-justify font-[Lexend] text-lg md:text-2xl lg:text-3xl font-bold dark:text-white">
-          🛠️ Tech Stack
-        </p>
+    <div className="flex flex-col h-full w-full justify-center items-center">
+      <p className="w-full my-4 text-justify font-[Lexend] text-lg md:text-2xl lg:text-4xl font-light text-slate-700 dark:text-white">
+        🛠️ Tech Stack
+      </p>
 
+      <div className="flex flex-col gap-4 w-full overflow-y-auto">
         {tech_stack.map((current: stack, index: number): React.ReactElement => {
           return (
             <Disclosure key={index}>
               {({ open, close }): React.ReactElement => (
                 <>
                   <Disclosure.Button
-                    className="mt-4 flex h-16 w-full items-center justify-between rounded border border-[#f5f5f538] bg-[#ffffff3f] hover:bg-white hover:bg-opacity-40 dark:text-slate-300"
+                    className="flex min-h-[4rem] w-full items-center justify-between rounded border border-[#f5f5f538] bg-[#ffffff3f] hover:bg-white hover:bg-opacity-40 dark:text-slate-300"
                     onClick={() => {}}
                   >
                     <span className="ml-8 font-[Lexend] font-bold text-md lg:text-lg text-slate-700 dark:text-white">
@@ -42,7 +42,7 @@ const Tools: React.FC = function tools(): React.ReactElement {
                     leaveFrom="scale-100"
                     leaveTo="scale-50"
                   >
-                    <Disclosure.Panel className="mt-8 flex w-full flex-col">
+                    <Disclosure.Panel className="prose prose-slate max-w-full mt-8 flex w-full flex-col">
                       {current.stack_value.map(
                         (inner_current: element, inner_index: number): React.ReactElement => {
                           return (

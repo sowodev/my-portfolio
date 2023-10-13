@@ -41,7 +41,7 @@ const SingleBtn: React.FC<SingleBtnProps> = ({
         onClick={(): void => setTextToShow(name)}
         disabled={text_to_show === name}
       >
-        <span className="font-[Goldman] font-semibold sm:text-sm md:text-lg lg:text-2xl  text-slate-700 dark:text-white">
+        <span className="font-[Goldman] sm:text-sm md:text-lg lg:text-2xl  text-slate-700 dark:text-white">
           {name}
         </span>
       </button>

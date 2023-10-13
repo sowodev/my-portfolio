@@ -64,7 +64,7 @@ const EditModalWorkingOn: React.FC<Props> = ({
                 >
                   Working On Editing Tasks!
                   <button
-                    className={`flex rounded justify-center items-center hover:bg-gray-100 ${
+                    className={`flex p-2 rounded justify-center items-center hover:bg-gray-100 ${
                       dark_mode && `hover:bg-slate-600`
                     }`}
                     onClick={() => tasks_controller.setShowEditTaskModal(false)}
@@ -82,7 +82,7 @@ const EditModalWorkingOn: React.FC<Props> = ({
                   </span>
                   <div className="flex flex-row w-full text-sm justify-end items-center mt-4">
                     <button
-                      className="flex h-10 px-2 items-center justify-center rounded bg-emerald-400 font-[Lexend] text-white text-center transition duration-300 ease-in-out hover:scale-110 hover:bg-emerald-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="flex px-4 py-2 items-center justify-center rounded bg-emerald-400 font-[Lexend] text-white text-center transition duration-300 ease-in-out hover:bg-emerald-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={handleDeleteTimer}
                     >
                       Close

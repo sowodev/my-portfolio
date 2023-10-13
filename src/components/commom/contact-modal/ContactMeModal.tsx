@@ -5,7 +5,7 @@ import InputField from './InputField';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import LoadingComponent from '../../loading/LoadingComponent';
-import { ArchiveBoxXMarkIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
+import { ArchiveBoxXMarkIcon, CheckCircleIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 type MessageDTO = {
   name: string;
@@ -97,12 +97,12 @@ const ContactMeModal = function contactMeModal() {
                     ? 'Message Successeful'
                     : 'Leave Us a Message!'}
                   <button
-                    className={`flex rounded px-2 py-1 hover:bg-slate-100 ${
+                    className={`flex rounded p-2 hover:bg-slate-100 ${
                       dark && `hover:bg-slate-600`
                     }`}
                     onClick={closeModal}
                   >
-                    ✖
+                    <XMarkIcon className="h-5" />
                   </button>
                 </Dialog.Title>
 
@@ -202,18 +202,18 @@ const ContactMeModal = function contactMeModal() {
                       <div className="flex w-full justify-between">
                         <button
                           type="button"
-                          className="flex h-8 flex-row items-center justify-center gap-1 rounded bg-amber-400 duration-300 ease-in-out hover:scale-110 hover:bg-amber-500 hover:shadow-md lg:hover:shadow-lg"
+                          className="flex px-4 py-2 flex-row items-center justify-center gap-1 rounded bg-amber-400 duration-300 ease-in-out hover:bg-amber-500 hover:shadow-md lg:hover:shadow-lg"
                           onClick={closeModal}
                         >
-                          <span className="mx-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
+                          <span className="mx-2 font-[Lexend] text-sm md:text-base text-slate-700 dark:text-slate-100">
                             Cancel
                           </span>
                         </button>
                         <button
                           type="submit"
-                          className="flex h-8 flex-row items-center justify-center gap-1 rounded bg-sky-400 duration-300 ease-in-out hover:scale-110 hover:bg-sky-500 hover:shadow-md lg:hover:shadow-lg"
+                          className="flex px-4 py-2 flex-row items-center justify-center gap-1 rounded bg-sky-400 duration-300 ease-in-out hover:bg-sky-500 hover:shadow-md lg:hover:shadow-lg"
                         >
-                          <span className="mx-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
+                          <span className="font-[Lexend] text-sm md:text-base text-slate-700 dark:text-slate-100">
                             Send
                           </span>
                         </button>

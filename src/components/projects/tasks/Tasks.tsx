@@ -51,13 +51,13 @@ const Tasks: React.FC = function tasks(): ReactElement {
 
   return (
     <div className="flex flex-col w-full h-full max-w-screen max-h-screen justify-center items-center">
-      <div className="flex relative w-[95%] h-[95%] mt-2 border-s-4 border-b-4 border-dashed border-gray-300 dark:border-slate-600">
+      <div className="flex relative w-[95%] h-[95%] mt-2 border-s-[3px] border-b-[3px] lg:border-s-4 lg:border-b-4 border-dashed border-gray-300 dark:border-slate-600">
         <span className="flex absolute text-lg -left-[4.5rem] h-fit w-fit font-[Lexend] transform -rotate-90 self-center dark:text-white">
           IMPORTANT
         </span>
-        <ChevronUpIcon className="absolute -top-3 -left-4 w-7 h-7 stroke-gray-300 stroke-[3] dark:stroke-slate-600" />
-        <ChevronLeftIcon className="absolute -bottom-4 left-2 w-7 h-7 stroke-gray-300 stroke-[3] dark:stroke-slate-600" />
-        <ChevronLeftIcon className="absolute -bottom-4 -right-[0.6rem] w-7 h-7 stroke-gray-300 stroke-[3] dark:stroke-slate-600" />
+        <ChevronUpIcon className="absolute -top-3 -left-4 w-7 h-7 stroke-gray-300 stroke-[1] lg:stroke-[3] md:stroke-[2] dark:stroke-slate-600" />
+        <ChevronLeftIcon className="absolute -bottom-4 left-2 w-7 h-7 stroke-gray-300 stroke-[1] lg:stroke-[3] md:stroke-[2] dark:stroke-slate-600" />
+        <ChevronLeftIcon className="absolute -bottom-4 -right-[0.6rem] w-7 h-7 stroke-gray-300 stroke-[1] lg:stroke-[3] md:stroke-[2] dark:stroke-slate-600" />
         <div className="flex flex-wrap w-full h-full pb-2 gap-x-4 justify-center items-center">
           <DragDropContext onDragEnd={handleDragEnd}>
             <Quadrant

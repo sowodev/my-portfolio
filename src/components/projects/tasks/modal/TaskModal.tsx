@@ -66,6 +66,15 @@ const TaskModal: React.FC<Props> = function taskModal({
     tasks_controller.setShowTasksModal(false);
   };
 
+  const tail_color: string =
+    tasks_controller.new_task_priority === 'yellow'
+      ? 'bg-[#ffed49]'
+      : tasks_controller.new_task_priority === 'red'
+      ? 'bg-[#ff867e]'
+      : tasks_controller.new_task_priority === 'green'
+      ? 'bg-[#8dff99]'
+      : 'bg-[#ffb978]';
+
   return (
     <Transition appear as={Fragment} show={tasks_controller.show_tasks_modal}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -95,19 +104,20 @@ const TaskModal: React.FC<Props> = function taskModal({
               <Dialog.Panel
                 className={
                   dark_mode
-                    ? `w-full max-w-md transform overflow-hidden bg-slate-700 p-4 text-left align-middle shadow-xl transition-all`
-                    : `w-full max-w-md transform overflow-hidden bg-white p-4 text-left align-middle shadow-xl transition-all`
+                    ? `flex flex-col relative w-full pt-0 max-w-md transform overflow-hidden bg-slate-700 p-4 text-left align-middle shadow-xl transition-all`
+                    : `flex flex-col relative w-full pt-0 max-w-md transform overflow-hidden bg-white p-4 text-left align-middle shadow-xl transition-all`
                 }
               >
+                <div className={`flex absolute top-0 left-0 w-full h-2 ${tail_color}`}></div>
                 <Dialog.Title
                   as="div"
-                  className={`flex flex-row font-[Lexend] text-lg font-medium leading-6 text-gray-900 justify-between ${
+                  className={`flex mt-4 flex-row font-[Lexend] text-lg font-medium leading-6 text-gray-900 justify-between ${
                     dark_mode && 'text-white'
                   }`}
                 >
                   Create Task!
                   <button
-                    className={`flex rounded hover:bg-gray-100 justify-center items-center ${
+                    className={`flex p-2 rounded hover:bg-gray-100 justify-center items-center ${
                       dark_mode && `hover:bg-slate-600`
                     }`}
                     onClick={closeModal}
@@ -140,14 +150,14 @@ const TaskModal: React.FC<Props> = function taskModal({
                   <InputDifficulty setDifficulty={setDifficulty} dark_mode={dark_mode} />
                   <div className="flex flex-row w-full font-[Lexend] text-white justify-between items-center mt-4">
                     <button
-                      className="flex h-10 px-2 items-center justify-center rounded bg-amber-300 text-center transition duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="flex px-4 py-2 items-center justify-center bg-amber-300 font-light transition duration-300 ease-in-out hover:bg-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       type="button"
                       onClick={closeModal}
                     >
                       Cancel
                     </button>
                     <button
-                      className="flex h-10 px-2 items-center justify-center rounded bg-sky-400 text-center transition duration-300 ease-in-out hover:scale-110 hover:bg-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="flex px-4 py-2 items-center justify-center bg-sky-400 font-light transition duration-300 ease-in-out hover:bg-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       type="submit"
                     >
                       Create

@@ -1,5 +1,5 @@
 import { Dialog, Transition } from '@headlessui/react';
-import { EnvelopeIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import React, { Fragment, useContext } from 'react';
 import { GlobalContext } from '../../../commom/context/GlobalContext';
 
@@ -52,12 +52,12 @@ const MoreDetailsModal: React.FC = function moreDetailsModal(): React.ReactEleme
                 >
                   More Details!
                   <button
-                    className={`flex rounded px-2 py-1 hover:bg-slate-100 ${
+                    className={`flex rounded p-2 hover:bg-slate-100 ${
                       dark && `hover:bg-slate-600`
                     }`}
                     onClick={closeModal}
                   >
-                    ✖
+                    <XMarkIcon className="h-5" />
                   </button>
                 </Dialog.Title>
                 <span className={`font-[Lexend] text-slate-800  ${dark && `text-white`}`}>
@@ -98,8 +98,8 @@ const MoreDetailsModal: React.FC = function moreDetailsModal(): React.ReactEleme
                       className="flex h-8 flex-row items-center justify-center gap-1 rounded bg-green-400"
                       disabled
                     >
-                      <EnvelopeIcon className="ml-2 h-5 w-5 stroke-white" />
-                      <span className="mr-2 font-[Lexend] text-sm md:text-sm text-white dark:text-slate-100">
+                      <EnvelopeIcon className="ml-2 h-5 w-5 stroke-slate-700 dark:stroke-white" />
+                      <span className="mr-2 font-[Lexend] text-sm md:text-sm text-slate-700 dark:text-slate-100">
                         Hire Now!
                       </span>
                     </button>

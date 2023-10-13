@@ -9,7 +9,7 @@ const Navbar = function () {
   const { set_sidebar } = useContext(GlobalContext);
 
   return (
-    <nav className="flex h-[4.5rem] w-full bg-gradient-to-t from-[#666666] to-[#444444] dark:from-slate-700 dark:to-slate-900">
+    <nav className="flex h-[4rem] w-full bg-gradient-to-t from-[#666666] to-[#444444] dark:from-slate-700 dark:to-slate-900">
       <div className="flex h-full w-full items-center justify-between ps-2 lg:px-12">
         <div className="flex h-full w-fit flex-row items-center justify-center gap-1 lg:gap-8">
           <button className="h-fit w-fit" onClick={() => set_sidebar.setOpenSidebar((c) => !c)}>

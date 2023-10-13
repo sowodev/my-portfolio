@@ -51,7 +51,11 @@ const TaskCard: React.FC<TaskProps> = function taskCard({
                       }}
                       defaultChecked={task.status === 'Done'}
                     />
-                    <span className="font-light text-sm line-clamp-1 dark:text-white">
+                    <span
+                      className={`font-light text-sm line-clamp-1 ${
+                        task.status === 'Done' && `text-gray-500 line-through`
+                      } dark:text-white`}
+                    >
                       {task.title}
                     </span>
                   </div>
