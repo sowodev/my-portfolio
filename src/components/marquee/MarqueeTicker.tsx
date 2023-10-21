@@ -1,7 +1,7 @@
-import TechComp from './TechComp';
-import Marquee from 'react-fast-marquee';
 import React, { useContext } from 'react';
+import Marquee from 'react-fast-marquee';
 import { GlobalContext } from '../commom/context/GlobalContext';
+import TechComp from './TechComp';
 
 const Ticker: React.FC = (): React.ReactElement => {
   const { set_dialog } = useContext(GlobalContext);
@@ -26,7 +26,8 @@ const Ticker: React.FC = (): React.ReactElement => {
         <TechComp name={'Node'} />
         <TechComp name={'Tailwind'} />
         <TechComp name={'MySQL'} />
-        <TechComp name={'Mongo'} />
+        <TechComp name={'PostgreSQL'} />
+        <TechComp name={'MongoDB'} />
         <TechComp name={'Docker'} />
         <TechComp name={'Linux'} />
         <TechComp name={'Github'} />
