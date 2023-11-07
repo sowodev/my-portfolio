@@ -5,7 +5,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '../../../../utils/shadcn-ui/components/select/select';
+} from '../../../../libs/shadcn-ui/components/select/select';
 import { TimeType } from '../hooks/types';
 
 type Props = {
