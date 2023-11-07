@@ -1,12 +1,12 @@
 'use client';
-import * as React from 'react';
 import { format } from 'date-fns';
 import { Calendar as CalendarIcon } from 'lucide-react';
+import * as React from 'react';
 
-import { cn } from '../shadcn-ui/lib/utils';
-import { Button } from '../shadcn-ui/components/button/button';
-import { Calendar } from '../shadcn-ui/components/calendar/calendar';
-import { Popover, PopoverContent, PopoverTrigger } from '../shadcn-ui/components/popover/popover';
+import { cn } from '../../lib/utils';
+import { Button } from '../button/button';
+import { Calendar } from '../calendar/calendar';
+import { Popover, PopoverContent, PopoverTrigger } from '../popover/popover';
 
 type Props = {
   due_date: Date | undefined;
