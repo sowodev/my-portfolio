@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Marquee from 'react-fast-marquee';
-import { GlobalContext } from '../commom/context/GlobalContext';
+import { GlobalContext } from '../context/GlobalContext';
 import TechComp from './TechComp';
 
 const Ticker: React.FC = (): React.ReactElement => {

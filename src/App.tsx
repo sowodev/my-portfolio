@@ -1,28 +1,28 @@
-import './App.css';
-import 'react-tooltip/dist/react-tooltip.css';
+import BlogRoutes from '@domain/blog/routes/BlogRoutes';
+import MoreDetailsModal from '@domain/home/text_panel/services_details/MoreDetailsModal';
+import { Transition } from '@headlessui/react';
+import { Fragment, useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Navbar from './components/navbar/Navbar';
-import Home from './pages/Home';
-import BlogRoutes from './components/blog/routes/BlogRoutes';
-import ProjectsRoutes from './components/projects/routes/ProjectsRoutes';
-import Login from './pages/Login';
-import NotFound from './pages/NotFound';
-import Test from './pages/Test';
-import MarqueeTicker from './components/marquee/MarqueeTicker';
+import 'react-tooltip/dist/react-tooltip.css';
+import './App.css';
 import ContactMeModal from './components/commom/contact-modal/ContactMeModal';
 import {
   CreditsType,
   DarkType,
+  DetailsDialogType,
   DialogType,
   GlobalContext,
-  DetailsDialogType,
-} from './components/commom/context/GlobalContext';
-import { Fragment, useEffect, useState } from 'react';
-import SignUp from './pages/SignUp';
-import ForgotPassword from './pages/ForgotPassword';
+} from './components/context/GlobalContext';
+import MarqueeTicker from './components/marquee/MarqueeTicker';
+import Navbar from './components/navbar/Navbar';
+import ProjectsRoutes from './components/projects/routes/ProjectsRoutes';
 import Sidebar from './components/sidebar/Sidebar';
-import { Transition } from '@headlessui/react';
-import MoreDetailsModal from './components/home/text_panel/services_details/MoreDetailsModal';
+import ForgotPassword from './pages/ForgotPassword';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import NotFound from './pages/NotFound';
+import SignUp from './pages/SignUp';
+import Test from './pages/Test';
 
 function App() {
   const [open_dialog, setOpenDialog] = useState(false);

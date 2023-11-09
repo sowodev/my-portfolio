@@ -1,13 +1,13 @@
+import { useContext } from 'react';
+import { GlobalContext } from '../../context/GlobalContext';
 import CountdownTimer from './CountdownTimer';
 import TimersList from './TimersList';
-import TimerModal from './modal/TimerModal';
-import useTimersListController from './hooks/useTimersList';
 import { EmptyTimer, TimerController, TimersListController } from './hooks/types';
-import DeleteConfirmationModal from './modal/DeleteConfirmationModal';
 import useTimer from './hooks/useTimer';
+import useTimersListController from './hooks/useTimersList';
+import DeleteConfirmationModal from './modal/DeleteConfirmationModal';
 import ResetConfirmationModal from './modal/ResetConfirmationModal';
-import { useContext } from 'react';
-import { GlobalContext } from '../../commom/context/GlobalContext';
+import TimerModal from './modal/TimerModal';
 
 const Timers = function timers() {
   const timers_list_controller: TimersListController = useTimersListController();

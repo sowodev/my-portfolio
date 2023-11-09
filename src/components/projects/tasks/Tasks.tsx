@@ -1,13 +1,13 @@
-import Quadrant from './Quadrant';
-import { ChevronUpIcon, ChevronLeftIcon } from '@heroicons/react/24/outline';
-import React, { ReactElement, useContext } from 'react';
 import { DragDropContext } from '@hello-pangea/dnd';
-import TaskModal from './modal/TaskModal';
+import { ChevronLeftIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
+import React, { ReactElement, useContext } from 'react';
+import { GlobalContext } from '../../context/GlobalContext';
+import Quadrant from './Quadrant';
 import { TasksController } from './hooks/types';
 import useTasks from './hooks/useTasks';
 import DeleteTaskConfirmationModal from './modal/DeleteTaskConfirmationModal';
 import EditModalWorkingOn from './modal/EditModalWorkingOn';
-import { GlobalContext } from '../../commom/context/GlobalContext';
+import TaskModal from './modal/TaskModal';
 
 const Tasks: React.FC = function tasks(): ReactElement {
   const tasks_controller: TasksController = useTasks();
