@@ -1,7 +1,7 @@
+import { GlobalContext } from '@components/context/GlobalContext';
 import { Dialog, Transition } from '@headlessui/react';
 import { EnvelopeIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import React, { Fragment, useContext } from 'react';
-import { GlobalContext } from '../../../commom/context/GlobalContext';
 
 const MoreDetailsModal: React.FC = function moreDetailsModal(): React.ReactElement {
   const { set_details, set_dark } = useContext(GlobalContext);

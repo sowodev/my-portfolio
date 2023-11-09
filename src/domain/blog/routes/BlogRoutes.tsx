@@ -1,15 +1,15 @@
-import { Route, Routes } from "react-router-dom";
-import PostPrototype from "../post/PostPrototype";
-import Blog from "../../../pages/Blog";
-import NotFound from "../../../pages/NotFound";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import LoadingComponent from "../../loading/LoadingComponent";
-import { PostsType, PostsDTO } from "../../../utils/MultiCardsIntetrfaces";
+import Blog from '@pages/Blog';
+import NotFound from '@pages/NotFound';
+import { useQuery } from '@tanstack/react-query';
+import { PostsDTO, PostsType } from '@utils/MultiCardsIntetrfaces';
+import axios from 'axios';
+import { Route, Routes } from 'react-router-dom';
+import LoadingComponent from '../../../components/loading/LoadingComponent';
+import PostPrototype from '../post/PostPrototype';
 
 const BlogRoutes = function blogRoutes() {
   const query = useQuery({
-    queryKey: ["blog"],
+    queryKey: ['blog'],
     queryFn: () =>
       axios.get(import.meta.env.VITE_DATABASE_POSTS).then((res) => {
         const posts_temp: PostsType[] = [];
@@ -22,7 +22,7 @@ const BlogRoutes = function blogRoutes() {
             content_path: post.md_name,
             published_date: post.created_at,
             updated_date: post.updated_at,
-            tags: post.tags.split(","),
+            tags: post.tags.split(','),
             author: post.author,
             img_credits: post.img_credits,
             thumb_img_path: post.thumb_img_path,
@@ -49,11 +49,11 @@ const BlogRoutes = function blogRoutes() {
         query.data.map((post: PostsType, index) => {
           const link: string = post.title
             .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .replace(/[^\w\s-]/g, "")
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^\w\s-]/g, '')
             .trim()
-            .replaceAll(" ", "-");
+            .replaceAll(' ', '-');
 
           return (
             <Route

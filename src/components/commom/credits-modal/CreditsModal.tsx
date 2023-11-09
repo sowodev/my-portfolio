@@ -1,10 +1,10 @@
-import { Fragment, useContext } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { GlobalContext } from "../context/GlobalContext";
+import { Dialog, Transition } from '@headlessui/react';
+import { Fragment, useContext } from 'react';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const CreditsModal = function creditsModal() {
   const { set_credits, set_dark } = useContext(GlobalContext);
-  const dark: boolean = set_dark.is_dark === "dark";
+  const dark: boolean = set_dark.is_dark === 'dark';
 
   const closeModal = () => {
     set_credits.setOpenCredits(false);
@@ -38,7 +38,7 @@ const CreditsModal = function creditsModal() {
             >
               <Dialog.Panel
                 className={`w-full max-w-md transform overflow-hidden rounded-lg p-6 text-left align-middle shadow-xl transition-all ${
-                  dark ? "bg-slate-700" : "bg-white"
+                  dark ? 'bg-slate-700' : 'bg-white'
                 }`}
               >
                 <Dialog.Title
@@ -56,19 +56,15 @@ const CreditsModal = function creditsModal() {
 
                 <hr className="my-2 border-slate-300 dark:bg-slate-500" />
                 <div className="flex w-full flex-col">
-                  <img
-                    className="h-24 w-24"
-                    src="/imgs/chest-only.webp"
-                    alt="chest"
-                  />
+                  <img className="h-24 w-24" src="/imgs/chest-only.webp" alt="chest" />
                   <p
                     className={`font-[Lexend] text-sm font-light leading-6 ${
                       dark && `text-slate-300`
                     }`}
                   >
-                    This treasure chest above, finded at the home page is a free
-                    liscenced asset for commercial use with attribution, asset
-                    from freepik.com, and you can find it at the following link:
+                    This treasure chest above, finded at the home page is a free liscenced asset for
+                    commercial use with attribution, asset from freepik.com, and you can find it at
+                    the following link:
                   </p>
                   <a
                     className="font-[Lexend] text-sm font-light leading-6 text-blue-500 hover:text-blue-700"
@@ -84,10 +80,9 @@ const CreditsModal = function creditsModal() {
                     dark && `text-slate-300`
                   }`}
                 >
-                  This entire portifolio was made using free liscenced assets
-                  and free liscenced libraries, frameworks and other tools, all
-                  the rights reserved, you can find more information about the
-                  tools used at "MyStack" section on the home page.
+                  This entire portifolio was made using free liscenced assets and free liscenced
+                  libraries, frameworks and other tools, all the rights reserved, you can find more
+                  information about the tools used at "MyStack" section on the home page.
                 </p>
                 <hr className="my-2 border-slate-300 dark:bg-slate-500" />
                 <p
@@ -95,8 +90,8 @@ const CreditsModal = function creditsModal() {
                     dark && `text-slate-300`
                   }`}
                 >
-                  This portifolio was made by me (Wendell Oliveira da Silva),
-                  and you can find the source code at the following link:
+                  This portifolio was made by me (Wendell Oliveira da Silva), and you can find the
+                  source code at the following link:
                 </p>
                 <a
                   className={`font-[Lexend] text-sm font-light leading-6 text-blue-500 hover:text-blue-700`}

@@ -19,6 +19,7 @@
     "paths": {
       "@components/*": ["components/*"],
       "@context/*": ["context/*"],
+      "@domain/*": ["domain/*"],
       "@utils/*": ["utils/*"],
       "@hooks/*": ["hooks/*"],
       "@pages/*": ["pages/*"],

@@ -1,3 +1,4 @@
+import { Transition } from '@headlessui/react';
 import {
   HomeIcon,
   MoonIcon,
@@ -7,9 +8,8 @@ import {
   UserCircleIcon,
 } from '@heroicons/react/24/outline';
 import React, { Fragment, RefObject, useContext, useEffect, useRef } from 'react';
-import { Transition } from '@headlessui/react';
-import { GlobalContext } from '../commom/context/GlobalContext';
 import { NavLink } from 'react-router-dom';
+import { GlobalContext } from '../context/GlobalContext';
 
 const Sidebar: React.FC = () => {
   const sidebar_ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);

@@ -1,6 +1,6 @@
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import { useContext } from 'react';
-import { GlobalContext } from '../commom/context/GlobalContext';
+import { GlobalContext } from '../context/GlobalContext';
 import Logo from './Logo';
 import NavButtons from './NavButtons';
 import LoginBtn from './btns/LoginBtn';

@@ -1,7 +1,7 @@
-import Filters from "../components/commom/filters/Filters";
-import CardsPagesBlog from "../components/blog/CardsPagesBlog";
-import usePostsController from "../components/blog/hooks/usePostsController";
-import { PostsController, PostsType } from "../utils/MultiCardsIntetrfaces";
+import Filters from '../components/commom/filters/Filters';
+import CardsPagesBlog from '../domain/blog/CardsPagesBlog';
+import usePostsController from '../domain/blog/hooks/usePostsController';
+import { PostsController, PostsType } from '../utils/MultiCardsIntetrfaces';
 
 const Blog = function articles({ BlogData }: { BlogData: PostsType[] }) {
   const posts_controller: PostsController = usePostsController(BlogData);

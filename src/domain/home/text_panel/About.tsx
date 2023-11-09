@@ -1,6 +1,6 @@
-import { useContext } from 'react';
-import { GlobalContext } from '../../commom/context/GlobalContext';
+import { GlobalContext } from '@components/context/GlobalContext';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
+import { useContext } from 'react';
 
 const About: React.FC = function about(): React.ReactElement {
   const { set_dialog, set_dark } = useContext(GlobalContext);

@@ -1,11 +1,11 @@
-import { Fragment, useContext, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { GlobalContext } from '../context/GlobalContext';
-import InputField from './InputField';
-import { useMutation, useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import LoadingComponent from '../../loading/LoadingComponent';
 import { ArchiveBoxXMarkIcon, CheckCircleIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
+import { Fragment, useContext, useState } from 'react';
+import { GlobalContext } from '../../context/GlobalContext';
+import LoadingComponent from '../../loading/LoadingComponent';
+import InputField from './InputField';
 
 type MessageDTO = {
   name: string;
