@@ -1,3 +1,5 @@
+import ForgotPassword from '@domain/auth/pages/ForgotPassword';
+import SignUp from '@domain/auth/pages/SignUp';
 import BlogRoutes from '@domain/blog/routes/BlogRoutes';
 import MoreDetailsModal from '@domain/home/text_panel/services_details/MoreDetailsModal';
 import { Transition } from '@headlessui/react';
@@ -17,12 +19,9 @@ import MarqueeTicker from './components/marquee/MarqueeTicker';
 import Navbar from './components/navbar/Navbar';
 import ProjectsRoutes from './components/projects/routes/ProjectsRoutes';
 import Sidebar from './components/sidebar/Sidebar';
-import ForgotPassword from './pages/ForgotPassword';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
-import SignUp from './pages/SignUp';
-import Test from './pages/Test';
 
 function App() {
   const [open_dialog, setOpenDialog] = useState(false);
@@ -80,7 +79,6 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="*" element={<NotFound />} />
-              <Route path="/test" element={<Test />} />
             </Routes>
           </div>
         </div>
