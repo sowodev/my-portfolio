@@ -1,29 +1,22 @@
-import ForgotPassword from '@domain/auth/pages/ForgotPassword';
-import SignUp from '@domain/auth/pages/SignUp';
-import BlogRoutes from '@domain/blog/routes/BlogRoutes';
 import MoreDetailsModal from '@domain/home/text_panel/services_details/MoreDetailsModal';
-import { Transition } from '@headlessui/react';
-import { Fragment, useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import AppPagesRoutes from '@routes/AppPagesRoutes';
+import { ReactElement, useEffect, useState } from 'react';
 import 'react-tooltip/dist/react-tooltip.css';
 import './App.css';
-import ContactMeModal from './components/commom/contact-modal/ContactMeModal';
+import ContactMeModal from './components/contact-modal/ContactMeModal';
+import MarqueeTicker from './components/marquee/MarqueeTicker';
+import Navbar from './components/navbar/Navbar';
+import Sidebar from './components/sidebar/Sidebar';
 import {
   CreditsType,
   DarkType,
   DetailsDialogType,
   DialogType,
   GlobalContext,
-} from './components/context/GlobalContext';
-import MarqueeTicker from './components/marquee/MarqueeTicker';
-import Navbar from './components/navbar/Navbar';
-import ProjectsRoutes from './components/projects/routes/ProjectsRoutes';
-import Sidebar from './components/sidebar/Sidebar';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import NotFound from './pages/NotFound';
+} from './context/GlobalContext';
 
-function App() {
+function App(): ReactElement {
+  // TODO: Move all the Contexts to the context folder
   const [open_dialog, setOpenDialog] = useState(false);
   const set_dialog: DialogType = { open_dialog, setOpenDialog };
   const [is_dark, setIsDark] = useState('light');
@@ -38,6 +31,7 @@ function App() {
     setOpenDetailsDialog,
   };
 
+  // TODO: move this effect to the theme controller context
   useEffect(() => {
     if (localStorage.getItem('theme')) {
       setIsDark(localStorage.getItem('theme')!);
@@ -55,32 +49,9 @@ function App() {
           <Navbar />
           <MarqueeTicker />
         </div>
-        <div className="relative z-0 flex h-full lg:h-full w-full overflow-auto transition duration-300 ease-in-out dark:bg-slate-800">
+        <div className="relative z-0 flex h-full w-full overflow-auto transition duration-300 ease-in-out dark:bg-slate-800">
           <Sidebar />
-          <div className="flex h-full lg:h-full w-full">
-            <Transition show={set_sidebar.open_sidebar}>
-              <Transition.Child
-                as={Fragment}
-                enter="transition ease-in-out duration-300"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                leave="transition ease-in-out duration-300"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-              >
-                <div className="fixed inset-0 z-10 flex bg-black bg-opacity-25 transition duration-300 ease-in-out" />
-              </Transition.Child>
-            </Transition>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/articles/*" element={<BlogRoutes />} />
-              <Route path="/projects/*" element={<ProjectsRoutes />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/forgot-password" element={<ForgotPassword />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
+          <AppPagesRoutes />
         </div>
         <ContactMeModal />
         <MoreDetailsModal />

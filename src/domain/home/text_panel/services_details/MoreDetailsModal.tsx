@@ -1,4 +1,4 @@
-import { GlobalContext } from '@components/context/GlobalContext';
+import { GlobalContext } from '@context/GlobalContext';
 import { Dialog, Transition } from '@headlessui/react';
 import { EnvelopeIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import React, { Fragment, useContext } from 'react';

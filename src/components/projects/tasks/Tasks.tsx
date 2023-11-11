@@ -1,7 +1,7 @@
 import { DragDropContext } from '@hello-pangea/dnd';
 import { ChevronLeftIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import React, { ReactElement, useContext } from 'react';
-import { GlobalContext } from '../../context/GlobalContext';
+import { GlobalContext } from '../../../context/GlobalContext';
 import Quadrant from './Quadrant';
 import { TasksController } from './hooks/types';
 import useTasks from './hooks/useTasks';

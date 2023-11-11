@@ -2,8 +2,8 @@ import Chest from '@domain/home/Chest';
 import { HomeContext } from '@domain/home/HomeContext';
 import TextPanel from '@domain/home/TextPanel';
 import { RefObject, useContext, useEffect, useRef, useState } from 'react';
-import CreditsModal from '../components/commom/credits-modal/CreditsModal';
-import { GlobalContext } from '../components/context/GlobalContext';
+import CreditsModal from '../components/credits-modal/CreditsModal';
+import { GlobalContext } from '../context/GlobalContext';
 
 const Home = function home() {
   const [text_to_show, setTextToShow] = useState('Services');

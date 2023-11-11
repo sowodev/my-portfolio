@@ -1,10 +1,10 @@
+import LoadingComponent from '@components/loading/LoadingComponent';
+import { GlobalContext } from '@context/GlobalContext';
 import { Dialog, Transition } from '@headlessui/react';
 import { ArchiveBoxXMarkIcon, CheckCircleIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { Fragment, useContext, useState } from 'react';
-import { GlobalContext } from '../../context/GlobalContext';
-import LoadingComponent from '../../loading/LoadingComponent';
 import InputField from './InputField';
 
 type MessageDTO = {
