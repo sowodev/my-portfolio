@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { GlobalContext } from '../../context/GlobalContext';
+import { GlobalContext } from '../../../context/GlobalContext';
 import CountdownTimer from './CountdownTimer';
 import TimersList from './TimersList';
 import { EmptyTimer, TimerController, TimersListController } from './hooks/types';

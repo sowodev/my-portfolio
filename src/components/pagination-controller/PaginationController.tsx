@@ -1,7 +1,7 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import React, { useEffect, useState } from "react";
-import { ProjectsController } from "../../../utils/MultiCardsIntetrfaces";
-import PaginationBtn from "./PaginationBtn";
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import React, { useEffect, useState } from 'react';
+import { ProjectsController } from '../../utils/MultiCardsIntetrfaces';
+import PaginationBtn from './PaginationBtn';
 
 // The code was Writen by Sowodin (Wendell Oliveira).
 
@@ -23,8 +23,7 @@ const PaginationController: React.FC<Props> = ({ projects_controller }) => {
 
   const array_of_pages_btns: number[] = [];
   function arrayFiller(iteration: number) {
-    for (let index = 0; index < iteration; index++)
-      array_of_pages_btns.push(index + 1);
+    for (let index = 0; index < iteration; index++) array_of_pages_btns.push(index + 1);
   }
 
   if (projects_controller.getTotalPages() < 8) {
@@ -41,10 +40,7 @@ const PaginationController: React.FC<Props> = ({ projects_controller }) => {
     projects_controller.setCurrentPageState(page_number);
 
     if (projects_controller.getTotalPages() > 7) {
-      if (
-        page_number >= 4 &&
-        page_number <= projects_controller.getTotalPages() - 3
-      ) {
+      if (page_number >= 4 && page_number <= projects_controller.getTotalPages() - 3) {
         setMiddlePage(page_number);
       } else if (page_number < 4) {
         setMiddlePage(4);

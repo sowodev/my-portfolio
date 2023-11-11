@@ -1,4 +1,4 @@
-import Filters from '../components/commom/filters/Filters';
+import Filters from '../components/filters/Filters';
 import CardsPagesBlog from '../domain/blog/CardsPagesBlog';
 import usePostsController from '../domain/blog/hooks/usePostsController';
 import { PostsController, PostsType } from '../utils/MultiCardsIntetrfaces';

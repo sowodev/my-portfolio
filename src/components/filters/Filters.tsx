@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react";
-import MultiSelectTags from "./MultiSelectTags";
-import {
-  PostsController,
-  ProjectsController,
-} from "../../../utils/MultiCardsIntetrfaces";
+import { useEffect, useState } from 'react';
+import { PostsController, ProjectsController } from '../../utils/MultiCardsIntetrfaces';
+import MultiSelectTags from './MultiSelectTags';
 
 const Filters = function filters({
   multi_card_controller,

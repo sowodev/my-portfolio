@@ -1,4 +1,4 @@
-import { GlobalContext } from '@components/context/GlobalContext';
+import { GlobalContext } from '@context/GlobalContext';
 import { EnvelopeIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline';
 import React, { useContext } from 'react';
 

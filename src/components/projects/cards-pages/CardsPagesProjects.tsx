@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { ProjectsController } from '../../../utils/MultiCardsIntetrfaces';
-import PaginationController from '../../commom/pagination-controller/PaginationController';
+import PaginationController from '../../pagination-controller/PaginationController';
 import CardProject from './CardProject';
 
 const CardsPagesProjects = function cardsPagesProjects({

@@ -24,7 +24,8 @@
       "@hooks/*": ["hooks/*"],
       "@pages/*": ["pages/*"],
       "@services/*": ["services/*"],
-      "@libs/*": ["libs/*"]
+      "@libs/*": ["libs/*"],
+      "@routes/*": ["routes/*"]
     }
   },
   "include": ["src"],
