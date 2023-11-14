@@ -9,7 +9,7 @@ const HomeContextProvider: FC<HomeContextProviderProps> = ({
   children,
 }: HomeContextProviderProps): ReactElement => {
   const [open, setOpen] = useState(false);
-  const [element, setElement] = useState('Services');
+  const [element, setElement] = useState<'About' | 'Tools' | 'Services'>('Services');
 
   const provided_values = {
     details_dialog: { open, setOpen },

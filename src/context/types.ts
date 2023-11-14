@@ -5,11 +5,9 @@ type ContactMeDialogType = {
   setOpenDialog: Dispatch<SetStateAction<boolean>>;
 };
 
-// TODO: Change where needed is_dark to mode
-// TODO: Change where needed setIsDark to setMode
 type ThemeControllerType = {
-  mode: string;
-  setMode: Dispatch<SetStateAction<string>>;
+  mode: 'light' | 'dark';
+  setMode: Dispatch<SetStateAction<'light' | 'dark'>>;
 };
 
 type SidebarType = {

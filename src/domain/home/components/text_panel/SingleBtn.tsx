@@ -3,8 +3,8 @@ import { Fragment } from 'react';
 
 interface SingleBtnProps {
   name: string;
-  text_to_show: string;
-  setTextToShow: (text_to_show: string) => void;
+  text_to_show: 'About' | 'Tools' | 'Services';
+  setTextToShow: (text_to_show: 'About' | 'Tools' | 'Services') => void;
 }
 
 const SingleBtn: React.FC<SingleBtnProps> = ({
@@ -38,7 +38,7 @@ const SingleBtn: React.FC<SingleBtnProps> = ({
             ? `cursor-not-allowed`
             : `cursor-pointer group-hover:bg-black group-hover:bg-opacity-10`
         }`}
-        onClick={(): void => setTextToShow(name)}
+        onClick={(): void => setTextToShow(name as 'About' | 'Tools' | 'Services')}
         disabled={text_to_show === name}
       >
         <span className="font-[Goldman] sm:text-sm md:text-lg lg:text-2xl  text-slate-700 dark:text-white">

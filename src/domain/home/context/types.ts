@@ -6,8 +6,8 @@ type DetailsDialogType = {
 };
 
 type TextPanelControllerType = {
-  element: string;
-  setElement: Dispatch<SetStateAction<string>>;
+  element: 'About' | 'Tools' | 'Services';
+  setElement: Dispatch<SetStateAction<'About' | 'Tools' | 'Services'>>;
 };
 
 export type HomeContextType = {
