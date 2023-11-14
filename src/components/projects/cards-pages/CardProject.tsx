@@ -1,15 +1,13 @@
-import { useState } from "react";
-import TagsListProjects from "./TagsListProjects";
-import TextCardProjects from "./TextCardProjects";
+import { ProjectType } from '@utils/MultiCardsIntetrfaces';
+import { FC, ReactElement, useState } from 'react';
+import TagsListProjects from './TagsListProjects';
+import TextCardProjects from './TextCardProjects';
 
-type Project = {
-  title: string;
-  description: string;
-  img_path: string;
-  tags: string[];
+type CardProjectProps = {
+  project: ProjectType;
 };
 
-const CardProject = function cardProject({ project }: { project: Project }) {
+const CardProject: FC<CardProjectProps> = ({ project }: CardProjectProps): ReactElement => {
   const [img_loaded, setImgLoaded] = useState(false);
 
   return (
@@ -17,8 +15,8 @@ const CardProject = function cardProject({ project }: { project: Project }) {
       <div
         className={
           img_loaded
-            ? "flex w-full basis-1/2 rounded-t"
-            : "flex w-full basis-1/2 animate-pulse bg-gray-300"
+            ? 'flex w-full basis-1/2 rounded-t'
+            : 'flex w-full basis-1/2 animate-pulse bg-gray-300'
         }
       >
         <img

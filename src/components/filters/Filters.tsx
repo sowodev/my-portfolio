@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
+import { FC, ReactElement, useEffect, useState } from 'react';
 import { PostsController, ProjectsController } from '../../utils/MultiCardsIntetrfaces';
 import MultiSelectTags from './MultiSelectTags';
 
-const Filters = function filters({
-  multi_card_controller,
-}: {
+type FiltersProps = {
   multi_card_controller: PostsController | ProjectsController;
-}) {
+};
+
+const Filters: FC<FiltersProps> = ({ multi_card_controller }: FiltersProps): ReactElement => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [tags, setTags] = useState<string[]>([]);
 

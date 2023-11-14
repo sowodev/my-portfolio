@@ -1,22 +1,15 @@
 import LoadingComponent from '@components/loading/LoadingComponent';
-import { GlobalContext } from '@context/GlobalContext';
+import AppContext from '@context/AppContext';
 import { Dialog, Transition } from '@headlessui/react';
 import { ArchiveBoxXMarkIcon, CheckCircleIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
-import { Fragment, useContext, useState } from 'react';
+import { FC, Fragment, ReactElement, useContext, useState } from 'react';
 import InputField from './InputField';
 
-type MessageDTO = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
-
-const ContactMeModal = function contactMeModal() {
-  const { set_dialog, set_dark } = useContext(GlobalContext);
-  const dark: boolean = set_dark.is_dark === 'dark';
+const ContactMeModal: FC = (): ReactElement => {
+  const { contact_me, theme } = useContext(AppContext);
+  const dark: boolean = theme.mode === 'dark';
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [subject, setSubject] = useState<string>('');
@@ -35,15 +28,16 @@ const ContactMeModal = function contactMeModal() {
   });
 
   const closeModal = () => {
-    set_dialog.setOpenDialog(false);
+    contact_me.setOpenDialog(false);
   };
 
   const closeModalOnSuccess = () => {
-    set_dialog.setOpenDialog(false);
+    contact_me.setOpenDialog(false);
 
     mutation.reset();
   };
 
+  // TODO: Fix this type any
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
@@ -51,7 +45,7 @@ const ContactMeModal = function contactMeModal() {
   };
 
   return (
-    <Transition appear as={Fragment} show={set_dialog.open_dialog}>
+    <Transition appear as={Fragment} show={contact_me.open_dialog}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
         <Transition.Child
           as={Fragment}

@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { FC, ReactElement, useState } from 'react';
 
-const SearchBar = function searchBar() {
+const SearchBar: FC = (): ReactElement => {
   const [inputF, setInputF] = useState(true);
 
   return (
@@ -13,14 +13,14 @@ const SearchBar = function searchBar() {
           placeholder="Search"
           type="search"
           onChange={(e) => {
-            console.log(e.target.value === "");
+            console.log(e.target.value === '');
           }}
           onFocus={() => setInputF(false)}
           onBlur={() => setInputF(true)}
         />
         <div
           className={`absolute top-[3.6rem] flex h-[25rem] w-[25.9rem] flex-col rounded-lg bg-white ${
-            inputF && "collapse"
+            inputF && 'collapse'
           }`}
         >
           <div className="flex w-full basis-1/5 flex-row rounded-t-lg bg-gray-200"></div>

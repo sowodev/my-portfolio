@@ -1,7 +1,6 @@
 import { DragDropContext } from '@hello-pangea/dnd';
 import { ChevronLeftIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
-import React, { ReactElement, useContext } from 'react';
-import { GlobalContext } from '../../../context/GlobalContext';
+import { FC, ReactElement } from 'react';
 import Quadrant from './Quadrant';
 import { TasksController } from './hooks/types';
 import useTasks from './hooks/useTasks';
@@ -9,9 +8,8 @@ import DeleteTaskConfirmationModal from './modal/DeleteTaskConfirmationModal';
 import EditModalWorkingOn from './modal/EditModalWorkingOn';
 import TaskModal from './modal/TaskModal';
 
-const Tasks: React.FC = function tasks(): ReactElement {
+const Tasks: FC = function tasks(): ReactElement {
   const tasks_controller: TasksController = useTasks();
-  const { set_dark } = useContext(GlobalContext);
 
   const handleDragEnd = (result: any) => {
     const { destination, source, draggableId } = result;
@@ -86,9 +84,9 @@ const Tasks: React.FC = function tasks(): ReactElement {
       <div className="flex w-full h-[5%] place-content-center">
         <span className="font-[Lexend] text-lg dark:text-white">URGENT</span>
       </div>
-      <TaskModal tasks_controller={tasks_controller} set_dark={set_dark} />
-      <DeleteTaskConfirmationModal tasks_controller={tasks_controller} set_dark={set_dark} />
-      <EditModalWorkingOn tasks_controller={tasks_controller} set_dark={set_dark} />
+      <TaskModal tasks_controller={tasks_controller} />
+      <DeleteTaskConfirmationModal tasks_controller={tasks_controller} />
+      <EditModalWorkingOn tasks_controller={tasks_controller} />
     </div>
   );
 };

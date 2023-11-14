@@ -1,13 +1,16 @@
+import { ProjectType, ProjectsController } from '@utils/MultiCardsIntetrfaces';
+import { FC, ReactElement } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ProjectsController } from '../../../utils/MultiCardsIntetrfaces';
 import PaginationController from '../../pagination-controller/PaginationController';
 import CardProject from './CardProject';
 
-const CardsPagesProjects = function cardsPagesProjects({
-  projects_controller,
-}: {
+type CardsPagesProjectsProps = {
   projects_controller: ProjectsController;
-}) {
+};
+
+const CardsPagesProjects: FC<CardsPagesProjectsProps> = ({
+  projects_controller,
+}: CardsPagesProjectsProps): ReactElement => {
   return (
     <div className="flex h-fit w-fit lg:h-full lg:w-[72rem] flex-col gap-4 py-6 justify-center items-center">
       <div className="h-full w-fit lg:w-full">
@@ -15,7 +18,7 @@ const CardsPagesProjects = function cardsPagesProjects({
           <div className="grid w-fit lg:w-full grid-cols-1 grid-rows-[8] md:grid-cols-2 md:grid-rows-4 lg:grid-cols-4 lg:grid-rows-2 gap-4 lg:gap-8">
             {projects_controller
               .showingProjects(projects_controller.getCurrentPage() - 1)
-              .map((project, index) => {
+              .map((project: ProjectType, index: number): ReactElement => {
                 const link: string = project.title
                   .toLowerCase()
                   .normalize('NFD')

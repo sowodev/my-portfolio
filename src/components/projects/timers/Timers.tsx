@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import { GlobalContext } from '../../../context/GlobalContext';
+import AppContext from '@context/AppContext';
+import { FC, ReactElement, useContext } from 'react';
 import CountdownTimer from './CountdownTimer';
 import TimersList from './TimersList';
 import { EmptyTimer, TimerController, TimersListController } from './hooks/types';
@@ -9,12 +9,12 @@ import DeleteConfirmationModal from './modal/DeleteConfirmationModal';
 import ResetConfirmationModal from './modal/ResetConfirmationModal';
 import TimerModal from './modal/TimerModal';
 
-const Timers = function timers() {
+const Timers: FC = (): ReactElement => {
   const timers_list_controller: TimersListController = useTimersListController();
   const timer_controller: TimerController = useTimer(
     timers_list_controller.getSelectedTimer() ?? EmptyTimer,
   );
-  const { set_dark } = useContext(GlobalContext);
+  const { theme } = useContext(AppContext);
 
   return (
     <div className="flex w-full h-full justify-center items-center">
@@ -29,16 +29,16 @@ const Timers = function timers() {
       <TimerModal
         timer_controller={timer_controller}
         timers_list_controller={timers_list_controller}
-        dark_mode={set_dark.is_dark === 'dark'}
+        dark_mode={theme.mode === 'dark'}
       />
       <DeleteConfirmationModal
         timer_controller={timer_controller}
         timers_list_controller={timers_list_controller}
-        dark_mode={set_dark.is_dark === 'dark'}
+        dark_mode={theme.mode === 'dark'}
       />
       <ResetConfirmationModal
         timer_controller={timer_controller}
-        dark_mode={set_dark.is_dark === 'dark'}
+        dark_mode={theme.mode === 'dark'}
       />
     </div>
   );

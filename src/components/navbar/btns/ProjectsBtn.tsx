@@ -1,33 +1,26 @@
-import { RocketLaunchIcon } from "@heroicons/react/24/outline";
-import { NavLink } from "react-router-dom";
+import { RocketLaunchIcon } from '@heroicons/react/24/outline';
+import { FC, ReactElement } from 'react';
+import { NavLink } from 'react-router-dom';
 
-const ProjectsBtn: React.FC = function projectsBtn() {
+const ProjectsBtn: FC = function projectsBtn(): ReactElement {
   return (
     <NavLink to="/projects" className="group relative flex h-full w-full">
-      {({ isActive }) => (
+      {({ isActive }): ReactElement => (
         <>
           <img
-            className={`relative h-full w-full ${
-              !isActive && "opacity-0 group-hover:opacity-30"
-            }`}
+            className={`relative h-full w-full ${!isActive && 'opacity-0 group-hover:opacity-30'}`}
             src="/imgs/light.svg"
             alt=""
           />
           <div
             className={`absolute float-none grid h-full w-full place-content-center ${
-              isActive && "drop-shadow-lg"
+              isActive && 'drop-shadow-lg'
             }`}
           >
             <RocketLaunchIcon
-              className={`h-6 w-6 justify-self-center ${
-                isActive && "drop-shadow"
-              }`}
+              className={`h-6 w-6 justify-self-center ${isActive && 'drop-shadow'}`}
             />
-            <span
-              className={`font-[Blinker] leading-4 ${
-                isActive && "drop-shadow-lg"
-              }`}
-            >
+            <span className={`font-[Blinker] leading-4 ${isActive && 'drop-shadow-lg'}`}>
               Projects
             </span>
           </div>

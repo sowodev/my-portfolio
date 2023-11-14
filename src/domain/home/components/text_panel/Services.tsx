@@ -1,9 +1,11 @@
-import { GlobalContext } from '@context/GlobalContext';
+import AppContext from '@context/AppContext';
+import HomeContext from '@domain/home/context/HomeContext';
 import { EnvelopeIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline';
 import React, { useContext } from 'react';
 
 const Services: React.FC = function services(): React.ReactElement {
-  const { set_dialog, set_details, set_dark } = useContext(GlobalContext);
+  const { contact_me } = useContext(AppContext);
+  const { details_dialog } = useContext(HomeContext);
 
   return (
     <div className="flex flex-col h-full w-full justify-around items-center">
@@ -43,7 +45,7 @@ const Services: React.FC = function services(): React.ReactElement {
           <button
             className="flex px-4 py-3 flex-row items-center justify-center gap-1 rounded bg-amber-300 duration-300 ease-in-out hover:bg-amber-400 hover:shadow-md lg:hover:shadow-lg"
             onClick={(): void => {
-              set_details.setOpenDetailsDialog(true);
+              details_dialog.setOpen(true);
             }}
           >
             <ExclamationCircleIcon className="h-6 w-6 stroke-slate-700 dark:stroke-white" />
@@ -53,7 +55,7 @@ const Services: React.FC = function services(): React.ReactElement {
           </button>
           <button
             className="flex px-4 py-3 flex-row items-center justify-center gap-1 rounded bg-green-400 duration-300 ease-in-out hover:bg-green-500 hover:shadow-md lg:hover:shadow-lg"
-            onClick={(): void => set_dialog.setOpenDialog(true)}
+            onClick={(): void => contact_me.setOpenDialog(true)}
           >
             <EnvelopeIcon className="h-6 w-6 stroke-slate-700 dark:stroke-white" />
             <span className="font-[Lexend] text-sm md:text-base text-slate-700 dark:text-slate-100">

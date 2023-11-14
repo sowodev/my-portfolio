@@ -1,3 +1,4 @@
+import AppContext from '@context/AppContext';
 import { Transition } from '@headlessui/react';
 import {
   HomeIcon,
@@ -9,23 +10,22 @@ import {
 } from '@heroicons/react/24/outline';
 import React, { Fragment, RefObject, useContext, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-import { GlobalContext } from '../../context/GlobalContext';
 
 const Sidebar: React.FC = () => {
   const sidebar_ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
-  const { set_dark, set_sidebar } = useContext(GlobalContext);
+  const { theme, sidebar } = useContext(AppContext);
 
   const handleOutsideClick = (e: MouseEvent) => {
     if (sidebar_ref.current && !sidebar_ref.current.contains(e.target as Node)) {
-      set_sidebar.setOpenSidebar(false);
+      sidebar.setOpen(false);
     }
   };
 
   const handleThemeChange = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
 
-    set_dark.setIsDark(set_dark.is_dark === 'light' ? 'dark' : 'light');
-    localStorage.setItem('theme', set_dark.is_dark === 'light' ? 'dark' : 'light');
+    theme.setMode(theme.mode === 'light' ? 'dark' : 'light');
+    localStorage.setItem('theme', theme.mode === 'light' ? 'dark' : 'light');
   };
 
   // useEffect for handling outside click
@@ -38,7 +38,7 @@ const Sidebar: React.FC = () => {
 
   return (
     <>
-      <Transition show={set_sidebar.open_sidebar}>
+      <Transition show={sidebar.open}>
         <Transition.Child
           as={Fragment}
           enter="transition ease-in-out duration-300 transform"
@@ -57,7 +57,7 @@ const Sidebar: React.FC = () => {
                 <NavLink
                   to={'/'}
                   className={`flex h-fit w-full items-center justify-center`}
-                  onClick={() => set_sidebar.setOpenSidebar(false)}
+                  onClick={() => sidebar.setOpen(false)}
                 >
                   {({ isActive }) => {
                     return (
@@ -75,7 +75,7 @@ const Sidebar: React.FC = () => {
                 <NavLink
                   to={'/articles'}
                   className={`flex h-fit w-full items-center justify-center`}
-                  onClick={() => set_sidebar.setOpenSidebar(false)}
+                  onClick={() => sidebar.setOpen(false)}
                 >
                   {({ isActive }) => {
                     return (
@@ -93,7 +93,7 @@ const Sidebar: React.FC = () => {
                 <NavLink
                   to={'/projects'}
                   className={`flex h-fit w-full items-center justify-center`}
-                  onClick={() => set_sidebar.setOpenSidebar(false)}
+                  onClick={() => sidebar.setOpen(false)}
                 >
                   {({ isActive }) => {
                     return (
@@ -111,7 +111,7 @@ const Sidebar: React.FC = () => {
                 <NavLink
                   to={'/login'}
                   className={`flex h-fit w-full items-center justify-center`}
-                  onClick={() => set_sidebar.setOpenSidebar(false)}
+                  onClick={() => sidebar.setOpen(false)}
                 >
                   {({ isActive }) => {
                     return (
@@ -132,7 +132,7 @@ const Sidebar: React.FC = () => {
                   className="flex h-9 w-9 items-center justify-center rounded border border-neutral-500 shadow-md transition duration-300 ease-in-out hover:scale-110 hover:bg-neutral-500 dark:border-gray-700 dark:bg-slate-800 dark:shadow-slate-600 dark:hover:bg-slate-700"
                   onClick={handleThemeChange}
                 >
-                  {set_dark.is_dark === 'dark' ? (
+                  {theme.mode === 'dark' ? (
                     <SunIcon className="h-5 w-5 stroke-slate-200" />
                   ) : (
                     <MoonIcon className="h-5 w-5 stroke-white" />
@@ -143,7 +143,7 @@ const Sidebar: React.FC = () => {
           </div>
         </Transition.Child>
       </Transition>
-      <Transition show={set_sidebar.open_sidebar}>
+      <Transition show={sidebar.open}>
         <Transition.Child
           as={Fragment}
           enter="transition ease-in-out duration-300"

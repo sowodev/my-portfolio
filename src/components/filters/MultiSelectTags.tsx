@@ -1,23 +1,28 @@
-import React, { useContext, useState } from 'react';
+import AppContext from '@context/AppContext';
+import { FC, ReactElement, useContext, useState } from 'react';
 import Select from 'react-select';
-import { GlobalContext } from '../../context/GlobalContext';
 
-interface Props {
+interface MultiSelectTagsProps {
   tags: string[];
   selectedTags: string[];
   onChange: (tags: string[]) => void;
 }
 
-const MultiSelectTags: React.FC<Props> = ({ tags, selectedTags, onChange }) => {
+const MultiSelectTags: FC<MultiSelectTagsProps> = ({
+  tags,
+  selectedTags,
+  onChange,
+}: MultiSelectTagsProps): ReactElement => {
   const [inputValue, setInputValue] = useState('');
-  const { set_dark } = useContext(GlobalContext);
-  const dark: boolean = set_dark.is_dark === 'dark';
+  const { theme } = useContext(AppContext);
+  const dark: boolean = theme.mode === 'dark';
 
   const options = tags.map((tag) => ({
     label: tag,
     value: tag,
   }));
 
+  // TODO: Fix this type any and the infered type
   const handleChange = (selectedOptions: any) => {
     const newSelectedTags = selectedOptions.map((option: any) => option.value as string);
     onChange(newSelectedTags);

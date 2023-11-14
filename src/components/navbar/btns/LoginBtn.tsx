@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
-import { Tooltip } from "react-tooltip";
+import { FC, ReactElement } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Tooltip } from 'react-tooltip';
 
-const LoginBtn: React.FC = function loginBtn() {
+const LoginBtn: FC = (): ReactElement => {
   return (
     <>
       <NavLink
@@ -11,24 +12,22 @@ const LoginBtn: React.FC = function loginBtn() {
         data-tooltip-place="bottom"
         className="group relative flex h-full w-full flex-col"
       >
-        {({ isActive }) => (
+        {({ isActive }): ReactElement => (
           <>
             <img
               className={`relative h-full w-full ${
-                !isActive && "opacity-0 group-hover:opacity-30"
+                !isActive && 'opacity-0 group-hover:opacity-30'
               }`}
               src="/imgs/light.svg"
               alt=""
             />
             <div
               className={`absolute float-none grid h-full w-full place-content-center ${
-                isActive && "drop-shadow-lg"
+                isActive && 'drop-shadow-lg'
               }`}
             >
               <img
-                className={`h-10 w-10 justify-self-center ${
-                  isActive && "drop-shadow-lg"
-                }`}
+                className={`h-10 w-10 justify-self-center ${isActive && 'drop-shadow-lg'}`}
                 src="/imgs/user.svg"
                 alt=""
               />

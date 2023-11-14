@@ -1,29 +1,20 @@
-import {
-  ProjectType,
-  ProjectsController,
-} from "../../../utils/MultiCardsIntetrfaces";
-import { useEffect, useState } from "react";
+import { ProjectType, ProjectsController } from '@utils/MultiCardsIntetrfaces';
+import { useEffect, useState } from 'react';
 
 function sliceDataIntoArrays(projects: ProjectType[]): ProjectType[][] {
   const array_of_arrays: ProjectType[][] = [];
 
   for (let i = 0; i < projects.length; i += 8)
-    array_of_arrays.push(
-      projects.slice(i, i + 8 > projects.length ? projects.length : i + 8)
-    );
+    array_of_arrays.push(projects.slice(i, i + 8 > projects.length ? projects.length : i + 8));
 
   return array_of_arrays;
 }
 
-function useProjectsController(
-  projects_data: ProjectType[]
-): ProjectsController {
+function useProjectsController(projects_data: ProjectType[]): ProjectsController {
   const [filtered_projects, setFilteredProjects] = useState<ProjectType[][]>(
-    sliceDataIntoArrays(projects_data)
+    sliceDataIntoArrays(projects_data),
   );
-  const [total_pages, setTotalPages] = useState<number>(
-    filtered_projects.length
-  );
+  const [total_pages, setTotalPages] = useState<number>(filtered_projects.length);
   const [current_page, setCurrentPage] = useState<number>(1);
   const [tags, setTags] = useState<string[]>([]);
 
@@ -82,16 +73,14 @@ function useProjectsController(
       );
     });
 
-    if (text === "") {
+    if (text === '') {
       setFilteredProjects(sliceDataIntoArrays(projects_data));
     } else {
       setFilteredProjects(sliceDataIntoArrays(filtered));
     }
 
     setTotalPages(
-      text === ""
-        ? Math.ceil(projects_data.length / 8)
-        : Math.ceil(filtered.length / 8)
+      text === '' ? Math.ceil(projects_data.length / 8) : Math.ceil(filtered.length / 8),
     );
   }
 
@@ -107,9 +96,7 @@ function useProjectsController(
     }
 
     setTotalPages(
-      tags.length === 0
-        ? Math.ceil(projects_data.length / 8)
-        : Math.ceil(filtered.length / 8)
+      tags.length === 0 ? Math.ceil(projects_data.length / 8) : Math.ceil(filtered.length / 8),
     );
   }
 

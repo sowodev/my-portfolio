@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import AppContext from '@context/AppContext';
+import { FC, ReactElement, useContext } from 'react';
 import Marquee from 'react-fast-marquee';
-import { GlobalContext } from '../../context/GlobalContext';
 import TechComp from './TechComp';
 
-const Ticker: React.FC = (): React.ReactElement => {
-  const { set_dialog } = useContext(GlobalContext);
+const Ticker: FC = (): ReactElement => {
+  const { contact_me } = useContext(AppContext);
 
   return (
     <Marquee pauseOnHover speed={50} play={true}>
@@ -35,7 +35,7 @@ const Ticker: React.FC = (): React.ReactElement => {
           For more information.{' '}
           <button
             className="font-[Lexend] text-lg font-normal text-sky-400 underline hover:text-sky-600"
-            onClick={() => set_dialog.setOpenDialog(true)}
+            onClick={() => contact_me.setOpenDialog(true)}
           >
             Contact Us!
           </button>
@@ -45,7 +45,7 @@ const Ticker: React.FC = (): React.ReactElement => {
   );
 };
 
-const MarqueeTicker: React.FC = function marqueeTicker(): React.ReactElement {
+const MarqueeTicker: FC = function marqueeTicker(): ReactElement {
   return (
     <div className="flex h-[40px] w-full items-center justify-center bg-amber-300">
       <Ticker />
