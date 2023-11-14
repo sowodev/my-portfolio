@@ -1,4 +1,4 @@
-import React from "react";
+import { Dispatch, FC, ReactElement, SetStateAction } from 'react';
 
 type InputFieldProps = {
   label: string;
@@ -6,22 +6,22 @@ type InputFieldProps = {
   type: string;
   name: string;
   placeholder: string;
-  setOnChange: React.Dispatch<React.SetStateAction<string>>;
+  setOnChange: Dispatch<SetStateAction<string>>;
 };
 
-const InputField: React.FC<InputFieldProps> = ({
+const InputField: FC<InputFieldProps> = ({
   label,
   dark,
   type,
   name,
   placeholder,
   setOnChange,
-}) => {
+}: InputFieldProps): ReactElement => {
   return (
     <>
       <label
         className={`w-full font-[Lexend] font-light after:ml-0.5 after:text-red-500 after:content-['*'] ${
-          dark && "text-slate-300"
+          dark && 'text-slate-300'
         }`}
         htmlFor="username"
       >
@@ -38,11 +38,7 @@ const InputField: React.FC<InputFieldProps> = ({
         name={name}
         id={name}
         placeholder={placeholder}
-        pattern={
-          name === "useremail"
-            ? "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$"
-            : "[^'\x22]+"
-        }
+        pattern={name === 'useremail' ? '[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$' : "[^'\x22]+"}
         onChange={(e) => setOnChange(e.target.value)}
       />
     </>

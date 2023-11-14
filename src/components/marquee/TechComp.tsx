@@ -1,10 +1,10 @@
-import React from 'react';
+import { FC, ReactElement } from 'react';
 
-const TechComp: React.FC<{ name: string }> = function techComp({
-  name,
-}: {
+type TechCompProps = {
   name: string;
-}): React.ReactElement {
+};
+
+const TechComp: FC<TechCompProps> = ({ name }: TechCompProps): ReactElement => {
   return (
     <div className="flex flex-row items-center justify-center gap-2 border-l border-gray-700 px-8 ">
       <img

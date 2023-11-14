@@ -1,12 +1,16 @@
-const TextCardProjects = function textCardProjects({
-  title,
-  description,
-  img_loaded,
-}: {
+import { FC, ReactElement } from 'react';
+
+type TextCardProjectsProps = {
   title: string;
   description: string;
   img_loaded: boolean;
-}) {
+};
+
+const TextCardProjects: FC<TextCardProjectsProps> = ({
+  title,
+  description,
+  img_loaded,
+}: TextCardProjectsProps): ReactElement => {
   return (
     <div className="flex h-full w-full flex-col">
       <div className="flex w-full basis-1/4 items-end justify-start">

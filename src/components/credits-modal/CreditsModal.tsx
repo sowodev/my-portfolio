@@ -1,17 +1,17 @@
+import AppContext from '@context/AppContext';
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment, useContext } from 'react';
-import { GlobalContext } from '../../context/GlobalContext';
+import { FC, Fragment, ReactElement, useContext } from 'react';
 
-const CreditsModal = function creditsModal() {
-  const { set_credits, set_dark } = useContext(GlobalContext);
-  const dark: boolean = set_dark.is_dark === 'dark';
+const CreditsModal: FC = (): ReactElement => {
+  const { credits, theme } = useContext(AppContext);
+  const dark: boolean = theme.mode === 'dark';
 
   const closeModal = () => {
-    set_credits.setOpenCredits(false);
+    credits.setOpenCredits(false);
   };
 
   return (
-    <Transition appear as={Fragment} show={set_credits.open_credits}>
+    <Transition appear as={Fragment} show={credits.open_credits}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
         <Transition.Child
           as={Fragment}
@@ -48,7 +48,7 @@ const CreditsModal = function creditsModal() {
                   <p className={`${dark && `text-white`}`}> Credits!</p>
                   <button
                     className="flex h-8 w-8 items-center justify-center rounded bg-gradient-to-b from-orange-300 to-amber-300 drop-shadow transition duration-200 ease-linear hover:scale-110 hover:from-orange-400 hover:to-amber-400"
-                    onClick={() => set_credits.setOpenCredits(false)}
+                    onClick={() => credits.setOpenCredits(false)}
                   >
                     <p className="text-center font-light text-white">&times;</p>
                   </button>

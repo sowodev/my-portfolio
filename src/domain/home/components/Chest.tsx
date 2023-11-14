@@ -1,8 +1,8 @@
-import { ReactElement, useContext } from 'react';
-import { HomeContext } from './HomeContext';
+import { FC, ReactElement, useContext } from 'react';
+import HomeContext from '../context/HomeContext';
 
-const Chest = function chestComponent(): ReactElement {
-  const context_object = useContext(HomeContext);
+const Chest: FC = (): ReactElement => {
+  const { text_panel_controller } = useContext(HomeContext);
 
   return (
     <div className="relative flex h-full items-end justify-center">
@@ -11,7 +11,7 @@ const Chest = function chestComponent(): ReactElement {
           <button
             className="flex h-fit w-fit drop-shadow-lg"
             onClick={() => {
-              context_object.setTextToShow('Services');
+              text_panel_controller.setElement('Services');
             }}
           >
             <img
@@ -25,7 +25,7 @@ const Chest = function chestComponent(): ReactElement {
           <button
             className="flex h-fit w-fit origin-center drop-shadow-lg"
             onClick={() => {
-              context_object.setTextToShow('Tools');
+              text_panel_controller.setElement('Tools');
             }}
           >
             <img
@@ -39,7 +39,7 @@ const Chest = function chestComponent(): ReactElement {
           <button
             className="flex h-fit w-fit origin-center drop-shadow-lg"
             onClick={() => {
-              context_object.setTextToShow('About');
+              text_panel_controller.setElement('About');
             }}
           >
             <img

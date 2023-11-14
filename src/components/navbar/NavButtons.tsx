@@ -1,25 +1,23 @@
-import HomeBtn from "./btns/HomeBtn";
-import BlogBtn from "./btns/BlogBtn";
-import ProjectsBtn from "./btns/ProjectsBtn";
-import { ReactElement } from "react";
+import { FC, ReactElement } from 'react';
+import BlogBtn from './btns/BlogBtn';
+import HomeBtn from './btns/HomeBtn';
+import ProjectsBtn from './btns/ProjectsBtn';
 
-const NavButtons = function navButtons() {
-  const components_array: ReactElement[] = [
-    <HomeBtn />,
-    <BlogBtn />,
-    <ProjectsBtn />,
-  ];
+const NavButtons: FC = (): ReactElement => {
+  const components_array: ReactElement[] = [<HomeBtn />, <BlogBtn />, <ProjectsBtn />];
 
   return (
     <div className="hidden h-full w-fit md:flex">
-      {components_array.map((component, index) => (
-        <div
-          key={index}
-          className="flex h-full w-[7rem] flex-none items-center justify-center text-white"
-        >
-          {component}
-        </div>
-      ))}
+      {components_array.map(
+        (component, index): ReactElement => (
+          <div
+            key={index}
+            className="flex h-full w-[7rem] flex-none items-center justify-center text-white"
+          >
+            {component}
+          </div>
+        ),
+      )}
     </div>
   );
 };

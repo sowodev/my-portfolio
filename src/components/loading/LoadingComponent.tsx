@@ -1,15 +1,11 @@
-const Loading = () => {
-  return (
-    <div className="flex h-20 w-20 animate-[spin_5s_linear_infinite] items-center justify-center overflow-hidden">
-      <img src="/imgs/loading.svg" alt="loading" />
-    </div>
-  );
-};
+import { FC, ReactElement } from 'react';
 
-const LoadingComponent = function loadingComponent() {
+const LoadingComponent: FC = (): ReactElement => {
   return (
     <div className="flex h-full w-full flex-col items-center justify-center">
-      <Loading />
+      <div className="flex h-20 w-20 animate-[spin_5s_linear_infinite] items-center justify-center overflow-hidden">
+        <img src="/imgs/loading.svg" alt="loading" />
+      </div>
     </div>
   );
 };

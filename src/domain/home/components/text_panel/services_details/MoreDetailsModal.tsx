@@ -1,18 +1,20 @@
-import { GlobalContext } from '@context/GlobalContext';
+import AppContext from '@context/AppContext';
+import HomeContext from '@domain/home/context/HomeContext';
 import { Dialog, Transition } from '@headlessui/react';
 import { EnvelopeIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import React, { Fragment, useContext } from 'react';
+import { FC, Fragment, ReactElement, useContext } from 'react';
 
-const MoreDetailsModal: React.FC = function moreDetailsModal(): React.ReactElement {
-  const { set_details, set_dark } = useContext(GlobalContext);
-  const dark: boolean = set_dark.is_dark === 'dark' ? true : false;
+const MoreDetailsModal: FC = function moreDetailsModal(): ReactElement {
+  const { theme } = useContext(AppContext);
+  const dark: boolean = theme.mode === 'dark' ? true : false;
+  const { details_dialog } = useContext(HomeContext);
 
   const closeModal = (): void => {
-    set_details.setOpenDetailsDialog(false);
+    details_dialog.setOpen(false);
   };
 
   return (
-    <Transition appear as={Fragment} show={set_details.open_details_dialog}>
+    <Transition appear as={Fragment} show={details_dialog.open}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
         <Transition.Child
           as={Fragment}

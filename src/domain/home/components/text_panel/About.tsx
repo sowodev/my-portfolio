@@ -1,9 +1,9 @@
-import { GlobalContext } from '@context/GlobalContext';
+import AppContext from '@context/AppContext';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import { useContext } from 'react';
 
 const About: React.FC = function about(): React.ReactElement {
-  const { set_dialog, set_dark } = useContext(GlobalContext);
+  const { contact_me, theme } = useContext(AppContext);
 
   return (
     <div className="flex h-full w-full flex-col justify-between items-center overflow-y-auto text-slate-700">
@@ -44,16 +44,14 @@ const About: React.FC = function about(): React.ReactElement {
           <img
             className="h-6 w-6"
             src={
-              set_dark.is_dark === 'dark'
-                ? '/imgs/mystack/github-white.svg'
-                : '/imgs/mystack/github.svg'
+              theme.mode === 'dark' ? '/imgs/mystack/github-white.svg' : '/imgs/mystack/github.svg'
             }
             alt="gh"
           />
         </a>
         <button
           className="flex px-4 py-3 flex-row items-center justify-center gap-1 rounded bg-green-400 duration-300 ease-in-out hover:bg-green-500 hover:shadow-md lg:hover:shadow-lg"
-          onClick={() => set_dialog.setOpenDialog(true)}
+          onClick={() => contact_me.setOpenDialog(true)}
         >
           <EnvelopeIcon className="h-6 w-6 stroke-slate-700 dark:stroke-white" />
           <span className="font-[Lexend] text-sm md:text-base stroke-slate-700 dark:text-slate-100">

@@ -1,6 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import React, { useEffect, useState } from 'react';
-import { ProjectsController } from '../../utils/MultiCardsIntetrfaces';
+import { ProjectsController } from '@utils/MultiCardsIntetrfaces';
+import { FC, ReactElement, useEffect, useState } from 'react';
 import PaginationBtn from './PaginationBtn';
 
 // The code was Writen by Sowodin (Wendell Oliveira).
@@ -18,7 +18,7 @@ Projects Controller must provide:
 
 */
 
-const PaginationController: React.FC<Props> = ({ projects_controller }) => {
+const PaginationController: FC<Props> = ({ projects_controller }: Props): ReactElement => {
   const [middle_page, setMiddlePage] = useState<number>(4);
 
   const array_of_pages_btns: number[] = [];
@@ -88,7 +88,7 @@ const PaginationController: React.FC<Props> = ({ projects_controller }) => {
         handlePageChange={handlePageChange}
       />
 
-      {array_of_pages_btns.map((btn_page_number: number, index: number) => {
+      {array_of_pages_btns.map((btn_page_number: number, index: number): ReactElement => {
         return (
           <PaginationBtn
             key={index}

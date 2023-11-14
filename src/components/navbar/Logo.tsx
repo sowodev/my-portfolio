@@ -1,6 +1,7 @@
+import { FC, ReactElement } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Logo = function logo() {
+const Logo: FC = (): ReactElement => {
   return (
     <NavLink to="/">
       <div className="flex flex-col items-center justify-center drop-shadow-xl">

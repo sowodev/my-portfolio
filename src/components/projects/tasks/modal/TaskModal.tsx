@@ -1,32 +1,21 @@
+import AppContext from '@context/AppContext';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import { Fragment, ReactElement, useState } from 'react';
+import { FC, Fragment, ReactElement, useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import {
-  DarkType,
-  DifficultyType,
-  FormValues,
-  Task,
-  TasksController,
-  TimeType,
-} from '../hooks/types';
-import InputTitle from './InputTitle';
+import { v4 as uuidv4 } from 'uuid';
+import { DifficultyType, FormValues, Task, TasksController, TimeType } from '../hooks/types';
 import InputDescription from './InputDescription';
+import InputDifficulty from './InputDifficulty';
 import InputDueDate from './InputDueDate';
 import InputEstimatedTime from './InputEstimatedTime';
-import { v4 as uuidv4 } from 'uuid';
-import InputDifficulty from './InputDifficulty';
+import InputTitle from './InputTitle';
 
 type Props = {
   tasks_controller: TasksController;
-  set_dark: DarkType;
 };
 
-const TaskModal: React.FC<Props> = function taskModal({
-  tasks_controller,
-  set_dark,
-}: Props): ReactElement {
-  // Form Validation
+const TaskModal: FC<Props> = ({ tasks_controller }: Props): ReactElement => {
   const {
     register,
     handleSubmit,
@@ -34,10 +23,11 @@ const TaskModal: React.FC<Props> = function taskModal({
     formState: { errors },
     setValue,
   } = useForm<FormValues>();
-  const dark_mode: boolean = set_dark.is_dark === 'dark' ? true : false;
+  const { theme } = useContext(AppContext);
+  const dark_mode: boolean = theme.mode === 'dark';
+  const [due_date, setDueDate] = useState<Date | undefined>(undefined);
   const [difficulty, setDifficulty] = useState<DifficultyType>('very_easy');
   const [time_type, setTimeType] = useState<TimeType>('hours');
-  const [due_date, setDueDate] = useState<Date | undefined>(undefined);
 
   const onSubmit = (data: FormValues): void => {
     const task: Task = {
