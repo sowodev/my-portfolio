@@ -8,10 +8,10 @@ interface AppContextProviderProps {
 const AppContextProvider: FC<AppContextProviderProps> = ({
   children,
 }: AppContextProviderProps): ReactElement => {
-  const [open_dialog, setOpenDialog] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [mode, setMode] = useState('light');
-  const [open_credits, setOpenCredits] = useState(false);
+  const [open_dialog, setOpenDialog] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
+  const [mode, setMode] = useState<'light' | 'dark'>('light');
+  const [open_credits, setOpenCredits] = useState<boolean>(false);
 
   const provided_values = {
     contact_me: { open_dialog, setOpenDialog },
@@ -22,7 +22,7 @@ const AppContextProvider: FC<AppContextProviderProps> = ({
 
   useEffect(() => {
     if (localStorage.getItem('theme')) {
-      setMode(localStorage.getItem('theme')!);
+      setMode(localStorage.getItem('theme') as 'light' | 'dark');
     } else {
       localStorage.setItem('theme', 'light');
     }

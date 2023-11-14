@@ -1,8 +1,8 @@
 import SingleBtn from './SingleBtn';
 
 type Props = {
-  text_to_show: string;
-  setTextToShow: (text_to_show: string) => void;
+  text_to_show: 'About' | 'Tools' | 'Services';
+  setTextToShow: (text_to_show: 'About' | 'Tools' | 'Services') => void;
 };
 
 const BtnsGroup: React.FC<Props> = ({ text_to_show, setTextToShow }: Props): React.ReactElement => {
