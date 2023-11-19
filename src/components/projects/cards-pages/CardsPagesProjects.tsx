@@ -1,7 +1,7 @@
 import { ProjectType, ProjectsController } from '@utils/MultiCardsIntetrfaces';
 import { FC, ReactElement } from 'react';
 import { NavLink } from 'react-router-dom';
-import PaginationController from '../../pagination-controller/PaginationController';
+import PaginationController from '../pagination-controller/PaginationController';
 import CardProject from './CardProject';
 
 type CardsPagesProjectsProps = {
