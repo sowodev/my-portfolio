@@ -1,12 +1,12 @@
-import { Route, Routes } from 'react-router-dom';
-import Projects from '../../../pages/Projects';
-import { ProjectsData } from '../ProjectsData';
-import { ElementsMap } from './ElementsMap';
-import NotFound from '../../../pages/NotFound';
-import { ProjectType } from '../../../utils/MultiCardsIntetrfaces';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import LoadingComponent from '../../loading/LoadingComponent';
+import { Route, Routes } from 'react-router-dom';
+import LoadingComponent from '../../../components/loading/LoadingComponent';
+import NotFound from '../../../pages/NotFound';
+import Projects from '../../../pages/Projects';
+import { ProjectType } from '../../../utils/MultiCardsIntetrfaces';
+import { ProjectsData } from '../ProjectsData';
+import { ElementsMap } from './ElementsMap';
 
 type ProjectsDTO = {
   title: string;
