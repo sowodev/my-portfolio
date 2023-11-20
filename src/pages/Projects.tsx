@@ -1,7 +1,7 @@
+import CardsPagesProjects from '@domain/projects/components/cards-pages/CardsPagesProjects';
 import { RefObject, useEffect, useRef } from 'react';
 import Filters from '../components/filters/Filters';
-import CardsPagesProjects from '../components/projects/cards-pages/CardsPagesProjects';
-import useProjectsController from '../components/projects/hooks/useProjectsController';
+import useProjectsController from '../domain/projects/hooks/useProjectsController';
 import { ProjectType } from '../utils/MultiCardsIntetrfaces';
 
 const Projects = function projects({ projects_data }: { projects_data: ProjectType[] }) {
