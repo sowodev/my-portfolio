@@ -51,7 +51,7 @@ const LoginMain: FC = (): ReactElement => {
                 </label>
               </div>
               <NavLink
-                to={'/forgot-password'}
+                to={'/login/forgot-password'}
                 className="font-[Lexend] text-sm font-light text-slate-400 hover:text-sky-400 dark:text-slate-200 dark:hover:text-sky-500"
               >
                 Forgot password?
@@ -90,7 +90,7 @@ const LoginMain: FC = (): ReactElement => {
           <span className="font-[Lexend] text-sm font-light dark:text-slate-200">
             New here?{' '}
             <NavLink
-              to="/signup"
+              to="/login/signup"
               className="font-[Lexend] text-sm font-light text-sky-400 hover:text-sky-600"
             >
               Sign Up!
