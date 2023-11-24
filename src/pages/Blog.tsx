@@ -1,9 +1,14 @@
+import { FC, ReactElement } from 'react';
 import Filters from '../components/filters/Filters';
 import CardsPagesBlog from '../domain/blog/CardsPagesBlog';
 import usePostsController from '../domain/blog/hooks/usePostsController';
 import { PostsController, PostsType } from '../utils/MultiCardsIntetrfaces';
 
-const Blog = function articles({ BlogData }: { BlogData: PostsType[] }) {
+type BlogProps = {
+  BlogData: PostsType[];
+};
+
+const Blog: FC<BlogProps> = ({ BlogData }: BlogProps): ReactElement => {
   const posts_controller: PostsController = usePostsController(BlogData);
 
   return (
