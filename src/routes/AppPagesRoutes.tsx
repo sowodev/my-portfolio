@@ -12,7 +12,7 @@ const AppPagesRoutes: FC = (): ReactElement => {
     <div className="flex h-full w-full">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/articles/*" element={<BlogRoutes />} />
+        <Route path="/blog/*" element={<BlogRoutes />} />
         <Route path="/projects/*" element={<ProjectsRoutes />} />
         <Route path="/login/*" element={<AuthPagesRoutes />} />
         <Route path="*" element={<NotFound />} />

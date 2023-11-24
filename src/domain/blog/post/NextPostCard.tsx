@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import { PostsType } from "../../../utils/MultiCardsIntetrfaces";
+import { NavLink } from 'react-router-dom';
+import { PostsType } from '../../../utils/MultiCardsIntetrfaces';
 
 interface Props {
   post: PostsType;
@@ -7,14 +7,14 @@ interface Props {
 
 const NextPostCard: React.FC<Props> = ({ post }) => {
   const link =
-    "/articles/" +
+    '/blog/' +
     post.title
       .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/[^\w\s-]/g, "")
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^\w\s-]/g, '')
       .trim()
-      .replaceAll(" ", "-");
+      .replaceAll(' ', '-');
 
   return (
     <NavLink

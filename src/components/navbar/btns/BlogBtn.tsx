@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const BlogBtn: FC = (): ReactElement => {
   return (
-    <NavLink to="/articles" className="group relative flex h-full w-full">
+    <NavLink to="/blog" className="group relative flex h-full w-full">
       {({ isActive }): ReactElement => (
         <>
           <img
