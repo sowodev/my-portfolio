@@ -1,7 +1,7 @@
 import { FC, ReactElement } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const LoginMain: FC = (): ReactElement => {
+const Login: FC = (): ReactElement => {
   return (
     <div className="md:mt-20 flex h-fit w-full justify-center">
       <div className="flex h-[38rem] w-[29rem] flex-col rounded-lg border border-slate-300 shadow-lg dark:border-slate-500 dark:shadow-slate-700">
@@ -51,7 +51,7 @@ const LoginMain: FC = (): ReactElement => {
                 </label>
               </div>
               <NavLink
-                to={'/login/forgot-password'}
+                to={'/auth/forgot-password'}
                 className="font-[Lexend] text-sm font-light text-slate-400 hover:text-sky-400 dark:text-slate-200 dark:hover:text-sky-500"
               >
                 Forgot password?
@@ -90,7 +90,7 @@ const LoginMain: FC = (): ReactElement => {
           <span className="font-[Lexend] text-sm font-light dark:text-slate-200">
             New here?{' '}
             <NavLink
-              to="/login/signup"
+              to="/auth/signup"
               className="font-[Lexend] text-sm font-light text-sky-400 hover:text-sky-600"
             >
               Sign Up!
@@ -102,4 +102,4 @@ const LoginMain: FC = (): ReactElement => {
   );
 };
 
-export default LoginMain;
+export default Login;

@@ -3,7 +3,7 @@ import { Bars3Icon } from '@heroicons/react/24/outline';
 import { FC, ReactElement, useContext } from 'react';
 import Logo from './Logo';
 import NavButtons from './NavButtons';
-import LoginBtn from './btns/LoginBtn';
+import AuthBtn from './btns/AuthBtn';
 
 const Navbar: FC = (): ReactElement => {
   const { sidebar } = useContext(AppContext);
@@ -22,7 +22,7 @@ const Navbar: FC = (): ReactElement => {
         </div>
         <div className="flex h-full flex-row">
           <NavButtons />
-          <LoginBtn />
+          <AuthBtn />
         </div>
       </div>
     </nav>
