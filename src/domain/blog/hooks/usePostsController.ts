@@ -1,9 +1,6 @@
-import {
-  PostsController,
-  PostsType,
-} from "../../../utils/MultiCardsIntetrfaces";
+import { PostsController, PostsType } from '@utils/MultiCardsIntetrfaces';
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from 'react';
 
 function usePostsController(posts: PostsType[]): PostsController {
   const [filtered_posts, setFilteredPosts] = useState(posts);
@@ -30,7 +27,7 @@ function usePostsController(posts: PostsType[]): PostsController {
     if (filtered_posts.length > 0) {
       return filtered_posts.slice(
         0,
-        filtered_posts.length < cutEnd ? filtered_posts.length : cutEnd
+        filtered_posts.length < cutEnd ? filtered_posts.length : cutEnd,
       );
     } else {
       return posts.slice(0, posts.length < cutEnd ? posts.length : cutEnd);
@@ -48,10 +45,7 @@ function usePostsController(posts: PostsType[]): PostsController {
 
   function filterMultiCardsByText(text: string): void {
     const filtered = posts.filter((post) => {
-      return (
-        post.title.toLowerCase().includes(text) ||
-        post.leading.toLowerCase().includes(text)
-      );
+      return post.title.toLowerCase().includes(text) || post.leading.toLowerCase().includes(text);
     });
     setFilteredPosts(filtered);
   }

@@ -2,11 +2,11 @@ import { FC, ReactElement } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip';
 
-const LoginBtn: FC = (): ReactElement => {
+const AuthBtn: FC = (): ReactElement => {
   return (
     <>
       <NavLink
-        to="/login"
+        to="/auth"
         data-tooltip-id="my-tooltip"
         data-tooltip-content="Sign in/Sign up"
         data-tooltip-place="bottom"
@@ -43,4 +43,4 @@ const LoginBtn: FC = (): ReactElement => {
   );
 };
 
-export default LoginBtn;
+export default AuthBtn;

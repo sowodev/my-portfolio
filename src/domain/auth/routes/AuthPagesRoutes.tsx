@@ -1,7 +1,7 @@
-import Login from '@pages/Login';
 import NotFound from '@pages/NotFound';
 import { FC, ReactElement } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Login from '../components/Login';
 import ForgotPassword from '../pages/ForgotPassword';
 import SignUp from '../pages/SignUp';
 

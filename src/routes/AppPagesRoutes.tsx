@@ -1,6 +1,6 @@
-import AuthPagesRoutes from '@domain/auth/routes/AuthPagesRoutes';
 import BlogRoutes from '@domain/blog/routes/BlogRoutes';
 import ProjectsRoutes from '@domain/projects/routes/ProjectsRoutes';
+import Auth from '@pages/Auth';
 import Home from '@pages/Home';
 import NotFound from '@pages/NotFound';
 import { FC, ReactElement } from 'react';
@@ -14,7 +14,7 @@ const AppPagesRoutes: FC = (): ReactElement => {
         <Route path="/" element={<Home />} />
         <Route path="/blog/*" element={<BlogRoutes />} />
         <Route path="/projects/*" element={<ProjectsRoutes />} />
-        <Route path="/login/*" element={<AuthPagesRoutes />} />
+        <Route path="/auth/*" element={<Auth />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
