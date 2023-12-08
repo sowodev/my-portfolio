@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { PostsController } from '../../utils/MultiCardsIntetrfaces';
+import { PostsController } from '../../../utils/MultiCardsIntetrfaces';
 import PostCard from './PostCard';
 
 const CardsPagesBlog = function cardsPagesBlog({

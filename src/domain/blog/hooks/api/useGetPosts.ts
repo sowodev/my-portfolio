@@ -1,4 +1,4 @@
-import getPosts from '../services/getPosts';
+import getPosts from '../../services/getPosts';
 
 function useGetPosts() {
   const query = getPosts();

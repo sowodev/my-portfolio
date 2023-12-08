@@ -1,7 +1,7 @@
-import { useState } from "react";
-import TagsList from "./TagsList";
-import TextCard from "./TextCard";
-import { PostsType } from "../../utils/MultiCardsIntetrfaces";
+import { useState } from 'react';
+import { PostsType } from '../../../utils/MultiCardsIntetrfaces';
+import TagsList from './TagsList';
+import TextCard from './TextCard';
 
 const PostCard = function postCard({ post }: { post: PostsType }) {
   const [imgLoaded, setImgLoaded] = useState(false);
@@ -11,8 +11,8 @@ const PostCard = function postCard({ post }: { post: PostsType }) {
       <div
         className={
           imgLoaded
-            ? "h-[55%] w-full md:w-1/3 md:h-full lg:w-[30%] object-cover aspect-video"
-            : "h-[55%] w-full md:w-1/3 md:h-full lg:w-[30%] animate-pulse bg-gray-300"
+            ? 'h-[55%] w-full md:w-1/3 md:h-full lg:w-[30%] object-cover aspect-video'
+            : 'h-[55%] w-full md:w-1/3 md:h-full lg:w-[30%] animate-pulse bg-gray-300'
         }
       >
         <img
