@@ -4,7 +4,7 @@ import { PostsType } from '@utils/MultiCardsIntetrfaces';
 import { FC, ReactElement } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import LoadingComponent from '../../../components/loading/LoadingComponent';
-import useGetPosts from '../hooks/useGetPosts';
+import useGetPosts from '../hooks/api/useGetPosts';
 import PostPrototype from '../post/PostPrototype';
 
 const BlogRoutes: FC = function blogRoutes(): ReactElement {
