@@ -5,7 +5,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '../../../../libs/shadcn-ui/components/select/select';
+} from '../../../../../libs/shadcn-ui/components/select/select';
 import { DifficultyType } from '../hooks/types';
 
 type Props = {

@@ -1,12 +1,12 @@
 import FillerProject from '../components/filler/FillerProject';
-import Nft from '../nft/Nft';
-import PodOfCast from '../podcast/PodOfCast';
-import ProductivityDashboard from '../prodash/ProductivityDashboard';
-import Scheduler from '../scheduler/Scheduler';
-import Tasks from '../tasks/Tasks';
-import Timers from '../timers/Timers';
-import YouLearn from '../youlearn/YouLearn';
-import YourSmile from '../yoursmile/YourSmile';
+import Nft from '../components/nft/Nft';
+import PodOfCast from '../components/podcast/PodOfCast';
+import ProductivityDashboard from '../components/prodash/ProductivityDashboard';
+import Scheduler from '../components/scheduler/Scheduler';
+import Tasks from '../components/tasks/Tasks';
+import Timers from '../components/timers/Timers';
+import YouLearn from '../components/youlearn/YouLearn';
+import YourSmile from '../components/yoursmile/YourSmile';
 
 export const ElementsMap: Map<string, JSX.Element> = new Map<string, JSX.Element>();
 
