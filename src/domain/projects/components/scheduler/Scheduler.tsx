@@ -1,6 +1,6 @@
 import React from 'react';
-import CalendarComponent from './Calendar';
 import WorkingInProgress from '../WorkingInProgress';
+import CalendarComponent from './Calendar';
 
 const Scheduler: React.FC = function scheduler(): React.ReactElement {
   const [is_finished, setIsFinished] = React.useState(false);
