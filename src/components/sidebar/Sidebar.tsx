@@ -1,3 +1,4 @@
+import OpenCreditsDialogBtn from '@components/credits-dialog/OpenCreditsDialogBtn';
 import AppContext from '@context/AppContext';
 import { Transition } from '@headlessui/react';
 import {
@@ -138,6 +139,7 @@ const Sidebar: React.FC = () => {
                     <MoonIcon className="h-5 w-5 stroke-white" />
                   )}
                 </button>
+                <OpenCreditsDialogBtn />
               </div>
             </div>
           </div>

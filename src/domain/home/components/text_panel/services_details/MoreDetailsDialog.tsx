@@ -4,18 +4,18 @@ import { Dialog, Transition } from '@headlessui/react';
 import { EnvelopeIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { FC, Fragment, ReactElement, useContext } from 'react';
 
-const MoreDetailsModal: FC = function moreDetailsModal(): ReactElement {
+const MoreDetailsDialog: FC = function moreDetailsDialog(): ReactElement {
   const { theme } = useContext(AppContext);
   const dark: boolean = theme.mode === 'dark' ? true : false;
   const { details_dialog } = useContext(HomeContext);
 
-  const closeModal = (): void => {
+  const closeDialog = (): void => {
     details_dialog.setOpen(false);
   };
 
   return (
     <Transition appear as={Fragment} show={details_dialog.open}>
-      <Dialog as="div" className="relative z-10" onClose={closeModal}>
+      <Dialog as="div" className="relative z-10" onClose={closeDialog}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -57,7 +57,7 @@ const MoreDetailsModal: FC = function moreDetailsModal(): ReactElement {
                     className={`flex rounded p-2 hover:bg-slate-100 ${
                       dark && `hover:bg-slate-600`
                     }`}
-                    onClick={closeModal}
+                    onClick={closeDialog}
                   >
                     <XMarkIcon className="h-5" />
                   </button>
@@ -125,4 +125,4 @@ const MoreDetailsModal: FC = function moreDetailsModal(): ReactElement {
   );
 };
 
-export default MoreDetailsModal;
+export default MoreDetailsDialog;

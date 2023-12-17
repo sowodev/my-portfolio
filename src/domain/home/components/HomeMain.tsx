@@ -1,7 +1,7 @@
-import CreditsModal from '@components/credits-modal/CreditsModal';
+import CreditsDialog from '@components/credits-dialog/CreditsDialog';
 import Chest from '@domain/home/components/Chest';
 import TextPanel from '@domain/home/components/TextPanel';
-import MoreDetailsModal from '@domain/home/components/text_panel/services_details/MoreDetailsModal';
+import MoreDetailsDialog from '@domain/home/components/text_panel/services_details/MoreDetailsDialog';
 import HomeContext from '@domain/home/context/HomeContext';
 import { FC, ReactElement, RefObject, useContext, useEffect, useRef } from 'react';
 
@@ -29,8 +29,8 @@ const HomeMain: FC = (): ReactElement => {
           <Chest />
         </div>
       </div>
-      <CreditsModal />
-      <MoreDetailsModal />
+      <CreditsDialog />
+      <MoreDetailsDialog />
     </div>
   );
 };

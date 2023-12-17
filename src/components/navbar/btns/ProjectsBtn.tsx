@@ -20,7 +20,7 @@ const ProjectsBtn: FC = function projectsBtn(): ReactElement {
             <RocketLaunchIcon
               className={`h-6 w-6 justify-self-center ${isActive && 'drop-shadow'}`}
             />
-            <span className={`font-[Blinker] leading-4 ${isActive && 'drop-shadow-lg'}`}>
+            <span className={`font-[Blinker] font-light leading-4 ${isActive && 'drop-shadow-lg'}`}>
               Projects
             </span>
           </div>
