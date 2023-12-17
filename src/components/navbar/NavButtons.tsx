@@ -9,7 +9,7 @@ const NavButtons: FC = (): ReactElement => {
   return (
     <div className="hidden h-full w-fit md:flex">
       {components_array.map(
-        (component, index): ReactElement => (
+        (component: ReactElement, index: number): ReactElement => (
           <div
             key={index}
             className="flex h-full w-[7rem] flex-none items-center justify-center text-white"

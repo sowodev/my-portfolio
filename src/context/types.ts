@@ -15,7 +15,7 @@ type SidebarType = {
   setOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-type CreditsType = {
+type CreditsDialogType = {
   open_credits: boolean;
   setOpenCredits: Dispatch<SetStateAction<boolean>>;
 };
@@ -24,5 +24,5 @@ export type AppContextType = {
   contact_me: ContactMeDialogType;
   theme: ThemeControllerType;
   sidebar: SidebarType;
-  credits: CreditsType;
+  credits: CreditsDialogType;
 };

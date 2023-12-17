@@ -7,7 +7,7 @@ import axios from 'axios';
 import { FC, Fragment, ReactElement, useContext, useState } from 'react';
 import InputField from './InputField';
 
-const ContactMeModal: FC = (): ReactElement => {
+const ContactMeDialog: FC = (): ReactElement => {
   const { contact_me, theme } = useContext(AppContext);
   const dark: boolean = theme.mode === 'dark';
   const [name, setName] = useState<string>('');
@@ -27,11 +27,11 @@ const ContactMeModal: FC = (): ReactElement => {
         .then((res) => res.data),
   });
 
-  const closeModal = () => {
+  const closeDialog = () => {
     contact_me.setOpenDialog(false);
   };
 
-  const closeModalOnSuccess = () => {
+  const closeDialogOnSuccess = () => {
     contact_me.setOpenDialog(false);
 
     mutation.reset();
@@ -46,7 +46,7 @@ const ContactMeModal: FC = (): ReactElement => {
 
   return (
     <Transition appear as={Fragment} show={contact_me.open_dialog}>
-      <Dialog as="div" className="relative z-10" onClose={closeModal}>
+      <Dialog as="div" className="relative z-10" onClose={closeDialog}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -94,7 +94,7 @@ const ContactMeModal: FC = (): ReactElement => {
                     className={`flex rounded p-2 hover:bg-slate-100 ${
                       dark && `hover:bg-slate-600`
                     }`}
-                    onClick={closeModal}
+                    onClick={closeDialog}
                   >
                     <XMarkIcon className="h-5" />
                   </button>
@@ -113,7 +113,7 @@ const ContactMeModal: FC = (): ReactElement => {
                     <button
                       type="button"
                       className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-sky-400 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:bg-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={closeModalOnSuccess}
+                      onClick={closeDialogOnSuccess}
                     >
                       Confirm
                     </button>
@@ -128,7 +128,7 @@ const ContactMeModal: FC = (): ReactElement => {
                     <button
                       type="button"
                       className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-amber-300 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={closeModal}
+                      onClick={closeDialog}
                     >
                       Close
                     </button>
@@ -197,7 +197,7 @@ const ContactMeModal: FC = (): ReactElement => {
                         <button
                           type="button"
                           className="flex px-4 py-2 flex-row items-center justify-center gap-1 rounded bg-amber-400 duration-300 ease-in-out hover:bg-amber-500 hover:shadow-md lg:hover:shadow-lg"
-                          onClick={closeModal}
+                          onClick={closeDialog}
                         >
                           <span className="mx-2 font-[Lexend] text-sm md:text-base text-slate-700 dark:text-slate-100">
                             Cancel
@@ -244,4 +244,4 @@ const ContactMeModal: FC = (): ReactElement => {
   );
 };
 
-export default ContactMeModal;
+export default ContactMeDialog;

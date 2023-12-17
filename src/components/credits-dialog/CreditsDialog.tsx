@@ -2,17 +2,17 @@ import AppContext from '@context/AppContext';
 import { Dialog, Transition } from '@headlessui/react';
 import { FC, Fragment, ReactElement, useContext } from 'react';
 
-const CreditsModal: FC = (): ReactElement => {
+const CreditsDialog: FC = (): ReactElement => {
   const { credits, theme } = useContext(AppContext);
   const dark: boolean = theme.mode === 'dark';
 
-  const closeModal = () => {
+  const closeDialog = () => {
     credits.setOpenCredits(false);
   };
 
   return (
     <Transition appear as={Fragment} show={credits.open_credits}>
-      <Dialog as="div" className="relative z-10" onClose={closeModal}>
+      <Dialog as="div" className="relative z-10" onClose={closeDialog}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -110,4 +110,4 @@ const CreditsModal: FC = (): ReactElement => {
   );
 };
 
-export default CreditsModal;
+export default CreditsDialog;
