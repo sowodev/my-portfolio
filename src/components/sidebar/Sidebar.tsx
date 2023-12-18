@@ -84,7 +84,7 @@ const Sidebar: FC = (): ReactElement => {
           >
             <div className="flex h-full w-full flex-col justify-between py-12">
               <div className="flex h-fit w-full flex-col items-center justify-start gap-4">
-                {sidebar_navigate_btns.map((btn: NavBtns, index: number): ReactElement => {
+                {sidebar_navigate_btns.map((btn: NavBtns): ReactElement => {
                   return <SidebarNavigator name={btn.name} address={btn.address} icon={btn.icon} />;
                 })}
               </div>
