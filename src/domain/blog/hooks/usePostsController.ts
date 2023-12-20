@@ -1,6 +1,5 @@
-import { PostsController, PostsType } from '@utils/MultiCardsIntetrfaces';
-
 import { useEffect, useState } from 'react';
+import { PostsController, PostsType } from '../types/types';
 
 function usePostsController(posts: PostsType[]): PostsController {
   const [filtered_posts, setFilteredPosts] = useState(posts);
