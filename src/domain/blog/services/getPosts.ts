@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { PostsDTO, PostsType } from '@utils/MultiCardsIntetrfaces';
 import axios from 'axios';
+import { PostsDTO, PostsType } from '../types/types';
 
 function getPosts() {
   const query = useQuery({

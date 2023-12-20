@@ -1,9 +1,13 @@
-import { useState } from 'react';
-import { PostsType } from '../../../utils/MultiCardsIntetrfaces';
+import { ReactElement, useState } from 'react';
+import { PostsType } from '../types/types';
 import TagsList from './TagsList';
 import TextCard from './TextCard';
 
-const PostCard = function postCard({ post }: { post: PostsType }) {
+type PostCardProps = {
+  post: PostsType;
+};
+
+function PostCard({ post }: PostCardProps): ReactElement {
   const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
@@ -26,12 +30,12 @@ const PostCard = function postCard({ post }: { post: PostsType }) {
         <div className="flex h-[85%] w-full items-center justify-center">
           <TextCard title={post.title} leading={post.leading} />
         </div>
-        <div className="flex h-[15%] w-full flex-row items-center justify-center">
+        <div className="flex h-[15%] w-full items-center justify-center">
           <TagsList tags={post.tags} />
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default PostCard;

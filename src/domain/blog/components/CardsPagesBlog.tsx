@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { PostsController } from '../../../utils/MultiCardsIntetrfaces';
+import { PostsController, PostsType } from '../types/types';
 import PostCard from './PostCard';
 
 const CardsPagesBlog = function cardsPagesBlog({
@@ -9,7 +9,7 @@ const CardsPagesBlog = function cardsPagesBlog({
 }) {
   return (
     <div className="flex h-full w-full flex-col items-center gap-6 md:gap-10 lg:gap-6">
-      {posts_controller.showingPosts().map((post, index) => {
+      {posts_controller.showingPosts().map((post: PostsType, index: number) => {
         const link =
           '/blog/' +
           post.title
@@ -26,15 +26,16 @@ const CardsPagesBlog = function cardsPagesBlog({
         );
       })}
       <div className="relative flex w-full flex-col items-center justify-center">
-        <div className="fixed bottom-8 flex h-12 w-52 flex-row">
+        <div className="fixed bottom-8 flex h-12 w-52">
           <button
-            className={`${
-              posts_controller.checkDisabledBtn() ? 'hidden' : 'flex'
-            } h-full w-52 items-center  justify-center rounded bg-gradient-to-b from-sky-400 to-cyan-400 shadow-lg transition duration-300 ease-linear  hover:scale-110 hover:from-sky-500 hover:to-cyan-500`}
+            className={
+              !posts_controller.checkDisabledBtn()
+                ? `flex h-full w-52 items-center justify-center rounded bg-gradient-to-b from-sky-400 to-cyan-400 shadow-lg hover:from-sky-500 hover:to-cyan-500`
+                : `hidden`
+            }
             onClick={() => posts_controller.addMorePosts()}
-            hidden={posts_controller.checkDisabledBtn()}
           >
-            <span className="font-[Lexend] text-lg text-white">+ Show More</span>
+            <span className="text-lg text-white">+ Show More</span>
           </button>
         </div>
       </div>

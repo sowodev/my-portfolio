@@ -1,30 +1,30 @@
-import { useEffect, useRef, useState } from "react";
-import ReactMarkdown from "react-markdown";
-import { PostsType } from "../../../utils/MultiCardsIntetrfaces";
-import NextPostCard from "./NextPostCard";
+import { ReactElement, useEffect, useRef, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import NextPostCard from '../components/NextPostCard';
+import { PostsType } from '../types/types';
 
-const PostPrototype = function postPrototype({
-  BlogData,
-  post,
-}: {
+type Props = {
   BlogData: PostsType[];
   post: PostsType;
-}) {
-  const [markdown_content, setMarkdownContent] = useState("");
+};
+
+function PostPrototypePage({ BlogData, post }: Props): ReactElement {
+  const [markdown_content, setMarkdownContent] = useState<string>('');
   const contentRef = useRef<HTMLDivElement>(null);
 
+  /* Scroll to top of the page when the markdown content changes */
   useEffect(() => {
     if (contentRef.current) {
-      contentRef.current.scrollTo({ top: 0, behavior: "smooth" });
+      contentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [markdown_content]);
 
+  /* Fetch the markdown content, this way we can have a single page for all the posts
+  and we can change the content dynamically */
   fetch(post.content_path)
     .then((response) => {
       if (!response.ok) {
-        throw new Error(
-          `Failed to fetch markdown file: ${response.status} ${response.statusText}`
-        );
+        throw new Error(`Failed to fetch markdown file: ${response.status} ${response.statusText}`);
       }
       return response.text();
     })
@@ -34,16 +34,14 @@ const PostPrototype = function postPrototype({
     .catch((error) => {
       console.error(`Error fetching markdown file: ${error.message}`);
     });
+
   return (
     <div
       className="flex h-full max-w-full lg:w-full flex-row overflow-scroll pt-4 md:pt-12 "
       ref={contentRef}
     >
       <div className="hidden lg:flex basis-[25%]"></div>
-      <div
-        className="flex h-fit w-full lg:basis-[50%] flex-col md:gap-4"
-        lang="en-US"
-      >
+      <div className="flex h-fit w-full lg:basis-[50%] flex-col md:gap-4" lang="en-US">
         <h1 className="max-w-full lg:w-full text-center font-[Lexend] text-2xl mx-6 md:text-3xl lg:text-5xl hyphens-auto dark:text-white">
           {post.title}
         </h1>
@@ -57,11 +55,7 @@ const PostPrototype = function postPrototype({
         </div>
         <div className="flex w-full flex-col">
           <hr className="mx-4 lg:mx-0 my-4 dark:border-slate-500" />
-          <img
-            className="px-4 lg:px-0 aspect-video w-full"
-            src={post.img_path}
-            alt="img"
-          />
+          <img className="px-4 lg:px-0 aspect-video w-full" src={post.img_path} alt="img" />
           <span className="px-4 lg:px-0 mt-2 text-xs lg:text-sm font-extralight lg:font-light text-gray-400">
             {post.img_credits}
           </span>
@@ -103,6 +97,6 @@ const PostPrototype = function postPrototype({
       <div className="hidden lg:flex basis-[25%]"></div>
     </div>
   );
-};
+}
 
-export default PostPrototype;
+export default PostPrototypePage;

@@ -1,13 +1,13 @@
 import Blog from '@pages/Blog';
 import NotFound from '@pages/NotFound';
-import { PostsType } from '@utils/MultiCardsIntetrfaces';
-import { FC, ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import LoadingComponent from '../../../components/loading/LoadingComponent';
 import useGetPosts from '../hooks/api/useGetPosts';
-import PostPrototype from '../post/PostPrototype';
+import PostPrototypePage from '../pages/PostPrototypePage';
+import { PostsType } from '../types/types';
 
-const BlogRoutes: FC = function blogRoutes(): ReactElement {
+function BlogRoutes(): ReactElement {
   const query = useGetPosts();
 
   if (query.isLoading) return <LoadingComponent />;
@@ -30,13 +30,13 @@ const BlogRoutes: FC = function blogRoutes(): ReactElement {
             <Route
               key={index}
               path={link}
-              element={<PostPrototype BlogData={query.data} post={post} />}
+              element={<PostPrototypePage BlogData={query.data} post={post} />}
             />
           );
         })}
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
-};
+}
 
 export default BlogRoutes;
