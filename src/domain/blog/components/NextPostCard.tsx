@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { PostsType } from '../types/types';
+import { PostsType } from '../types/posts';
 
 interface Props {
   post: PostsType;

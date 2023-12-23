@@ -1,7 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react';
-import { XMarkIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
+import { ExclamationTriangleIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import React, { Fragment, ReactElement } from 'react';
-import { TimerController } from '../hooks/types';
+import { TimerController } from '../../../types/timers';
 
 type Props = {
   timer_controller: TimerController;

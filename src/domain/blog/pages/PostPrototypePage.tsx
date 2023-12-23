@@ -1,7 +1,7 @@
 import { ReactElement, useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import NextPostCard from '../components/NextPostCard';
-import { PostsType } from '../types/types';
+import { PostsType } from '../types/posts';
 
 type Props = {
   BlogData: PostsType[];

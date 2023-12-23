@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { TasksController, TasksColumn, PriorityType, DarkType } from './hooks/types';
+import { PriorityType, TasksColumn, TasksController } from '../../types/tasks';
 import ColumnContainer from './ColumnContainer';
 
 type QuadrantProps = {

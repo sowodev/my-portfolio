@@ -1,6 +1,6 @@
-import { ProjectType, ProjectsController } from '@utils/MultiCardsIntetrfaces';
 import { FC, ReactElement } from 'react';
 import { NavLink } from 'react-router-dom';
+import { ProjectType, ProjectsController } from '../../types/projects';
 import PaginationController from '../pagination-controller/PaginationController';
 import CardProject from './CardProject';
 

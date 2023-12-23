@@ -1,6 +1,6 @@
 import { ArrowPathIcon, PauseIcon, PlayIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { ReactElement } from 'react';
-import { TimerController, TimersListController } from './hooks/types';
+import { TimerController, TimersListController } from '../../types/timers';
 
 type Props = {
   timer_controller: TimerController;

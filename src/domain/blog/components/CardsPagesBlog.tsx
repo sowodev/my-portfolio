@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { PostsController, PostsType } from '../types/types';
+import { PostsController, PostsType } from '../types/posts';
 import PostCard from './PostCard';
 
 const CardsPagesBlog = function cardsPagesBlog({

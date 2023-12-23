@@ -1,7 +1,7 @@
 import DatePicker from '@libs/shadcn-ui/components/datepicker/DatePicker';
 import { ReactElement } from 'react';
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
-import { FormValues } from '../hooks/types';
+import { FormValues } from '../../../types/tasks';
 
 type Props = {
   due_date: Date | undefined;

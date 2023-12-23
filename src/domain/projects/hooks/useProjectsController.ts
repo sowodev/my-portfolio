@@ -1,5 +1,5 @@
-import { ProjectType, ProjectsController } from '@utils/MultiCardsIntetrfaces';
 import { useEffect, useState } from 'react';
+import { ProjectType, ProjectsController } from '../types/projects';
 
 function sliceDataIntoArrays(projects: ProjectType[]): ProjectType[][] {
   const array_of_arrays: ProjectType[][] = [];

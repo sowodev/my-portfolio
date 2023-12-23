@@ -4,7 +4,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 import { FC, Fragment, ReactElement, useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { v4 as uuidv4 } from 'uuid';
-import { DifficultyType, FormValues, Task, TasksController, TimeType } from '../hooks/types';
+import { DifficultyType, FormValues, Task, TasksController, TimeType } from '../../../types/tasks';
 import InputDescription from './InputDescription';
 import InputDifficulty from './InputDifficulty';
 import InputDueDate from './InputDueDate';

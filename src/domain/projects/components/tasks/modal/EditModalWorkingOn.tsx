@@ -2,7 +2,7 @@ import AppContext from '@context/AppContext';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import React, { Fragment, ReactElement, useContext, useEffect } from 'react';
-import { TasksController } from '../hooks/types';
+import { TasksController } from '../../../types/tasks';
 
 type Props = {
   tasks_controller: TasksController;

@@ -1,6 +1,6 @@
 import { PlusSmallIcon } from '@heroicons/react/24/outline';
 import { ReactElement } from 'react';
-import { PriorityType, TasksController } from './hooks/types';
+import { PriorityType, TasksController } from '../../types/tasks';
 
 type Props = {
   tasks_controller: TasksController;

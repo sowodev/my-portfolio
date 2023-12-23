@@ -2,8 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import LoadingComponent from '../../../components/loading/LoadingComponent';
 import NotFound from '../../../pages/NotFound';
 import Projects from '../../../pages/Projects';
-import { ProjectType } from '../../../utils/MultiCardsIntetrfaces';
 import useGetProjects from '../hooks/api/useGetProjects';
+import { ProjectType } from '../types/projects';
 import { ElementsMap } from './ElementsMap';
 
 const ProjectsRoutes = function projectsRoutes() {

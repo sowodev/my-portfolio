@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { PostsController, PostsType } from '../types/types';
+import { PostsController, PostsType } from '../types/posts';
 
 function usePostsController(posts: PostsType[]): PostsController {
   const [filtered_posts, setFilteredPosts] = useState(posts);

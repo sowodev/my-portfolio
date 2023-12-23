@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import { ProjectType } from '@utils/MultiCardsIntetrfaces';
 import axios from 'axios';
 import { ProjectsData } from '../ProjectsData';
+import { ProjectType } from '../types/projects';
 
 type ProjectsDTO = {
   title: string;

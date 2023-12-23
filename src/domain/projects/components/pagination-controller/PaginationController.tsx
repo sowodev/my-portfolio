@@ -1,6 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import { ProjectsController } from '@utils/MultiCardsIntetrfaces';
 import { FC, ReactElement, useEffect, useState } from 'react';
+import { ProjectsController } from '../../types/projects';
 import PaginationBtn from './PaginationBtn';
 
 // The code was Writen by Sowodin (Wendell Oliveira).
