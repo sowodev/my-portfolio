@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { Timer } from './hooks/types';
+import { Timer } from '../../types/timers';
 
 export const TimersMockedData: Timer[] = [
   {

@@ -1,14 +1,14 @@
 import { Dialog, Transition } from '@headlessui/react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import React, { Fragment, ReactElement, useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { XMarkIcon } from '@heroicons/react/24/outline';
-import TypeBtnGroup from './TypeBtnGroup';
-import InputTitle from './InputTitle';
+import { v4 as uuidv4 } from 'uuid';
+import { FormValues, Timer, TimerController, TimersListController } from '../../../types/timers';
 import InputDescription from './InputDescription';
 import InputEndDate from './InputEndDate';
 import InputEndTime from './InputEndTime';
-import { FormValues, TimersListController, Timer, TimerController } from '../hooks/types';
-import { v4 as uuidv4 } from 'uuid';
+import InputTitle from './InputTitle';
+import TypeBtnGroup from './TypeBtnGroup';
 
 type Props = {
   timer_controller: TimerController;

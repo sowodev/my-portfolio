@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
-import { FormValues, TimeType } from '../hooks/types';
+import { FormValues, TimeType } from '../../../types/tasks';
 import TimeTypeSelect from './TimeTypeSelect';
 
 type Props = {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { TimerController, RemainingTime, Timer, EmptyTimer } from './types';
+import { RemainingTime, Timer, TimerController } from '../../../types/timers';
 
 function useTimer(default_timer: Timer): TimerController {
   const [remaining_time, setRemainingTime] = useState<RemainingTime>({

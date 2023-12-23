@@ -1,6 +1,6 @@
 import { ClockIcon, TrashIcon } from '@heroicons/react/24/outline';
-import { Timer, TimerController, TimersListController } from './hooks/types';
 import { ReactElement } from 'react';
+import { Timer, TimerController, TimersListController } from '../../types/timers';
 
 type Props = {
   timer_controller: TimerController;

@@ -1,8 +1,8 @@
 import AppContext from '@context/AppContext';
 import { FC, ReactElement, useContext } from 'react';
+import { EmptyTimer, TimerController, TimersListController } from '../../types/timers';
 import CountdownTimer from './CountdownTimer';
 import TimersList from './TimersList';
-import { EmptyTimer, TimerController, TimersListController } from './hooks/types';
 import useTimer from './hooks/useTimer';
 import useTimersListController from './hooks/useTimersList';
 import DeleteConfirmationModal from './modal/DeleteConfirmationModal';

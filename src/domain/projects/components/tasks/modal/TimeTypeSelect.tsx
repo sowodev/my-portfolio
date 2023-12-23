@@ -1,12 +1,12 @@
-import { ReactElement } from 'react';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '../../../../../libs/shadcn-ui/components/select/select';
-import { TimeType } from '../hooks/types';
+} from '@libs/shadcn-ui/components/select/select';
+import { ReactElement } from 'react';
+import { TimeType } from '../../../types/tasks';
 
 type Props = {
   time_type: string;

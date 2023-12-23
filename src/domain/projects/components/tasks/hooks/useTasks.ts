@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Task, TasksController, TasksColumn, PriorityType, ColumnType } from './types';
+import { ColumnType, PriorityType, Task, TasksColumn, TasksController } from '../../../types/tasks';
 import { TasksMockedData } from '../MockedTasksData';
 
 function tasksByPriority(tasks: Task[]): Map<string, TasksColumn> {

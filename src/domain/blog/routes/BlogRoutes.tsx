@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import LoadingComponent from '../../../components/loading/LoadingComponent';
 import useGetPosts from '../hooks/api/useGetPosts';
 import PostPrototypePage from '../pages/PostPrototypePage';
-import { PostsType } from '../types/types';
+import { PostsType } from '../types/posts';
 
 function BlogRoutes(): ReactElement {
   const query = useGetPosts();

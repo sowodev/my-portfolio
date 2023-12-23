@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
-import { FormValues } from '../hooks/types';
+import { FormValues } from '../../../types/timers';
 
 type Props = {
   register: UseFormRegister<FormValues>;

@@ -1,5 +1,5 @@
 import { ReactElement, useState } from 'react';
-import { PostsType } from '../types/types';
+import { PostsType } from '../types/posts';
 import TagsList from './TagsList';
 import TextCard from './TextCard';
 

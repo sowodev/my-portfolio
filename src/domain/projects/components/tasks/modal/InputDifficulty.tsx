@@ -1,12 +1,12 @@
-import { ReactElement } from 'react';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '../../../../../libs/shadcn-ui/components/select/select';
-import { DifficultyType } from '../hooks/types';
+} from '@libs/shadcn-ui/components/select/select';
+import { ReactElement } from 'react';
+import { DifficultyType } from '../../../types/tasks';
 
 type Props = {
   setDifficulty: (difficulty: DifficultyType) => void;

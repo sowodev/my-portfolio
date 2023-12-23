@@ -1,8 +1,8 @@
-import { ReactElement } from 'react';
-import { PriorityType, Task, TasksController } from './hooks/types';
-import TaskCard from './TaskCard';
-import AddTaskBtn from './AddTaskBtn';
 import { Droppable, DroppableProvided } from '@hello-pangea/dnd';
+import { ReactElement } from 'react';
+import { PriorityType, Task, TasksController } from '../../types/tasks';
+import AddTaskBtn from './AddTaskBtn';
+import TaskCard from './TaskCard';
 
 type ColumnContainerProps = {
   column: string;

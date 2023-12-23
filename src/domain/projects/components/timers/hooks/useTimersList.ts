@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import { Timer, TimersListController } from '../../../types/timers';
 import { TimersMockedData } from '../TimersMockedData';
-import { Timer, TimersListController } from './types';
 
 function useTimersListController(): TimersListController {
   const [timers, setTimers] = useState<Timer[]>(TimersMockedData);

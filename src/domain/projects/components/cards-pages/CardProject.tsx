@@ -1,5 +1,5 @@
-import { ProjectType } from '@utils/MultiCardsIntetrfaces';
 import { FC, ReactElement, useState } from 'react';
+import { ProjectType } from '../../types/projects';
 import TagsListProjects from './TagsListProjects';
 import TextCardProjects from './TextCardProjects';
 

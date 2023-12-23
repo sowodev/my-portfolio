@@ -1,9 +1,8 @@
-import { ChangeEvent, ReactElement } from 'react';
-import { Task, TasksController } from './hooks/types';
 import { Draggable, DraggableProvided } from '@hello-pangea/dnd';
-import { ConvertDifficultiesFromNumsToSvgs } from './hooks/types';
 import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { ChangeEvent, ReactElement } from 'react';
 import { Tooltip } from 'react-tooltip';
+import { ConvertDifficultiesFromNumsToSvgs, Task, TasksController } from '../../types/tasks';
 
 type TaskProps = {
   index: number;

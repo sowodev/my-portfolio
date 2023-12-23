@@ -1,8 +1,8 @@
 import { DragDropContext } from '@hello-pangea/dnd';
 import { ChevronLeftIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import { FC, ReactElement } from 'react';
+import { TasksController } from '../../types/tasks';
 import Quadrant from './Quadrant';
-import { TasksController } from './hooks/types';
 import useTasks from './hooks/useTasks';
 import DeleteTaskConfirmationModal from './modal/DeleteTaskConfirmationModal';
 import EditModalWorkingOn from './modal/EditModalWorkingOn';
