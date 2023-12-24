@@ -9,16 +9,16 @@ const About: React.FC = function about(): React.ReactElement {
     <div className="flex h-full w-full flex-col justify-between items-center overflow-y-auto text-slate-700">
       <div className="prose prose-slate max-w-full mt-8">
         <p className="mb-2 text-justify font-[Lexend] text-md md:text-2xl lg:text-3xl font-light dark:text-white ">
-          Software Engineers working with Full-stack Web Development, building secure, robust,
+          Software Engineer and Full-Stack Web Developer Specialist, building secure, robust,
           reliable and scalable web applications.
         </p>
         <p className="my-2 lg:mt-2 text-sm md:text-base text-justify indent-5 font-[Lexend] font-light dark:text-slate-200">
-          Hi there, my name is Wendell Oliveira, I am a Software Engineer. With over 3 years of
-          experience as a Full-stack Web Developer. I am a completely passionate about computers and
+          Hi there, my name is Wendell Oliveira, I am a Software Engineer. With more than 4 years of
+          experience as a Full-stack Web Developer. I am completely passionate about computers and
           technology. I got a Science and Technology bachelor's degree with focus on Computer
-          Science at the Federal University of São Paulo. I have been dedicating the past few years
-          of my life mastering the art of building relentless software, so that I can make a huge
-          difference wherever I go, guiding those who I work with to the highest standards when
+          Science at the Universidade Federal de São Paulo. I have been dedicating the past few
+          years of my life mastering the art of building relentless software, so that I can make a
+          huge difference wherever I go, guiding those who I work with to the highest standards when
           deploying high quality software.{' '}
           <span className="font-bold">
             My primary goal is to guide and assist you in overcoming the most challenging aspects of
