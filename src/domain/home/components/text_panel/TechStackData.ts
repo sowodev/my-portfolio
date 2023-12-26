@@ -116,6 +116,20 @@ const backend: element[] = [
     desc: "MySql is a great database management system, I'm currently using it for storing and managing the data of my projects. I've got a quite well understanding of the SQL language, I'm able to create tables, insert, update and delete data, and I'm able to create complex queries.",
   },
   {
+    name: 'PostgreSQL',
+    icon: 'postgresql',
+    quote:
+      'PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.',
+    desc: "PostgreSQL is a great database management system, I'm currently using it for storing and managing the data of my projects. I've got a quite well understanding of the SQL language, I'm able to create tables, insert, update and delete data, and I'm able to create complex queries.",
+  },
+  {
+    name: 'MongoDB',
+    icon: 'mongodb',
+    quote:
+      'MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era.',
+    desc: "MongoDB is a great database management system, I'm currently using it for storing and managing the data of my projects. I've got a quite well understanding of the NoSQL language, I'm able to create collections, insert, update and delete data, and I'm able to create complex queries.",
+  },
+  {
     name: 'NodeJS',
     icon: 'node',
     quote: 'Node.js® is an open-source, cross-platform JavaScript runtime environment.',
