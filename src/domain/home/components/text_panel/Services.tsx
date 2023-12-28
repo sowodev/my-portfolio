@@ -1,18 +1,18 @@
 import AppContext from '@context/AppContext';
 import HomeContext from '@domain/home/context/HomeContext';
 import { EnvelopeIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline';
-import React, { useContext } from 'react';
+import { ReactElement, useContext } from 'react';
 
-const Services: React.FC = function services(): React.ReactElement {
+function Services(): ReactElement {
   const { contact_me } = useContext(AppContext);
   const { details_dialog } = useContext(HomeContext);
 
   return (
-    <div className="flex flex-col h-full w-full justify-around items-center">
-      <p className="text-justify font-[Lexend] text-lg md:text-2xl lg:text-4xl font-light text-slate-700 dark:text-white">
+    <div className="flex flex-col h-full w-full justify-center md:justify-around items-center">
+      <p className="text-justify text-lg md:text-2xl lg:text-4xl font-light text-slate-700 dark:text-white">
         Looking for someone to build or fix your web application?{' '}
       </p>
-      <div className="flex flex-col w-full gap-12 p-5 font-[Lexend] items-center justify-between rounded-lg border border-[#f5f5f538] bg-[#ffffff3f]">
+      <div className="flex flex-col w-full gap-12 p-5 items-center justify-between rounded-lg border border-[#f5f5f538] bg-[#ffffff3f]">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col text-slate-700 dark:text-white">
             <span className="sm:text-sm md:text-lg lg:text-2xl">
@@ -49,7 +49,7 @@ const Services: React.FC = function services(): React.ReactElement {
             }}
           >
             <ExclamationCircleIcon className="h-6 w-6 stroke-slate-700 dark:stroke-white" />
-            <span className="font-[Lexend] text-sm md:text-base text-slate-700 dark:text-slate-100">
+            <span className="text-sm md:text-base text-slate-700 dark:text-slate-100">
               More Details!
             </span>
           </button>
@@ -58,7 +58,7 @@ const Services: React.FC = function services(): React.ReactElement {
             onClick={(): void => contact_me.setOpenDialog(true)}
           >
             <EnvelopeIcon className="h-6 w-6 stroke-slate-700 dark:stroke-white" />
-            <span className="font-[Lexend] text-sm md:text-base text-slate-700 dark:text-slate-100">
+            <span className="text-sm md:text-base text-slate-700 dark:text-slate-100">
               Hire Now!
             </span>
           </button>
@@ -66,6 +66,6 @@ const Services: React.FC = function services(): React.ReactElement {
       </div>
     </div>
   );
-};
+}
 
 export default Services;

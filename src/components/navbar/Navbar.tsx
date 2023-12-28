@@ -13,10 +13,10 @@ const Navbar: FC = (): ReactElement => {
       <div className="flex h-full w-full items-center justify-between ps-2 lg:px-12">
         <div className="flex h-full w-fit flex-row items-center justify-center gap-1 lg:gap-8">
           <button
-            className="h-fit w-fit"
+            className="flex p-2 rounded hover:bg-slate-100 hover:bg-opacity-10"
             onClick={(): void => sidebar.setOpen((c: boolean): boolean => !c)}
           >
-            <Bars3Icon className="h-7 w-7 rounded stroke-white hover:bg-slate-100 hover:bg-opacity-10" />
+            <Bars3Icon className="h-7 w-7 stroke-white" />
           </button>
           <Logo />
         </div>

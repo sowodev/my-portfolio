@@ -1,4 +1,5 @@
 import CreditsDialog from '@components/credits-dialog/CreditsDialog';
+import StackMarquee from '@components/marquee/StackMarquee';
 import Chest from '@domain/home/components/Chest';
 import TextPanel from '@domain/home/components/TextPanel';
 import MoreDetailsDialog from '@domain/home/components/text_panel/services_details/MoreDetailsDialog';
@@ -18,15 +19,18 @@ const HomeMain: FC = (): ReactElement => {
 
   return (
     <div
-      className="flex flex-col h-full w-full overflow-y-scroll overflow-x-hidden lg:flex-row md:overflow-hidden"
+      className="flex flex-col h-full w-full overflow-y-scroll overflow-x-hidden md:overflow-hidden"
       ref={home_ref}
     >
-      <div className="flex w-full min-h-full md:min-h-[55%] lg:min-h-full justify-center">
-        <TextPanel />
-      </div>
-      <div className="flex w-full min-h-full md:min-h-[45%] items-center justify-center">
-        <div className="flex h-full w-full flex-col">
-          <Chest />
+      <StackMarquee />
+      <div className="flex flex-col w-full h-full lg:flex-row">
+        <div className="flex w-full min-h-full md:min-h-[55%] lg:min-h-full justify-center">
+          <TextPanel />
+        </div>
+        <div className="flex w-full min-h-full md:min-h-[45%] items-center justify-center">
+          <div className="flex h-full w-full flex-col">
+            <Chest />
+          </div>
         </div>
       </div>
       <CreditsDialog />
