@@ -78,10 +78,7 @@ const Sidebar: FC = (): ReactElement => {
           leaveFrom="translate-x-0"
           leaveTo="-translate-x-full"
         >
-          <div
-            className="fixed z-20 flex h-[calc(100vh-64px)] w-60 bg-neutral-600 dark:bg-slate-700"
-            ref={sidebar_ref}
-          >
+          <div className="fixed z-20 flex h-[calc(100vh-64px)] w-60 bg-slate-900" ref={sidebar_ref}>
             <div className="flex h-full w-full flex-col justify-between py-12">
               <div className="flex h-fit w-full flex-col items-center justify-start gap-4">
                 {sidebar_navigate_btns.map((btn: NavBtns, index: number): ReactElement => {
