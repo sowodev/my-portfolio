@@ -35,10 +35,7 @@ const AuthBtn: FC = (): ReactElement => {
           </>
         )}
       </NavLink>
-      <Tooltip
-        id="my-tooltip"
-        className="absolute z-10 bg-black bg-opacity-100 font-[Blinker] text-sm font-light"
-      />
+      <Tooltip id="my-tooltip" className="absolute z-10 bg-black bg-opacity-100 text-xs" />
     </>
   );
 };

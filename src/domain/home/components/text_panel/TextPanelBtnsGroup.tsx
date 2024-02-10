@@ -7,7 +7,7 @@ type Props = {
 
 const BtnsGroup: React.FC<Props> = ({ text_to_show, setTextToShow }: Props): React.ReactElement => {
   return (
-    <div className="flex w-full h-full items-center justify-center gap-4 rounded-lg border border-[#f5f5f538] bg-[#ffffff3f]">
+    <div className="flex w-full h-full items-center justify-center gap-4 rounded-lg border border-[#f5f5f538] bg-slate-900">
       <div className="flex flex-row h-full w-full justify-center items-center">
         <SingleBtn
           key={'Services'}

@@ -9,35 +9,75 @@ function Services(): ReactElement {
 
   return (
     <div className="flex flex-col h-full w-full justify-center md:justify-around items-center">
-      <p className="text-justify text-lg md:text-2xl lg:text-4xl font-light text-slate-700 dark:text-white">
-        Looking for someone to build or fix your web application?{' '}
+      <p className="text-justify text-lg md:text-2xl lg:text-4xl font-light text-slate-900 dark:text-white">
+        &emsp;Building the Next Generation of Software on the Web!
       </p>
-      <div className="flex flex-col w-full gap-12 p-5 items-center justify-between rounded-lg border border-[#f5f5f538] bg-[#ffffff3f]">
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col text-slate-700 dark:text-white">
-            <span className="sm:text-sm md:text-lg lg:text-2xl">
-              Design and Develop Your Web Application
-            </span>
-            <span className="text-sm font-light text-slate-600 indent-4 dark:text-slate-200">
-              ✅ We are going to bring your 😴 dream project to life!
-            </span>
+      <div className="flex flex-col relative w-full h-96 gap-2 p-2 items-center justify-between rounded-lg bg-slate-900">
+        <div className="flex absolute -top-[1px] h-px w-[95%] rounded-lg bg-gradient-to-r from-sky-300/30 via-sky-300 to-sky-300/30" />
+        <div className="flex flex-col w-full h-full">
+          <div className="flex w-full h-[10%] justify-end">
+            <div className="flex w-24 gap-2 justify-center items-center">
+              <div className="flex h-[12px] w-[12px] rounded-full bg-green-300 hover:bg-green-400" />
+              <div className="flex h-[12px] w-[12px] rounded-full bg-amber-300 hover:bg-amber-400" />
+              <div className="flex h-[12px] w-[12px] rounded-full bg-red-400 hover:bg-red-500" />
+            </div>
           </div>
-          <div className="flex flex-col text-slate-700 dark:text-white">
-            <span className="sm:text-sm md:text-lg lg:text-2xl">
-              Fix and Optimize Your Web Application
-            </span>
-            <span className="text-sm font-light text-slate-600 indent-4 dark:text-slate-200">
-              ✅ We are going to make your web application 🛡️safer, ⚡faster and 🍹smoother!
-            </span>
+          <div className="flex w-full h-[10%]">
+            <div className="flex w-36 justify-center items-center">
+              <div className="flex w-4/5 h-[90%] rounded bg-[#ffffff3f] border border-[#38bdf838] justify-center items-center">
+                <span className="text-sky-400 text-xs">success.win</span>
+              </div>
+            </div>
           </div>
-          <div className="flex flex-col w text-slate-700 dark:text-white">
-            <span className="sm:text-sm md:text-lg lg:text-2xl">
-              Consultancy About Your Web Application
-            </span>
-            <span className="text-sm font-light text-slate-600 indent-4 dark:text-slate-200">
-              ✅ We are going to guide your web application projects 🤓. So you can ship faster and
-              make money 🤑!
-            </span>
+          <div className="flex w-full h-[80%] px-4 pt-4">
+            <div className="flex flex-col h-full w-[10%] gap-1 text-sm text-slate-500 border-e border-slate-500 justify-center items-center">
+              <div>01</div>
+              <div>02</div>
+              <div>03</div>
+              <div>04</div>
+              <div>05</div>
+              <div>06</div>
+              <div>07</div>
+              <div>08</div>
+              <div>09</div>
+              <div>10</div>
+            </div>
+            <div className="flex flex-col h-full w-[90%] text-white text-sm gap-1 ps-4">
+              <div className="text-slate-500">
+                // To run the function bellow, press the Hire Now button!
+              </div>
+              <div>
+                <span className="text-red-400">function</span>{' '}
+                <span className="text-sky-300">generateSuccessfulBusiness</span>(
+                <span className="text-amber-300">your_requirements</span>) {'{'}
+              </div>
+              <div>
+                &emsp;<span className="text-red-400">let</span>&nbsp;
+                <span className="text-green-300">project_results</span> ={' '}
+                <span className="text-red-400">new</span>&nbsp;
+                <span className="text-sky-300">Project</span>(
+                <span className="text-amber-300">your_requirements</span>);
+              </div>
+              <br />
+              <div>
+                &emsp;<span className="text-sky-300">designTheRobustAndSecureApplication</span>(
+                <span className="text-green-300">project_results</span>);
+              </div>
+              <div>
+                &emsp;<span className="text-sky-300">buildAndDevelopAGreatProduct</span>(
+                <span className="text-green-300">project_results</span>);
+              </div>
+              <div>
+                &emsp;<span className="text-sky-300">testsForReliabilityAndConsistency</span>(
+                <span className="text-green-300">project_results</span>);
+              </div>
+              <br />
+              <div>
+                &emsp;<span className="text-red-400">return</span>&nbsp;
+                <span className="text-green-300">project_results</span>;
+              </div>
+              <div>{'}'}</div>
+            </div>
           </div>
         </div>
 
@@ -49,7 +89,7 @@ function Services(): ReactElement {
             }}
           >
             <ExclamationCircleIcon className="h-6 w-6 stroke-slate-700 dark:stroke-white" />
-            <span className="text-sm md:text-base text-slate-700 dark:text-slate-100">
+            <span className="text-sm md:text-base text-slate-900 dark:text-slate-100">
               More Details!
             </span>
           </button>
@@ -58,11 +98,12 @@ function Services(): ReactElement {
             onClick={(): void => contact_me.setOpenDialog(true)}
           >
             <EnvelopeIcon className="h-6 w-6 stroke-slate-700 dark:stroke-white" />
-            <span className="text-sm md:text-base text-slate-700 dark:text-slate-100">
+            <span className="text-sm md:text-base text-slate-900 dark:text-slate-100">
               Hire Now!
             </span>
           </button>
         </div>
+        <div className="flex absolute -bottom-[1px] h-px w-[95%] rounded-lg bg-gradient-to-r from-sky-300/30 via-sky-300 to-sky-300/30" />
       </div>
     </div>
   );

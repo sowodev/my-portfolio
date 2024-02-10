@@ -1,8 +1,7 @@
-import BlogRoutes from '@domain/blog/routes/BlogRoutes';
-import ProjectsRoutes from '@domain/projects/routes/ProjectsRoutes';
 import Auth from '@pages/Auth';
 import Home from '@pages/Home';
 import NotFound from '@pages/NotFound';
+import UnderImprovements from '@pages/UnderImprovements';
 import { FC, ReactElement } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
@@ -12,8 +11,8 @@ const AppPagesRoutes: FC = (): ReactElement => {
     <div className="flex h-full w-full">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blog/*" element={<BlogRoutes />} />
-        <Route path="/projects/*" element={<ProjectsRoutes />} />
+        <Route path="/blog/*" element={<UnderImprovements />} />
+        <Route path="/projects/*" element={<UnderImprovements />} />
         <Route path="/auth/*" element={<Auth />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

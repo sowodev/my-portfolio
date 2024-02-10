@@ -27,23 +27,19 @@ const SingleBtn: React.FC<SingleBtnProps> = ({
         <div
           className={
             text_to_show === name
-              ? `flex absolute h-[80%] w-[85%] items-center justify-center rounded bg-slate-100 outline-none ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-300 dark:bg-slate-700 dark:ring-slate-700 dark:ring-offset-blue-400 group-hover:cursor-not-allowed`
+              ? `flex absolute h-[80%] w-[85%] items-center justify-center rounded bg-slate-700 group-hover:cursor-not-allowed`
               : `flex absolute h-[80%] w-[85%] items-center justify-center rounded`
           }
         />
       </Transition>
       <button
         className={`flex absolute h-[80%] w-[85%] items-center justify-center rounded ${
-          text_to_show === name
-            ? `cursor-not-allowed`
-            : `cursor-pointer group-hover:bg-black group-hover:bg-opacity-10`
+          text_to_show === name ? `cursor-not-allowed` : `cursor-pointer group-hover:bg-slate-800`
         }`}
         onClick={(): void => setTextToShow(name as 'About' | 'Tools' | 'Services')}
         disabled={text_to_show === name}
       >
-        <span className="font-[Goldman] sm:text-sm md:text-lg lg:text-2xl  text-slate-700 dark:text-white">
-          {name}
-        </span>
+        <span className="sm:text-sm md:text-lg lg:text-2xl  text-slate-100">{name}</span>
       </button>
     </div>
   );

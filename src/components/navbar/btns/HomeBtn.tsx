@@ -18,9 +18,7 @@ const HomeBtn: FC = (): ReactElement => {
             }`}
           >
             <HomeIcon className={`h-6 w-6 justify-self-center ${isActive && 'drop-shadow'}`} />
-            <p className={`font-[Blinker] font-light leading-4 ${isActive && 'drop-shadow-lg'}`}>
-              Home
-            </p>
+            <p className={`text-sm ${isActive && 'drop-shadow-lg'}`}>Home</p>
           </div>
         </>
       )}

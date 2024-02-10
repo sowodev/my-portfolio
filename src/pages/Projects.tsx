@@ -2,7 +2,7 @@ import CardsPagesProjects from '@domain/projects/components/cards-pages/CardsPag
 import { RefObject, useEffect, useRef } from 'react';
 import Filters from '../components/filters/Filters';
 import useProjectsController from '../domain/projects/hooks/useProjectsController';
-import { ProjectType } from '../utils/MultiCardsIntetrfaces';
+import { ProjectType } from '../domain/projects/types/projects';
 
 const Projects = function projects({ projects_data }: { projects_data: ProjectType[] }) {
   const projects_controller = useProjectsController(projects_data);

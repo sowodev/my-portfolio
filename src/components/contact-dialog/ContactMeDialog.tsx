@@ -79,7 +79,7 @@ const ContactMeDialog: FC = (): ReactElement => {
               >
                 <Dialog.Title
                   as="h4"
-                  className={`flex font-[Lexend] text-lg font-medium leading-6 text-gray-900 justify-between items-center ${
+                  className={`flex text-lg font-medium leading-6 text-gray-900 justify-between items-center ${
                     dark && 'text-white'
                   }`}
                 >
@@ -106,13 +106,13 @@ const ContactMeDialog: FC = (): ReactElement => {
                 ) : mutation.isSuccess ? (
                   <div className="flex h-full w-full flex-col gap-4 py-4 justify-center items-center">
                     <CheckCircleIcon className="w-16 h-16 stroke-green-500" />
-                    <p className="font-[Lexend] text-lg">
+                    <p className="text-lg">
                       <b>Yeeeeah, all good!</b> Thank you very much for your message. I will do my
                       best to answer as soon as possible!
                     </p>
                     <button
                       type="button"
-                      className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-sky-400 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:bg-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-sky-400 text-center text-white transition duration-300 ease-in-out hover:scale-110 hover:bg-sky-500 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={closeDialogOnSuccess}
                     >
                       Confirm
@@ -121,13 +121,13 @@ const ContactMeDialog: FC = (): ReactElement => {
                 ) : mutation.isError ? (
                   <div className="flex h-full w-full flex-col gap-4 py-4 justify-center items-center">
                     <ArchiveBoxXMarkIcon className="w-16 h-16 stroke-red-500" />
-                    <p className="font-[Lexend] text-lg">
+                    <p className="text-lg">
                       <b>Sorry!</b> Seems that something went wrong while submitting your message.
                       Please, refresh and try again!
                     </p>
                     <button
                       type="button"
-                      className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-amber-300 text-center font-[Lexend] text-white transition duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="flex h-[3rem] w-1/4 items-center justify-center rounded bg-amber-300 text-center text-white transition duration-300 ease-in-out hover:scale-110 hover:bg-amber-400 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={closeDialog}
                     >
                       Close
@@ -169,7 +169,7 @@ const ContactMeDialog: FC = (): ReactElement => {
                         </div>
                         <div className="flex w-full flex-col items-center">
                           <label
-                            className={`w-full font-[Lexend] font-light after:ml-0.5 after:text-red-500 after:content-['*'] ${
+                            className={`w-full font-light after:ml-0.5 after:text-red-500 after:content-['*'] ${
                               dark && 'text-slate-300'
                             }`}
                             htmlFor="message"
@@ -180,8 +180,8 @@ const ContactMeDialog: FC = (): ReactElement => {
                             required
                             className={
                               dark
-                                ? `flex w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-[Lexend] font-light text-slate-300 placeholder:text-gray-500 focus:border-sky-400 focus:outline-none`
-                                : `flex w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light text-gray-500 placeholder:text-gray-200 focus:border-sky-400 focus:outline-none`
+                                ? `flex w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-light text-slate-300 placeholder:text-gray-500 focus:border-sky-400 focus:outline-none`
+                                : `flex w-full border-b border-[#B0B0B0] indent-2 font-light text-gray-500 placeholder:text-gray-200 focus:border-sky-400 focus:outline-none`
                             }
                             name="message"
                             id="message"
@@ -199,7 +199,7 @@ const ContactMeDialog: FC = (): ReactElement => {
                           className="flex px-4 py-2 flex-row items-center justify-center gap-1 rounded bg-amber-400 duration-300 ease-in-out hover:bg-amber-500 hover:shadow-md lg:hover:shadow-lg"
                           onClick={closeDialog}
                         >
-                          <span className="mx-2 font-[Lexend] text-sm md:text-base text-slate-700 dark:text-slate-100">
+                          <span className="mx-2 text-sm md:text-base text-slate-700 dark:text-slate-100">
                             Cancel
                           </span>
                         </button>
@@ -207,7 +207,7 @@ const ContactMeDialog: FC = (): ReactElement => {
                           type="submit"
                           className="flex px-4 py-2 flex-row items-center justify-center gap-1 rounded bg-sky-400 duration-300 ease-in-out hover:bg-sky-500 hover:shadow-md lg:hover:shadow-lg"
                         >
-                          <span className="font-[Lexend] text-sm md:text-base text-slate-700 dark:text-slate-100">
+                          <span className="text-sm md:text-base text-slate-700 dark:text-slate-100">
                             Send
                           </span>
                         </button>
@@ -215,12 +215,12 @@ const ContactMeDialog: FC = (): ReactElement => {
                     </form>
                     <div className="my-6 flex w-full flex-row items-center justify-center">
                       <hr className="basis-2/5 dark:border-slate-700" />
-                      <span className="mx-3 font-[Lexend] text-sm font-extralight text-slate-300 dark:text-slate-600">
+                      <span className="mx-3 text-sm font-extralight text-slate-300 dark:text-slate-600">
                         OR
                       </span>
                       <hr className="basis-2/5 dark:border-slate-700" />
                     </div>
-                    <div className="flex flex-col font-[Lexend] w-full justify-center items-center">
+                    <div className="flex flex-col w-full justify-center items-center">
                       <p className={dark ? `text-white` : `text-slate-700`}>
                         Reach me out, through my email:
                       </p>
