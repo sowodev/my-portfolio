@@ -15,7 +15,7 @@ const MoreDetailsDialog: FC = function moreDetailsDialog(): ReactElement {
 
   return (
     <Transition appear as={Fragment} show={details_dialog.open}>
-      <Dialog as="div" className="relative z-10" onClose={closeDialog}>
+      <Dialog as="div" className="relative z-10 text-sm" onClose={closeDialog}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -48,7 +48,7 @@ const MoreDetailsDialog: FC = function moreDetailsDialog(): ReactElement {
               >
                 <Dialog.Title
                   as="h4"
-                  className={`flex font-[Lexend] text-lg font-medium leading-6 text-gray-800 justify-between items-center ${
+                  className={`flex text-lg font-medium leading-6 text-gray-800 justify-between items-center ${
                     dark && 'text-white'
                   }`}
                 >
@@ -62,11 +62,9 @@ const MoreDetailsDialog: FC = function moreDetailsDialog(): ReactElement {
                     <XMarkIcon className="h-5" />
                   </button>
                 </Dialog.Title>
-                <span className={`font-[Lexend] text-slate-800  ${dark && `text-white`}`}>
-                  Why?
-                </span>
+                <span className={`text-slate-800  ${dark && `text-white`}`}>Why?</span>
                 <ol
-                  className={`flex flex-col bg-slate-100 font-light rounded-lg text-justify p-3 list-decimal list-inside gap-3 font-[Lexend] text-slate-800 ${
+                  className={`flex flex-col bg-slate-100 font-light rounded-lg text-justify p-3 list-decimal list-inside gap-3 text-slate-800 ${
                     dark && `bg-slate-600 text-white`
                   }`}
                 >
@@ -86,11 +84,9 @@ const MoreDetailsDialog: FC = function moreDetailsDialog(): ReactElement {
                   </li>
                   <li>We have the solution for you, contact us!</li>
                 </ol>
-                <span className={`font-[Lexend] text-slate-800  ${dark && `text-white`}`}>
-                  How?
-                </span>
+                <span className={`text-slate-800  ${dark && `text-white`}`}>How?</span>
                 <ol
-                  className={`flex flex-col bg-slate-100 font-light rounded-lg text-justify p-3 list-decimal list-inside gap-3 font-[Lexend] text-slate-800 ${
+                  className={`flex flex-col bg-slate-100 font-light rounded-lg text-justify p-3 list-decimal list-inside gap-3 text-slate-800 ${
                     dark && `bg-slate-600 text-white`
                   }`}
                 >
@@ -101,7 +97,7 @@ const MoreDetailsDialog: FC = function moreDetailsDialog(): ReactElement {
                       disabled
                     >
                       <EnvelopeIcon className="ml-2 h-5 w-5 stroke-slate-700 dark:stroke-white" />
-                      <span className="mr-2 font-[Lexend] text-sm md:text-sm text-slate-700 dark:text-slate-100">
+                      <span className="mr-2 text-sm md:text-sm text-slate-700 dark:text-slate-100">
                         Hire Now!
                       </span>
                     </button>

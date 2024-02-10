@@ -29,7 +29,7 @@ const SidebarNavigator: FC<SidebarNavigatorProps> = ({
             } hover:bg-[#606060]`}
           >
             {icon}
-            <span className="font-[Blinker] text-white">{name}</span>
+            <span className="text-sm text-white">{name}</span>
           </div>
         );
       }}

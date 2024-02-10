@@ -18,9 +18,7 @@ const BlogBtn: FC = (): ReactElement => {
             }`}
           >
             <NewspaperIcon className={`h-6 w-6 justify-self-center ${isActive && 'drop-shadow'}`} />
-            <span className={`font-[Blinker] font-light leading-4 ${isActive && 'drop-shadow-lg'}`}>
-              Blog
-            </span>
+            <span className={`text-sm leading-4 ${isActive && 'drop-shadow-lg'}`}>Blog</span>
           </div>
         </>
       )}

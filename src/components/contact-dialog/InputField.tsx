@@ -20,7 +20,7 @@ const InputField: FC<InputFieldProps> = ({
   return (
     <>
       <label
-        className={`w-full font-[Lexend] font-light after:ml-0.5 after:text-red-500 after:content-['*'] ${
+        className={`w-full font-light after:ml-0.5 after:text-red-500 after:content-['*'] ${
           dark && 'text-slate-300'
         }`}
         htmlFor="username"
@@ -31,8 +31,8 @@ const InputField: FC<InputFieldProps> = ({
         required
         className={
           dark
-            ? `flex h-[2rem] w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-[Lexend] font-light text-slate-300 placeholder:text-gray-500 focus:border-sky-400 focus:outline-none`
-            : `flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-[Lexend] font-light text-gray-500 placeholder:text-gray-200 focus:border-sky-400 focus:outline-none`
+            ? `flex h-[2rem] w-full border-b border-[#B0B0B0] bg-slate-700 indent-2 font-light text-slate-300 placeholder:text-gray-500 focus:border-sky-400 focus:outline-none`
+            : `flex h-[2rem] w-full border-b border-[#B0B0B0] indent-2 font-light text-gray-500 placeholder:text-gray-200 focus:border-sky-400 focus:outline-none`
         }
         type={type}
         name={name}

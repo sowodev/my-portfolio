@@ -15,7 +15,7 @@ function App(): ReactElement {
       <div className="sticky top-0 z-10 flex flex-col">
         <Navbar />
       </div>
-      <div className="relative z-0 flex h-full w-full overflow-auto transition duration-300 ease-in-out dark:bg-slate-800">
+      <div className="relative z-0 flex h-full w-full overflow-auto transition duration-300 ease-in-out dark:bg-slate-900">
         <Sidebar />
         <AppPagesRoutes />
       </div>

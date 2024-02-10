@@ -2,7 +2,7 @@ import { FC, ReactElement } from 'react';
 import Filters from '../components/filters/Filters';
 import CardsPagesBlog from '../domain/blog/components/CardsPagesBlog';
 import usePostsController from '../domain/blog/hooks/usePostsController';
-import { PostsController, PostsType } from '../utils/MultiCardsIntetrfaces';
+import { PostsController, PostsType } from '../domain/blog/types/posts';
 
 type BlogProps = {
   BlogData: PostsType[];

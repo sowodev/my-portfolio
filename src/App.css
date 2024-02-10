@@ -23,13 +23,18 @@
   src: url('/fonts/Goldman/Goldman-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'Caskaydia';
+  src: url('/fonts/CascadiaCode/CaskaydiaCoveNerdFont-Regular.ttf');
+}
+
 body {
   width: 100vw;
   height: 100vh;
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-  font-family: 'Lexend', sans-serif;
+  font-family: 'Caskaydia', sans-serif;
 }
 
 .App {
