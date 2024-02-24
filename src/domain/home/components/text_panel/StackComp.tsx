@@ -1,33 +1,11 @@
-const StackComp = function stackComp({
-  name,
-  icon,
-  quote,
-  desc,
-}: {
-  name: string;
-  icon: string;
-  quote: string;
-  desc: string;
-}) {
-  const src: string = "/imgs/mystack/" + icon + ".svg";
+const StackComp = function stackComp({ name, icon }: { name: string; icon: string }) {
+  const src: string = '/imgs/mystack/' + icon + '.svg';
   return (
-    <div className="flex flex-col">
-      <div className="flex h-fit w-fit flex-row items-center">
-        <img
-          className="my-0 w-[30px] lg:w-[50px] mr-[10px]"
-          alt={name}
-          src={src}
-        />{" "}
-        <h3 className="my-0 font-[Lexend] font-bold lg:font-normal text-sm lg:text-base h-full w-full dark:text-white">
-          {name}
-        </h3>
-      </div>
-      <blockquote className="my-4 font-[Lexend] font-light text-sm lg:text-base border-gray-600 dark:text-slate-300 dark:border-slate-300">
-        {quote}
-      </blockquote>
-      <p className="my-0 font-[Lexend] font-light text-sm lg:text-base indent-5 dark:text-slate-300">
-        {desc}
-      </p>
+    <div className="flex flex-col p-1 justify-center items-center border border-slate-800">
+      <img className="w-[30px] lg:w-[60px]" alt={name} src={src} />{' '}
+      <span className="w-[80px] break-words font-bold lg:font-light text-xs text-center text-white">
+        {name}
+      </span>
     </div>
   );
 };

@@ -6,13 +6,13 @@ const About: React.FC = function about(): React.ReactElement {
   const { contact_me, theme } = useContext(AppContext);
 
   return (
-    <div className="flex h-full w-full flex-col justify-between items-center overflow-y-auto text-slate-700">
+    <div className="flex h-full w-full flex-col justify-between items-center overflow-y-auto">
       <div className="prose prose-slate max-w-full mt-8">
-        <p className="mb-2 text-justify font-[Lexend] text-md md:text-2xl lg:text-3xl font-light dark:text-white ">
+        <p className="mb-2 text-justify text-md md:text-2xl dark:text-white text-slate-900">
           Software Engineer and Full-Stack Web Developer Specialist, building secure, robust,
           reliable and scalable web applications.
         </p>
-        <p className="my-2 lg:mt-2 text-sm md:text-base text-justify indent-5 font-[Lexend] font-light dark:text-slate-200">
+        <p className="my-2 lg:mt-2 text-sm text-justify indent-5 text-slate-900 dark:text-slate-200">
           Hi there, my name is Wendell Oliveira, I am a Software Engineer. With more than 4 years of
           experience as a Full-stack Web Developer. I am completely passionate about computers and
           technology. I got a Science and Technology bachelor's degree with focus on Computer
@@ -53,8 +53,8 @@ const About: React.FC = function about(): React.ReactElement {
           className="flex px-4 py-3 flex-row items-center justify-center gap-1 rounded bg-green-400 duration-300 ease-in-out hover:bg-green-500 hover:shadow-md lg:hover:shadow-lg"
           onClick={() => contact_me.setOpenDialog(true)}
         >
-          <EnvelopeIcon className="h-6 w-6 stroke-slate-700 dark:stroke-white" />
-          <span className="font-[Lexend] text-sm md:text-base stroke-slate-700 dark:text-slate-100">
+          <EnvelopeIcon className="h-6 w-6 stroke-slate-900 dark:stroke-white" />
+          <span className="text-sm md:text-base stroke-slate-700 dark:text-slate-100">
             Hire Now!
           </span>
         </button>

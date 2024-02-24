@@ -9,10 +9,10 @@ function Services(): ReactElement {
 
   return (
     <div className="flex flex-col h-full w-full justify-center md:justify-around items-center">
-      <p className="text-justify text-lg md:text-2xl lg:text-4xl font-light text-slate-900 dark:text-white">
+      <p className="flex mt-4 text-justify text-lg md:text-2xl lg:text-4xl font-light text-slate-900 dark:text-white">
         &emsp;Building the Next Generation of Software on the Web!
       </p>
-      <div className="flex flex-col relative w-full h-96 gap-2 p-2 items-center justify-between rounded-lg bg-slate-900">
+      <div className="flex flex-col relative w-full h-[70%] gap-2 p-2 items-center justify-between rounded-lg bg-slate-900">
         <div className="flex absolute -top-[1px] h-px w-[95%] rounded-lg bg-gradient-to-r from-sky-300/30 via-sky-300 to-sky-300/30" />
         <div className="flex flex-col w-full h-full">
           <div className="flex w-full h-[10%] justify-end">
@@ -29,54 +29,76 @@ function Services(): ReactElement {
               </div>
             </div>
           </div>
-          <div className="flex w-full h-[80%] px-4 pt-4">
-            <div className="flex flex-col h-full w-[10%] gap-1 text-sm text-slate-500 border-e border-slate-500 justify-center items-center">
-              <div>01</div>
-              <div>02</div>
-              <div>03</div>
-              <div>04</div>
-              <div>05</div>
-              <div>06</div>
-              <div>07</div>
-              <div>08</div>
-              <div>09</div>
-              <div>10</div>
-            </div>
-            <div className="flex flex-col h-full w-[90%] text-white text-sm gap-1 ps-4">
-              <div className="text-slate-500">
-                // To run the function bellow, press the Hire Now button!
+          <div className="flex min-w-full h-[80%] pt-4 ps-4 justify-start items-center overflow-x-auto overflow-y-hidden">
+            <div className="flex">
+              <div className="flex flex-col h-full w-full text-white text-sm ps-4">
+                <div className="flex justify-start items-center">
+                  <span className="text-slate-700 pe-4 border-e border-slate-700">01</span>
+                  <span className="text-slate-500 ps-4 min-w-fit">
+                    // To run the function bellow, press the Hire Now button!
+                  </span>
+                </div>
+                <div className="flex justify-start items-center">
+                  <span className="text-slate-700 pe-4 border-e border-slate-700">02</span>
+                  <div className="flex w-full h-full ps-4 justify-start items-center">
+                    <span className="text-red-400">function&nbsp;</span>
+                    <span className="text-sky-300">generateSuccessfulBusiness</span>(
+                    <span className="text-amber-300">your_requirements</span>
+                    <span>)</span>
+                    <span className="ms-2">{'{'}</span>
+                  </div>
+                </div>
+                <div className="flex justify-start items-center">
+                  <span className="text-slate-700 pe-4 border-e border-slate-700">03</span>
+                  <div className="flex w-full h-full ps-8 justify-start items-center">
+                    <span className="text-red-400">let</span>&nbsp;
+                    <span className="text-green-300">project_results</span>&nbsp;=&nbsp;
+                    <span className="text-red-400">new</span>&nbsp;
+                    <span className="text-sky-300">Project</span>(
+                    <span className="text-amber-300">your_requirements</span>);
+                  </div>
+                </div>
+                <div className="flex justify-start items-center">
+                  <span className="text-slate-700 pe-4 border-e border-slate-700">04</span>
+                  <div className="flex w-full h-full ps-4 justify-start items-center"></div>
+                </div>
+                <div className="flex justify-start items-center">
+                  <span className="text-slate-700 pe-4 border-e border-slate-700">05</span>
+                  <div className="flex w-full h-full ps-8 justify-start items-center">
+                    <span className="text-sky-300">designRobustAndSecureApplication</span>(
+                    <span className="text-green-300">project_results</span>);
+                  </div>
+                </div>
+                <div className="flex justify-start items-center">
+                  <span className="text-slate-700 pe-4 border-e border-slate-700">06</span>
+                  <div className="flex w-full h-full ps-8 justify-start items-center">
+                    <span className="text-sky-300">buildAndDevelopAGreatProduct</span>(
+                    <span className="text-green-300">project_results</span>);
+                  </div>
+                </div>
+                <div className="flex justify-start items-center">
+                  <span className="text-slate-700 pe-4 border-e border-slate-700">07</span>
+                  <div className="flex w-full h-full ps-8 justify-start items-center">
+                    <span className="text-sky-300">testsForReliabilityAndConsistency</span>(
+                    <span className="text-green-300">project_results</span>);
+                  </div>
+                </div>
+                <div className="flex justify-start items-center">
+                  <span className="text-slate-700 pe-4 border-e border-slate-700">08</span>
+                  <div className="flex w-full h-full ps-4 justify-start items-center"></div>
+                </div>
+                <div className="flex justify-start items-center">
+                  <span className="text-slate-700 pe-4 border-e border-slate-700">09</span>
+                  <div className="flex w-full h-full ps-8 justify-start items-center">
+                    <span className="text-red-400">return</span>&nbsp;
+                    <span className="text-green-300">project_results</span>;
+                  </div>
+                </div>
+                <div className="flex justify-start items-center">
+                  <span className="text-slate-700 pe-4 border-e border-slate-700">10</span>
+                  <span className="ps-4">{'}'}</span>
+                </div>
               </div>
-              <div>
-                <span className="text-red-400">function</span>{' '}
-                <span className="text-sky-300">generateSuccessfulBusiness</span>(
-                <span className="text-amber-300">your_requirements</span>) {'{'}
-              </div>
-              <div>
-                &emsp;<span className="text-red-400">let</span>&nbsp;
-                <span className="text-green-300">project_results</span> ={' '}
-                <span className="text-red-400">new</span>&nbsp;
-                <span className="text-sky-300">Project</span>(
-                <span className="text-amber-300">your_requirements</span>);
-              </div>
-              <br />
-              <div>
-                &emsp;<span className="text-sky-300">designTheRobustAndSecureApplication</span>(
-                <span className="text-green-300">project_results</span>);
-              </div>
-              <div>
-                &emsp;<span className="text-sky-300">buildAndDevelopAGreatProduct</span>(
-                <span className="text-green-300">project_results</span>);
-              </div>
-              <div>
-                &emsp;<span className="text-sky-300">testsForReliabilityAndConsistency</span>(
-                <span className="text-green-300">project_results</span>);
-              </div>
-              <br />
-              <div>
-                &emsp;<span className="text-red-400">return</span>&nbsp;
-                <span className="text-green-300">project_results</span>;
-              </div>
-              <div>{'}'}</div>
             </div>
           </div>
         </div>
@@ -90,7 +112,7 @@ function Services(): ReactElement {
           >
             <ExclamationCircleIcon className="h-6 w-6 stroke-slate-700 dark:stroke-white" />
             <span className="text-sm md:text-base text-slate-900 dark:text-slate-100">
-              More Details!
+              Details!
             </span>
           </button>
           <button
