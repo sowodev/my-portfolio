@@ -22,7 +22,7 @@ const StackMarquee: FC = (): ReactElement => {
   ];
 
   return (
-    <div className="flex h-[40px] w-full items-center justify-center bg-amber-300">
+    <div className="flex absolute top-0 h-10 w-full items-center justify-center bg-amber-300">
       <Marquee pauseOnHover speed={50} play={true}>
         <div className="mx-8 flex h-fit w-fit items-center justify-between">
           <span className="flex">

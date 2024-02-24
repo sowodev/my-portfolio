@@ -15,9 +15,9 @@ const Chest: FC = (): ReactElement => {
             }}
           >
             <img
-              className="w-20 h-5 md:w-24 md:h-7 drop-shadow"
-              src={`/imgs/services.png`}
-              alt={'Services'}
+              className="w-20 h-5 md:w-20 md:h-20 grayscale object-cover drop-shadow-[0_0px_12px_rgba(56,189,248,0.6)]"
+              src="/imgs/services.png"
+              alt="Services"
             />
           </button>
         </div>
@@ -29,7 +29,7 @@ const Chest: FC = (): ReactElement => {
             }}
           >
             <img
-              className="w-20 h-5 md:w-24 md:h-7 drop-shadow"
+              className="w-20 h-5 md:w-28 md:h-28 object-cover drop-shadow-[0_13px_25px_rgba(251,191,36,0.8)]"
               src="/imgs/tools.png"
               alt="Tools"
             />
@@ -43,7 +43,7 @@ const Chest: FC = (): ReactElement => {
             }}
           >
             <img
-              className="w-20 h-5 md:w-24 md:h-7 drop-shadow"
+              className="w-20 h-5 md:w-16 md:h-16 grayscale object-cover drop-shadow-[0_0px_12px_rgba(52,211,153,0.6)]"
               src="/imgs/about.png"
               alt="About"
             />

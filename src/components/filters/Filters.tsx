@@ -1,5 +1,6 @@
+import { PostsController } from '@domain/blog/types/posts';
+import { ProjectsController } from '@domain/projects/types/projects';
 import { FC, ReactElement, useEffect, useState } from 'react';
-import { PostsController, ProjectsController } from '../../utils/MultiCardsIntetrfaces';
 import MultiSelectTags from './MultiSelectTags';
 
 type FiltersProps = {

@@ -21,25 +21,24 @@ const TextPanel: FC = function textPanel(): ReactElement {
   }, [text_panel_controller.element]);
 
   return (
-    <div className="mt-4 p-1 lg:mt-16 flex w-[95%] h-[95%] lg:h-4/5 md:w-3/4 lg:p-10 flex-col items-center justify-center rounded-lg bg-gradient-to-tl from-blue-500 to-sky-500 shadow-lg shadow-sky-300 ring-1 ring-slate-900/5 dark:from-sky-700 dark:to-blue-950 dark:shadow-sky-800">
+    <div className="mt-4 p-1 flex w-[95%] h-[95%] lg:h-4/5 md:w-3/4 lg:p-10 flex-col items-center justify-center rounded-lg bg-gradient-to-tl from-blue-500 to-sky-500 shadow-lg shadow-sky-300 dark:from-sky-700 dark:to-blue-950 dark:shadow-sky-800">
       <div className="flex h-[10%] w-full items-center justify-center">
         <BtnsGroup
           text_to_show={text_panel_controller.element}
           setTextToShow={text_panel_controller.setElement}
         />
       </div>
-      <div className="flex h-[90%] w-full rounded-lg overflow-y-auto justify-center items-center">
+      <div className="flex w-full h-[90%]">
         <Transition
+          key={text_panel_controller.element}
           as={Fragment}
           show={text_panel_controller.element === prev_text}
-          key={text_panel_controller.element}
         >
           <Transition.Child
-            className={`flex w-full h-full flex-col items-center justify-center`}
-            enter="transition transform ease-in-out duration-300"
+            enter="transform transition ease-in-out duration-300"
             enterFrom="scale-50"
             enterTo="scale-100"
-            leave="transition transform ease-in-out duration-300"
+            leave="transform transition ease-in-out duration-300"
             leaveFrom="scale-100"
             leaveTo="scale-50"
           >

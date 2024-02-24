@@ -12,6 +12,19 @@ export type stack = {
 
 const frontend: element[] = [
   {
+    name: 'Next',
+    icon: 'next',
+    quote: 'The React Framework for Production.',
+    desc: "I'm currently using Next for building my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with Next, and I'm able to create complex responsive layouts with Next.",
+  },
+  {
+    name: 'React',
+    icon: 'react',
+    quote:
+      'React lets you build user interfaces out of individual pieces called components. Create your own React components like Thumbnail, LikeButton, and Video.',
+    desc: "I love React, it's a great library for building robust, reliable, scaleble and safer web applications. Currently it is my favorite library for building web apps. I'd say I'm an early-advanced user of React, I understand quite well the core concepts (function components, hooks, routing, etc) and I'm able to build complex applications with it.",
+  },
+  {
     name: 'Typescript',
     icon: 'typescript',
     quote:
@@ -26,28 +39,21 @@ const frontend: element[] = [
     desc: 'There is a huge intersection between Javascript with Typescript. I use mainly the native functions set of Javascript in Typescript, but sometimes I use some awesome Javascript libraries that has fully operability with Typescript.',
   },
   {
-    name: 'Html',
+    name: 'HTML5',
     icon: 'html',
     quote:
       'HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content.',
     desc: 'Html still being the core of the web, I use it a lot. I use it inside of the React components as part of the tsx components.',
   },
   {
-    name: 'Css',
+    name: 'CSS3',
     icon: 'css',
     quote:
       'CSS (Cascading Style Sheets) is the code that styles web content. CSS basics walks through what you need to get started.',
     desc: "I consider myself an intermidiate CSS user, recently I've been using it mainly when there is no way to style the components only using the Tailwind framework. Other ways I keep the pure Css usage at the bare minimum needed in the project.",
   },
   {
-    name: 'React',
-    icon: 'react',
-    quote:
-      'React lets you build user interfaces out of individual pieces called components. Create your own React components like Thumbnail, LikeButton, and Video.',
-    desc: "I love React, it's a great library for building robust, reliable, scaleble and safer web applications. Currently it is my favorite library for building web apps. I'd say I'm an early-advanced user of React, I understand quite well the core concepts (function components, hooks, routing, etc) and I'm able to build complex applications with it.",
-  },
-  {
-    name: 'Tailwind',
+    name: 'Tailwind CSS',
     icon: 'tailwind',
     quote:
       'A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.',
@@ -61,11 +67,17 @@ const frontend: element[] = [
     desc: "I'm currently using Headless UI for styling my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with Headless UI, and I'm able to create complex responsive layouts with Headless UI.",
   },
   {
-    name: 'Bootstrap',
-    icon: 'bootstrap',
+    name: 'Shadcn UI',
+    icon: 'shadcn-ui',
     quote:
-      "Build responsive, mobile-first projects on the web with the world's most popular front-end component library.",
-    desc: "I'm currently using Bootstrap for styling my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with Bootstrap, and I'm able to create complex responsive layouts with Bootstrap.",
+      'Shadcn UI is a component library that provides you with a set of high-quality components and demos for building rich, interactive user interfaces.',
+    desc: "I'm currently using Shadcn UI for styling my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with Shadcn UI, and I'm able to create complex responsive layouts with Shadcn UI.",
+  },
+  {
+    name: 'React Query',
+    icon: 'query',
+    quote: 'Hooks for fetching, caching and updating asynchronous data in React.',
+    desc: "I'm currently using React Query for managing the state of my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with React Query, and I'm able to create complex responsive layouts with React Query.",
   },
   {
     name: 'React Router',
@@ -75,22 +87,10 @@ const frontend: element[] = [
     desc: 'React router is a routing systems type of librarie',
   },
   {
-    name: 'React Query',
-    icon: 'query',
-    quote: 'Hooks for fetching, caching and updating asynchronous data in React.',
-    desc: "I'm currently using React Query for managing the state of my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with React Query, and I'm able to create complex responsive layouts with React Query.",
-  },
-  {
-    name: 'Redux',
-    icon: 'redux',
-    quote: 'A Predictable State Container for JS Apps.',
-    desc: "I'm currently using Redux for managing the state of my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with Redux, and I'm able to create complex responsive layouts with Redux.",
-  },
-  {
-    name: 'Ant Design',
-    icon: 'ant',
-    quote: 'A design system for enterprise-level products.',
-    desc: "I'm currently using Ant Design for styling my projects, it's a great framework for building modern and responsive web applications. I'm able to create custom components with Ant Design, and I'm able to create complex responsive layouts with Ant Design.",
+    name: 'React Hook Form',
+    icon: 'react-hook-form',
+    quote: 'Performant, flexible and extensible forms with easy-to-use validation.',
+    desc: 'React Hook Form is a great library for building forms in React.',
   },
   {
     name: 'Figma',
@@ -102,7 +102,7 @@ const frontend: element[] = [
 ];
 const backend: element[] = [
   {
-    name: 'NestJS',
+    name: 'Nest',
     icon: 'nest',
     quote:
       'Nest (NestJS) is a framework for building efficient, scalable Node.js server-side applications. It uses progressive JavaScript, is built with and fully supports TypeScript (yet still enables developers to code in pure JavaScript) and combines elements of OOP (Object Oriented Programming), FP (Functional Programming), and FRP (Functional Reactive Programming).',
@@ -130,7 +130,7 @@ const backend: element[] = [
     desc: "MongoDB is a great database management system, I'm currently using it for storing and managing the data of my projects. I've got a quite well understanding of the NoSQL language, I'm able to create collections, insert, update and delete data, and I'm able to create complex queries.",
   },
   {
-    name: 'NodeJS',
+    name: 'Node',
     icon: 'node',
     quote: 'Node.js® is an open-source, cross-platform JavaScript runtime environment.',
     desc: "Honestly I know only the basics of NodeJS, I'm not a NodeJS expert, but I'm able to build CRUD like NodeJS applications. I'm currently learning and trying to specialize more about NestJS.",
@@ -161,7 +161,7 @@ const devops: element[] = [
 
   {
     name: 'Github',
-    icon: 'github',
+    icon: 'github-white',
     quote:
       'GitHub is where over 100 million developers shape the future of software, together. Contribute to the open source community, manage your Git repositories.',
     desc: "Version control is key for any well structured project, I keep all my projects in Github. I'm able to control the versions effectively and consistently, and I'm able to collaborate with other developers in a very efficient way, delivering high quality projects.",

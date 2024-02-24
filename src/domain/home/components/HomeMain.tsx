@@ -19,12 +19,12 @@ const HomeMain: FC = (): ReactElement => {
 
   return (
     <div
-      className="flex flex-col h-full w-full overflow-y-scroll overflow-x-hidden md:overflow-hidden"
+      className="flex flex-col relative h-full w-full overflow-y-scroll overflow-x-hidden md:overflow-hidden"
       ref={home_ref}
     >
       <StackMarquee />
       <div className="flex flex-col w-full h-full lg:flex-row">
-        <div className="flex w-full min-h-full md:min-h-[55%] lg:min-h-full justify-center">
+        <div className="flex w-full min-h-full md:min-h-[55%] lg:min-h-full justify-center items-center">
           <TextPanel />
         </div>
         <div className="flex w-full min-h-full md:min-h-[45%] items-center justify-center">
